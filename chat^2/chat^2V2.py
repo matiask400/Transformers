@@ -14,7 +14,7 @@ import keyboard
 
 
 # Configurar la API de generativeai
-genai.configure(api_key="AIzaSyDq1VehLJ3MKEvQFuW8VxmsJ82j2zhbOrw")
+genai.configure(api_key=None)
 
 # Definir la configuración de generación
 generation_config = {
