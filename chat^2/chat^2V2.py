@@ -75,8 +75,16 @@ class ChatController:
                 response_message = self.send_message_gpt(response)
                 current_time = datetime.now().strftime("%Y-%m-%d %H:%M:%S")
                 with open("chats/chat_logs.txt", "a") as file:
-                    file.write(f"{current_time} - Response: {str(response_message)}\n")
-                    file.write(f"{current_time} - Copied Text: {str(self.get_last_copied_message())}\n")
+                    try:
+                        file.write(f"{current_time} - Response: {response_message}\n")
+                    except:
+                        texto = response_message.encode('ascii', 'replace').decode('ascii')
+                        file.write(f"{current_time} - Response: {texto}\n")
+                    try:
+                        file.write(f"{current_time} - Copied Text: {self.get_last_copied_message()}\n")
+                    except:
+                        texto = self.get_last_copied_message().encode('ascii', 'replace').decode('ascii')
+                        file.write(f"{current_time} - Copied Text: {texto}\n")
                 time.sleep(5)
             else:
                 print("No se encontró la página de chat. Esperando...")
