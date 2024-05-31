@@ -3,18 +3,10 @@ import pyperclip
 import google.generativeai as genai
 import time
 import keyboard
-
-# -----------------------  Avisos  -------------------------
-# El codigo proporcionado utiliza la libreria pyautogui para 
-# interactuar con la interfaz grafica de usuario
-# Utiliza pyperclip para copiar y pegar texto de la papelera
-# Escribe la respuesta de GPT en la interfaz de chat utilizando pyautogui
-# keyboard en la pestaña que este activa en el momento de la ejecucion
-# ----------------------------------------------------------
-
+from datetime import datetime
 
 # Configurar la API de generativeai
-genai.configure(api_key=None)
+genai.configure(api_key="")
 
 # Definir la configuración de generación
 generation_config = {
@@ -68,16 +60,23 @@ class ChatController:
         time.sleep(5) # Ajustar de ser necesario -----------------------------------
         pyautogui.press("enter")
         # Copiar ultima respuesta
-        time.sleep(30) # Ajustar de ser necesario -----------------------------------
+        time.sleep(50) # Ajustar de ser necesario -----------------------------------
+        while not self.is_ready():
+            time.sleep(5)
         pyautogui.hotkey("ctrl", "shift", "c")
+        return message
 
     def main_loop(self):
         start_time = time.time()
-        max_duration = 600  # 10 minutos
+        max_duration = 1800  # 30 minutos
         while not self.interrupted and time.time() - start_time < max_duration:
             if self.is_on_chat_page():
                 response = self.send_message_gemini()
-                self.send_message_gpt(response)
+                response_message = self.send_message_gpt(response)
+                current_time = datetime.now().strftime("%Y-%m-%d %H:%M:%S")
+                with open("chats/chat_logs.txt", "a") as file:
+                    file.write(f"{current_time} - Response: {str(response_message)}\n")
+                    file.write(f"{current_time} - Copied Text: {str(self.get_last_copied_message())}\n")
                 time.sleep(5)
             else:
                 print("No se encontró la página de chat. Esperando...")
@@ -86,6 +85,14 @@ class ChatController:
     def is_on_chat_page(self):
         # Captura de pantalla del elemento distintivo
         element_location = pyautogui.locateOnScreen('chat_page_identifier.png', confidence=0.8)
+        return element_location is not None
+
+    def is_ready(self):
+        # Captura de pantalla del elemento distintivo
+        try:
+            element_location = pyautogui.locateOnScreen('ready.png', confidence=0.5)
+        except:
+            element_location = True
         return element_location is not None
 
 if __name__ == "__main__":
