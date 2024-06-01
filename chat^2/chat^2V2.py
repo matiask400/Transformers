@@ -68,7 +68,7 @@ class ChatController:
 
     def main_loop(self):
         start_time = time.time()
-        max_duration = 1800  # 30 minutos
+        max_duration = 18000  # 30 minutos
         while not self.interrupted and time.time() - start_time < max_duration:
             if self.is_on_chat_page():
                 response = self.send_message_gemini()
