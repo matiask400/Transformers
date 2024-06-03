@@ -4,9 +4,21 @@ import google.generativeai as genai
 import time
 import keyboard
 from datetime import datetime
+import sys, os
+# Obtener el directorio actual (donde se encuentra mi_script.py)
+directorio_actual = os.path.dirname(os.path.realpath(__file__))
+
+# Agregar el directorio padre al sys.path
+directorio_padre = os.path.abspath(os.path.join(directorio_actual, os.pardir))
+sys.path.append(directorio_padre)
+
+# Ahora puedes importar GEMINI_API_KEY desde archivo.py
+from archivo import GEMINI_API_KEY
 
 # Configurar la API de generativeai
-genai.configure(api_key="")
+GEMINI_API_KEY = GEMINI_API_KEY()
+genai.configure(api_key=GEMINI_API_KEY)
+
 
 # Definir la configuración de generación
 generation_config = {
@@ -29,6 +41,15 @@ model = genai.GenerativeModel(
     safety_settings=safety_settings,
     generation_config=generation_config,
 )
+
+def seguro():
+    opcion = input("Presiona Y para comenzar el chat...")
+    if opcion != "Y":
+        keyboard.unhook_all()
+        print("Chat no iniciado.")
+        exit()
+    pyautogui.alert("El programa se ejecutará en 20 segundos. Asegúrate de tener la pestaña de chat activa.", "Aviso", button="Entendido")
+    print("Iniciando chat en 20 segundos...")
 
 class ChatController:
     def __init__(self):
@@ -92,13 +113,13 @@ class ChatController:
 
     def is_on_chat_page(self):
         # Captura de pantalla del elemento distintivo
-        element_location = pyautogui.locateOnScreen('chat_page_identifier.png', confidence=0.8)
+        element_location = pyautogui.locateOnScreen('imagenes/chat_page_identifier.png', confidence=0.8)
         return element_location is not None
 
     def is_ready(self):
         # Captura de pantalla del elemento distintivo
         try:
-            element_location = pyautogui.locateOnScreen('ready.png', confidence=0.5)
+            element_location = pyautogui.locateOnScreen('imagenes/ready.png', confidence=0.5)
         except:
             element_location = True
         return element_location is not None
@@ -110,6 +131,7 @@ if __name__ == "__main__":
     keyboard.on_press_key('c', chat_controller.stop_execution)
 
     # Esperar 20 segundos para que la pestaña de chat esté activa
+    seguro()
     time.sleep(20)
 
     # Iniciar el bucle principal

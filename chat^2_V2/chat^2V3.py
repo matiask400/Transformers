@@ -1,8 +1,23 @@
-import os
+import sys, os
 import datetime
 import json
 import time
 import google.generativeai as genai
+import google.api_core.exceptions
+
+# Obtener el directorio actual (donde se encuentra mi_script.py)
+directorio_actual = os.path.dirname(os.path.realpath(__file__))
+
+# Agregar el directorio padre al sys.path
+directorio_padre = os.path.abspath(os.path.join(directorio_actual, os.pardir))
+sys.path.append(directorio_padre)
+
+# Ahora puedes importar GEMINI_API_KEY desde archivo.py
+from archivo import GEMINI_API_KEY
+
+
+# Configurar la API de generativeai
+GEMINI_API_KEY = GEMINI_API_KEY()
 
 def get_last_file_number():
     files = os.listdir()
@@ -12,7 +27,7 @@ def get_last_file_number():
 def iniciar_conversacion(modelo_nombre, historial=None, temperature=1):
     if historial is None:
         historial = []
-    genai.configure(api_key="")
+    genai.configure(api_key=GEMINI_API_KEY)
     generation_config = {
         "temperature": temperature,
         "top_p": 0.95,
@@ -35,8 +50,19 @@ def iniciar_conversacion(modelo_nombre, historial=None, temperature=1):
     return chat_session
 
 def enviar_mensaje(chat_session, mensaje):
-    response = chat_session.send_message(mensaje)
-    return response
+    max_retries = 5
+    for attempt in range(max_retries):
+        try:
+            response = chat_session.send_message(mensaje)
+            return response
+        except google.api_core.exceptions.DeadlineExceeded as e:
+            print(f"Error: {e}")
+            print(f"Reintentando... (Intento {attempt + 1}/{max_retries}, esperando {2 ** attempt} segundos)")
+            if attempt < max_retries - 1:
+                wait_time = 2 ** attempt
+                time.sleep(wait_time)
+            else:
+                raise e
 
 def guardar_historial(temperature, historial, archivo, modelo1, modelo2):
     if not os.path.exists(archivo):  # Verificar si el archivo ya existe
@@ -69,7 +95,7 @@ def main():
     modelo1 = "gemini-1.5-flash"
     modelo2 = "gemini-1.5-pro"
     fecha_hora = datetime.datetime.now().strftime("%Y%m%d")
-    historial_archivo = f"historial_conversacion_{fecha_hora}_{get_last_file_number()}.json"
+    historial_archivo = f"chats_gemini-gemini/historial_conversacion_{fecha_hora}_{get_last_file_number()}.json"
 
     if os.path.exists(historial_archivo):
         historial = cargar_historial(historial_archivo)
