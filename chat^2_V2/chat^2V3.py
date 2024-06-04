@@ -20,7 +20,7 @@ from archivo import GEMINI_API_KEY
 GEMINI_API_KEY = GEMINI_API_KEY()
 
 def get_last_file_number():
-    files = os.listdir()
+    files = os.listdir("chats_gemini-gemini")
     last_number = len(files)
     return last_number
 
@@ -113,7 +113,41 @@ def main():
     response_2 = None
     while True:
         if response_2 is None:
-            mensaje_1 = input("Modelo 1: ")
+            # mensaje_1 = input("Modelo 1: ")
+            mensaje_1 = """Que opinas del codigo: import json
+import unicodedata
+import docx
+
+# Leer el archivo JSON
+
+json_file_path = 'chats_gemini-gemini/historial_conversacion_20240601_1.json'
+
+with open(json_file_path, 'r', encoding='utf-8') as file:
+    data = json.load(file)
+
+# Función para decodificar caracteres Unicode
+def decode_unicode(text):
+    return unicodedata.normalize("NFKD", text)
+
+# Crear un nuevo documento Word
+doc = docx.Document()
+doc.add_heading('Registro de Interacciones', 0)
+
+# Procesar y formatear los datos
+for item in data:
+    time = decode_unicode(item["time"])
+    message = decode_unicode(item["message"])
+    response = decode_unicode(item["response"])
+
+    doc.add_heading('Registro', level=1)
+    doc.add_paragraph(f"Time: {time}")
+    doc.add_paragraph(f"Message: {message}")
+    doc.add_heading('Response', level=2)
+    doc.add_paragraph(response)
+
+# Guardar el documento
+doc_path = f'lectura/historial_conversacion_20240601_1.docx'
+doc.save(doc_path)"""
         else:
             mensaje_1 = response_2.text
 
