@@ -4,7 +4,7 @@ import docx
 
 # Leer el archivo JSON
 
-json_file_path = 'chats_gemini-gemini/historial_conversacion_20240604_14.json'
+json_file_path = 'chats_gemini-gemini/historial_conversacion_20240604_17.json'
 
 with open(json_file_path, 'r', encoding='utf-8') as file:
     data = json.load(file)
@@ -33,5 +33,5 @@ for item in data:
         print("Error en el registro")
         print(item)
 # Guardar el documento
-doc_path = f'lectura/historial_conversacion_20240604_14.docx'
+doc_path = f'lectura/historial_conversacion_20240604_17.docx'
 doc.save(doc_path)

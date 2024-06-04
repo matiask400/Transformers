@@ -110,52 +110,18 @@ def main():
         if item["message"] and item["response"]:
             print("Modelo 1:", item["message"])
             print("Modelo 2:", item["response"])
+    
     response_2 = None
     while True:
         if response_2 is None:
-            # mensaje_1 = input("Modelo 1: ")
-            mensaje_1 = """Que opinas del codigo: import json
-import unicodedata
-import docx
-
-# Leer el archivo JSON
-
-json_file_path = 'chats_gemini-gemini/historial_conversacion_20240601_1.json'
-
-with open(json_file_path, 'r', encoding='utf-8') as file:
-    data = json.load(file)
-
-# Función para decodificar caracteres Unicode
-def decode_unicode(text):
-    return unicodedata.normalize("NFKD", text)
-
-# Crear un nuevo documento Word
-doc = docx.Document()
-doc.add_heading('Registro de Interacciones', 0)
-
-# Procesar y formatear los datos
-for item in data:
-    time = decode_unicode(item["time"])
-    message = decode_unicode(item["message"])
-    response = decode_unicode(item["response"])
-
-    doc.add_heading('Registro', level=1)
-    doc.add_paragraph(f"Time: {time}")
-    doc.add_paragraph(f"Message: {message}")
-    doc.add_heading('Response', level=2)
-    doc.add_paragraph(response)
-
-# Guardar el documento
-doc_path = f'lectura/historial_conversacion_20240601_1.docx'
-doc.save(doc_path)"""
+            mensaje_1 = input("Modelo 1: ")
         else:
             mensaje_1 = response_2.text
-
         response_1 = enviar_mensaje(chat_session_1, mensaje_1)
         historial.append({"time": str(datetime.datetime.now()), "message": mensaje_1, "response": response_1.text})
         print("Modelo 1:", response_1.text)
 
-        time.sleep(30)
+        time.sleep(15)
 
         mensaje_2 = response_1.text
         response_2 = enviar_mensaje(chat_session_2, mensaje_2)
@@ -165,7 +131,7 @@ doc.save(doc_path)"""
 
         print("Modelo 2:", response_2.text)
         
-        time.sleep(30)
+        time.sleep(15)
 
 if __name__ == "__main__":
     main()
