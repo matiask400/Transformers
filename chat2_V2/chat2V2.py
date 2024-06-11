@@ -132,18 +132,18 @@ def main():
     response_2 = None
     while True:
         if response_2 is None:
-            message_1 = input("Input for model 1: ")
+            message_1 = input("Input for model 1: ") 
         else:
             message_1 = response_2.text
         response_1 = send_message(chat_session_1, message_1)
-        history.append({"time": str(datetime.datetime.now()), "message": message_1, "response": response_1.text})
+        history.append({"role": "user", "parts": [f"{response_1.text}",]})
         print("Model 1:", response_1.text)
 
         time.sleep(20)
 
         message_2 = response_1.text
         response_2 = send_message(chat_session_2, message_2)
-        history.append({"time": str(datetime.datetime.now()), "message": message_2, "response": response_2.text})
+        history.append({"role": "model", "parts": [f"{response_1.text}  \n",]})
 
         save_history(temperature1, temperature2, history, history_file, model1, model2)
 
