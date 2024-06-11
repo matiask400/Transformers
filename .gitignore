@@ -1,3 +1,5 @@
-# Archivos
-**/archivo.py
+# Files that should be ignored by git
 **/__pycache__/
+
+# Generated files
+**/.~lock.historial_conversacion_20240604_14.docx#
