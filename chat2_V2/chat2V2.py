@@ -75,7 +75,7 @@ def save_history(temperature1, temperature2, history, file, model1, model2):
                 "top_p": 0.95,
                 "top_k": 64,
                 "max_output_tokens": 8192,
-                "response_mime_type": "text/plain",
+                "response_mime_type": "application/json"
             },
             "safety_settings": [
                 {"category": "HARM_CATEGORY_HARASSMENT", "threshold": "BLOCK_NONE",},
@@ -87,6 +87,12 @@ def save_history(temperature1, temperature2, history, file, model1, model2):
         })
     with open(file, 'w') as f:
         json.dump(history, f, indent=2)
+
+def save(history_json):
+    file = f"json_gemini-gemini/conversation_history_{get_last_file_number()}.json"
+    with open(file, 'w') as f:
+        json.dump(history_json, f, indent=2)
+
 
 def load_history(file):
     with open(file, 'r') as f:
@@ -123,27 +129,21 @@ def main():
     chat_session_1 = start_conversation(model1, history, temperature=temperature1, system_instruction="You are going to chat with another AI model.")
     chat_session_2 = start_conversation(model2, history, temperature=temperature2, system_instruction="You are going to chat with another AI model.")
 
-    for item in history:
-        if item["message"] and item["response"]:
-            print("Model 1:", item["message"])
-            print("Model 2:", item["response"])
-
     print("-"*50)
     response_2 = None
-    while True:
+    for i in range(1):
         if response_2 is None:
-            message_1 = input("Input for model 1: ") 
+            message_1 = input("Input for model 1: ")
         else:
             message_1 = response_2.text
         response_1 = send_message(chat_session_1, message_1)
-        history.append({"role": "user", "parts": [f"{response_1.text}",]})
+        history.append({"time": str(datetime.datetime.now()), "message": message_1, "response": response_1.text})
         print("Model 1:", response_1.text)
-
         time.sleep(20)
 
         message_2 = response_1.text
         response_2 = send_message(chat_session_2, message_2)
-        history.append({"role": "model", "parts": [f"{response_1.text}  \n",]})
+        history.append({"time": str(datetime.datetime.now()), "message": message_2, "response": response_2.text})
 
         save_history(temperature1, temperature2, history, history_file, model1, model2)
 
@@ -151,5 +151,6 @@ def main():
 
         time.sleep(20)
 
+    save(response_2)
 if __name__ == "__main__":
     main()

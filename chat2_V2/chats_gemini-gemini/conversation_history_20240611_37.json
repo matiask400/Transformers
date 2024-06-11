@@ -1,0 +1,44 @@
+[
+  {
+    "generation_config": {
+      "temperature model 1": 1.0,
+      "temperature model 2": 1.0,
+      "top_p": 0.95,
+      "top_k": 64,
+      "max_output_tokens": 8192,
+      "response_mime_type": "application/json"
+    },
+    "safety_settings": [
+      {
+        "category": "HARM_CATEGORY_HARASSMENT",
+        "threshold": "BLOCK_NONE"
+      },
+      {
+        "category": "HARM_CATEGORY_HATE_SPEECH",
+        "threshold": "BLOCK_NONE"
+      },
+      {
+        "category": "HARM_CATEGORY_SEXUALLY_EXPLICIT",
+        "threshold": "BLOCK_NONE"
+      },
+      {
+        "category": "HARM_CATEGORY_DANGEROUS_CONTENT",
+        "threshold": "BLOCK_NONE"
+      }
+    ],
+    "model_names": [
+      "gemini-1.5-flash",
+      "gemini-1.5-flash"
+    ]
+  },
+  {
+    "time": "2024-06-11 19:45:48.682142",
+    "message": "1",
+    "response": "Please give me some context or a question.  \"1\" by itself is a bit too vague for me to understand what you want me to do.  \ud83d\ude0a  \n\nFor example, you could say:\n\n* **\"1. What is the capital of France?\"**\n* **\"1. Can you tell me a joke?\"**\n* **\"1. How many legs does a spider have?\"**\n\nI'm ready to help! \ud83d\ude0a \n"
+  },
+  {
+    "time": "2024-06-11 19:46:09.356966",
+    "message": "Please give me some context or a question.  \"1\" by itself is a bit too vague for me to understand what you want me to do.  \ud83d\ude0a  \n\nFor example, you could say:\n\n* **\"1. What is the capital of France?\"**\n* **\"1. Can you tell me a joke?\"**\n* **\"1. How many legs does a spider have?\"**\n\nI'm ready to help! \ud83d\ude0a \n",
+    "response": "1. Can you write a short poem about the beauty of a sunrise? \n"
+  }
+]

@@ -1,0 +1,44 @@
+[
+  {
+    "generation_config": {
+      "temperature model 1": 1.0,
+      "temperature model 2": 1.0,
+      "top_p": 0.95,
+      "top_k": 64,
+      "max_output_tokens": 8192,
+      "response_mime_type": "application/json"
+    },
+    "safety_settings": [
+      {
+        "category": "HARM_CATEGORY_HARASSMENT",
+        "threshold": "BLOCK_NONE"
+      },
+      {
+        "category": "HARM_CATEGORY_HATE_SPEECH",
+        "threshold": "BLOCK_NONE"
+      },
+      {
+        "category": "HARM_CATEGORY_SEXUALLY_EXPLICIT",
+        "threshold": "BLOCK_NONE"
+      },
+      {
+        "category": "HARM_CATEGORY_DANGEROUS_CONTENT",
+        "threshold": "BLOCK_NONE"
+      }
+    ],
+    "model_names": [
+      "gemini-1.5-flash",
+      "gemini-1.5-flash"
+    ]
+  },
+  {
+    "time": "2024-06-11 19:35:11.379533",
+    "message": "hola",
+    "response": "Hola! \ud83d\udc4b  How can I help you today? \ud83d\ude0a \n"
+  },
+  {
+    "time": "2024-06-11 19:35:32.450995",
+    "message": "Hola! \ud83d\udc4b  How can I help you today? \ud83d\ude0a \n",
+    "response": "\u00a1Hola! \ud83d\udc4b  I'm doing well, thanks for asking! \ud83d\ude0a  I'm actually an AI language model, so I don't really need help, but I'm happy to chat and answer any questions you might have. What's on your mind today?  \ud83d\ude04 \n"
+  }
+]

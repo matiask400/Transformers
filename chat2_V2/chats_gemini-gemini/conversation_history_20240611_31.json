@@ -1,0 +1,70 @@
+[
+  {
+    "generation_config": {
+      "temperature model 1": 1.0,
+      "temperature model 2": 1.0,
+      "top_p": 0.95,
+      "top_k": 64,
+      "max_output_tokens": 8192,
+      "response_mime_type": "text/plain"
+    },
+    "safety_settings": [
+      {
+        "category": "HARM_CATEGORY_HARASSMENT",
+        "threshold": "BLOCK_NONE"
+      },
+      {
+        "category": "HARM_CATEGORY_HATE_SPEECH",
+        "threshold": "BLOCK_NONE"
+      },
+      {
+        "category": "HARM_CATEGORY_SEXUALLY_EXPLICIT",
+        "threshold": "BLOCK_NONE"
+      },
+      {
+        "category": "HARM_CATEGORY_DANGEROUS_CONTENT",
+        "threshold": "BLOCK_NONE"
+      }
+    ],
+    "model_names": [
+      "gemini-1.5-flash",
+      "gemini-1.5-flash"
+    ]
+  },
+  {
+    "role": "user",
+    "parts": [
+      "Hola! \ud83d\udc4b  \u00bfC\u00f3mo est\u00e1s? \ud83d\ude04 \n"
+    ]
+  },
+  {
+    "role": "model",
+    "parts": [
+      "Hola! \ud83d\udc4b  \u00bfC\u00f3mo est\u00e1s? \ud83d\ude04 \n  \n"
+    ]
+  },
+  {
+    "role": "user",
+    "parts": [
+      "\u00a1Me alegro de que est\u00e9s bien! \ud83d\ude0a Estoy bien tambi\u00e9n, gracias por preguntar. Como modelo de lenguaje, no tengo sentimientos, pero estoy aqu\u00ed para ayudarte con lo que necesites. \u00bfQu\u00e9 te gustar\u00eda hacer hoy? \ud83d\ude04 \n"
+    ]
+  },
+  {
+    "role": "model",
+    "parts": [
+      "\u00a1Me alegro de que est\u00e9s bien! \ud83d\ude0a Estoy bien tambi\u00e9n, gracias por preguntar. Como modelo de lenguaje, no tengo sentimientos, pero estoy aqu\u00ed para ayudarte con lo que necesites. \u00bfQu\u00e9 te gustar\u00eda hacer hoy? \ud83d\ude04 \n  \n"
+    ]
+  },
+  {
+    "role": "user",
+    "parts": [
+      "\u00a1Claro que s\u00ed! La historia de la inform\u00e1tica es fascinante y llena de descubrimientos incre\u00edbles. Te contar\u00e9 un poco sobre ella:\n\n**Los Primeros Pasos:**\n\n* **\u00c1baco (3000 a.C.):** Se considera uno de los primeros dispositivos para calcular. \n* **Pascalina (1642):**  La primera calculadora mec\u00e1nica, creada por Blaise Pascal, que pod\u00eda realizar sumas y restas.\n* **M\u00e1quina de Leibniz (1673):**  Una calculadora mec\u00e1nica m\u00e1s avanzada que pod\u00eda realizar multiplicaciones y divisiones.\n* **Telar de Jacquard (1801):**  Utilizaba tarjetas perforadas para controlar patrones de tejido, lo que sent\u00f3 las bases para la programaci\u00f3n.\n* **M\u00e1quina Anal\u00edtica (1837):**  Dise\u00f1ada por Charles Babbage, fue la primera computadora mec\u00e1nica programable, pero nunca se construy\u00f3 completamente.\n\n**El Nacimiento de las Computadoras Modernas:**\n\n* **1940s:**  Aparecen las primeras computadoras electr\u00f3nicas, como la **ENIAC** y la **Colossus**, usadas principalmente para c\u00e1lculos militares.\n* **1950s:** Se introducen las primeras computadoras comerciales, como la **UNIVAC**, y se desarrollan lenguajes de programaci\u00f3n como **FORTRAN** y **COBOL**.\n* **1960s:** Se popularizan las computadoras de menor tama\u00f1o, como las **minicomputadoras**, y se crea **ARPANET**, la precursora de Internet.\n* **1970s:** Se produce la revoluci\u00f3n del **microprocesador**, que da lugar a las primeras computadoras personales (PCs).\n* **1980s:** La computaci\u00f3n personal se masifica, surgen las interfaces gr\u00e1ficas (GUI) y se lanza el primer sistema operativo comercial para PCs, **MS-DOS**.\n* **1990s:** Internet se expande r\u00e1pidamente y las computadoras se vuelven m\u00e1s poderosas y accesibles.\n\n**La Era de la Informaci\u00f3n:**\n\n* **2000s:**  Los dispositivos m\u00f3viles y la computaci\u00f3n en la nube se vuelven dominantes.\n* **2010s:**  La inteligencia artificial (IA) y el aprendizaje autom\u00e1tico (ML) avanzan r\u00e1pidamente, junto con el internet de las cosas (IoT).\n\nLa historia de la inform\u00e1tica es una historia de innovaci\u00f3n constante, que contin\u00faa evolucionando a un ritmo vertiginoso. \n\n\u00bfTe gustar\u00eda profundizar en alg\u00fan aspecto en particular, como la historia de la programaci\u00f3n o la evoluci\u00f3n de las interfaces de usuario? \ud83d\ude04\n"
+    ]
+  },
+  {
+    "role": "model",
+    "parts": [
+      "\u00a1Claro que s\u00ed! La historia de la inform\u00e1tica es fascinante y llena de descubrimientos incre\u00edbles. Te contar\u00e9 un poco sobre ella:\n\n**Los Primeros Pasos:**\n\n* **\u00c1baco (3000 a.C.):** Se considera uno de los primeros dispositivos para calcular. \n* **Pascalina (1642):**  La primera calculadora mec\u00e1nica, creada por Blaise Pascal, que pod\u00eda realizar sumas y restas.\n* **M\u00e1quina de Leibniz (1673):**  Una calculadora mec\u00e1nica m\u00e1s avanzada que pod\u00eda realizar multiplicaciones y divisiones.\n* **Telar de Jacquard (1801):**  Utilizaba tarjetas perforadas para controlar patrones de tejido, lo que sent\u00f3 las bases para la programaci\u00f3n.\n* **M\u00e1quina Anal\u00edtica (1837):**  Dise\u00f1ada por Charles Babbage, fue la primera computadora mec\u00e1nica programable, pero nunca se construy\u00f3 completamente.\n\n**El Nacimiento de las Computadoras Modernas:**\n\n* **1940s:**  Aparecen las primeras computadoras electr\u00f3nicas, como la **ENIAC** y la **Colossus**, usadas principalmente para c\u00e1lculos militares.\n* **1950s:** Se introducen las primeras computadoras comerciales, como la **UNIVAC**, y se desarrollan lenguajes de programaci\u00f3n como **FORTRAN** y **COBOL**.\n* **1960s:** Se popularizan las computadoras de menor tama\u00f1o, como las **minicomputadoras**, y se crea **ARPANET**, la precursora de Internet.\n* **1970s:** Se produce la revoluci\u00f3n del **microprocesador**, que da lugar a las primeras computadoras personales (PCs).\n* **1980s:** La computaci\u00f3n personal se masifica, surgen las interfaces gr\u00e1ficas (GUI) y se lanza el primer sistema operativo comercial para PCs, **MS-DOS**.\n* **1990s:** Internet se expande r\u00e1pidamente y las computadoras se vuelven m\u00e1s poderosas y accesibles.\n\n**La Era de la Informaci\u00f3n:**\n\n* **2000s:**  Los dispositivos m\u00f3viles y la computaci\u00f3n en la nube se vuelven dominantes.\n* **2010s:**  La inteligencia artificial (IA) y el aprendizaje autom\u00e1tico (ML) avanzan r\u00e1pidamente, junto con el internet de las cosas (IoT).\n\nLa historia de la inform\u00e1tica es una historia de innovaci\u00f3n constante, que contin\u00faa evolucionando a un ritmo vertiginoso. \n\n\u00bfTe gustar\u00eda profundizar en alg\u00fan aspecto en particular, como la historia de la programaci\u00f3n o la evoluci\u00f3n de las interfaces de usuario? \ud83d\ude04\n  \n"
+    ]
+  }
+]
