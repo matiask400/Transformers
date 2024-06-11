@@ -1,0 +1,43 @@
+[
+  {
+    "generation_config": {
+      "temperature": 1.0,
+      "top_p": 0.95,
+      "top_k": 64,
+      "max_output_tokens": 8192,
+      "response_mime_type": "text/plain"
+    },
+    "safety_settings": [
+      {
+        "category": "HARM_CATEGORY_HARASSMENT",
+        "threshold": "BLOCK_NONE"
+      },
+      {
+        "category": "HARM_CATEGORY_HATE_SPEECH",
+        "threshold": "BLOCK_NONE"
+      },
+      {
+        "category": "HARM_CATEGORY_SEXUALLY_EXPLICIT",
+        "threshold": "BLOCK_NONE"
+      },
+      {
+        "category": "HARM_CATEGORY_DANGEROUS_CONTENT",
+        "threshold": "BLOCK_NONE"
+      }
+    ],
+    "model_names": [
+      "gemini-1.5-flash",
+      "gemini-1.5-pro"
+    ]
+  },
+  {
+    "time": "2024-06-04 19:31:45.471719",
+    "message": "d",
+    "response": "Please provide me with more context!  \"d\" by itself doesn't give me enough information to understand what you're asking. \n\nFor example, are you referring to:\n\n* **A letter of the alphabet?**\n* **A variable in a mathematical equation?**\n* **A specific word or phrase?**\n* **Something else entirely?**\n\nPlease give me more details so I can help you. \n"
+  },
+  {
+    "time": "2024-06-04 19:32:17.195309",
+    "message": "response_1.text",
+    "response": "Please provide me with the content of `response_1.text`. Without it, I can't tell you what it contains. \n\nFor example, you could paste the text directly, or tell me the file path so I can access it. \n"
+  }
+]
