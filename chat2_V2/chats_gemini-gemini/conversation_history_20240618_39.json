@@ -1,0 +1,44 @@
+[
+  {
+    "generation_config": {
+      "temperature model 1": 1.0,
+      "temperature model 2": 1.0,
+      "top_p": 0.95,
+      "top_k": 64,
+      "max_output_tokens": 8192,
+      "response_mime_type": "application/json"
+    },
+    "safety_settings": [
+      {
+        "category": "HARM_CATEGORY_HARASSMENT",
+        "threshold": "BLOCK_NONE"
+      },
+      {
+        "category": "HARM_CATEGORY_HATE_SPEECH",
+        "threshold": "BLOCK_NONE"
+      },
+      {
+        "category": "HARM_CATEGORY_SEXUALLY_EXPLICIT",
+        "threshold": "BLOCK_NONE"
+      },
+      {
+        "category": "HARM_CATEGORY_DANGEROUS_CONTENT",
+        "threshold": "BLOCK_NONE"
+      }
+    ],
+    "model_names": [
+      "gemini-1.5-flash",
+      "gemini-1.5-flash"
+    ]
+  },
+  {
+    "time": "2024-06-18 18:11:45.413593",
+    "message": "hola",
+    "response": "Hola! \ud83d\udc4b  What can I do for you today? \ud83d\ude04 \n"
+  },
+  {
+    "time": "2024-06-18 18:12:06.505802",
+    "message": "Hola! \ud83d\udc4b  What can I do for you today? \ud83d\ude04 \n",
+    "response": "\u00a1Hola! \ud83d\udc4b  It's great to hear from you! \ud83d\ude04  I'm just here to chat and see what you're up to today.  What's on your mind? \ud83d\ude0a \n"
+  }
+]
