@@ -46,7 +46,6 @@ def start_conversation(model_name, history=None, temperature=1, system_instructi
         model_name=model_name,
         safety_settings=safety_settings,
         generation_config=generation_config,
-        system_instruction=system_instruction,
     )
     chat_session = model.start_chat(history=history)
     return chat_session
@@ -88,10 +87,10 @@ def save_history(temperature1, temperature2, history, file, model1, model2):
     with open(file, 'w') as f:
         json.dump(history, f, indent=2)
 
-def save(history_json):
-    file = f"json_gemini-gemini/conversation_history_{get_last_file_number()}.json"
-    with open(file, 'w') as f:
-        json.dump(history_json, f, indent=2)
+# def save(history_json):
+#     file = f"json_gemini-gemini/conversation_history_{get_last_file_number()}.json"
+#     with open(file, 'w') as f:
+#        json.dump(history_json, f, indent=2)
 
 
 def load_history(file):
@@ -131,7 +130,7 @@ def main():
 
     print("-"*50)
     response_2 = None
-    for i in range(1):
+    while True:
         if response_2 is None:
             message_1 = input("Input for model 1: ")
         else:
@@ -151,6 +150,6 @@ def main():
 
         time.sleep(20)
 
-    save(response_2)
+    # save(response_2)
 if __name__ == "__main__":
     main()
