@@ -78,66 +78,43 @@ def main():
     print("-"*50)
 
     message_1 = """
-Problem D
-Circular DNA
-Time limit: 3 seconds
-You have an internship with a bioinformatics research group studying DNA. A single strand of DNA
-consists of many genes, which fall into different categories called gene types. Gene types are delimited
-by specific nucleotide sequences known as gene markers. Each gene type i has a unique start marker si
-and a unique end marker ei. After many dirty jobs (growing bacteria, cell extraction, protein engineering,
-and so on), your research group can convert DNA into a form consisting of only the gene markers,
-removing all the genetic material lying between the markers.
-Your research group came up with the interesting hypothesis that gene interpretation depends on whether
-the markers of some gene types form properly nested structures. To decide whether markers of gene type
-i form a proper nesting in a given sequence of markers w, one needs to consider the subsequence of w
-containing only the markers of gene type i (si and ei), leaving none of them out. The following (and
-only the following) are considered to be properly nested structures:
-• siei
-• siN ei, where N is a properly nested structure
-• AB, where A and B are properly nested structures
-Given your computing background, you were assigned to investigate this property, but there is one
-further complication. Your group is studying a specific type of DNA called circular DNA, which is
-DNA that forms a closed loop. To study nesting in circular DNA, it is necessary to cut the loop at some
-location, which results in a unique sequence of markers (the direction of reading is fixed by molecular
-properties). Whether a gene type i forms a proper nesting now also depends on where the circular
-DNA is cut. Your task is to find the cutting location that maximizes the number of gene types that form a
-properly nested structure. Figure D.1 shows an example corresponding to Sample Input 1. The indicated
-cut results in the markers for gene type 1 being properly nested.e1
-e1
-s1
-e2
-s1s2
-e42
-e1
-s1 1
-2
-3
-4
-56
-7
-8
-9
-Figure D.1: Illustration of Sample Input 1 with its optimal cutting location.
-Input
-The first line of input contains an integer n (1 ≤ n ≤ 106), the length of the DNA. The next line
-contains the DNA sequence, that is, n markers. Each marker is a character c followed by an integer i,
-where c ∈ {s, e} specifies whether it is a start or an end marker and i (1 ≤ i ≤ 106) is the gene type of
-the marker. The given DNA sequence has been obtained from the circular DNA by cutting at an arbitrary
-location.
-ICPC World Finals 2019 Problem D: Circular DNA 7
-Output
-Output one line with two integers p and m, where p is the cutting position that maximizes the number
-of different gene types that form a proper nesting, and m is this maximum number of gene types. The
-DNA is cut just before the pth input marker (for instance, the cut shown in Figure D.1 has p = 3). If
-more than one cutting position yields the same maximum value of m, output the smallest p that does so.
-Sample Input 1 Sample Output 1
-9
-e1 e1 s1 e2 s1 s2 e42 e1 s1
-3 1
-Sample Input 2 Sample Output 2
-8
-s1 s1 e3 e1 s3 e1 e3 s3
-8 2
+
+4. Median of Two Sorted Arrays
+Hard
+Topics
+Companies
+
+Given two sorted arrays nums1 and nums2 of size m and n respectively, return the median of the two sorted arrays.
+
+The overall run time complexity should be O(log (m+n)).
+
+ 
+
+Example 1:
+
+Input: nums1 = [1,3], nums2 = [2]
+Output: 2.00000
+Explanation: merged array = [1,2,3] and median is 2.
+
+Example 2:
+
+Input: nums1 = [1,2], nums2 = [3,4]
+Output: 2.50000
+Explanation: merged array = [1,2,3,4] and median is (2 + 3) / 2 = 2.5.
+
+ 
+
+Constraints:
+
+    nums1.length == m
+    nums2.length == n
+    0 <= m <= 1000
+    0 <= n <= 1000
+    1 <= m + n <= 2000
+    -106 <= nums1[i], nums2[i] <= 106
+
+
+
 """
     response_1 = send_message(chat_session_1, message_1)
 
