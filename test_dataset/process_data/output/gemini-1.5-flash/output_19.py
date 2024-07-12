@@ -17,7 +17,7 @@ def removeNthFromEnd(head, n):
         first = first.next
         second = second.next
     
-    # Remove the node after second
+    # Now second points to the node before the nth node from the end
     second.next = second.next.next
     
     return dummy.next
@@ -38,10 +38,6 @@ input_3 = head3
 output_3 = removeNthFromEnd(head3, 1)
 
 # Check if the outputs are correct
-result_1 = output_1 == ListNode(1, ListNode(2, ListNode(3, ListNode(5))))
-result_2 = output_2 == None
-result_3 = output_3 == ListNode(1)
-
-print(f"Example 1: {result_1}")
-print(f"Example 2: {result_2}")
-print(f"Example 3: {result_3}")
+print(f"Example 1: {output_1 == [1,2,3,5]}")
+print(f"Example 2: {output_2 == []}")
+print(f"Example 3: {output_3 == [1]}")

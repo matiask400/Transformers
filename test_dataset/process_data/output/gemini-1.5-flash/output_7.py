@@ -1,15 +1,17 @@
 import math
 
-def reverse_integer(x: int) -> int:
+def reverse_integer(x):
     sign = 1 if x >= 0 else -1
     x = abs(x)
     reversed_x = 0
     while x > 0:
-        reversed_x = reversed_x * 10 + x % 10
+        digit = x % 10
+        reversed_x = reversed_x * 10 + digit
         x //= 10
-    if reversed_x > math.pow(2, 31) - 1 or reversed_x < -math.pow(2, 31):
+    reversed_x *= sign
+    if reversed_x < -2**31 or reversed_x > 2**31 - 1:
         return 0
-    return reversed_x * sign
+    return reversed_x
 
 # Test cases
 input_1 = 123
@@ -24,7 +26,6 @@ input_3 = 120
 output_3 = reverse_integer(input_3)
 print(f'Input 3: {input_3}, Output 3: {output_3}')
 
-# Check if the outputs are correct
-print(f'Output 1 is correct: {output_1 == 321}')
-print(f'Output 2 is correct: {output_2 == -321}')
-print(f'Output 3 is correct: {output_3 == 21}')
+input_4 = 0
+output_4 = reverse_integer(input_4)
+print(f'Input 4: {input_4}, Output 4: {output_4}')

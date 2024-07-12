@@ -42,8 +42,8 @@ print(f"Input 2: {nums2}, {target2}")
 print(f"Output 2: {output2}")
 
 # Example 3
-nums3 = [1,2,3,4,5]
-target3 = 15
+nums3 = [2,2,2,2,2]
+target3 = 8
 output3 = fourSum(nums3, target3)
 print(f"Input 3: {nums3}, {target3}")
 print(f"Output 3: {output3}")

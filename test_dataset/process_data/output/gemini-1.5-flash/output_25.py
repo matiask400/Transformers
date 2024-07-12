@@ -81,7 +81,7 @@ reversed_head4 = reverseKGroup(head4, k4)
 output4 = print_linked_list(reversed_head4)
 
 # Check if the outputs are correct
-result1 = output1 == [2, 1, 4, 3, 5]
-result2 = output2 == [3, 2, 1, 4, 5]
-result3 = output3 == [1, 2, 3, 4, 5]
-result4 = output4 == [1]
+check1 = output1 == [2, 1, 4, 3, 5]
+check2 = output2 == [3, 2, 1, 4, 5]
+check3 = output3 == [1, 2, 3, 4, 5]
+check4 = output4 == [1]

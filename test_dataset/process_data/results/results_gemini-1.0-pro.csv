@@ -492,6 +492,7 @@ False",2,1
     else:
         l2.next = mergeTwoLists(l1, l2.next)
         return l2",,0,0
+22,argument of type 'NoneType' is not iterable,ERROR,ERROR,ERROR
 23,"from typing import List, Optional
 
 
@@ -569,4 +570,3 @@ def reverse(prev, next):
         prev.next = curr
         curr = last.next
     return last",,0,0
-22,argument of type 'NoneType' is not iterable,ERROR,ERROR,ERROR

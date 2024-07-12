@@ -43,8 +43,3 @@ print(f"Input 2: {input_2}, Output 2: {output_2}")
 input_3 = "4193 with words"
 output_3 = myAtoi(input_3)
 print(f"Input 3: {input_3}, Output 3: {output_3}")
-
-# Check if the outputs match the expected values
-print(f"Output 1 matches expected: {output_1 == 42}")
-print(f"Output 2 matches expected: {output_2 == -42}")
-print(f"Output 3 matches expected: {output_3 == 4193}")
