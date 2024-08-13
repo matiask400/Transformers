@@ -1,6 +1,6 @@
 import unittest
 
-def three_sum(nums):
+def threeSum(nums):
     result = []
     nums.sort()
     for i, a in enumerate(nums):
@@ -23,13 +23,19 @@ def three_sum(nums):
 class TestThreeSum(unittest.TestCase):
 
     def test_example_1(self):
-        self.assertEqual(three_sum([-1,0,1,2,-1,-4]), [[-1,-1,2],[-1,0,1]])
+        input_1 = [-1,0,1,2,-1,-4]
+        output_1 = [[-1,-1,2],[-1,0,1]]
+        self.assertEqual(threeSum(input_1), output_1)
 
     def test_example_2(self):
-        self.assertEqual(three_sum([]), [])
+        input_2 = []
+        output_2 = []
+        self.assertEqual(threeSum(input_2), output_2)
 
     def test_example_3(self):
-        self.assertEqual(three_sum([0]), [])
+        input_3 = [0]
+        output_3 = []
+        self.assertEqual(threeSum(input_3), output_3)
 
 if __name__ == '__main__':
     unittest.main()

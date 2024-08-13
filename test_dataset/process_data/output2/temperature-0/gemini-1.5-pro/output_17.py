@@ -22,15 +22,12 @@ def letterCombinations(digits):
         result = temp
     return result
 
-
-# Test cases
 digits1 = "23"
 output1 = ["ad","ae","af","bd","be","bf","cd","ce","cf"]
 digits2 = ""
 output2 = []
 digits3 = "2"
 output3 = ["a","b","c"]
-
-print(letterCombinations(digits1) == output1)  
-print(letterCombinations(digits2) == output2)  
-print(letterCombinations(digits3) == output3)  
+print(letterCombinations(digits1) == output1)
+print(letterCombinations(digits2) == output2)
+print(letterCombinations(digits3) == output3)

@@ -19,41 +19,31 @@ def findMedianSortedArrays(nums1, nums2):
         
         if maxLeftX <= minRightY and maxLeftY <= minRightX:
             if (m + n) % 2 == 0:
-                return (max(maxLeftX, maxLeftY) + min(minRightX, minRightY)) / 2
+                return (max(maxLeftX, maxLeftY) + min(minRightX, minRightY)) / 2.0
             else:
                 return max(maxLeftX, maxLeftY)
         elif maxLeftX > minRightY:
             high = partitionX - 1
         else:
             low = partitionX + 1
-    return -1
 
-# Example 1
-nums1_1 = [1,3]
-nums2_1 = [2]
-output_1 = findMedianSortedArrays(nums1_1, nums2_1)
-print(f"Example 1: {output_1 == 2.00000}")
+# Example usage:
+nums1 = [1, 3]
+nums2 = [2]
+print(findMedianSortedArrays(nums1, nums2) == 2.00000)  # True
 
-# Example 2
-nums1_2 = [1,2]
-nums2_2 = [3,4]
-output_2 = findMedianSortedArrays(nums1_2, nums2_2)
-print(f"Example 2: {output_2 == 2.50000}")
+nums1 = [1, 2]
+nums2 = [3, 4]
+print(findMedianSortedArrays(nums1, nums2) == 2.50000)  # True
 
-# Example 3
-nums1_3 = [0,0]
-nums2_3 = [0,0]
-output_3 = findMedianSortedArrays(nums1_3, nums2_3)
-print(f"Example 3: {output_3 == 0.00000}")
+nums1 = [0, 0]
+nums2 = [0, 0]
+print(findMedianSortedArrays(nums1, nums2) == 0.00000)  # True
 
-# Example 4
-nums1_4 = []
-nums2_4 = [1]
-output_4 = findMedianSortedArrays(nums1_4, nums2_4)
-print(f"Example 4: {output_4 == 1.00000}")
+nums1 = []
+nums2 = [1]
+print(findMedianSortedArrays(nums1, nums2) == 1.00000)  # True
 
-# Example 5
-nums1_5 = [2]
-nums2_5 = []
-output_5 = findMedianSortedArrays(nums1_5, nums2_5)
-print(f"Example 5: {output_5 == 2.00000}")
+nums1 = [2]
+nums2 = []
+print(findMedianSortedArrays(nums1, nums2) == 2.00000)  # True

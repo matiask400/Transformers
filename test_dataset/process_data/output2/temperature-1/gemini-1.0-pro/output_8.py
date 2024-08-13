@@ -1,44 +1,44 @@
-def myAtoi(s):
-  s = s.lstrip()  # Remove leading whitespace
+import re
 
-  # Handle sign
-  sign = 1
-  if s[0] == '-':
-    sign = -1
-    s = s[1:]
-  elif s[0] == '+':
-    s = s[1:]
+def myAtoi(s: str) -> int:
+    s = s.lstrip()  # remove leading whitespace
+    if not s:
+        return 0
+    
+    # check for sign
+    if s[0] == '-' or s[0] == '+':
+        sign = -1 if s[0] == '-' else 1
+        s = s[1:]
+    else:
+        sign = 1
 
-  # Convert string to integer
-  num = 0
-  for c in s:
-    if not c.isdigit():
-      break
-    num = num * 10 + ord(c) - ord('0')
+    # get digits
+    digits = re.match('^[0-9]+', s)
+    if digits is None:
+        return 0
+    
+    num = int(digits.group(0)) * sign
 
-  # Clamp integer to 32-bit signed integer range
-  MIN_INT, MAX_INT = -2 ** 31, 2 ** 31 - 1
-  num = max(MIN_INT, min(MAX_INT, num * sign))
+    # clamp to 32-bit signed int range
+    min_int = -2 ** 31
+    max_int = 2 ** 31 - 1
+    if num < min_int:
+        return min_int
+    if num > max_int:
+        return max_int
 
-  return num
+    return num
+
 
 # Test examples
-input1 = "42"
-output1 = myAtoi(input1)
-print(output1 == 42)
+examples = [ 
+    {'input': '42', 'output': 42}, 
+    {'input': '   -42', 'output': -42}, 
+    {'input': '4193 with words', 'output': 4193}, 
+    {'input': 'words and 987', 'output': 0}, 
+    {'input': '-91283472332', 'output': -2147483648}, 
+]
 
-input2 = "   -42"
-output2 = myAtoi(input2)
-print(output2 == -42)
-
-input3 = "4193 with words"
-output3 = myAtoi(input3)
-print(output3 == 4193)
-
-input4 = "words and 987"
-output4 = myAtoi(input4)
-print(output4 == 0)
-
-input5 = "-91283472332"
-output5 = myAtoi(input5)
-print(output5 == -2147483648)
+for example in examples:
+    output = myAtoi(example['input'])
+    print(output == example['output'])

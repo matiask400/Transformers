@@ -23,34 +23,34 @@ class Solution:
 
         return dummy.next
 
-def print_linked_list(head):
-    result = []
-    while head:
-        result.append(head.val)
-        head = head.next
-    return result
-
-# Test cases
-test_cases = [
-    ([2, 4, 3], [5, 6, 4], [7, 0, 8]),
-    ([0], [0], [0]),
-    ([9, 9, 9, 9, 9, 9, 9], [9, 9, 9, 9], [8, 9, 9, 9, 0, 0, 0, 1]),
-]
-
-solution = Solution()
-for i, (l1, l2, expected) in enumerate(test_cases):
-    l1 = ListNode(l1[0])
-    curr = l1
-    for val in l1[1:]:
-        curr.next = ListNode(val)
+def create_linked_list(nums):
+    head = ListNode(nums[0])
+    curr = head
+    for i in range(1, len(nums)):
+        curr.next = ListNode(nums[i])
         curr = curr.next
+    return head
 
-    l2 = ListNode(l2[0])
-    curr = l2
-    for val in l2[1:]:
-        curr.next = ListNode(val)
-        curr = curr.next
+def compare_linked_lists(l1, l2):
+    while l1 and l2:
+        if l1.val != l2.val:
+            return False
+        l1 = l1.next
+        l2 = l2.next
+    return l1 is None and l2 is None
 
-    result = solution.addTwoNumbers(l1, l2)
-    result_list = print_linked_list(result)
-    print(f'Test Case {i+1}: {result_list == expected}')
+# Example test cases
+input_1 = create_linked_list([2, 4, 3])
+input_2 = create_linked_list([5, 6, 4])
+expected_output_1 = create_linked_list([7, 0, 8])
+print(compare_linked_lists(Solution().addTwoNumbers(input_1, input_2), expected_output_1))  # True
+
+input_3 = create_linked_list([0])
+input_4 = create_linked_list([0])
+expected_output_2 = create_linked_list([0])
+print(compare_linked_lists(Solution().addTwoNumbers(input_3, input_4), expected_output_2))  # True
+
+input_5 = create_linked_list([9, 9, 9, 9, 9, 9, 9])
+input_6 = create_linked_list([9, 9, 9, 9])
+expected_output_3 = create_linked_list([8, 9, 9, 9, 0, 0, 0, 1])
+print(compare_linked_lists(Solution().addTwoNumbers(input_5, input_6), expected_output_3))  # True

@@ -23,7 +23,7 @@ output1 = threeSumClosest(nums1, target1)
 print(output1 == 2)  # True
 
 # Example 2
-# No second example provided
+# (No second example provided)
 
 # Example 3
-# No third example provided
+# (No third example provided)

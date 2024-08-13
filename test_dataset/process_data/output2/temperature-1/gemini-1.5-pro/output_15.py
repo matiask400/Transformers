@@ -1,34 +1,35 @@
 def three_sum(nums):
-    res = []
+    result = []
     nums.sort()
-    for i in range(len(nums)-2):
-        if i > 0 and nums[i] == nums[i-1]:
+    for i in range(len(nums) - 2):
+        if i > 0 and nums[i] == nums[i - 1]:
             continue
-        l, r = i+1, len(nums)-1
-        while l < r:
-            s = nums[i] + nums[l] + nums[r]
-            if s < 0:
-                l += 1
-            elif s > 0:
-                r -= 1
+        left, right = i + 1, len(nums) - 1
+        while left < right:
+            total = nums[i] + nums[left] + nums[right]
+            if total < 0:
+                left += 1
+            elif total > 0:
+                right -= 1
             else:
-                res.append((nums[i], nums[l], nums[r]))
-                while l < r and nums[l] == nums[l+1]:
-                    l += 1
-                while l < r and nums[r] == nums[r-1]:
-                    r -= 1
-                l += 1
-                r -= 1
-    return res
+                result.append([nums[i], nums[left], nums[right]])
+                while left < right and nums[left] == nums[left + 1]:
+                    left += 1
+                while left < right and nums[right] == nums[right - 1]:
+                    right -= 1
+                left += 1
+                right -= 1
+    return result
 
 
-input_value_1 = [-1,0,1,2,-1,-4]
-output_value_1 = [[-1,-1,2],[-1,0,1]]
-input_value_2 = []
-output_value_2 = []
-input_value_3 = [0]
-output_value_3 = []
+input1 = [-1, 0, 1, 2, -1, -4]
+output1 = [[-1, -1, 2], [-1, 0, 1]]
+print(f"Input 1: {three_sum(input1) == output1}")
 
-print(three_sum(input_value_1) == output_value_1)
-print(three_sum(input_value_2) == output_value_2)
-print(three_sum(input_value_3) == output_value_3)
+input2 = []
+output2 = []
+print(f"Input 2: {three_sum(input2) == output2}")
+
+input3 = [0]
+output3 = []
+print(f"Input 3: {three_sum(input3) == output3}")

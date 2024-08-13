@@ -6,42 +6,48 @@
 class Solution:
     def removeNthFromEnd(self, head, n):
         dummy = ListNode(0, head)
-        slow = dummy
-        fast = head
-        
-        for i in range(n):
-            fast = fast.next
-            
-        while fast:
-            slow = slow.next
-            fast = fast.next
-            
-        slow.next = slow.next.next
-        
+        left = dummy
+        right = head
+
+        while n > 0 and right:
+            right = right.next
+            n -= 1
+
+        while right:
+            left = left.next
+            right = right.next
+
+        left.next = left.next.next
         return dummy.next
 
 def print_linked_list(head):
+    result = []
     current = head
-    values = []
     while current:
-        values.append(current.val)
+        result.append(current.val)
         current = current.next
-    print(values)
+    return result
 
-# Example usage and verification:
-head1 = ListNode(1)
-head1.next = ListNode(2)
-head1.next.next = ListNode(3)
-head1.next.next.next = ListNode(4)
-head1.next.next.next.next = ListNode(5)
-result1 = Solution().removeNthFromEnd(head1, 2)
-print(result1 == [1, 2, 3, 5])
+# Example 1
+head1 = ListNode(1, ListNode(2, ListNode(3, ListNode(4, ListNode(5)))))
+n1 = 2
+output1 = [1, 2, 3, 5]
+solution = Solution()
+result1 = print_linked_list(solution.removeNthFromEnd(head1, n1))
+print(result1 == output1)  # True
 
+# Example 2
 head2 = ListNode(1)
-result2 = Solution().removeNthFromEnd(head2, 1)
-print(result2 == [])
+n2 = 1
+output2 = []
+solution = Solution()
+result2 = print_linked_list(solution.removeNthFromEnd(head2, n2))
+print(result2 == output2)  # True
 
-head3 = ListNode(1)
-head3.next = ListNode(2)
-result3 = Solution().removeNthFromEnd(head3, 1)
-print(result3 == [1])
+# Example 3
+head3 = ListNode(1, ListNode(2))
+n3 = 1
+output3 = [1]
+solution = Solution()
+result3 = print_linked_list(solution.removeNthFromEnd(head3, n3))
+print(result3 == output3)  # True

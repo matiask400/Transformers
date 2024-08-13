@@ -1,6 +1,6 @@
-import random
+import unittest
 
-def maxArea(height):
+def maxArea(height) -> int:
     max_area = 0
     left = 0
     right = len(height) - 1
@@ -12,26 +12,23 @@ def maxArea(height):
             right -= 1
     return max_area
 
-# Example 1:
-input_1 = [1,8,6,2,5,4,8,3,7]
-output_1 = maxArea(input_1)
-asserted_1 = output_1 == 49
-print(asserted_1)
 
-# Example 2:
-input_2 = [1,1]
-output_2 = maxArea(input_2)
-asserted_2 = output_2 == 1
-print(asserted_2)
+class ExampleTests(unittest.TestCase):
 
-# Example 3:
-input_3 = [4,3,2,1,4]
-output_3 = maxArea(input_3)
-asserted_3 = output_3 == 16
-print(asserted_3)
+    def test_Example_1(self):
+        solution = maxArea([1,8,6,2,5,4,8,3,7])
+        self.assertEqual(solution, 49)
 
-# Example 4:
-input_4 = [1,2,1]
-output_4 = maxArea(input_4)
-asserted_4 = output_4 == 2
-print(asserted_4)
+    def test_Example_2(self):
+        solution = maxArea([1,1])
+        self.assertEqual(solution, 1)
+
+    def test_Example_3(self):
+        solution = maxArea([4,3,2,1,4])
+        self.assertEqual(solution, 16)
+
+    def test_Example_4(self):
+        solution = maxArea([1,2,1])
+        self.assertEqual(solution, 2)
+
+unittest.main()

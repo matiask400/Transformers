@@ -1,49 +1,49 @@
-from typing import List, Optional
-
+import heapq
 
 class ListNode:
     def __init__(self, val=0, next=None):
         self.val = val
         self.next = next
 
-
-def merge_k_sorted_lists(lists: List[Optional[ListNode]]) -> Optional[ListNode]:
-    if not lists:
-        return None
-
-    # Create a min-heap to store the heads of the linked lists
-    import heapq
+def mergeKLists(lists):
     heap = []
     for head in lists:
         if head:
             heapq.heappush(heap, (head.val, head))
-
-    # Initialize the dummy head of the merged linked list
     dummy = ListNode()
     curr = dummy
-
-    # Merge the linked lists until the heap is empty
     while heap:
-        _, head = heapq.heappop(heap)
-        curr.next = head
+        val, node = heapq.heappop(heap)
+        curr.next = node
         curr = curr.next
-        if head.next:
-            heapq.heappush(heap, (head.next.val, head.next))
-
+        if node.next:
+            heapq.heappush(heap, (node.next.val, node.next))
     return dummy.next
 
+# Example 1: Input
+lists1 = [ListNode(1), ListNode(4), ListNode(5)]
+lists1[0].next = ListNode(4)
+lists1[0].next.next = ListNode(5)
+lists1[1] = ListNode(1)
+lists1[1].next = ListNode(3)
+lists1[1].next.next = ListNode(4)
+lists1[2] = ListNode(2)
+lists1[2].next = ListNode(6)
 
-# Example 1: Input and Output
-input1 = [[1,4,5],[1,3,4],[2,6]]
-output1 = merge_k_sorted_lists(input1)
-print(output1 == [1,1,2,3,4,4,5,6])  # True
+# Example 1: Output
+output1 = mergeKLists(lists1)
+print(output1.val == 1 and output1.next.val == 1 and output1.next.next.val == 2 and output1.next.next.next.val == 3 and output1.next.next.next.next.val == 4 and output1.next.next.next.next.next.val == 4 and output1.next.next.next.next.next.next.val == 5 and output1.next.next.next.next.next.next.next.val == 6)
 
-# Example 2: Input and Output
-input2 = []
-output2 = merge_k_sorted_lists(input2)
-print(output2 == [])  # True
+# Example 2: Input
+lists2 = []
 
-# Example 3: Input and Output
-input3 = [[]]
-output3 = merge_k_sorted_lists(input3)
-print(output3 == [])  # True
+# Example 2: Output
+output2 = mergeKLists(lists2)
+print(output2 == None)
+
+# Example 3: Input
+lists3 = [[]]
+
+# Example 3: Output
+output3 = mergeKLists(lists3)
+print(output3 == None)

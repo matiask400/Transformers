@@ -5,20 +5,19 @@
 #         self.next = next
 class Solution:
     def mergeKLists(self, lists):
-        if not lists:
+        if not lists or len(lists) == 0:
             return None
 
-        while len(lists) > 1:
-            mergedLists = []
-            for i in range(0, len(lists), 2):
-                l1 = lists[i]
-                l2 = lists[i + 1] if (i + 1) < len(lists) else None
-                mergedLists.append(self.mergeTwoLists(l1, l2))
-            lists = mergedLists
-        return lists[0]
+        if len(lists) == 1:
+            return lists[0]
+
+        mid = len(lists) // 2
+        left = self.mergeKLists(lists[:mid])
+        right = self.mergeKLists(lists[mid:])
+        return self.mergeTwoLists(left, right)
 
     def mergeTwoLists(self, l1, l2):
-        dummy = ListNode()
+        dummy = ListNode(0)
         tail = dummy
 
         while l1 and l2:
@@ -32,34 +31,35 @@ class Solution:
 
         if l1:
             tail.next = l1
-        elif l2:
+        if l2:
             tail.next = l2
 
         return dummy.next
 
-def printLinkedList(head):
-    result = []
-    current = head
-    while current:
-        result.append(current.val)
-        current = current.next
-    return result
+def arrayToLinkedList(arr):
+    if not arr:
+        return None
+    head = ListNode(arr[0])
+    curr = head
+    for i in range(1, len(arr)):
+        curr.next = ListNode(arr[i])
+        curr = curr.next
+    return head
 
-# Example usage and verification
-lists1 = [[1,4,5],[1,3,4],[2,6]]
-lists2 = []
-lists3 = [[]]
+def linkedListToArray(head):
+    arr = []
+    while head:
+        arr.append(head.val)
+        head = head.next
+    return arr
 
-solution = Solution()
 
-# Test Case 1
-output1 = solution.mergeKLists(createLinkedList(lists1))
-print(printLinkedList(output1) == [1,1,2,3,4,4,5,6])
+inputs = [ [[1,4,5],[1,3,4],[2,6]], [], [[]] ]
+outputs = [ [1,1,2,3,4,4,5,6], [], [] ]
 
-# Test Case 2
-output2 = solution.mergeKLists(createLinkedList(lists2))
-print(printLinkedList(output2) == [])
-
-# Test Case 3
-output3 = solution.mergeKLists(createLinkedList(lists3))
-print(printLinkedList(output3) == [])
+# Test the function
+for i in range(len(inputs)):
+    linked_lists = [arrayToLinkedList(arr) for arr in inputs[i]]
+    merged_list = Solution().mergeKLists(linked_lists)
+    output = linkedListToArray(merged_list)
+    print(output == outputs[i])

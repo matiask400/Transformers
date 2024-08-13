@@ -1,15 +1,14 @@
 l1 = [1,2,4]
 l2 = [1,3,4]
-print(mergeTwoLists(l1, l2) == [1,1,2,3,4,4])  # True
+print(mergeTwoLists(l1, l2) == [1,1,2,3,4,4])
 
 l1 = []
 l2 = []
-print(mergeTwoLists(l1, l2) == [])  # True
+print(mergeTwoLists(l1, l2) == [])
 
 l1 = []
 l2 = [0]
-print(mergeTwoLists(l1, l2) == [0])  # True
-
+print(mergeTwoLists(l1, l2) == [0])
 
 def mergeTwoLists(list1, list2):
     if not list1 and not list2:

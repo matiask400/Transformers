@@ -1,4 +1,4 @@
-def is_valid(s: str) -> bool:
+def is_valid(s):
     stack = []
     parentheses = {')': '(', '}': '{', ']': '['}
     for char in s:
@@ -31,4 +31,4 @@ print(is_valid(s) == False)
 
 # Example 5
 s = "{[]}"
-print(is_valid(s) == True) 
+print(is_valid(s) == True)

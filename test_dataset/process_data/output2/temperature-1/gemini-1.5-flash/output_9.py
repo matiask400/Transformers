@@ -1,4 +1,4 @@
-def isPalindrome(x: int) -> bool:
+def isPalindrome(x):
     if x < 0:
         return False
     original_x = x
@@ -10,25 +10,16 @@ def isPalindrome(x: int) -> bool:
     return original_x == reversed_x
 
 # Example 1
-x = 121
-output = isPalindrome(x)
-expected_output = True
-print(output == expected_output)
+input_1 = 121
+output_1 = isPalindrome(input_1)
+print(output_1 == True)
 
 # Example 2
-x = -121
-output = isPalindrome(x)
-expected_output = False
-print(output == expected_output)
+input_2 = -121
+output_2 = isPalindrome(input_2)
+print(output_2 == False)
 
 # Example 3
-x = 10
-output = isPalindrome(x)
-expected_output = False
-print(output == expected_output)
-
-# Example 4
-x = -101
-output = isPalindrome(x)
-expected_output = False
-print(output == expected_output) 
+input_3 = 10
+output_3 = isPalindrome(input_3)
+print(output_3 == False)

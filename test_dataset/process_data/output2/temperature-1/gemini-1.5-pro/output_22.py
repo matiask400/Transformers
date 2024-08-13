@@ -1,6 +1,7 @@
+# Function to generate all combinations of well-formed parentheses
 def generateParenthesis(n):
     result = []
-    def backtrack(s, left, right):
+    def backtrack(s='', left=0, right=0):
         if len(s) == 2 * n:
             result.append(s)
             return
@@ -8,13 +9,14 @@ def generateParenthesis(n):
             backtrack(s + '(', left + 1, right)
         if right < left:
             backtrack(s + ')', left, right + 1)
-    backtrack('', 0, 0)
+    backtrack()
     return result
 
 # Test cases
-inputs = [3, 1]
-outputs = [["((()))","(()())","(())()","()(())","()()()"], ["()"]]
+input_1 = 3
+output_1 = ["((()))","(()())","(())()","()(())","()()()"]
+input_2 = 1
+output_2 = ["()"]
 
-for i in range(len(inputs)):
-    output = generateParenthesis(inputs[i])
-    print(output == outputs[i])
+print(f'Input 1: {generateParenthesis(input_1) == output_1}')
+print(f'Input 2: {generateParenthesis(input_2) == output_2}')

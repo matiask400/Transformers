@@ -1,26 +1,28 @@
-def roman_to_integer(s: str) -> int:
+def roman_to_integer(s):
     roman_map = {'I': 1, 'V': 5, 'X': 10, 'L': 50, 'C': 100, 'D': 500, 'M': 1000}
     n = len(s)
-    num = 0
-    i = 0
-    while i < n:
-        if i + 1 < n and roman_map[s[i]] < roman_map[s[i + 1]]:
-            num += roman_map[s[i + 1]] - roman_map[s[i]]
-            i += 2
-        else:
+    num = roman_map[s[n - 1]]
+    for i in range(n - 2, -1, -1):
+        if roman_map[s[i]] >= roman_map[s[i + 1]]:
             num += roman_map[s[i]]
-            i += 1
+        else:
+            num -= roman_map[s[i]]
     return num
 
 
 input_1 = "III"
 output_1 = 3
-print(f"Input: {input_1}, Output: {roman_to_integer(input_1)}, Expected: {output_1}, Result: {roman_to_integer(input_1) == output_1}")
-
 input_2 = "IV"
 output_2 = 4
-print(f"Input: {input_2}, Output: {roman_to_integer(input_2)}, Expected: {output_2}, Result: {roman_to_integer(input_2) == output_2}")
-
 input_3 = "IX"
 output_3 = 9
-print(f"Input: {input_3}, Output: {roman_to_integer(input_3)}, Expected: {output_3}, Result: {roman_to_integer(input_3) == output_3}")
+input_4 = "LVIII"
+output_4 = 58
+input_5 = "MCMXCIV"
+output_5 = 1994
+
+print(roman_to_integer(input_1) == output_1)
+print(roman_to_integer(input_2) == output_2)
+print(roman_to_integer(input_3) == output_3)
+print(roman_to_integer(input_4) == output_4)
+print(roman_to_integer(input_5) == output_5)

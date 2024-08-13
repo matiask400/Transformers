@@ -1,23 +1,11 @@
-import unittest
-
-def length_of_longest_substring(s: str) -> int:
-    """
-    Given a string s, find the length of the longest substring without repeating characters.
-
-    Args:
-        s (str): The input string.
-
-    Returns:
-        int: The length of the longest substring without repeating characters.
-    """
+def lengthOfLongestSubstring(s: str) -> int:
     n = len(s)
     if n == 0:
         return 0
     max_len = 1
     start = 0
     end = 1
-    seen = set()
-    seen.add(s[0])
+    seen = set(s[start])
     while end < n:
         if s[end] not in seen:
             seen.add(s[end])
@@ -28,30 +16,17 @@ def length_of_longest_substring(s: str) -> int:
             start += 1
     return max_len
 
-class TestLongestSubstring(unittest.TestCase):
-    def test_example_1(self):
-        s = "abcabcbb"
-        expected_output = 3
-        self.assertEqual(length_of_longest_substring(s), expected_output)
-        print(f"Example 1: {length_of_longest_substring(s) == expected_output}")
+# Example 1
+s = "abcabcbb"
+output_1 = lengthOfLongestSubstring(s)
+print(output_1 == 3)  # True
 
-    def test_example_2(self):
-        s = "bbbbb"
-        expected_output = 1
-        self.assertEqual(length_of_longest_substring(s), expected_output)
-        print(f"Example 2: {length_of_longest_substring(s) == expected_output}")
+# Example 2
+s = "bbbbb"
+output_2 = lengthOfLongestSubstring(s)
+print(output_2 == 1)  # True
 
-    def test_example_3(self):
-        s = "pwwkew"
-        expected_output = 3
-        self.assertEqual(length_of_longest_substring(s), expected_output)
-        print(f"Example 3: {length_of_longest_substring(s) == expected_output}")
-
-    def test_example_4(self):
-        s = ""
-        expected_output = 0
-        self.assertEqual(length_of_longest_substring(s), expected_output)
-        print(f"Example 4: {length_of_longest_substring(s) == expected_output}")
-
-if __name__ == '__main__':
-    unittest.main()
+# Example 3
+s = "pwwkew"
+output_3 = lengthOfLongestSubstring(s)
+print(output_3 == 3)  # True

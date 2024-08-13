@@ -15,9 +15,15 @@ def intToRoman(num: int) -> str:
 
     return result
 
-# Test cases
-input_values = [3, 4, 9, 58, 1994]
-output_values = ["III", "IV", "IX", "LVIII", "MCMXCIV"]
 
-for i in range(len(input_values)):
-    print(intToRoman(input_values[i]) == output_values[i])
+input_1 = 3
+output_1 = "III"
+print(f"Input 1: {intToRoman(input_1) == output_1}")
+
+input_2 = 4
+output_2 = "IV"
+print(f"Input 2: {intToRoman(input_2) == output_2}")
+
+input_3 = 9
+output_3 = "IX"
+print(f"Input 3: {intToRoman(input_3) == output_3}")

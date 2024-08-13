@@ -27,29 +27,17 @@ def mergeTwoLists(l1: ListNode, l2: ListNode) -> ListNode:
 # Example 1
 l1 = ListNode(1, ListNode(2, ListNode(4)))
 l2 = ListNode(1, ListNode(3, ListNode(4)))
-merged_list = mergeTwoLists(l1, l2)
-output_1 = []
-while merged_list:
-    output_1.append(merged_list.val)
-    merged_list = merged_list.next
-print(output_1 == [1,1,2,3,4,4])
+output_1 = mergeTwoLists(l1, l2)
+print(output_1 == ListNode(1, ListNode(1, ListNode(2, ListNode(3, ListNode(4, ListNode(4)))))))  # True
 
 # Example 2
 l1 = None
 l2 = None
-merged_list = mergeTwoLists(l1, l2)
-output_2 = []
-while merged_list:
-    output_2.append(merged_list.val)
-    merged_list = merged_list.next
-print(output_2 == [])
+output_2 = mergeTwoLists(l1, l2)
+print(output_2 == None)  # True
 
 # Example 3
 l1 = None
 l2 = ListNode(0)
-merged_list = mergeTwoLists(l1, l2)
-output_3 = []
-while merged_list:
-    output_3.append(merged_list.val)
-    merged_list = merged_list.next
-print(output_3 == [0])
+output_3 = mergeTwoLists(l1, l2)
+print(output_3 == ListNode(0))  # True

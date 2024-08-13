@@ -1,5 +1,3 @@
-import itertools
-
 def threeSum(nums):
     result = []
     nums.sort()

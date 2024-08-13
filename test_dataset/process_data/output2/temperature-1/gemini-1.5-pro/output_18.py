@@ -8,8 +8,7 @@ def four_sum(nums, target):
         for j in range(i + 1, n - 2):
             if j > i + 1 and nums[j] == nums[j - 1]:
                 continue
-            left = j + 1
-            right = n - 1
+            left, right = j + 1, n - 1
             while left < right:
                 total = nums[i] + nums[j] + nums[left] + nums[right]
                 if total == target:
@@ -27,15 +26,12 @@ def four_sum(nums, target):
     return result
 
 
-input_values = [
-    ([1, 0, -1, 0, -2, 2], 0),
-    ([], 0),
-]
+input_1 = [1, 0, -1, 0, -2, 2]
+target_1 = 0
+output_1 = [[-2, -1, 1, 2], [-2, 0, 0, 2], [-1, 0, 0, 1]]
+print(four_sum(input_1, target_1) == output_1)
 
-expected_outputs = [
-    [[-2, -1, 1, 2], [-2, 0, 0, 2], [-1, 0, 0, 1]],
-    []
-]
-
-for i, (input_val, expected_output) in enumerate(zip(input_values, expected_outputs)):
-    print(f"Test Case {i + 1}: {four_sum(input_val[0], input_val[1]) == expected_output}")
+input_2 = []
+target_2 = 0
+output_2 = []
+print(four_sum(input_2, target_2) == output_2)

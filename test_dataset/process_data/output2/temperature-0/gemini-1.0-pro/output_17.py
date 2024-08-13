@@ -31,20 +31,17 @@ class Solution:
         return result
 
 
-# Example 1: Input: digits = "23"
-# Output: ["ad","ae","af","bd","be","bf","cd","ce","cf"]
+# Example 1: Input: digits = "23" Output: ["ad","ae","af","bd","be","bf","cd","ce","cf"]
 input1 = "23"
 output1 = Solution().letterCombinations(input1)
 print(output1 == ["ad","ae","af","bd","be","bf","cd","ce","cf"])
 
-# Example 2: Input: digits = ""
-# Output: []
+# Example 2: Input: digits = "" Output: []
 input2 = ""
 output2 = Solution().letterCombinations(input2)
 print(output2 == [])
 
-# Example 3: Input: digits = "2"
-# Output: ["a","b","c"]
+# Example 3: Input: digits = "2" Output: ["a","b","c"]
 input3 = "2"
 output3 = Solution().letterCombinations(input3)
 print(output3 == ["a","b","c"])

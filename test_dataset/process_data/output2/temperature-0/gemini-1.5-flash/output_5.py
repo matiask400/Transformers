@@ -22,21 +22,16 @@ def longestPalindrome(s: str) -> str:
     return s[start:start + maxLen]
 
 # Example 1
-s = "babad"
-output_1 = longestPalindrome(s)
-print(output_1 == "bab")  # True
+input_1 = "babad"
+output_1 = "bab"
+print(longestPalindrome(input_1) == output_1)
 
 # Example 2
-s = "cbbd"
-output_2 = longestPalindrome(s)
-print(output_2 == "bb")  # True
+input_2 = "cbbd"
+output_2 = "bb"
+print(longestPalindrome(input_2) == output_2)
 
 # Example 3
-s = "a"
-output_3 = longestPalindrome(s)
-print(output_3 == "a")  # True
-
-# Example 4
-s = "ac"
-output_4 = longestPalindrome(s)
-print(output_4 == "a")  # True
+input_3 = "a"
+output_3 = "a"
+print(longestPalindrome(input_3) == output_3)

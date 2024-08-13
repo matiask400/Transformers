@@ -14,27 +14,16 @@ class Solution:
         return result
 
 class TestSolution(unittest.TestCase):
-    def test_case_1(self):
-        num = 3
-        expected_output = "III"
-        self.assertEqual(Solution().intToRoman(num), expected_output)
-    def test_case_2(self):
-        num = 4
-        expected_output = "IV"
-        self.assertEqual(Solution().intToRoman(num), expected_output)
-    def test_case_3(self):
-        num = 9
-        expected_output = "IX"
-        self.assertEqual(Solution().intToRoman(num), expected_output)
-    def test_case_4(self):
-        num = 58
-        expected_output = "LVIII"
-        self.assertEqual(Solution().intToRoman(num), expected_output)
-    def test_case_5(self):
-        num = 1994
-        expected_output = "MCMXCIV"
-        self.assertEqual(Solution().intToRoman(num), expected_output)
-
+    def test_1(self):
+        self.assertEqual(Solution().intToRoman(3), "III")
+    def test_2(self):
+        self.assertEqual(Solution().intToRoman(4), "IV")
+    def test_3(self):
+        self.assertEqual(Solution().intToRoman(9), "IX")
+    def test_4(self):
+        self.assertEqual(Solution().intToRoman(58), "LVIII")
+    def test_5(self):
+        self.assertEqual(Solution().intToRoman(1994), "MCMXCIV")
 
 if __name__ == '__main__':
     unittest.main()

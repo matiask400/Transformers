@@ -1,47 +1,48 @@
-import heapq
-
 class ListNode:
     def __init__(self, val=0, next=None):
         self.val = val
         self.next = next
 
-def mergeKLists(lists):
-    # Create a min-heap to store the heads of all linked lists.
-    heap = []
-    for i in range(len(lists)):
-        if lists[i]:
-            heapq.heappush(heap, (lists[i].val, i, lists[i]))
 
-    # Create a dummy head node.
-    dummy = ListNode(0)
+def mergeKLists(lists):
+    if not lists:
+        return None
+    if len(lists) == 1:
+        return lists[0]
+
+    # Use a min-heap to store the heads of each list
+    import heapq
+    heap = [(node.val, i, node) for i, node in enumerate(lists) if node]
+    heapq.heapify(heap)
+
+    dummy = ListNode()
     tail = dummy
 
-    # While the heap is not empty.
     while heap:
-        # Pop the smallest node from the heap.
-        _, i, node = heapq.heappop(heap)
+        val, list_index, node = heapq.heappop(heap)
 
-        # Add the node to the merged list.
+        # Connect the current node to the tail of the merged list
         tail.next = node
         tail = tail.next
 
-        # Add the next node of the popped node to the heap.
+        # Add the next node from the same list to the heap
         if node.next:
-            heapq.heappush(heap, (node.next.val, i, node.next))
+            heapq.heappush(heap, (node.next.val, list_index, node.next))
 
     return dummy.next
 
-# Example 1
+
+# Example 1:
 lists_1 = [[1, 4, 5], [1, 3, 4], [2, 6]]
-output_1 = mergeKLists(lists_1)
+output_1 = mergeKLists([ListNode(val) for val in lists_1[0]], [ListNode(val) for val in lists_1[1]], [ListNode(val) for val in lists_1[2]])
 print(True if output_1 == [1, 1, 2, 3, 4, 4, 5, 6] else False)
 
-# Example 2
+# Example 2:
 lists_2 = []
 output_2 = mergeKLists(lists_2)
 print(True if output_2 == [] else False)
 
-# Example 3
+# Example 3:
 lists_3 = [[]]
-output_3 = mergeKLists(lists_3)
+output_3 = mergeKLists([ListNode() for val in lists_3[0]])
 print(True if output_3 == [] else False)

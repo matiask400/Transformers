@@ -38,30 +38,36 @@ def create_linked_list(values):
     if not values:
         return None
     head = ListNode(values[0])
-    current = head
-    for value in values[1:]:
-        current.next = ListNode(value)
-        current = current.next
+    curr = head
+    for val in values[1:]:
+        curr.next = ListNode(val)
+        curr = curr.next
     return head
 
 def linked_list_to_list(head):
     result = []
-    current = head
-    while current:
-        result.append(current.val)
-        current = current.next
+    curr = head
+    while curr:
+        result.append(curr.val)
+        curr = curr.next
     return result
 
-# Test cases
-test_cases = [
-    ([1, 2, 3, 4, 5], 2, [2, 1, 4, 3, 5]),
-    ([1, 2, 3, 4, 5], 3, [3, 2, 1, 4, 5]),
-    ([1, 2, 3, 4, 5], 1, [1, 2, 3, 4, 5]),
-    ([1], 1, [1]),
+# Test Cases
+inputs = [
+    ([1, 2, 3, 4, 5], 2),
+    ([1, 2, 3, 4, 5], 3),
+    ([1, 2, 3, 4, 5], 1),
+    ([1], 1)
+]
+outputs = [
+    [2, 1, 4, 3, 5],
+    [3, 2, 1, 4, 5],
+    [1, 2, 3, 4, 5],
+    [1]
 ]
 
-for i, (input_list, k, expected_output) in enumerate(test_cases):
-    head = create_linked_list(input_list)
-    result_head = reverse_k_group(head, k)
-    result_list = linked_list_to_list(result_head)
-    print(f'Test case {i+1}: {result_list == expected_output}')
+for i in range(len(inputs)):
+    head = create_linked_list(inputs[i][0])
+    k = inputs[i][1]
+    result = linked_list_to_list(reverse_k_group(head, k))
+    print(result == outputs[i])

@@ -3,6 +3,7 @@ class ListNode:
         self.val = val
         self.next = next
 
+
 def swapPairs(head: ListNode) -> ListNode:
     dummy = ListNode(0, head)
     prev = dummy
@@ -25,17 +26,17 @@ def swapPairs(head: ListNode) -> ListNode:
 # Example 1
 head1 = ListNode(1, ListNode(2, ListNode(3, ListNode(4))))
 output1 = swapPairs(head1)
-print(output1.val, output1.next.val, output1.next.next.val, output1.next.next.next.val)  # Output: 2 1 4 3
+print(output1.val, output1.next.val, output1.next.next.val, output1.next.next.next.val)
 print(True)
 
 # Example 2
 head2 = None
 output2 = swapPairs(head2)
-print(output2)  # Output: None
+print(output2)
 print(True)
 
 # Example 3
 head3 = ListNode(1)
 output3 = swapPairs(head3)
-print(output3.val)  # Output: 1
+print(output3.val)
 print(True)

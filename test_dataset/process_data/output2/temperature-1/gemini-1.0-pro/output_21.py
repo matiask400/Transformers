@@ -1,41 +1,29 @@
-l1 = ListNode(1)
-l1.next = ListNode(2)
-l1.next.next = ListNode(4)
+l1 = []
+l2 = []
+print(mergeTwoLists(l1, l2))
 
-l2 = ListNode(1)
-l2.next = ListNode(3)
-l2.next.next = ListNode(4)
+l1 = [1,2,4]
+l2 = [1,3,4]
+print(mergeTwoLists(l1, l2))
 
-merged_list = mergeTwoLists(l1, l2)
-print_list(merged_list)  # Expected output: [1, 1, 2, 3, 4, 4]
+l1 = []
+l2 = [0]
+print(mergeTwoLists(l1, l2))
+def mergeTwoLists(l1, l2):
+    dummy = ListNode()
+    pre = dummy
+    cur1, cur2 = l1, l2
+    while cur1 and cur2:
+        if cur1.val <= cur2.val:
+            pre.next = cur1
+            cur1 = cur1.next
+        else:
+            pre.next = cur2
+            cur2 = cur2.next
+        pre = pre.next
+    pre.next = cur1 or cur2
+    return dummy.next
 
-l1 = ListNode(0)
-
-l2 = ListNode(-1)
-l2.next = ListNode(2)
-l2.next.next = ListNode(3)
-
-merged_list = mergeTwoLists(l1, l2)
-print_list(merged_list)  # Expected output: [-1, 0, 2, 3]
-
-l1 = ListNode(100)
-
-l2 = ListNode()
-
-merged_list = mergeTwoLists(l1, l2)
-print_list(merged_list)  # Expected output: [100]
-
-l1 = ListNode(-1)
-
-l2 = ListNode(-3)
-l2.next = ListNode(-3)
-l2.next.next = ListNode(-1)
-
-merged_list = mergeTwoLists(l1, l2)
-print_list(merged_list)  # Expected output: [-3, -3, -1, -1]
-
-l1 = ListNode(2)
-
-l2 = ListNode(1)
-merged_list = mergeTwoLists(l1, l2)
-print_list(merged_list)  # Expected output: [1, 2]
+class ListNode:
+    def __init__(self, x=0):
+        self.val = x

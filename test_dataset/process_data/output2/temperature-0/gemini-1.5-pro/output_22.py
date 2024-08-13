@@ -11,10 +11,6 @@ def generateParenthesis(n):
     backtrack('', 0, 0)
     return result
 
-
 # Test cases
-inputs = [3, 1]
-outputs = [["((()))","(()())","(())()","()(())","()()()"], ["()"]]
-
-for i in range(len(inputs)):
-    print(generateParenthesis(inputs[i]) == outputs[i])
+print(generateParenthesis(3) == ["((()))","(()())","(())()","()(())","()()()"])
+print(generateParenthesis(1) == ["()"])

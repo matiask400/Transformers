@@ -1,13 +1,14 @@
 def maxArea(height):
-    l, r = 0, len(height) - 1
     max_area = 0
-    while l < r:
-        current_area = min(height[l], height[r]) * (r - l)
+    left = 0
+    right = len(height) - 1
+    while left < right:
+        current_area = min(height[left], height[right]) * (right - left)
         max_area = max(max_area, current_area)
-        if height[l] < height[r]:
-            l += 1
+        if height[left] < height[right]:
+            left += 1
         else:
-            r -= 1
+            right -= 1
     return max_area
 
 
@@ -18,6 +19,6 @@ output_2 = 1
 input_3 = [4, 3, 2, 1, 4]
 output_3 = 16
 
-print(f"Input 1: {input_1}, Output 1: {output_1}, Result: {maxArea(input_1) == output_1}")
-print(f"Input 2: {input_2}, Output 2: {output_2}, Result: {maxArea(input_2) == output_2}")
-print(f"Input 3: {input_3}, Output 3: {output_3}, Result: {maxArea(input_3) == output_3}")
+print(maxArea(input_1) == output_1)
+print(maxArea(input_2) == output_2)
+print(maxArea(input_3) == output_3)

@@ -4,7 +4,8 @@ class ListNode:
         self.next = next
 
 def swapPairs(head):
-    dummy = ListNode(0, head)
+    dummy = ListNode(0)
+    dummy.next = head
     prev = dummy
     current = head
     while current and current.next:

@@ -1,19 +1,18 @@
-def longestCommonPrefix(strs) -> str:
+def longestCommonPrefix(strs):
+    """ Write a function to find the longest common prefix string amongst an array of strings.
+
+    If there is no common prefix, return an empty string "".
+    """
     if not strs:
         return ""
     shortest_str = min(strs, key=len)
-    for i, char in enumerate(shortest_str):
+
+    for i, ch in enumerate(shortest_str):
         for other_str in strs:
-            if other_str[i] != char:
+            if other_str[i] != ch:
                 return shortest_str[:i]
     return shortest_str
 
-# Example 1
-input_1 = ["flower","flow","flight"]
-output_1 = longestCommonPrefix(input_1)
-print(output_1 == "fl")
-
-# Example 2
-input_2 = ["dog","racecar","car"]
-output_2 = longestCommonPrefix(input_2)
-print(output_2 == "")
+print(longestCommonPrefix(["flower","flow","flight"]) == "fl")  # True
+print(longestCommonPrefix(["dog","racecar","car"]) == "")  # True
+print(longestCommonPrefix(["a"]) == "a")  # True

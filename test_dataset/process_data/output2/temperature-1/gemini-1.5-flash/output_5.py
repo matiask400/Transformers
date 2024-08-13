@@ -1,12 +1,16 @@
-def longestPalindrome(s: str) -> str:
+def longestPalindrome(s):
     if len(s) < 2:
         return s
+    
     n = len(s)
     dp = [[False for _ in range(n)] for _ in range(n)]
+    
     maxLen = 1
     start = 0
+    
     for i in range(n):
         dp[i][i] = True
+    
     for i in range(n-1, -1, -1):
         for j in range(i+1, n):
             if s[i] == s[j]:
@@ -15,24 +19,19 @@ def longestPalindrome(s: str) -> str:
                     if j - i + 1 > maxLen:
                         maxLen = j - i + 1
                         start = i
-    return s[start:start + maxLen]
+    return s[start:start+maxLen]
 
 # Example 1
-s1 = "babad"
-output1 = longestPalindrome(s1)
-print(output1 == "bab")  # True or False
+input1 = "babad"
+output1 = "bab"
+print(longestPalindrome(input1) == output1)
 
 # Example 2
-s2 = "cbbd"
-output2 = longestPalindrome(s2)
-print(output2 == "bb")  # True or False
+input2 = "cbbd"
+output2 = "bb"
+print(longestPalindrome(input2) == output2)
 
 # Example 3
-s3 = "a"
-output3 = longestPalindrome(s3)
-print(output3 == "a")  # True or False
-
-# Example 4
-s4 = "ac"
-output4 = longestPalindrome(s4)
-print(output4 == "a")  # True or False
+input3 = "a"
+output3 = "a"
+print(longestPalindrome(input3) == output3)

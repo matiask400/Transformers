@@ -6,21 +6,21 @@
 class Solution:
     def mergeTwoLists(self, l1: ListNode, l2: ListNode) -> ListNode:
         dummy = ListNode(0)
-        curr = dummy
+        tail = dummy
 
         while l1 and l2:
             if l1.val <= l2.val:
-                curr.next = l1
+                tail.next = l1
                 l1 = l1.next
             else:
-                curr.next = l2
+                tail.next = l2
                 l2 = l2.next
-            curr = curr.next
+            tail = tail.next
 
         if l1:
-            curr.next = l1
+            tail.next = l1
         else:
-            curr.next = l2
+            tail.next = l2
 
         return dummy.next
 
@@ -32,33 +32,25 @@ def print_linked_list(head):
         current = current.next
     return result
 
-# Test cases
-test_cases = [
-    ([1,2,4], [1,3,4], [1,1,2,3,4,4]),
-    ([], [], []),
-    ([], [0], [0])
-]
+def test_solution():
+    solution = Solution()
 
-solution = Solution()
-
-for i, (l1_list, l2_list, expected_output) in enumerate(test_cases):
-    # Create linked lists from input lists
-    l1 = ListNode(0)
-    current = l1
-    for val in l1_list:
-        current.next = ListNode(val)
-        current = current.next
-    l1 = l1.next
-
-    l2 = ListNode(0)
-    current = l2
-    for val in l2_list:
-        current.next = ListNode(val)
-        current = current.next
-    l2 = l2.next
-
-    # Run the solution and compare the output
+    # Test case 1
+    l1 = ListNode(1, ListNode(2, ListNode(4)))
+    l2 = ListNode(1, ListNode(3, ListNode(4)))
     merged_list = solution.mergeTwoLists(l1, l2)
-    output = print_linked_list(merged_list)
-    is_correct = output == expected_output
-    print(f"Test case {i+1}: {is_correct}")
+    print(print_linked_list(merged_list) == [1, 1, 2, 3, 4, 4])  # Expected output: True
+
+    # Test case 2
+    l1 = None
+    l2 = None
+    merged_list = solution.mergeTwoLists(l1, l2)
+    print(print_linked_list(merged_list) == [])  # Expected output: True
+
+    # Test case 3
+    l1 = None
+    l2 = ListNode(0)
+    merged_list = solution.mergeTwoLists(l1, l2)
+    print(print_linked_list(merged_list) == [0])  # Expected output: True
+
+test_solution()

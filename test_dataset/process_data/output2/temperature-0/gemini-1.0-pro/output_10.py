@@ -18,8 +18,6 @@ s = "mississippi"
 p = "mis*is*p*."
 assert isMatch(s, p) == False
 
-print("All tests passed")
-
 def isMatch(s, p):
     m, n = len(s), len(p)
     dp = [[False] * (n + 1) for _ in range(m + 1)]

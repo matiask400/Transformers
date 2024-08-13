@@ -1,18 +1,22 @@
 def longestCommonPrefix(strs):
     if not strs:
         return ""
-    shortest = min(strs, key=len)
-    for i, char in enumerate(shortest):
-        for other in strs:
-            if other[i] != char:
-                return shortest[:i]
-    return shortest
+
+    prefix = strs[0]
+    for i in range(1, len(strs)):
+        j = 0
+        while j < len(prefix) and j < len(strs[i]) and prefix[j] == strs[i][j]:
+            j += 1
+        prefix = prefix[:j]
+        if not prefix:
+            return ""
+    return prefix
 
 
-input_1 = ["flower", "flow", "flight"]
-output_1 = "fl"
-input_2 = ["dog", "racecar", "car"]
-output_2 = ""
+input1 = ["flower", "flow", "flight"]
+output1 = "fl"
+print(f"Input 1: {input1}, Output: {output1 == longestCommonPrefix(input1)}")
 
-print(longestCommonPrefix(input_1) == output_1)
-print(longestCommonPrefix(input_2) == output_2)
+input2 = ["dog", "racecar", "car"]
+output2 = ""
+print(f"Input 2: {input2}, Output: {output2 == longestCommonPrefix(input2)}")

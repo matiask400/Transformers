@@ -1,48 +1,41 @@
-import unittest
+from typing import List
 
 class Solution:
-    def letterCombinations(self, digits: str) -> list[str]:
+    def letterCombinations(self, digits: str) -> List[str]:
         if not digits:
             return []
-        
-        phone = {
-            '2': "abc",
-            '3': "def",
-            '4': "ghi",
-            '5': "jkl",
-            '6': "mno",
-            '7': "pqrs",
-            '8': "tuv",
-            '9': "wxyz"
+
+        mapping = {
+            '2': 'abc',
+            '3': 'def',
+            '4': 'ghi',
+            '5': 'jkl',
+            '6': 'mno',
+            '7': 'pqrs',
+            '8': 'tuv',
+            '9': 'wxyz'
         }
-        
+
         result = ['']
         for digit in digits:
             temp = []
-            for letter in phone[digit]:
-                for word in result:
-                    temp.append(word + letter)
+            for letter in mapping[digit]:
+                for combination in result:
+                    temp.append(combination + letter)
             result = temp
         return result
 
-class TestLetterCombinations(unittest.TestCase):
-    def test_example_1(self):
-        digits = "23"
-        expected_output = ["ad","ae","af","bd","be","bf","cd","ce","cf"]
-        self.assertEqual(Solution().letterCombinations(digits), expected_output)
-        print(f"Example 1: {Solution().letterCombinations(digits) == expected_output}")
-    
-    def test_example_2(self):
-        digits = ""
-        expected_output = []
-        self.assertEqual(Solution().letterCombinations(digits), expected_output)
-        print(f"Example 2: {Solution().letterCombinations(digits) == expected_output}")
-    
-    def test_example_3(self):
-        digits = "2"
-        expected_output = ["a","b","c"]
-        self.assertEqual(Solution().letterCombinations(digits), expected_output)
-        print(f"Example 3: {Solution().letterCombinations(digits) == expected_output}")
+# Example 1:
+input_1 = "23"
+output_1 = Solution().letterCombinations(input_1)
+print(output_1 == ['ad', 'ae', 'af', 'bd', 'be', 'bf', 'cd', 'ce', 'cf'])  # True
 
-if __name__ == '__main__':
-    unittest.main()
+# Example 2:
+input_2 = ""
+output_2 = Solution().letterCombinations(input_2)
+print(output_2 == [])  # True
+
+# Example 3:
+input_3 = "2"
+output_3 = Solution().letterCombinations(input_3)
+print(output_3 == ['a', 'b', 'c'])  # True

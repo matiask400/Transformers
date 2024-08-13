@@ -1,18 +1,24 @@
+# Define integer to roman mapping 
+int_to_roman = {1: 'I', 4: 'IV', 5: 'V', 9: 'IX', 10: 'X', 40: 'XL', 50: 'L', 90: 'XC', 100: 'C', 400: 'XD', 500: 'D', 900: 'CM', 1000: 'M'}
+
 def intToRoman(num):
-    values = [1000, 900, 500, 400, 100, 90, 50, 40, 10, 9, 5, 4, 1]
-    roman = ['M', 'CM', 'D', 'CD', 'C', 'XC', 'L', 'XL', 'X', 'IX', 'V', 'IV', 'I']
-    result = ''
-    i = 0
-    while num > 0:
-        for _ in range(num // values[i]):
-            result += roman[i]
-            num -= values[i]
-        i += 1
+    """
+    Given an integer, convert it to a roman numeral.
+    """
+    i = 12
+    result = ""
+    while num != 0:
+        if list(int_to_roman.keys())[i] <= num:
+            result += list(int_to_roman.values())[i]
+            num -= list(int_to_roman.keys())[i]
+        else:
+            i -= 1
     return result
 
 # Test cases
 inputs = [3, 4, 9, 58, 1994]
-outputs = ['III', 'IV', 'IX', 'LVIII', 'MCMXCIV']
+outputs = ["III", "IV", "IX", "LVIII", "MCMXCIV"]
 
 for i in range(len(inputs)):
-    print(intToRoman(inputs[i]) == outputs[i])
+    output = intToRoman(inputs[i])
+    print(output == outputs[i])

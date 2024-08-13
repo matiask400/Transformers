@@ -1,32 +1,35 @@
-import unittest
-
-def convert(s: str, numRows: int) -> str:
+def convert(s, numRows):
     if numRows == 1 or numRows >= len(s):
         return s
     
-    rows = [[] for _ in range(numRows)]
-    direction = 1
+    result = [''] * numRows
     row = 0
+    goingDown = False
     
     for i in range(len(s)):
-        rows[row].append(s[i])
-        row += direction
-        
-        if row == numRows - 1 or row == 0:
-            direction *= -1
+        result[row] += s[i]
+        if row == numRows - 1:
+            goingDown = True
+        elif row == 0:
+            goingDown = False
+        row += 1 if goingDown else -1
     
-    result = ''.join([''.join(row) for row in rows])
-    return result
+    return ''.join(result)
 
-class TestZigZagConversion(unittest.TestCase):
-    def test_example_1(self):
-        self.assertEqual(convert('PAYPALISHIRING', 3), 'PAHNAPLSIIGYIR')
-    
-    def test_example_2(self):
-        self.assertEqual(convert('PAYPALISHIRING', 4), 'PINALSIGYAHRPI')
-    
-    def test_example_3(self):
-        self.assertEqual(convert('A', 1), 'A')
+# Example 1
+input_1 = "PAYPALISHIRING"
+numRows_1 = 3
+output_1 = "PAHNAPLSIIGYIR"
+print(convert(input_1, numRows_1) == output_1)
 
-if __name__ == '__main__':
-    unittest.main()
+# Example 2
+input_2 = "PAYPALISHIRING"
+numRows_2 = 4
+output_2 = "PINALSIGYAHRPI"
+print(convert(input_2, numRows_2) == output_2)
+
+# Example 3
+input_3 = "A"
+numRows_3 = 1
+output_3 = "A"
+print(convert(input_3, numRows_3) == output_3)

@@ -10,13 +10,14 @@ def longestCommonPrefix(strs):
         prefix = prefix[:j]
         if not prefix:
             return ""
+
     return prefix
 
 
-input1 = ["flower","flow","flight"]
+input1 = ["flower", "flow", "flight"]
 output1 = "fl"
-print(f"Input 1: {input1}, Output: {output1 == longestCommonPrefix(input1)}")
+print(f'Input 1: {input1}, Output: {output1}, Result: {longestCommonPrefix(input1) == output1}')
 
-input2 = ["dog","racecar","car"]
+input2 = ["dog", "racecar", "car"]
 output2 = ""
-print(f"Input 2: {input2}, Output: {output2 == longestCommonPrefix(input2)}")
+print(f'Input 2: {input2}, Output: {output2}, Result: {longestCommonPrefix(input2) == output2}')

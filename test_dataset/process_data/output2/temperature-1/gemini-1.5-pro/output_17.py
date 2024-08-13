@@ -1,4 +1,4 @@
-def letter_combinations(digits):
+def letterCombinations(digits):
     if not digits:
         return []
 
@@ -15,18 +15,19 @@ def letter_combinations(digits):
 
     result = ['']
     for digit in digits:
-        result = [prefix + letter for prefix in result for letter in mapping[digit]]
+        temp = []
+        for letter in mapping[digit]:
+            for combination in result:
+                temp.append(combination + letter)
+        result = temp
     return result
 
-
-# Test cases
 digits1 = "23"
 output1 = ["ad","ae","af","bd","be","bf","cd","ce","cf"]
 digits2 = ""
 output2 = []
 digits3 = "2"
 output3 = ["a","b","c"]
-
-print(letter_combinations(digits1) == output1)  
-print(letter_combinations(digits2) == output2)  
-print(letter_combinations(digits3) == output3)  
+print(letterCombinations(digits1) == output1)
+print(letterCombinations(digits2) == output2)
+print(letterCombinations(digits3) == output3)

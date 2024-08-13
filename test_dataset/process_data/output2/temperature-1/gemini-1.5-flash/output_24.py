@@ -3,36 +3,40 @@ class ListNode:
         self.val = val
         self.next = next
 
+
 def swapPairs(head: ListNode) -> ListNode:
     dummy = ListNode(0, head)
     prev = dummy
 
     while prev.next and prev.next.next:
-        first = prev.next
-        second = prev.next.next
+        # Get the two nodes to be swapped
+        node1 = prev.next
+        node2 = node1.next
 
-        prev.next = second
-        first.next = second.next
-        second.next = first
+        # Swap the nodes
+        prev.next = node2
+        node1.next = node2.next
+        node2.next = node1
 
-        prev = first
+        # Move the previous pointer
+        prev = node1
 
     return dummy.next
 
 # Example 1
-head_1 = ListNode(1, ListNode(2, ListNode(3, ListNode(4))))
-output_1 = swapPairs(head_1)
-print(output_1.val, output_1.next.val, output_1.next.next.val, output_1.next.next.next.val)  # Output: 2 1 4 3
-print(output_1.val == 2 and output_1.next.val == 1 and output_1.next.next.val == 4 and output_1.next.next.next.val == 3)  # Output: True
+head1 = ListNode(1, ListNode(2, ListNode(3, ListNode(4))))
+output1 = swapPairs(head1)
+print(output1.val, output1.next.val, output1.next.next.val, output1.next.next.next.val)
+print(output1.val == 2 and output1.next.val == 1 and output1.next.next.val == 4 and output1.next.next.next.val == 3)
 
 # Example 2
-head_2 = None
-output_2 = swapPairs(head_2)
-print(output_2)  # Output: None
-print(output_2 is None)  # Output: True
+head2 = None
+output2 = swapPairs(head2)
+print(output2)
+print(output2 is None)
 
 # Example 3
-head_3 = ListNode(1)
-output_3 = swapPairs(head_3)
-print(output_3.val)  # Output: 1
-print(output_3.val == 1)  # Output: True
+head3 = ListNode(1)
+output3 = swapPairs(head3)
+print(output3.val)
+print(output3.val == 1)

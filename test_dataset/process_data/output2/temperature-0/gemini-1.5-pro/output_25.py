@@ -1,64 +1,48 @@
-class ListNode:
-    def __init__(self, val=0, next=None):
-        self.val = val
-        self.next = next
+# Definition for singly-linked list.
+# class ListNode:
+#     def __init__(self, val=0, next=None):
+#         self.val = val
+#         self.next = next
+class Solution:
+    def reverseKGroup(self, head: ListNode, k: int) -> ListNode:
+        dummy = ListNode(0, head)
+        groupPrev = dummy
 
-def reverse_k_group(head, k):
-    dummy = ListNode(0, head)
-    group_prev = dummy
+        while True:
+            kth = self.getKth(groupPrev, k)
+            if not kth:
+                break
+            groupNext = kth.next
 
-    while True:
-        kth = get_kth(group_prev, k)
-        if not kth:
-            break
-        group_next = kth.next
+            # reverse group
+            prev, curr = kth.next, groupPrev.next
+            while curr != groupNext:
+                tmp = curr.next
+                curr.next = prev
+                prev = curr
+                curr = tmp
 
-        # reverse group
-        prev, curr = kth.next, group_prev.next
-        while curr != group_next:
-            tmp = curr.next
-            curr.next = prev
-            prev = curr
-            curr = tmp
+            # connect with previous and next groups
+            tmp = groupPrev.next
+            groupPrev.next = kth
+            groupPrev = tmp
 
-        # update pointers
-        tmp = group_prev.next
-        group_prev.next = kth
-        group_prev = tmp
+        return dummy.next
 
-    return dummy.next
-
-def get_kth(curr, k):
-    while curr and k > 0:
-        curr = curr.next
-        k -= 1
-    return curr
-
-def create_linked_list(values):
-    if not values:
-        return None
-    head = ListNode(values[0])
-    curr = head
-    for val in values[1:]:
-        curr.next = ListNode(val)
-        curr = curr.next
-    return head
-
-def linked_list_to_list(head):
-    values = []
-    curr = head
-    while curr:
-        values.append(curr.val)
-        curr = curr.next
-    return values
+    def getKth(self, curr, k):
+        while curr and k > 0:
+            curr = curr.next
+            k -= 1
+        return curr
 
 # Test cases
-inputs = [([1,2,3,4,5], 2), ([1,2,3,4,5], 3), ([1,2,3,4,5], 1), ([1], 1)]
-outputs = [[2,1,4,3,5], [3,2,1,4,5], [1,2,3,4,5], [1]]
+head1 = ListNode(1, ListNode(2, ListNode(3, ListNode(4, ListNode(5)))))
+head2 = ListNode(1, ListNode(2, ListNode(3, ListNode(4, ListNode(5)))))
+head3 = ListNode(1, ListNode(2, ListNode(3, ListNode(4, ListNode(5)))))
+head4 = ListNode(1)
+sol = Solution()
 
-for i in range(len(inputs)):
-    head = create_linked_list(inputs[i][0])
-    k = inputs[i][1]
-    result = reverse_k_group(head, k)
-    output = linked_list_to_list(result)
-    print(output == outputs[i])
+print(sol.reverseKGroup(head1, 2) == ListNode(2, ListNode(1, ListNode(4, ListNode(3, ListNode(5))))))  # True
+print(sol.reverseKGroup(head2, 3) == ListNode(3, ListNode(2, ListNode(1, ListNode(4, ListNode(5))))))  # True
+print(sol.reverseKGroup(head3, 1) == ListNode(1, ListNode(2, ListNode(3, ListNode(4, ListNode(5))))))  # True
+print(sol.reverseKGroup(head4, 1) == ListNode(1))  # True

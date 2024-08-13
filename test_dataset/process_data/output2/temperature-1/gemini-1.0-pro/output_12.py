@@ -1,27 +1,39 @@
-import math
+if __name__ == "__main__":
+    # Example 1: Test Input
+    num1 = 3
+    result1 = int_to_roman(num1)
+    print("Input: num = {}".format(num1))
+    print("Output: {}".format(result1))
+    print("Expected: III")
+    print("Correct? {}".format(result1 == "III"))
 
-class Solution:
-    def intToRoman(self, num: int) -> str:
-        values = [1000, 900, 500, 400, 100, 90, 50, 40, 10, 9, 5, 4, 1]
-        roman_values = ['M', 'CM', 'D', 'CD', 'C', 'XC', 'L', 'XL', 'X', 'IX', 'V', 'IV', 'I']
-        roman_number = ''
+    # Example 2: Test Input
+    num2 = 4
+    result2 = int_to_roman(num2)
+    print("Input: num = {}".format(num2))
+    print("Output: {}".format(result2))
+    print("Expected: IV")
+    print("Correct? {}".format(result2 == "IV"))
 
-        for i in range(len(values)):
-            while num >= values[i]:
-                roman_number += roman_values[i]
-                num -= values[i]
+    # Example 3: Test Input
+    num3 = 9
+    result3 = int_to_roman(num3)
+    print("Input: num = {}".format(num3))
+    print("Output: {}".format(result3))
+    print("Expected: IX")
+    print("Correct? {}".format(result3 == "IX"))
 
-        return roman_number
+    # Example 4: Test Input
+    num4 = 58
+    result4 = int_to_roman(num4)
+    print("Input: num = {}".format(num4))
+    print("Output: {}".format(result4))
+    print("Expected: LVIII")
+    print("Correct? {}".format(result4 == "LVIII"))
 
-
-input_1 = 3
-output_1 = 'III'
-input_2 = 4
-output_2 = 'IV'
-input_3 = 9
-output_3 = 'IX'
-
-solution = Solution()
-print(solution.intToRoman(input_1) == output_1)
-print(solution.intToRoman(input_2) == output_2)
-print(solution.intToRoman(input_3) == output_3)
+    # Example 5: Test Input
+    num5 = 1994
+    result5 = int_to_roman(num5)
+    print("Input: num = {}".format(num5))
+    print("Output: {}".format(result5))
+    print("Expected: MCMXCIV")

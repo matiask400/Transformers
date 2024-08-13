@@ -1,35 +1,30 @@
-# Definition for singly-linked list.
-# class ListNode:
-#     def __init__(self, val=0, next=None):
-#         self.val = val
-#         self.next = next
-class Solution:
-    def mergeTwoLists(self, l1: ListNode, l2: ListNode) -> ListNode:
-        dummy = ListNode(0)
-        current = dummy
+class ListNode:
+    def __init__(self, val=0, next=None):
+        self.val = val
+        self.next = next
 
-        while l1 and l2:
-            if l1.val <= l2.val:
-                current.next = l1
-                l1 = l1.next
-            else:
-                current.next = l2
-                l2 = l2.next
-            current = current.next
+def merge_two_lists(l1, l2):
+    dummy = ListNode(0)
+    tail = dummy
 
-        if l1:
-            current.next = l1
+    while l1 and l2:
+        if l1.val <= l2.val:
+            tail.next = l1
+            l1 = l1.next
         else:
-            current.next = l2
+            tail.next = l2
+            l2 = l2.next
+        tail = tail.next
 
-        return dummy.next
+    tail.next = l1 or l2
+    return dummy.next
 
 def list_to_linked_list(lst):
     dummy = ListNode(0)
-    current = dummy
+    tail = dummy
     for val in lst:
-        current.next = ListNode(val)
-        current = current.next
+        tail.next = ListNode(val)
+        tail = tail.next
     return dummy.next
 
 def linked_list_to_list(head):
@@ -39,14 +34,17 @@ def linked_list_to_list(head):
         head = head.next
     return lst
 
-# Test cases
-inputs = [([1,2,4], [1,3,4]), ([], []), ([], [0])]
-outputs = [[1,1,2,3,4,4], [], [0]]
+# Test Cases
+input_1 = ([1,2,4], [1,3,4])
+output_1 = [1,1,2,3,4,4]
 
-# Run tests
-for i in range(len(inputs)):
-    l1 = list_to_linked_list(inputs[i][0])
-    l2 = list_to_linked_list(inputs[i][1])
-    result = Solution().mergeTwoLists(l1, l2)
-    output = linked_list_to_list(result)
-    print(output == outputs[i])
+input_2 = ([], [])
+output_2 = []
+
+input_3 = ([], [0])
+output_3 = [0]
+
+# Verify the solution
+print(linked_list_to_list(merge_two_lists(list_to_linked_list(input_1[0]), list_to_linked_list(input_1[1]))) == output_1)
+print(linked_list_to_list(merge_two_lists(list_to_linked_list(input_2[0]), list_to_linked_list(input_2[1]))) == output_2)
+print(linked_list_to_list(merge_two_lists(list_to_linked_list(input_3[0]), list_to_linked_list(input_3[1]))) == output_3)

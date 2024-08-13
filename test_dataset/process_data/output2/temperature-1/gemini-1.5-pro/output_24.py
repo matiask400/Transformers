@@ -9,44 +9,43 @@ class Solution:
         prev, curr = dummy, head
 
         while curr and curr.next:
-            # Save pointers
-            nxtPair = curr.next.next
-            second = curr.next
+            # save pointers
+            nxt = curr.next
+            tmp = nxt.next
 
-            # Reverse this pair
-            second.next = curr
-            curr.next = nxtPair
-            prev.next = second
+            # swap nodes
+            curr.next = tmp
+            nxt.next = curr
+            prev.next = nxt
 
-            # Move forward
+            # update pointers
             prev = curr
-            curr = nxtPair
-        
+            curr = tmp
+
         return dummy.next
 
-def print_linked_list(head):
-    current = head
-    values = []
-    while current:
-        values.append(current.val)
-        current = current.next
-    return values
+# Example inputs and expected outputs
+inputs = [[1,2,3,4], [], [1]]
+outputs = [[2,1,4,3], [], [1]]
 
-# Test cases
-head1 = ListNode(1, ListNode(2, ListNode(3, ListNode(4))))
-output1 = [2, 1, 4, 3]
-print(f"Input 1: {print_linked_list(head1) == [1, 2, 3, 4]}")
-head1 = Solution().swapPairs(head1)
-print(f"Output 1: {print_linked_list(head1) == output1}")
+# Test the solution with example inputs
+for i in range(len(inputs)):
+    # Create linked list from input
+    head = ListNode(inputs[i][0]) if inputs[i] else None
+    curr = head
+    for j in range(1, len(inputs[i])):
+        curr.next = ListNode(inputs[i][j])
+        curr = curr.next
+    
+    # Swap nodes in pairs
+    sol = Solution()
+    result_head = sol.swapPairs(head)
 
-head2 = None
-output2 = []
-print(f"Input 2: {print_linked_list(head2) == []}")
-head2 = Solution().swapPairs(head2)
-print(f"Output 2: {print_linked_list(head2) == output2}")
+    # Convert result linked list to list for comparison
+    result = []
+    while result_head:
+        result.append(result_head.val)
+        result_head = result_head.next
 
-head3 = ListNode(1)
-output3 = [1]
-print(f"Input 3: {print_linked_list(head3) == [1]}")
-head3 = Solution().swapPairs(head3)
-print(f"Output 3: {print_linked_list(head3) == output3}")
+    # Compare output to expected output
+    print(result == outputs[i])

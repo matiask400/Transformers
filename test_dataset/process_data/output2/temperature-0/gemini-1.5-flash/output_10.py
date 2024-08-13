@@ -22,28 +22,28 @@ def isMatch(s: str, p: str) -> bool:
 s1 = "aa"
 p1 = "a"
 output1 = isMatch(s1, p1)
-print(f"Example 1: {output1 == False}")
+print(output1 == False)  # True
 
 # Example 2
 s2 = "aa"
 p2 = "a*"
 output2 = isMatch(s2, p2)
-print(f"Example 2: {output2 == True}")
+print(output2 == True)  # True
 
 # Example 3
 s3 = "ab"
 p3 = ".*"
 output3 = isMatch(s3, p3)
-print(f"Example 3: {output3 == True}")
+print(output3 == True)  # True
 
 # Example 4
 s4 = "aab"
 p4 = "c*a*b"
 output4 = isMatch(s4, p4)
-print(f"Example 4: {output4 == True}")
+print(output4 == True)  # True
 
 # Example 5
 s5 = "mississippi"
 p5 = "mis*is*p*."
 output5 = isMatch(s5, p5)
-print(f"Example 5: {output5 == False}")
+print(output5 == False)  # True

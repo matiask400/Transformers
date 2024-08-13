@@ -3,19 +3,21 @@ def reverse_integer(x):
     x = abs(x)
     reversed_x = 0
     while x > 0:
-        digit = x % 10
-        reversed_x = reversed_x * 10 + digit
+        reversed_x = reversed_x * 10 + x % 10
         x //= 10
-    reversed_x = sign * reversed_x
-    if -2**31 <= reversed_x <= 2**31 - 1:
-        return reversed_x
-    else:
+    reversed_x *= sign
+    if reversed_x < -2**31 or reversed_x > 2**31 - 1:
         return 0
+    return reversed_x
 
-# Test cases
-inputs = [123, -123, 120, 0]
-outputs = [321, -321, 21, 0]
 
-for i in range(len(inputs)):
-    result = reverse_integer(inputs[i])
-    print(result == outputs[i])
+input_1 = 123
+output_1 = 321
+input_2 = -123
+output_2 = -321
+input_3 = 120
+output_3 = 21
+
+print(reverse_integer(input_1) == output_1)
+print(reverse_integer(input_2) == output_2)
+print(reverse_integer(input_3) == output_3)

@@ -1,5 +1,4 @@
-from typing import List
-def four_sum(nums: List[int], target: int) -> List[List[int]]:
+def four_sum(nums, target):
     nums.sort()
     result = []
     n = len(nums)
@@ -28,12 +27,13 @@ def four_sum(nums: List[int], target: int) -> List[List[int]]:
     return result
 
 
-nums1 = [1, 0, -1, 0, -2, 2]
-target1 = 0
-output1 = [[-2,-1,1,2],[-2,0,0,2],[-1,0,0,1]]
-print(f"Input 1: {nums1} Target: {target1} - Output: {four_sum(nums1, target1) == output1}")
+input_1 = [1, 0, -1, 0, -2, 2]
+target_1 = 0
+output_1 = [[-2, -1, 1, 2], [-2, 0, 0, 2], [-1, 0, 0, 1]]
 
-nums2 = []
-target2 = 0
-output2 = []
-print(f"Input 2: {nums2} Target: {target2} - Output: {four_sum(nums2, target2) == output2}")
+input_2 = []
+target_2 = 0
+output_2 = []
+
+print(f"Input 1: {four_sum(input_1, target_1) == output_1}")
+print(f"Input 2: {four_sum(input_2, target_2) == output_2}")

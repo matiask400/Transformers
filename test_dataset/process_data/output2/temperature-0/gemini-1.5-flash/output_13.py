@@ -1,5 +1,3 @@
-import unittest
-
 class Solution:
     def romanToInt(self, s: str) -> int:
         roman_map = {
@@ -24,41 +22,19 @@ class Solution:
                 i += 1
         return result
 
-class TestRomanToInt(unittest.TestCase):
-    def test_example_1(self):
-        s = "III"
-        expected_output = 3
-        solution = Solution()
-        self.assertEqual(solution.romanToInt(s), expected_output)
-        print(f"Example 1: {solution.romanToInt(s) == expected_output}")
+s = Solution()
 
-    def test_example_2(self):
-        s = "IV"
-        expected_output = 4
-        solution = Solution()
-        self.assertEqual(solution.romanToInt(s), expected_output)
-        print(f"Example 2: {solution.romanToInt(s) == expected_output}")
+# Example 1
+input_1 = "III"
+output_1 = s.romanToInt(input_1)
+print(output_1 == 3)  # True
 
-    def test_example_3(self):
-        s = "IX"
-        expected_output = 9
-        solution = Solution()
-        self.assertEqual(solution.romanToInt(s), expected_output)
-        print(f"Example 3: {solution.romanToInt(s) == expected_output}")
+# Example 2
+input_2 = "IV"
+output_2 = s.romanToInt(input_2)
+print(output_2 == 4)  # True
 
-    def test_example_4(self):
-        s = "LVIII"
-        expected_output = 58
-        solution = Solution()
-        self.assertEqual(solution.romanToInt(s), expected_output)
-        print(f"Example 4: {solution.romanToInt(s) == expected_output}")
-
-    def test_example_5(self):
-        s = "MCMXCIV"
-        expected_output = 1994
-        solution = Solution()
-        self.assertEqual(solution.romanToInt(s), expected_output)
-        print(f"Example 5: {solution.romanToInt(s) == expected_output}")
-
-if __name__ == '__main__':
-    unittest.main()
+# Example 3
+input_3 = "IX"
+output_3 = s.romanToInt(input_3)
+print(output_3 == 9)  # True
