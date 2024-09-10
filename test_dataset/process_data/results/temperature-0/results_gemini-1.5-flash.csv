@@ -1,0 +1,1133 @@
+ID,code,result,true_count,false_count
+1,"def two_sum(nums, target):
+    seen = {}
+    for i, num in enumerate(nums):
+        complement = target - num
+        if complement in seen:
+            return [seen[complement], i]
+        seen[num] = i
+    return None
+
+# Example 1
+nums1 = [2, 7, 11, 15]
+target1 = 9
+result1 = two_sum(nums1, target1)
+print(f'Example 1: Input: {nums1}, {target1}, Output: {result1}')
+
+# Example 2
+nums2 = [3, 2, 4]
+target2 = 6
+result2 = two_sum(nums2, target2)
+print(f'Example 2: Input: {nums2}, {target2}, Output: {result2}')
+
+# Example 3
+nums3 = [3, 3]
+target3 = 6
+result3 = two_sum(nums3, target3)
+print(f'Example 3: Input: {nums3}, {target3}, Output: {result3}')","Example 1: Input: [2, 7, 11, 15], 9, Output: [0, 1]
+Example 2: Input: [3, 2, 4], 6, Output: [1, 2]
+Example 3: Input: [3, 3], 6, Output: [0, 1]",0,0
+2,"class ListNode:
+    def __init__(self, val=0, next=None):
+        self.val = val
+        self.next = next
+
+
+def addTwoNumbers(l1, l2):
+    dummy = ListNode()
+    curr = dummy
+    carry = 0
+
+    while l1 or l2 or carry:
+        val1 = l1.val if l1 else 0
+        val2 = l2.val if l2 else 0
+        total = val1 + val2 + carry
+        carry = total // 10
+        curr.next = ListNode(total % 10)
+        curr = curr.next
+        l1 = l1.next if l1 else None
+        l2 = l2.next if l2 else None
+
+    return dummy.next
+
+# Example 1
+l1 = ListNode(2, ListNode(4, ListNode(3)))
+l2 = ListNode(5, ListNode(6, ListNode(4)))
+result1 = addTwoNumbers(l1, l2)
+
+# Example 2
+l1 = ListNode(0)
+l2 = ListNode(0)
+result2 = addTwoNumbers(l1, l2)
+
+# Example 3
+l1 = ListNode(9, ListNode(9, ListNode(9, ListNode(9, ListNode(9, ListNode(9, ListNode(9)))))))
+l2 = ListNode(9, ListNode(9, ListNode(9, ListNode(9))))
+result3 = addTwoNumbers(l1, l2)
+
+# Check if the results match the expected outputs
+output1 = [7, 0, 8]
+output2 = [0]
+output3 = [8, 9, 9, 9, 0, 0, 0, 1]
+
+print(f""Example 1: {result1 == output1}"")
+print(f""Example 2: {result2 == output2}"")
+print(f""Example 3: {result3 == output3}"")","Example 1: False
+Example 2: False
+Example 3: False",0,3
+3,"def lengthOfLongestSubstring(s: str) -> int:
+    n = len(s)
+    if n == 0:
+        return 0
+    max_len = 1
+    start = 0
+    char_index = {}
+    for i in range(n):
+        if s[i] in char_index and char_index[s[i]] >= start:
+            start = char_index[s[i]] + 1
+        char_index[s[i]] = i
+        max_len = max(max_len, i - start + 1)
+    return max_len
+
+# Test cases
+input_1 = ""abcabcbb""
+output_1 = lengthOfLongestSubstring(input_1)
+
+input_2 = ""bbbbb""
+output_2 = lengthOfLongestSubstring(input_2)
+
+input_3 = ""pwwkew""
+output_3 = lengthOfLongestSubstring(input_3)
+
+print(f""Input 1: {input_1}"")
+print(f""Output 1: {output_1}"")
+print(f""Input 2: {input_2}"")
+print(f""Output 2: {output_2}"")
+print(f""Input 3: {input_3}"")
+print(f""Output 3: {output_3}"")
+
+# Check if the outputs are correct
+print(f""Output 1 is correct: {output_1 == 3}"")
+print(f""Output 2 is correct: {output_2 == 1}"")
+print(f""Output 3 is correct: {output_3 == 3}"")","Input 1: abcabcbb
+Output 1: 3
+Input 2: bbbbb
+Output 2: 1
+Input 3: pwwkew
+Output 3: 3
+Output 1 is correct: True
+Output 2 is correct: True
+Output 3 is correct: True",3,0
+4,"import math
+
+def findMedianSortedArrays(nums1, nums2):
+    m = len(nums1)
+    n = len(nums2)
+    if m > n:
+        nums1, nums2, m, n = nums2, nums1, n, m
+    
+    low = 0
+    high = m
+    while low <= high:
+        partitionX = (low + high) // 2
+        partitionY = ((m + n + 1) // 2) - partitionX
+        
+        maxLeftX = float('-inf') if partitionX == 0 else nums1[partitionX - 1]
+        minRightX = float('inf') if partitionX == m else nums1[partitionX]
+        
+        maxLeftY = float('-inf') if partitionY == 0 else nums2[partitionY - 1]
+        minRightY = float('inf') if partitionY == n else nums2[partitionY]
+        
+        if maxLeftX <= minRightY and maxLeftY <= minRightX:
+            if (m + n) % 2 == 0:
+                return (max(maxLeftX, maxLeftY) + min(minRightX, minRightY)) / 2
+            else:
+                return max(maxLeftX, maxLeftY)
+        elif maxLeftX > minRightY:
+            high = partitionX - 1
+        else:
+            low = partitionX + 1
+    return -1
+
+# Test cases
+nums1_1 = [1, 3]
+nums2_1 = [2]
+output_1 = findMedianSortedArrays(nums1_1, nums2_1)
+print(f""Input 1: nums1 = {nums1_1}, nums2 = {nums2_1}"")
+print(f""Output 1: {output_1}"")
+
+nums1_2 = [1, 2]
+nums2_2 = [3, 4]
+output_2 = findMedianSortedArrays(nums1_2, nums2_2)
+print(f""Input 2: nums1 = {nums1_2}, nums2 = {nums2_2}"")
+print(f""Output 2: {output_2}"")
+
+nums1_3 = [0, 0]
+nums2_3 = [0, 0]
+output_3 = findMedianSortedArrays(nums1_3, nums2_3)
+print(f""Input 3: nums1 = {nums1_3}, nums2 = {nums2_3}"")
+print(f""Output 3: {output_3}"")","Input 1: nums1 = [1, 3], nums2 = [2]
+Output 1: 2
+Input 2: nums1 = [1, 2], nums2 = [3, 4]
+Output 2: 2.5
+Input 3: nums1 = [0, 0], nums2 = [0, 0]
+Output 3: 0.0",0,0
+5,"def longestPalindrome(s: str) -> str:
+    if len(s) < 2:
+        return s
+    
+    n = len(s)
+    dp = [[False for _ in range(n)] for _ in range(n)]
+    maxLen = 1
+    start = 0
+    
+    for i in range(n):
+        dp[i][i] = True
+    
+    for i in range(n - 1, -1, -1):
+        for j in range(i + 1, n):
+            if s[i] == s[j]:
+                if j - i == 1 or dp[i + 1][j - 1]:
+                    dp[i][j] = True
+                    if j - i + 1 > maxLen:
+                        maxLen = j - i + 1
+                        start = i
+    
+    return s[start:start + maxLen]",,0,0
+6,"def convert(s, numRows):
+    if numRows == 1 or numRows >= len(s):
+        return s
+    
+    result = [''] * numRows
+    row = 0
+    direction = 1
+    
+    for i in range(len(s)):
+        result[row] += s[i]
+        
+        if row == numRows - 1:
+            direction = -1
+        elif row == 0:
+            direction = 1
+        
+        row += direction
+    
+    return ''.join(result)
+
+# Test cases
+input_1 = ""PAYPALISHIRING""
+output_1 = ""PAHNAPLSIIGYIR""
+input_2 = ""PAYPALISHIRING""
+output_2 = ""PINALSIGYAHRPI""
+input_3 = ""A""
+output_3 = ""A""
+
+print(f""Input 1: {input_1}"")
+print(f""Output 1: {output_1}"")
+print(f""Expected Output 1: {convert(input_1, 3)}"")
+print(f""Test 1: {convert(input_1, 3) == output_1}"")
+
+print(f""Input 2: {input_2}"")
+print(f""Output 2: {output_2}"")
+print(f""Expected Output 2: {convert(input_2, 4)}"")
+print(f""Test 2: {convert(input_2, 4) == output_2}"")
+
+print(f""Input 3: {input_3}"")
+print(f""Output 3: {output_3}"")
+print(f""Expected Output 3: {convert(input_3, 1)}"")
+print(f""Test 3: {convert(input_3, 1) == output_3}"")","Input 1: PAYPALISHIRING
+Output 1: PAHNAPLSIIGYIR
+Expected Output 1: PAHNAPLSIIGYIR
+Test 1: True
+Input 2: PAYPALISHIRING
+Output 2: PINALSIGYAHRPI
+Expected Output 2: PINALSIGYAHRPI
+Test 2: True
+Input 3: A
+Output 3: A
+Expected Output 3: A
+Test 3: True",3,0
+7,"import math
+
+def reverse_integer(x: int) -> int:
+    sign = 1 if x >= 0 else -1
+    x = abs(x)
+    reversed_x = 0
+    while x > 0:
+        reversed_x = reversed_x * 10 + x % 10
+        x //= 10
+    if reversed_x > math.pow(2, 31) - 1 or reversed_x < -math.pow(2, 31):
+        return 0
+    return reversed_x * sign
+
+# Test cases
+input_1 = 123
+output_1 = reverse_integer(input_1)
+print(f'Input 1: {input_1}, Output 1: {output_1}')
+
+input_2 = -123
+output_2 = reverse_integer(input_2)
+print(f'Input 2: {input_2}, Output 2: {output_2}')
+
+input_3 = 120
+output_3 = reverse_integer(input_3)
+print(f'Input 3: {input_3}, Output 3: {output_3}')
+
+# Check if the outputs are correct
+print(f'Output 1 is correct: {output_1 == 321}')
+print(f'Output 2 is correct: {output_2 == -321}')
+print(f'Output 3 is correct: {output_3 == 21}')","Input 1: 123, Output 1: 321
+Input 2: -123, Output 2: -321
+Input 3: 120, Output 3: 21
+Output 1 is correct: True
+Output 2 is correct: True
+Output 3 is correct: True",3,0
+8,"import sys
+
+def myAtoi(s: str) -> int:
+    """"""
+    Converts a string to a 32-bit signed integer.
+
+    Args:
+        s: The string to convert.
+
+    Returns:
+        The converted integer.
+    """"""
+    s = s.strip()
+    if not s:
+        return 0
+    sign = 1
+    if s[0] == '-':
+        sign = -1
+        s = s[1:]
+    elif s[0] == '+':
+        s = s[1:]
+    result = 0
+    for i in range(len(s)):
+        if not s[i].isdigit():
+            break
+        result = result * 10 + int(s[i])
+    result *= sign
+    if result > 2**31 - 1:
+        return 2**31 - 1
+    elif result < -2**31:
+        return -2**31
+    return result
+
+# Test cases
+input_1 = ""42""
+output_1 = myAtoi(input_1)
+print(f""Input 1: {input_1}, Output 1: {output_1}"")
+
+input_2 = ""   -42""
+output_2 = myAtoi(input_2)
+print(f""Input 2: {input_2}, Output 2: {output_2}"")
+
+input_3 = ""4193 with words""
+output_3 = myAtoi(input_3)
+print(f""Input 3: {input_3}, Output 3: {output_3}"")
+
+# Check if the outputs match the expected values
+print(f""Output 1 matches expected: {output_1 == 42}"")
+print(f""Output 2 matches expected: {output_2 == -42}"")
+print(f""Output 3 matches expected: {output_3 == 4193}"")","Input 1: 42, Output 1: 42
+Input 2:    -42, Output 2: -42
+Input 3: 4193 with words, Output 3: 4193
+Output 1 matches expected: True
+Output 2 matches expected: True
+Output 3 matches expected: True",3,0
+9,"def isPalindrome(x):
+    if x < 0:
+        return False
+    original = x
+    reversed = 0
+    while x > 0:
+        digit = x % 10
+        reversed = reversed * 10 + digit
+        x //= 10
+    return original == reversed
+
+# Example 1
+input_1 = 121
+output_1 = isPalindrome(input_1)
+print(f""Input 1: {input_1}"")
+print(f""Output 1: {output_1}"")
+
+# Example 2
+input_2 = -121
+output_2 = isPalindrome(input_2)
+print(f""Input 2: {input_2}"")
+print(f""Output 2: {output_2}"")
+
+# Example 3
+input_3 = 10
+output_3 = isPalindrome(input_3)
+print(f""Input 3: {input_3}"")
+print(f""Output 3: {output_3}"")","Input 1: 121
+Output 1: True
+Input 2: -121
+Output 2: False
+Input 3: 10
+Output 3: False",1,2
+10,"def isMatch(s: str, p: str) -> bool:
+    n = len(s)
+    m = len(p)
+    
+    dp = [[False for _ in range(m + 1)] for _ in range(n + 1)]
+    dp[0][0] = True
+    
+    for j in range(2, m + 1):
+        if p[j - 1] == '*':
+            dp[0][j] = dp[0][j - 2]
+    
+    for i in range(1, n + 1):
+        for j in range(1, m + 1):
+            if p[j - 1] == s[i - 1] or p[j - 1] == '.':
+                dp[i][j] = dp[i - 1][j - 1]
+            elif p[j - 1] == '*':
+                dp[i][j] = dp[i][j - 2] or (dp[i - 1][j] and (s[i - 1] == p[j - 2] or p[j - 2] == '.'))
+    
+    return dp[n][m]
+
+# Test cases
+print(isMatch(""aa"", ""a""))  # Output: False
+print(isMatch(""aa"", ""a*""))  # Output: True
+print(isMatch(""ab"", "".*""))  # Output: True
+print(isMatch(""aab"", ""c*a*b""))  # Output: True
+print(isMatch(""mississippi"", ""mis*is*p*.""))  # Output: False","False
+True
+True
+True
+False",3,2
+11,"def maxArea(height):
+    left = 0
+    right = len(height) - 1
+    max_area = 0
+    while left < right:
+        current_area = min(height[left], height[right]) * (right - left)
+        max_area = max(max_area, current_area)
+        if height[left] < height[right]:
+            left += 1
+        else:
+            right -= 1
+    return max_area
+
+# Test cases
+input_1 = [1,8,6,2,5,4,8,3,7]
+output_1 = maxArea(input_1)
+print(f""Input 1: {input_1}"")
+print(f""Output 1: {output_1}"")
+print(f""Test 1: {output_1 == 49}"")
+
+input_2 = [1,1]
+output_2 = maxArea(input_2)
+print(f""Input 2: {input_2}"")
+print(f""Output 2: {output_2}"")
+print(f""Test 2: {output_2 == 1}"")
+
+input_3 = [4,3,2,1,4]
+output_3 = maxArea(input_3)
+print(f""Input 3: {input_3}"")
+print(f""Output 3: {output_3}"")
+print(f""Test 3: {output_3 == 16}"")","Input 1: [1, 8, 6, 2, 5, 4, 8, 3, 7]
+Output 1: 49
+Test 1: True
+Input 2: [1, 1]
+Output 2: 1
+Test 2: True
+Input 3: [4, 3, 2, 1, 4]
+Output 3: 16
+Test 3: True",3,0
+12,"import unittest
+
+class Solution:
+    def intToRoman(self, num: int) -> str:
+        roman_map = { 1: 'I', 4: 'IV', 5: 'V', 9: 'IX', 10: 'X', 40: 'XL', 50: 'L', 90: 'XC', 100: 'C', 400: 'XD', 500: 'D', 900: 'CM', 1000: 'M'}
+        i = 12
+        result = ''
+        while num > 0:
+            if list(roman_map.keys())[i] <= num:
+                result += list(roman_map.values())[i]
+                num -= list(roman_map.keys())[i]
+            else:
+                i -= 1
+        return result
+
+class TestSolution(unittest.TestCase):
+    def test_intToRoman(self):
+        solution = Solution()
+        self.assertEqual(solution.intToRoman(3), ""III"")
+        self.assertEqual(solution.intToRoman(4), ""IV"")
+        self.assertEqual(solution.intToRoman(9), ""IX"")
+        self.assertEqual(solution.intToRoman(58), ""LVIII"")
+        self.assertEqual(solution.intToRoman(1994), ""MCMXCIV"")
+
+if __name__ == '__main__':
+    unittest.main()",,0,0
+13,"import re
+
+def roman_to_integer(s: str) -> int:
+    roman_map = {
+        'I': 1,
+        'V': 5,
+        'X': 10,
+        'L': 50,
+        'C': 100,
+        'D': 500,
+        'M': 1000
+    }
+    result = 0
+    i = 0
+    while i < len(s):
+        current_symbol = s[i]
+        next_symbol = s[i + 1] if i + 1 < len(s) else None
+        if next_symbol and roman_map[current_symbol] < roman_map[next_symbol]:
+            result += roman_map[next_symbol] - roman_map[current_symbol]
+            i += 2
+        else:
+            result += roman_map[current_symbol]
+            i += 1
+    return result
+
+# Test cases
+input_1 = ""III""
+output_1 = roman_to_integer(input_1)
+print(f""Input 1: {input_1}, Output 1: {output_1}"")
+
+input_2 = ""IV""
+output_2 = roman_to_integer(input_2)
+print(f""Input 2: {input_2}, Output 2: {output_2}"")
+
+input_3 = ""IX""
+output_3 = roman_to_integer(input_3)
+print(f""Input 3: {input_3}, Output 3: {output_3}"")
+
+# Check if the outputs match the expected values
+print(f""Output 1 matches expected: {output_1 == 3}"")
+print(f""Output 2 matches expected: {output_2 == 4}"")
+print(f""Output 3 matches expected: {output_3 == 9}"")","Input 1: III, Output 1: 3
+Input 2: IV, Output 2: 4
+Input 3: IX, Output 3: 9
+Output 1 matches expected: True
+Output 2 matches expected: True
+Output 3 matches expected: True",3,0
+14,"def longestCommonPrefix(strs):
+    if not strs:
+        return """"
+    prefix = strs[0]
+    for i in range(1, len(strs)):
+        while not strs[i].startswith(prefix):
+            prefix = prefix[:-1]
+            if not prefix:
+                return """"
+    return prefix
+
+# Example 1
+strs1 = [""flower"",""flow"",""flight""]
+output1 = longestCommonPrefix(strs1)
+print(f""Input 1: {strs1}"")
+print(f""Output 1: {output1}"")
+
+# Example 2
+strs2 = [""dog"",""racecar"",""car""]
+output2 = longestCommonPrefix(strs2)
+print(f""Input 2: {strs2}"")
+print(f""Output 2: {output2}"")
+
+# Example 3 (Optional)
+# strs3 = [""abc"", ""abcd"", ""abce""]
+# output3 = longestCommonPrefix(strs3)
+# print(f""Input 3: {strs3}"")
+# print(f""Output 3: {output3}"")","Input 1: ['flower', 'flow', 'flight']
+Output 1: fl
+Input 2: ['dog', 'racecar', 'car']
+Output 2:",0,0
+15,"import itertools
+
+def threeSum(nums):
+    result = []
+    nums.sort()
+    for i in range(len(nums) - 2):
+        if i > 0 and nums[i] == nums[i - 1]:
+            continue
+        left = i + 1
+        right = len(nums) - 1
+        while left < right:
+            total = nums[i] + nums[left] + nums[right]
+            if total == 0:
+                result.append([nums[i], nums[left], nums[right]])
+                while left < right and nums[left] == nums[left + 1]:
+                    left += 1
+                while left < right and nums[right] == nums[right - 1]:
+                    right -= 1
+                left += 1
+                right -= 1
+            elif total < 0:
+                left += 1
+            else:
+                right -= 1
+    return result
+
+# Test cases
+nums1 = [-1,0,1,2,-1,-4]
+output1 = threeSum(nums1)
+print(f""Input 1: {nums1}"")
+print(f""Output 1: {output1}"")
+
+nums2 = []
+output2 = threeSum(nums2)
+print(f""Input 2: {nums2}"")
+print(f""Output 2: {output2}"")
+
+nums3 = [0]
+output3 = threeSum(nums3)
+print(f""Input 3: {nums3}"")
+print(f""Output 3: {output3}"")
+
+# Check if the outputs match the expected outputs
+print(f""Output 1 matches expected output: {output1 == [[-1,-1,2],[-1,0,1]]}"")
+print(f""Output 2 matches expected output: {output2 == []}"")
+print(f""Output 3 matches expected output: {output3 == []}"")","Input 1: [-4, -1, -1, 0, 1, 2]
+Output 1: [[-1, -1, 2], [-1, 0, 1]]
+Input 2: []
+Output 2: []
+Input 3: [0]
+Output 3: []
+Output 1 matches expected output: True
+Output 2 matches expected output: True
+Output 3 matches expected output: True",3,0
+16,"import sys
+
+def threeSumClosest(nums, target):
+    nums.sort()
+    closest_sum = sys.maxsize
+    for i in range(len(nums) - 2):
+        left = i + 1
+        right = len(nums) - 1
+        while left < right:
+            current_sum = nums[i] + nums[left] + nums[right]
+            if abs(current_sum - target) < abs(closest_sum - target):
+                closest_sum = current_sum
+            if current_sum < target:
+                left += 1
+            else:
+                right -= 1
+    return closest_sum
+
+# Example 1
+nums = [-1, 2, 1, -4]
+target = 1
+output_1 = threeSumClosest(nums, target)
+print(f""Input 1: nums = {nums}, target = {target}"")
+print(f""Output 1: {output_1}"")
+
+# Example 2
+nums = [0, 0, 0]
+target = 1
+output_2 = threeSumClosest(nums, target)
+print(f""Input 2: nums = {nums}, target = {target}"")
+print(f""Output 2: {output_2}"")
+
+# Example 3
+nums = [1, 1, 1, 0]
+target = -100
+output_3 = threeSumClosest(nums, target)
+print(f""Input 3: nums = {nums}, target = {target}"")
+print(f""Output 3: {output_3}"")","Input 1: nums = [-4, -1, 1, 2], target = 1
+Output 1: 2
+Input 2: nums = [0, 0, 0], target = 1
+Output 2: 0
+Input 3: nums = [0, 1, 1, 1], target = -100
+Output 3: 2",0,0
+17,"import itertools
+
+class Solution:
+    def letterCombinations(self, digits: str) -> list[str]:
+        if not digits:
+            return []
+        
+        mapping = {
+            '2': 'abc',
+            '3': 'def',
+            '4': 'ghi',
+            '5': 'jkl',
+            '6': 'mno',
+            '7': 'pqrs',
+            '8': 'tuv',
+            '9': 'wxyz'
+        }
+        
+        result = ['']
+        for digit in digits:
+            result = [prefix + letter for prefix in result for letter in mapping[digit]]
+        return result
+
+# Test the solution
+
+solution = Solution()
+
+input_1 = ""23""
+output_1 = solution.letterCombinations(input_1)
+
+input_2 = """"
+output_2 = solution.letterCombinations(input_2)
+
+input_3 = ""2""
+output_3 = solution.letterCombinations(input_3)
+
+print(f""Input 1: {input_1}"")
+print(f""Output 1: {output_1}"")
+print(f""Input 2: {input_2}"")
+print(f""Output 2: {output_2}"")
+print(f""Input 3: {input_3}"")
+print(f""Output 3: {output_3}"")
+
+# Check if the outputs match the expected results
+print(f""Output 1 matches expected: {output_1 == ['ad', 'ae', 'af', 'bd', 'be', 'bf', 'cd', 'ce', 'cf']}"")
+print(f""Output 2 matches expected: {output_2 == []}"")
+print(f""Output 3 matches expected: {output_3 == ['a', 'b', 'c']}"")","Input 1: 23
+Output 1: ['ad', 'ae', 'af', 'bd', 'be', 'bf', 'cd', 'ce', 'cf']
+Input 2: 
+Output 2: []
+Input 3: 2
+Output 3: ['a', 'b', 'c']
+Output 1 matches expected: True
+Output 2 matches expected: True
+Output 3 matches expected: True",3,0
+18,"import itertools
+
+def fourSum(nums, target):
+    nums.sort()
+    quadruplets = []
+    for i in range(len(nums) - 3):
+        if i > 0 and nums[i] == nums[i - 1]:
+            continue
+        for j in range(i + 1, len(nums) - 2):
+            if j > i + 1 and nums[j] == nums[j - 1]:
+                continue
+            left = j + 1
+            right = len(nums) - 1
+            while left < right:
+                current_sum = nums[i] + nums[j] + nums[left] + nums[right]
+                if current_sum == target:
+                    quadruplets.append([nums[i], nums[j], nums[left], nums[right]])
+                    while left < right and nums[left] == nums[left + 1]:
+                        left += 1
+                    while left < right and nums[right] == nums[right - 1]:
+                        right -= 1
+                    left += 1
+                    right -= 1
+                elif current_sum < target:
+                    left += 1
+                else:
+                    right -= 1
+    return quadruplets
+
+# Example 1
+nums1 = [1,0,-1,0,-2,2]
+target1 = 0
+output1 = fourSum(nums1, target1)
+print(f""Input 1: {nums1}, {target1}"")
+print(f""Output 1: {output1}"")
+
+# Example 2
+nums2 = []
+target2 = 0
+output2 = fourSum(nums2, target2)
+print(f""Input 2: {nums2}, {target2}"")
+print(f""Output 2: {output2}"")
+
+# Example 3
+nums3 = [1,2,3,4,5]
+target3 = 15
+output3 = fourSum(nums3, target3)
+print(f""Input 3: {nums3}, {target3}"")
+print(f""Output 3: {output3}"")","Input 1: [-2, -1, 0, 0, 1, 2], 0
+Output 1: [[-2, -1, 1, 2], [-2, 0, 0, 2], [-1, 0, 0, 1]]
+Input 2: [], 0
+Output 2: []
+Input 3: [1, 2, 3, 4, 5], 15
+Output 3: []",0,0
+19,"class ListNode:
+    def __init__(self, val=0, next=None):
+        self.val = val
+        self.next = next
+
+def removeNthFromEnd(head, n):
+    dummy = ListNode(0, head)
+    first = dummy
+    second = dummy
+    
+    # Move first pointer n+1 steps ahead
+    for i in range(n + 1):
+        first = first.next
+    
+    # Move both pointers until first reaches the end
+    while first:
+        first = first.next
+        second = second.next
+    
+    # Remove the node after second
+    second.next = second.next.next
+    
+    return dummy.next
+
+# Example 1
+head1 = ListNode(1, ListNode(2, ListNode(3, ListNode(4, ListNode(5)))))
+input_1 = head1
+output_1 = removeNthFromEnd(head1, 2)
+
+# Example 2
+head2 = ListNode(1)
+input_2 = head2
+output_2 = removeNthFromEnd(head2, 1)
+
+# Example 3
+head3 = ListNode(1, ListNode(2))
+input_3 = head3
+output_3 = removeNthFromEnd(head3, 1)
+
+# Check if the outputs are correct
+result_1 = output_1 == ListNode(1, ListNode(2, ListNode(3, ListNode(5))))
+result_2 = output_2 == None
+result_3 = output_3 == ListNode(1)
+
+print(f""Example 1: {result_1}"")
+print(f""Example 2: {result_2}"")
+print(f""Example 3: {result_3}"")","Example 1: False
+Example 2: True
+Example 3: False",1,2
+20,"def is_valid(s):
+    stack = []
+    parentheses = {')': '(', '}': '{', ']': '['}
+    for char in s:
+        if char in parentheses.values():
+            stack.append(char)
+        elif char in parentheses.keys():
+            if stack and stack[-1] == parentheses[char]:
+                stack.pop()
+            else:
+                return False
+        else:
+            return False
+    return len(stack) == 0
+
+# Example 1
+input_1 = ""()""
+output_1 = is_valid(input_1)
+
+# Example 2
+input_2 = ""()[]{}""
+output_2 = is_valid(input_2)
+
+# Example 3
+input_3 = ""(]""
+output_3 = is_valid(input_3)
+
+# Check if the outputs are correct
+print(f""Example 1: Output is {output_1}, Expected output is True: {output_1 == True}"")
+print(f""Example 2: Output is {output_2}, Expected output is True: {output_2 == True}"")
+print(f""Example 3: Output is {output_3}, Expected output is False: {output_3 == False}"")","Example 1: Output is True, Expected output is True: True
+Example 2: Output is True, Expected output is True: True
+Example 3: Output is False, Expected output is False: True",7,2
+21,"class ListNode:
+    def __init__(self, val=0, next=None):
+        self.val = val
+        self.next = next
+
+
+def mergeTwoLists(l1: ListNode, l2: ListNode) -> ListNode:
+    dummy = ListNode()
+    tail = dummy
+
+    while l1 and l2:
+        if l1.val <= l2.val:
+            tail.next = l1
+            l1 = l1.next
+        else:
+            tail.next = l2
+            l2 = l2.next
+        tail = tail.next
+
+    if l1:
+        tail.next = l1
+    if l2:
+        tail.next = l2
+
+    return dummy.next
+
+# Example 1
+l1_example1 = ListNode(1, ListNode(2, ListNode(4)))
+l2_example1 = ListNode(1, ListNode(3, ListNode(4)))
+merged_list_example1 = mergeTwoLists(l1_example1, l2_example1)
+output_example1 = []
+while merged_list_example1:
+    output_example1.append(merged_list_example1.val)
+    merged_list_example1 = merged_list_example1.next
+
+# Example 2
+l1_example2 = None
+l2_example2 = None
+merged_list_example2 = mergeTwoLists(l1_example2, l2_example2)
+output_example2 = []
+while merged_list_example2:
+    output_example2.append(merged_list_example2.val)
+    merged_list_example2 = merged_list_example2.next
+
+# Example 3
+l1_example3 = None
+l2_example3 = ListNode(0)
+merged_list_example3 = mergeTwoLists(l1_example3, l2_example3)
+output_example3 = []
+while merged_list_example3:
+    output_example3.append(merged_list_example3.val)
+    merged_list_example3 = merged_list_example3.next
+
+# Check if the outputs match
+result_example1 = output_example1 == [1, 1, 2, 3, 4, 4]
+result_example2 = output_example2 == []
+result_example3 = output_example3 == [0]
+
+print(f""Example 1: {result_example1}"")
+print(f""Example 2: {result_example2}"")
+print(f""Example 3: {result_example3}"")","Example 1: True
+Example 2: True
+Example 3: True",3,0
+22,"def generateParentheses(n):
+    result = []
+    def backtrack(s, left, right):
+        if len(s) == 2 * n:
+            result.append(s)
+            return
+        if left < n:
+            backtrack(s + ""("", left + 1, right)
+        if right < left:
+            backtrack(s + "")"", left, right + 1)
+    backtrack("""", 0, 0)
+    return result
+
+# Test cases
+input_1 = 3
+output_1 = generateParentheses(input_1)
+input_2 = 1
+output_2 = generateParentheses(input_2)
+input_3 = 2
+output_3 = generateParentheses(input_3)
+
+# Check if the outputs match the expected results
+output_1_match = output_1 == ['((()))', '(()())', '(())()', '()(())', '()()()']
+output_2_match = output_2 == ['()']
+output_3_match = output_3 == ['(())', '()()']
+
+print(f""Input 1: {input_1}, Output 1: {output_1}, Match: {output_1_match}"")
+print(f""Input 2: {input_2}, Output 2: {output_2}, Match: {output_2_match}"")
+print(f""Input 3: {input_3}, Output 3: {output_3}, Match: {output_3_match}"")","Input 1: 3, Output 1: ['((()))', '(()())', '(())()', '()(())', '()()()'], Match: True
+Input 2: 1, Output 2: ['()'], Match: True
+Input 3: 2, Output 3: ['(())', '()()'], Match: True",3,0
+23,"class ListNode:
+    def __init__(self, val=0, next=None):
+        self.val = val
+        self.next = next
+
+def mergeKLists(lists):
+    if not lists:
+        return None
+    if len(lists) == 1:
+        return lists[0]
+    
+    # Use a min-heap to store the heads of the linked lists
+    import heapq
+    heap = [(node.val, i, node) for i, node in enumerate(lists) if node]
+    heapq.heapify(heap)
+    
+    dummy = ListNode(0)
+    tail = dummy
+    
+    while heap:
+        val, i, node = heapq.heappop(heap)
+        tail.next = node
+        tail = tail.next
+        
+        if node.next:
+            heapq.heappush(heap, (node.next.val, i, node.next))
+    
+    return dummy.next
+
+# Test cases
+
+def test_mergeKLists(lists, expected_output):
+    output = mergeKLists(lists)
+    
+    # Convert linked lists to lists for comparison
+    output_list = []
+    while output:
+        output_list.append(output.val)
+        output = output.next
+    
+    print(f""Input: {lists}"")
+    print(f""Output: {output_list}"")
+    print(f""Expected Output: {expected_output}"")
+    print(f""Result: {output_list == expected_output}"")
+    print(""---"")
+
+# Example 1
+lists1 = [[1,4,5],[1,3,4],[2,6]]
+output1 = [1,1,2,3,4,4,5,6]
+test_mergeKLists(lists1, output1)
+
+# Example 2
+lists2 = []
+output2 = []
+test_mergeKLists(lists2, output2)
+
+# Example 3
+lists3 = [[]]
+output3 = []
+test_mergeKLists(lists3, output3)",,0,0
+24,"class ListNode:
+    def __init__(self, val=0, next=None):
+        self.val = val
+        self.next = next
+
+
+def swapPairs(head: ListNode) -> ListNode:
+    dummy = ListNode(0, head)
+    prev = dummy
+
+    while head and head.next:
+        # 1. Save the next two nodes
+        first = head
+        second = head.next
+
+        # 2. Swap the nodes
+        prev.next = second
+        first.next = second.next
+        second.next = first
+
+        # 3. Move to the next pair
+        prev = first
+        head = first.next
+
+    return dummy.next
+
+# Test cases
+
+def test_swapPairs(head_list, expected_output):
+    head = ListNode(head_list[0])
+    current = head
+    for val in head_list[1:]:
+        current.next = ListNode(val)
+        current = current.next
+
+    result = swapPairs(head)
+    actual_output = []
+    while result:
+        actual_output.append(result.val)
+        result = result.next
+
+    print(f""Input: {head_list}"")
+    print(f""Expected Output: {expected_output}"")
+    print(f""Actual Output: {actual_output}"")
+    print(f""Test Passed: {actual_output == expected_output}"")
+    print()
+
+# Example 1
+test_swapPairs([1, 2, 3, 4], [2, 1, 4, 3])
+
+# Example 2
+test_swapPairs([], [])
+
+# Example 3
+test_swapPairs([1], [1])","Input: [1, 2, 3, 4]
+Expected Output: [2, 1, 4, 3]
+Actual Output: [2, 1, 4, 3]
+Test Passed: True",1,0
+25,"class ListNode:
+    def __init__(self, val=0, next=None):
+        self.val = val
+        self.next = next
+
+
+def reverseKGroup(head: ListNode, k: int) -> ListNode:
+    dummy = ListNode(0, head)
+    groupPrev = dummy
+
+    while True:
+        kth = getKth(groupPrev, k)
+        if not kth:
+            break
+        groupNext = kth.next
+
+        # reverse group
+        prev, curr = kth.next, groupPrev.next
+        while curr != groupNext:
+            tmp = curr.next
+            curr.next = prev
+            prev = curr
+            curr = tmp
+
+        tmp = groupPrev.next
+        groupPrev.next = kth
+        groupPrev = tmp
+
+    return dummy.next
+
+
+def getKth(curr, k):
+    while curr and k > 0:
+        curr = curr.next
+        k -= 1
+    return curr
+
+
+def print_linked_list(head):
+    current = head
+    result = []
+    while current:
+        result.append(current.val)
+        current = current.next
+    return result
+
+# Example 1
+head1 = ListNode(1)
+head1.next = ListNode(2)
+head1.next.next = ListNode(3)
+head1.next.next.next = ListNode(4)
+head1.next.next.next.next = ListNode(5)
+k1 = 2
+reversed_head1 = reverseKGroup(head1, k1)
+output1 = print_linked_list(reversed_head1)
+
+# Example 2
+head2 = ListNode(1)
+head2.next = ListNode(2)
+head2.next.next = ListNode(3)
+head2.next.next.next = ListNode(4)
+head2.next.next.next.next = ListNode(5)
+k2 = 3
+reversed_head2 = reverseKGroup(head2, k2)
+output2 = print_linked_list(reversed_head2)
+
+# Example 3
+head3 = ListNode(1)
+head3.next = ListNode(2)
+head3.next.next = ListNode(3)
+head3.next.next.next = ListNode(4)
+head3.next.next.next.next = ListNode(5)
+k3 = 1
+reversed_head3 = reverseKGroup(head3, k3)
+output3 = print_linked_list(reversed_head3)
+
+# Example 4
+head4 = ListNode(1)
+k4 = 1
+reversed_head4 = reverseKGroup(head4, k4)
+output4 = print_linked_list(reversed_head4)
+
+# Check if the outputs are correct
+result1 = output1 == [2, 1, 4, 3, 5]
+result2 = output2 == [3, 2, 1, 4, 5]
+result3 = output3 == [1, 2, 3, 4, 5]
+result4 = output4 == [1]
+",,0,0

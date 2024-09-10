@@ -1,0 +1,572 @@
+ID,code,result,true_count,false_count
+1,"def twoSum(nums, target):
+    hashtable = {}
+    for i in range(len(nums)):
+        complement = target - nums[i]
+        if complement in hashtable:
+            return [hashtable[complement], i]
+        hashtable[nums[i]] = i
+    return None
+
+nums1 = [2,7,11,15]
+target1 = 9
+result1 = twoSum(nums1, target1)
+print(result1)
+
+nums2 = [3,2,4]
+target2 = 6
+result2 = twoSum(nums2, target2)
+print(result2)
+
+nums3 = [3,3]
+target3 = 6
+result3 = twoSum(nums3, target3)
+print(result3)","[0, 1]
+[1, 2]
+[0, 1]",0,0
+2,"class ListNode:
+    def __init__(self, val=0, next=None):
+        self.val = val
+        self.next = next
+
+def addTwoNumbers(l1, l2):
+    dummy = ListNode()
+    curr = dummy
+    carry = 0
+
+    while l1 or l2 or carry:
+        val1 = l1.val if l1 else 0
+        val2 = l2.val if l2 else 0
+        sum = val1 + val2 + carry
+        carry = sum // 10
+        curr.next = ListNode(sum % 10)
+
+        curr = curr.next
+        l1 = l1.next if l1 else None
+        l2 = l2.next if l2 else None
+
+    return dummy.next",,0,0
+3,"def length_of_longest_substring(s: str) -> int:
+    max_length = 0
+    start = 0
+    char_index_map = {}
+
+    for end in range(len(s)):
+        if s[end] in char_index_map and char_index_map[s[end]] >= start:
+            start = char_index_map[s[end]] + 1
+        char_index_map[s[end]] = end
+        max_length = max(max_length, end - start + 1)
+
+    return max_length",,0,0
+4,"def findMedianSortedArrays(nums1, nums2):
+    m, n = len(nums1), len(nums2)
+    p1, p2 = 0, 0
+    merged = []
+    while p1 < m and p2 < n:
+        if nums1[p1] < nums2[p2]:
+            merged.append(nums1[p1])
+            p1 += 1
+        else:
+            merged.append(nums2[p2])
+            p2 += 1
+    while p1 < m:
+        merged.append(nums1[p1])
+        p1 += 1
+    while p2 < n:
+        merged.append(nums2[p2])
+        p2 += 1
+    l = len(merged)
+    if l % 2 == 0:
+        return (merged[l // 2 - 1] + merged[l // 2]) / 2
+    else:
+        return merged[l // 2]
+
+# Example 1
+nums1 = [1, 3]
+nums2 = [2]
+result = findMedianSortedArrays(nums1, nums2)
+print(result)
+
+# Example 2
+nums1 = [1, 2]
+nums2 = [3, 4]
+result = findMedianSortedArrays(nums1, nums2)
+print(result)
+
+# Example 3
+nums1 = [0, 0]
+nums2 = [0, 0]
+result = findMedianSortedArrays(nums1, nums2)
+print(result)
+
+# Example 4
+nums1 = []
+nums2 = [1]
+result = findMedianSortedArrays(nums1, nums2)
+print(result)
+
+# Example 5
+nums1 = [2]
+nums2 = []
+result = findMedianSortedArrays(nums1, nums2)
+print(result)","2
+2.5
+0.0
+1
+2",0,0
+5,"def longestPalindrome(s: str) -> str:
+    if not s:
+        return """"
+    n = len(s)
+    dp = [[False] * n for _ in range(n)]
+    start = 0
+    maxLen = 1
+    for i in range(n - 1, -1, -1):
+        dp[i][i] = True
+        for j in range(i + 1, n):
+            if s[i] == s[j] and (j - i <= 2 or dp[i + 1][j - 1]):
+                dp[i][j] = True
+                if j - i + 1 > maxLen:
+                    maxLen = j - i + 1
+                    start = i
+    return s[start:start + maxLen]",,0,0
+6,"def convert(s: str, numRows: int) -> str:
+    if numRows == 1 or numRows >= len(s):
+        return s
+    rows = [[] for _ in range(numRows)]
+    row, col = 0, 0
+    direction = 1
+    for char in s:
+        rows[row].append(char)
+        if row == 0:
+            direction = 1
+        elif row == numRows - 1:
+            direction = -1
+        row += direction
+    return ''.join([''.join(row) for row in rows])",,0,0
+7,"def reverse(x: int) -> int:
+    rev = 0
+    sign = 1
+    if x < 0:
+        sign = -1
+        x = -x
+    while x > 0:
+        rev = rev * 10 + x % 10
+        x //= 10
+    if rev > 2**31 - 1 or rev < -2**31:
+        return 0
+    return rev * sign",,0,0
+8,"def myAtoi(s: str) -> int:
+  s = s.lstrip()
+  if not s:
+    return 0
+  sign = -1 if s[0] == '-' else 1
+  if s[0] in ('-', '+'):
+    s = s[1:]
+  i = 0
+  num = 0
+  while i < len(s) and s[i].isdigit():
+    num = num * 10 + ord(s[i]) - ord('0')
+    i += 1
+  num *= sign
+  if num < -2**31:
+    return -2**31
+  if num > 2**31 - 1:
+    return 2**31 - 1
+  return num",,0,0
+9,"def isPalindrome(x: int) -> bool:
+  """"""Given an integer `x`, return `true` if `x` is palindrome integer.
+
+  An integer is a palindrome when it reads the same backward as forward. For example, `121` is palindrome while `123` is not.
+
+  Example 1:
+  Input: x = 121
+  Output: true
+
+  Example 2:
+  Input: x = -121
+  Output: false
+  Explanation: From left to right, it reads -121. From right to left, it becomes 121-. Therefore it is not a palindrome.
+
+
+  Example 3:
+  Input: x = 10
+  Output: false
+  Explanation: Reads 01 from right to left. Therefore it is not a palindrome.
+
+
+  Example 4:
+  Input: x = -101
+  Output: false
+
+  Constraints:
+  `-231 <= x <= 231 - 1`
+  Follow up: Could you solve it without converting the integer to a string?
+  """"""
+  if x < 0:
+    return False
+
+  rev = 0
+  num = x
+  while num > 0:
+    rev = rev * 10 + num % 10
+    num //= 10
+
+  return x == rev",,0,0
+10,"def isMatch(s, p):
+    m, n = len(s), len(p)
+    dp = [[False] * (n + 1) for _ in range(m + 1)]
+    dp[0][0] = True
+    for j in range(1, n + 1):
+        if p[j - 1] == '*':
+            dp[0][j] = dp[0][j - 2]
+    for i in range(1, m + 1):
+        for j in range(1, n + 1):
+            if s[i - 1] == p[j - 1] or p[j - 1] == '.':
+                dp[i][j] = dp[i - 1][j - 1]
+            elif p[j - 1] == '*':
+                dp[i][j] = dp[i][j - 2] or (dp[i - 1][j] and (s[i - 1] == p[j - 2] or p[j - 2] == '.'))
+    return dp[m][n]
+
+s = ""aa""
+p = ""a""
+print(isMatch(s, p))
+s = ""aa""
+p = ""a*""
+print(isMatch(s, p))
+s = ""ab""
+p = "".*""
+print(isMatch(s, p))
+s = ""aab""
+p = ""c*a*b""
+print(isMatch(s, p))
+s = ""mississippi""
+p = ""mis*is*p*.""","False
+True
+True
+True",3,1
+11,"def maxArea(height):
+    max_area = 0
+    left = 0
+    right = len(height) - 1
+    while left < right:
+        max_area = max(max_area, (right - left) * min(height[left], height[right]))
+        if height[left] < height[right]:
+            left += 1
+        else:
+            right -= 1
+    return max_area",,0,0
+12,"def int_to_roman(num):
+  values = [1000, 900, 500, 400, 100, 90, 50, 40, 10, 9, 5, 4, 1]
+  roman_values = ['M', 'CM', 'D', 'CD', 'C', 'XC', 'L', 'XL', 'X', 'IX', 'V', 'IV', 'I']
+  roman_num = ''
+  i = 0
+  while num > 0:
+    for _ in range(num // values[i]):
+      roman_num += roman_values[i]
+      num -= values[i]
+    i += 1
+  return roman_num
+
+# Example 1
+num1 = 3
+result1 = int_to_roman(num1)
+print(f""Input: num = {num1}"")
+print(f""Output: {result1}"")
+
+# Example 2
+num2 = 4
+result2 = int_to_roman(num2)
+print(f""Input: num = {num2}"")
+print(f""Output: {result2}"")
+
+# Example 3
+num3 = 9
+result3 = int_to_roman(num3)
+print(f""Input: num = {num3}"")
+print(f""Output: {result3}"")","Input: num = 3
+Output: III
+Input: num = 4
+Output: IV
+Input: num = 9
+Output: IX",0,0
+13,"def roman_to_int(s: str) -> int:
+  """"""Converts a Roman numeral to an integer.
+
+  Args:
+    s (str): The Roman numeral to convert.
+
+  Returns:
+    int: The integer value of the Roman numeral.
+  """"""
+  roman_numerals = {
+      'I': 1,
+      'V': 5,
+      'X': 10,
+      'L': 50,
+      'C': 100,
+      'D': 500,
+      'M': 1000,
+  }
+
+  result = 0
+  for i in range(len(s)):
+    if i > 0 and roman_numerals[s[i]] > roman_numerals[s[i - 1]]:
+      result += roman_numerals[s[i]] - 2 * roman_numerals[s[i - 1]]
+    else:
+      result += roman_numerals[s[i]]
+  return result
+
+
+# Example 1
+s = ""III""
+print(roman_to_int(s))
+
+# Example 2
+s = ""IV""
+print(roman_to_int(s))
+
+# Example 3
+s = ""IX""
+print(roman_to_int(s))
+
+# Example 4
+s = ""LVIII""
+print(roman_to_int(s))
+
+# Example 5
+s = ""MCMXCIV""
+print(roman_to_int(s))","3
+4
+9
+58
+1994",0,0
+14,"def longestCommonPrefix(strs):
+    if not strs:
+        return """"
+    shortest_str = min(strs, key=len)
+    for i, char in enumerate(shortest_str):
+        for other_str in strs:
+            if other_str[i] != char:
+                return shortest_str[:i]
+    return shortest_str
+
+strs1 = [""flower"",""flow"",""flight""]
+print(longestCommonPrefix(strs1))
+
+strs2 = [""dog"",""racecar"",""car""]
+print(longestCommonPrefix(strs2))",fl,0,0
+15,"def threeSum(nums):
+    nums.sort()
+    result = []
+    for i, a in enumerate(nums):
+        if i > 0 and a == nums[i - 1]:
+            continue
+        l, r = i + 1, len(nums) - 1
+        while l < r:
+            s = a + nums[l] + nums[r]
+            if s > 0:
+                r -= 1
+            elif s < 0:
+                l += 1
+            else:
+                result.append([a, nums[l], nums[r]])
+                l += 1
+                while nums[l] == nums[l - 1] and l < r:
+                    l += 1
+    return result",,0,0
+16,"def threeSumClosest(nums, target):
+    nums.sort()
+    n = len(nums)
+    closest_sum = float('inf')
+    for i in range(n-2):
+        if i > 0 and nums[i] == nums[i-1]:
+            continue
+        l, r = i+1, n-1
+        while l < r:
+            current_sum = nums[i] + nums[l] + nums[r]
+            if abs(current_sum - target) < abs(closest_sum - target):
+                closest_sum = current_sum
+            if current_sum < target:
+                l += 1
+            else:
+                r -= 1
+    return closest_sum",,0,0
+17,"def letterCombinations(digits):
+    if not digits:
+        return []
+    mapping = {
+        '2': 'abc',
+        '3': 'def',
+        '4': 'ghi',
+        '5': 'jkl',
+        '6': 'mno',
+        '7': 'pqrs',
+        '8': 'tuv',
+        '9': 'wxyz'
+    }
+    result = []
+    def backtrack(index, path):
+        if index == len(digits):
+            result.append(path)
+            return
+        for letter in mapping[digits[index]]:
+            backtrack(index + 1, path + letter)
+    backtrack(0, '')
+    return result",,0,0
+18,"def fourSum(nums, target):
+    nums.sort()
+    result = []
+    for i in range(len(nums) - 3):
+        if i > 0 and nums[i] == nums[i - 1]:
+            continue
+        for j in range(i + 1, len(nums) - 2):
+            if j > i + 1 and nums[j] == nums[j - 1]:
+                continue
+            left, right = j + 1, len(nums) - 1
+            while left < right:
+                quad_sum = nums[i] + nums[j] + nums[left] + nums[right]
+                if quad_sum == target:
+                    result.append([nums[i], nums[j], nums[left], nums[right]])
+                    while left < right and nums[left] == nums[left + 1]:
+                        left += 1
+                    while left < right and nums[right] == nums[right - 1]:
+                        right -= 1
+                    left += 1
+                    right -= 1
+                elif quad_sum < target:
+                    left += 1
+                else:
+                    right -= 1
+    return result
+
+nums = [1,0,-1,0,-2,2]
+target = 0
+print(fourSum(nums, target))","[[-2, -1, 1, 2], [-2, 0, 0, 2], [-1, 0, 0, 1]]",0,0
+19,"def removeNthFromEnd(head, n):
+    dummy = ListNode(0, head)
+    left = dummy
+    right = head
+    while n > 0 and right:
+        right = right.next
+        n -= 1
+    while right:
+        left = left.next
+        right = right.next
+    left.next = left.next.next
+    return dummy.next",,0,0
+20,"def is_valid(s: str) -> bool:
+    stack = []
+    mapping = {')': '(', '}': '{', ']': '['}
+
+    for char in s:
+        if char in mapping:
+            top_element = stack.pop() if stack else '#'
+            if mapping[char] != top_element:
+                return False
+        else:
+            stack.append(char)
+
+    return not stack
+
+
+input1 = ""()""
+output1 = is_valid(input1)
+print(output1)
+
+input2 = ""()[]{}""
+output2 = is_valid(input2)
+print(output2)
+
+input3 = ""(]""
+output3 = is_valid(input3)
+print(output3)","True
+True
+False",2,1
+21,"def mergeTwoLists(l1, l2):
+    if not l1 or not l2:
+        return l1 or l2
+    if l1.val < l2.val:
+        l1.next = mergeTwoLists(l1.next, l2)
+        return l1
+    else:
+        l2.next = mergeTwoLists(l1, l2.next)
+        return l2",,0,0
+22,argument of type 'NoneType' is not iterable,ERROR,ERROR,ERROR
+23,"from typing import List, Optional
+
+
+class ListNode:
+    def __init__(self, val=0, next=None):
+        self.val = val
+        self.next = next
+
+
+def mergeKLists(lists: List[Optional[ListNode]]) -> Optional[ListNode]:
+    if not lists or len(lists) == 0:
+        return None
+
+    # Create a dummy node to point to the head of the merged list
+    dummy = ListNode()
+    curr = dummy
+
+    # Create a heap to store the heads of the linked lists
+    import heapq
+    heap = []
+    for node in lists:
+        if node:
+            heapq.heappush(heap, (node.val, node))
+
+    # Merge the linked lists until the heap is empty
+    while heap:
+        # Get the node with the smallest value from the heap
+        val, node = heapq.heappop(heap)
+
+        # Add the node to the merged list
+        curr.next = node
+        curr = curr.next
+
+        # If the node has a next node, add it to the heap
+        if node.next:
+            heapq.heappush(heap, (node.next.val, node.next))
+
+    # Return the head of the merged list
+    return dummy.next",,0,0
+24,"def swapPairs(head):
+    if not head or not head.next:
+        return head
+    dummy = ListNode(0)
+    dummy.next = head
+    prev = dummy
+    while head and head.next:
+        nxt = head.next
+        head.next = nxt.next
+        nxt.next = head
+        prev.next = nxt
+        prev = head
+        head = head.next
+    return dummy.next",,0,0
+25,"def reverseKGroup(head, k):
+    dummy = ListNode(0)
+    dummy.next = head
+    prev = dummy
+    curr = head
+    next = None
+    count = 0
+    while curr:
+        count += 1
+        next = curr.next
+        if count == k:
+            prev = reverse(prev, curr.next)
+            curr = next
+            count = 0
+    return dummy.next
+def reverse(prev, next):
+    last = prev.next
+    curr = last.next
+    while curr != next:
+        last.next = curr.next
+        curr.next = prev.next
+        prev.next = curr
+        curr = last.next
+    return last",,0,0

@@ -1,0 +1,1 @@
+def removeNthFromEnd(head, n):\n    dummy = ListNode(0)\n    dummy.next = head\n    first = dummy\n    second = dummy\n    for i in range(n+1):\n        first = first.next\n    while first is not None:\n        first = first.next\n        second = second.next\n    second.next = second.next.next\n    return dummy.next

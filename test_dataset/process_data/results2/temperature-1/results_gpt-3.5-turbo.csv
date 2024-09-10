@@ -1,0 +1,460 @@
+ID,code,result,true_count,false_count
+1,"def two_sum(nums, target):\n    seen = {}\n    for i, num in enumerate(nums):\n        complement = target - num\n        if complement in seen:\n            return [seen[complement], i]\n        seen[num] = i\n    return []\n\n# Test Cases\nnums1 = [2, 7, 11, 15]\ntarget1 = 9\noutput1 = [0, 1]\nprint(two_sum(nums1, target1) == output1)\nnums2 = [3, 2, 4]\ntarget2 = 6\noutput2 = [1, 2]\nprint(two_sum(nums2, target2) == output2)\nnums3 = [3, 3]\ntarget3 = 6\noutput3 = [0, 1]\nprint(two_sum(nums3, target3) == output3)",,0,0
+2,"def addTwoNumbers(l1, l2):
+    dummy = ListNode()
+    current = dummy
+    carry = 0
+    while l1 or l2 or carry:
+        sum_val = carry
+        if l1:
+            sum_val += l1.val
+            l1 = l1.next
+        if l2:
+            sum_val += l2.val
+            l2 = l2.next
+        carry, val = divmod(sum_val, 10)
+        current.next = ListNode(val)
+        current = current.next
+    return dummy.next
+",,0,0
+3,"def lengthOfLongestSubstring(s):
+    start = 0
+    max_length = 0
+    used_chars = {}
+
+    for i in range(len(s)):
+        if s[i] in used_chars and start <= used_chars[s[i]]:
+            start = used_chars[s[i]] + 1
+        else:
+            max_length = max(max_length, i - start + 1)
+
+        used_chars[s[i]] = i
+
+    return max_length
+
+# Test cases
+print(lengthOfLongestSubstring('abcabcbb') == 3)
+print(lengthOfLongestSubstring('bbbbb') == 1)
+print(lengthOfLongestSubstring('pwwkew') == 3)","True
+True
+True",3,0
+4,"Code a solution in Python for the given problem. The solution should handle example inputs and verify if each output matches the expected result. Print for each input the value `True` if the output is correct for that input, otherwise `False`. Return the solution as a Python program.",,0,0
+5,"def longestPalindrome(s):
+    def expand_around_center(left, right):
+        while left >= 0 and right < len(s) and s[left] == s[right]:
+            left -= 1
+            right += 1
+        return s[left+1:right]
+
+    if len(s) < 1:
+        return """"
+
+    longest_palindrome = """"
+    for i in range(len(s)):
+        # for odd case
+        palindrome1 = expand_around_center(i, i)
+        # for even case
+        palindrome2 = expand_around_center(i, i + 1)
+
+        if len(palindrome1) > len(longest_palindrome):
+            longest_palindrome = palindrome1
+        if len(palindrome2) > len(longest_palindrome):
+            longest_palindrome = palindrome2
+
+    return longest_palindrome
+
+# Example Inputs
+print(longestPalindrome(""babad""))
+print(longestPalindrome(""cbbd""))
+print(longestPalindrome(""a""))
+print(longestPalindrome(""ac""))","bab
+bb
+a
+a",0,0
+6,"def convert(s, numRows):
+    if numRows == 1 or numRows >= len(s):
+        return s
+    rows = [''] * numRows
+    index, step = 0, 1
+    for c in s:
+        rows[index] += c
+        if index == 0:
+            step = 1
+        elif index == numRows - 1:
+            step = -1
+        index += step
+    return ''.join(rows)
+
+# Test Cases
+print(convert('PAYPALISHIRING', 3) == 'PAHNAPLSIIGYIR')
+print(convert('PAYPALISHIRING', 4) == 'PINALSIGYAHRPI')
+print(convert('A', 1) == 'A')","True
+True
+True",3,0
+7,"def reverse_integer(x):
+    if x < 0:
+        sign = -1
+        x = -x
+    else:
+        sign = 1
+    reversed_x = 0
+    while x != 0:
+        digit = x % 10
+        x = x // 10
+        reversed_x = reversed_x * 10 + digit
+    reversed_x *= sign
+    if reversed_x < -2**31 or reversed_x > 2**31 - 1:
+        return 0
+    return reversed_x
+
+# Test cases
+print(reverse_integer(123) == 321)
+print(reverse_integer(-123) == -321)
+print(reverse_integer(120) == 21)
+print(reverse_integer(0) == 0)","True
+True
+True
+True",4,0
+8,"def myAtoi(s: str) -> int:
+    s = s.strip()
+    if not s:
+        return 0
+    sign = 1
+    i = 0
+    if s[0] == '-':
+        sign = -1
+        i = 1
+    elif s[0] == '+':
+        i = 1
+    result = 0
+    while i < len(s) and s[i].isdigit():
+        result = result * 10 + int(s[i])
+        i += 1
+    result = max(-2**31, min(sign * result, 2**31 - 1))
+    return result
+
+# Test cases
+print(myAtoi(""42"") == 42)
+print(myAtoi(""   -42"") == -42)
+print(myAtoi(""4193 with words"") == 4193)
+","True
+True
+True",3,0
+9,"def isPalindrome(x):
+    if x < 0:
+        return False
+    temp = x
+    reverse_num = 0
+    while x > 0:
+        digit = x % 10
+        reverse_num = reverse_num * 10 + digit
+        x = x // 10
+    return temp == reverse_num
+
+# Test cases
+print(isPalindrome(121) == True)
+print(isPalindrome(-121) == False)
+print(isPalindrome(10) == False)","True
+True
+True",3,0
+10,"def isMatch(s, p):
+    dp = [[False] * (len(p) + 1) for _ in range(len(s) + 1)]
+    dp[0][0] = True
+    for i in range(1, len(p) + 1):
+        if p[i - 1] == '*':
+            dp[0][i] = dp[0][i - 2]
+    for i in range(1, len(s) + 1):
+        for j in range(1, len(p) + 1):
+            if p[j - 1] == s[i - 1] or p[j - 1] == '.':
+                dp[i][j] = dp[i - 1][j - 1]
+            elif p[j - 1] == '*':
+                dp[i][j] = dp[i][j - 2] or (dp[i - 1][j] and (s[i - 1] == p[j - 2] or p[j - 2] == '.'))
+    return dp[len(s)][len(p)]
+
+# Example inputs
+print(isMatch(""aa"", ""a"")) # Output should be False
+print(isMatch(""aa"", ""a*"")) # Output should be True
+print(isMatch(""ab"", "".*"")) # Output should be True","False
+True
+True",2,1
+11,"def max_area(height):
+    max_area = 0
+    left = 0
+    right = len(height) - 1
+    while left < right:
+        max_area = max(max_area, min(height[left], height[right]) * (right - left))
+        if height[left] < height[right]:
+            left += 1
+        else:
+            right -= 1
+    return max_area
+
+# Test Cases
+print(max_area([1,8,6,2,5,4,8,3,7]) == 49)
+print(max_area([1,1]) == 1)
+print(max_area([4,3,2,1,4]) == 16)","True
+True
+True",3,0
+12,"def int_to_roman(num):
+    val = [1000, 900, 500, 400, 100, 90, 50, 40, 10, 9, 5, 4, 1]
+    syms = ['M', 'CM', 'D', 'CD', 'C', 'XC', 'L', 'XL', 'X', 'IX', 'V', 'IV', 'I']
+    roman_num = ''
+    i = 0
+    while num > 0:
+        for _ in range(num // val[i]):
+            roman_num += syms[i]
+            num -= val[i]
+        i += 1
+    return roman_num
+
+# Test cases
+print(int_to_roman(3) == 'III')
+print(int_to_roman(4) == 'IV')
+print(int_to_roman(9) == 'IX')","True
+True
+True",3,0
+13,"def romanToInt(s: str) -> int:
+    roman_values = {
+        'I': 1,
+        'V': 5,
+        'X': 10,
+        'L': 50,
+        'C': 100,
+        'D': 500,
+        'M': 1000
+    }
+    result = 0
+    prev_value = 0
+    for c in s:
+        curr_value = roman_values[c]
+        result += curr_value
+        if curr_value > prev_value:
+            result -= 2 * prev_value
+        prev_value = curr_value
+    return result
+
+# Test cases
+print(romanToInt(""III"") == 3)
+print(romanToInt(""IV"") == 4)
+print(romanToInt(""IX"") == 9)","True
+True
+True",3,0
+14,"def longestCommonPrefix(strs):
+    if not strs:
+        return """"
+    min_len = min([len(s) for s in strs])
+    prefix = """"
+    for i in range(min_len):
+        char = strs[0][i]
+        if all(s[i] == char for s in strs):
+            prefix += char
+        else:
+            break
+    return prefix
+
+# Test the solution with example inputs
+input1 = [""flower"",""flow"",""flight""]
+output1 = longestCommonPrefix(input1)
+print(output1 == ""fl"")
+
+input2 = [""dog"",""racecar"",""car""]
+output2 = longestCommonPrefix(input2)
+print(output2 == """")
+","True
+True",2,0
+15,"def threeSum(nums):
+    nums.sort()
+    res = []
+    for i in range(len(nums)-2):
+        if i > 0 and nums[i] == nums[i-1]:
+            continue
+        l, r = i+1, len(nums)-1
+        while l < r:
+            total = nums[i] + nums[l] + nums[r]
+            if total < 0:
+                l += 1
+            elif total > 0:
+                r -= 1
+            else:
+                res.append([nums[i], nums[l], nums[r]])
+                while l < r and nums[l] == nums[l+1]:
+                    l += 1
+                while l < r and nums[r] == nums[r-1]:
+                    r -= 1
+                l += 1
+                r -= 1
+    return res
+
+# Test Cases
+print(threeSum([-1,0,1,2,-1,-4]) == [[-1, -1, 2], [-1, 0, 1]])
+print(threeSum([]) == [])
+print(threeSum([0]) == [])","True
+True
+True",3,0
+16,"def threeSumClosest(nums, target):
+    nums.sort()
+    closest_sum = float('inf')
+    for i in range(len(nums)-2):
+        start = i + 1
+        end = len(nums) - 1
+        while start < end:
+            current_sum = nums[i] + nums[start] + nums[end]
+            if current_sum == target:
+                return target
+            if abs(target - current_sum) < abs(target - closest_sum):
+                closest_sum = current_sum
+            if current_sum < target:
+                start += 1
+            else:
+                end -= 1
+    return closest_sum
+
+# Test the solution with example inputs
+print(threeSumClosest([-1, 2, 1, -4], 1) == 2)
+print(threeSumClosest([1, 2, 3, 4, 5], 100) == 12)
+print(threeSumClosest([0, 0, 0], 1) == 0)","True
+True
+True",3,0
+17,"def letter_combinations(digits):
+    if not digits:
+        return []
+    mapping = {
+        '2': 'abc',
+        '3': 'def',
+        '4': 'ghi',
+        '5': 'jkl',
+        '6': 'mno',
+        '7': 'pqrs',
+        '8': 'tuv',
+        '9': 'wxyz'
+    }
+    result = ['']
+    for digit in digits:
+        new_result = []
+        for char in mapping[digit]:
+            for word in result:
+                new_result.append(word + char)
+        result = new_result
+    return result
+
+# Test Cases
+print(letter_combinations('23') == ['ad','ae','af','bd','be','bf','cd','ce','cf'])
+print(letter_combinations('') == [])
+print(letter_combinations('2') == ['a', 'b', 'c'])","False
+True
+True",2,1
+18,"def fourSum(nums, target):
+    nums.sort()
+    result = []
+    n = len(nums)
+    for i in range(n-3):
+        if i > 0 and nums[i] == nums[i-1]:
+            continue
+        for j in range(i+1, n-2):
+            if j > i+1 and nums[j] == nums[j-1]:
+                continue
+            left = j + 1
+            right = n - 1
+            while left < right:
+                total = nums[i] + nums[j] + nums[left] + nums[right]
+                if total == target:
+                    result.append([nums[i], nums[j], nums[left], nums[right]])
+                    while left < right and nums[left] == nums[left+1]:
+                        left += 1
+                    while left < right and nums[right] == nums[right-1]:
+                        right -= 1
+                    left += 1
+                    right -= 1
+                elif total < target:
+                    left += 1
+                else:
+                    right -= 1
+    return result
+
+# Test the solution with example inputs
+input_1 = [1, 0, -1, 0, -2, 2]
+output_1 = [[-2, -1, 1, 2], [-2, 0, 0, 2], [-1, 0, 0, 1]]
+print(fourSum(input_1, 0) == output_1)
+
+input_2 = []
+output_2 = []
+print(fourSum(input_2, 0) == output_2)","True
+True",2,0
+19,"def removeNthFromEnd(head, n):\n    dummy = ListNode(0)\n    dummy.next = head\n    first = dummy\n    second = dummy\n    for i in range(n+1):\n        first = first.next\n    while first is not None:\n        first = first.next\n        second = second.next\n    second.next = second.next.next\n    return dummy.next",,0,0
+20,"def isValid(s):
+    stack = []
+    mapping = {')': '(', '}': '{', ']': '['}
+    for char in s:
+        if char in mapping:
+            top_element = stack.pop() if stack else '#'
+            if mapping[char] != top_element:
+                return False
+        else:
+            stack.append(char)
+    return not stack
+
+# Test cases
+print(isValid('()') == True)
+print(isValid('()[]{}') == True)
+print(isValid('(]') == False)
+print(isValid('([)]') == False)
+print(isValid('{[]}') == True)","True
+True
+True
+True
+True",5,0
+21,"def mergeTwoLists(l1, l2):
+    if not l1:
+        return l2
+    if not l2:
+        return l1
+    if l1.val < l2.val:
+        l1.next = mergeTwoLists(l1.next, l2)
+        return l1
+    else:
+        l2.next = mergeTwoLists(l1, l2.next)
+        return l2",,0,0
+22,"def generateParenthesis(n):
+    def backtrack(S='', left=0, right=0):
+        if len(S) == 2*n:
+            output.append(S)
+            return
+        if left < n:
+            backtrack(S+'(', left+1, right)
+        if right < left:
+            backtrack(S+')', left, right+1)
+    output = []
+    backtrack()
+    return output
+
+# Test the function with example inputs
+print(generateParenthesis(3) == ['((()))', '(()())', '(())()', '()(())', '()()()'])
+print(generateParenthesis(1) == ['()'])","True
+True",2,0
+23,"def mergeKLists(self, lists: List[ListNode]) -> ListNode:
+    import heapq
+    heap = []
+    for l in lists:
+        while l:
+            heapq.heappush(heap, l.val)
+            l = l.next
+    dummy = ListNode(0)
+    curr = dummy
+    while heap:
+        curr.next = ListNode(heapq.heappop(heap))
+        curr = curr.next
+    return dummy.next",,0,0
+24,"def swapPairs(head):
+    dummy = ListNode(0)
+    dummy.next = head
+    curr = dummy
+    while curr.next and curr.next.next:
+        first = curr.next
+        second = curr.next.next
+        first.next = second.next
+        curr.next = second
+        curr.next.next = first
+        curr = curr.next.next
+    return dummy.next
+",,0,0
+25,Code a solution in Python for the given problem. The solution should handle example inputs and verify if each output matches the expected result. Print for each input the value `True` if the output is correct for that input. Otherwise `False`. Return the solution as a Python program.,,0,0
