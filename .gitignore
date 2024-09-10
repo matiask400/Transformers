@@ -1,5 +1,29 @@
-# Files that should be ignored by git
+# Python-generated files and directories
 __pycache__/
+*.pyc
+*.pyo
+*.pyd
+
+# Virtual environment
+venv/
+env/
+*.env
+
+# IDE configuration files (e.g., PyCharm, VSCode)
+.idea/
+.vscode/
+*.sublime-workspace
+*.sublime-project
+
+# Drafts and temporary files
+drafts/
 k
-# Generated files
-**/.~lock.historial_conversacion_20240604_14.docx#
+*.tmp
+*.swp
+
+# Generated document files
+*.docx
+*.pdf
+
+# Editor lock files
+*~lock.historial_conversacion_*.docx
