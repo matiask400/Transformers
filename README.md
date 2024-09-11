@@ -1,9 +1,9 @@
 # Transformers
 
-## Language Model Evaluation
+## Large Language Model Evaluation
 
 ## Project Description
-This project aims to evaluate the performance of different language models through a series of standardized tests. Using a Python program executed in IPython, we assess the models' ability to solve problems from "Problem Set 4," experimenting with different temperature settings to observe their impact on the generated results.
+This project aims to evaluate the performance of different large language models through a series of standardized tests. Using a Python program executed in IPython, we assess the models' ability to solve problems from "Problem Set 4," experimenting with different temperature settings to observe their impact on the generated results.
 
 ## Technologies Used
 - **Language**: Python
@@ -25,14 +25,13 @@ The code is available on GitHub [here](https://github.com/matiask400/Transformer
 
 ## Models Used
 - **Models**:
-  - Gemini 1.0 pro 
-  - Gemini 1.5 pro
-  - Gemini  1.5 flash
+  - Gemini 1.0 Pro 
+  - Gemini 1.5 Pro
+  - Gemini 1.5 Flash
   - GPT 3.5-turbo
   - GPT 4.0-turbo
   - GPT-4o 
   - GPT 4o-mini
-
 
 ## Execution Configuration
 - **Temperatures tested**:
@@ -55,11 +54,11 @@ The code is available on GitHub [here](https://github.com/matiask400/Transformer
 ## Main Executable Notebook
 The primary notebook responsible for executing the program is located at:
 /Transformers/test_dataset/process_data/Solve_Extract_V2.ipynb
-To run the program, navigate to the directory and execute the notebook using IPython or Jupyter Notebook.
+To run the program, navigate to the directory and execute the notebook.
 
 ## Generated Files
 - **Results CSV**: Contains the count of "True" and "False" responses along with execution details.
 - **Python Code**: Contains the code used for the evaluation.
 
 ## Conclusions
-This project offers a detailed comparison of language models under different temperature configurations, highlighting how these variables affect the models' ability to solve these problems.
+This project offers a detailed comparison of large language models under different temperature configurations, highlighting how these variables affect the models' ability to solve these problems.
