@@ -60,5 +60,3 @@ To run the program, navigate to the directory and execute the notebook.
 - **Results CSV**: Contains the count of "True" and "False" responses along with execution details.
 - **Python Code**: Contains the code used for the evaluation.
 
-## Conclusions
-This project offers a detailed comparison of large language models under different temperature configurations, highlighting how these variables affect the models' ability to solve these problems.
