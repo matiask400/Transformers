@@ -2,7 +2,7 @@ import csv
 
 # Nombre del archivo de entrada y salida
 input_filename = "leetcode_problems.csv"
-output_filename = "leetcode_problems_data.csv"
+output_filename = "leetcode_problems_processed_data.csv"
 
 # Lista para almacenar los problemas en formato de diccionario
 problems = []
