@@ -1,0 +1,12 @@
+En python en el archivo cristales.py mostro dos veces la misma estructura minima para la entrada
+6 6 3
+1 1 3 3 1 1 3 2 2
+0 2 6 3 1 1 3 2 2 6 4 5 3 4 2
+1 -1 4 1 3 2 4 3 5 4 6
+Mientras que en cristales.c++ mostro una solucion valida nomas para la max y la min no valida segun la prueba otorgada 
+6 6 3
+1 1 3 3 1 1 3 2 2
+0 2 6 3 1 1 3 2 2 6 4 5 3 4 2
+1 -1 4 1 3 2 4 3 5 4 6
+
+Ambos mosttrarin una conclucion valida diferente
