@@ -1,0 +1,1 @@
+Sure, I'd be happy to help! However, it seems like the problem statement or the SQL schema details are missing. Could you please provide the complete problem description and the SQL schema you're referring to? This will help me create the appropriate Python function to solve the problem and run the necessary tests.

@@ -1,0 +1,2963 @@
+ID,Title,Description,Difficulty,Premium,Solution Link,Acceptance Rate,Frequency,URL,Discuss Count,Accepted,Submissions,Companies,Related Topics,Likes,Dislikes,Rating,Asked by FAANG,Similar Questions
+762,Prime Number of Set Bits in Binary Representation,"Given two integers `L` and `R`, find the count of numbers in the range `[L, R]` (inclusive) having a prime number of set bits in their binary representation.
+
+(Recall that the number of set bits an integer has is the number of `1`s present when written in binary.  For example, `21` written in binary is `10101` which has 3 set bits.  Also, 1 is not a prime.)
+
+Example 1:Input: L = 6, R = 10
+Output: 4
+Explanation:
+6 -> 110 (2 set bits, 2 is prime)
+7 -> 111 (3 set bits, 3 is prime)
+9 -> 1001 (2 set bits , 2 is prime)
+10->1010 (2 set bits , 2 is prime)
+
+Example 2:Input: L = 10, R = 15
+Output: 5
+Explanation:
+10 -> 1010 (2 set bits, 2 is prime)
+11 -> 1011 (3 set bits, 3 is prime)
+12 -> 1100 (2 set bits, 2 is prime)
+13 -> 1101 (3 set bits, 3 is prime)
+14 -> 1110 (3 set bits, 3 is prime)
+15 -> 1111 (4 set bits, 4 is not prime)
+Note:
+`L, R` will be integers `L <= R` in the range `[1, 10^6]`.
+
+`R - L` will be at most 10000.",0,Easy,/articles/prime-number-of-set-bits-in-binary-representation,64.6,2.3,https://leetcode.com/problems/prime-number-of-set-bits-in-binary-representation,336,54.1K,83.8K,Amazon,Bit Manipulation,314,398,44,1,"[Number of 1 Bits, /problems/number-of-1-bits/, Easy]"
+1015,Smallest Integer Divisible by K,"Given a positive integer `K`, you need to find the length of the smallest positive integer `N` such that `N` is divisible by `K`, and `N` only contains the digit `1`.
+
+Return the length of `N`. If there is no such `N`, return -1.
+
+Note: `N` may not fit in a 64-bit signed integer.
+
+
+Example 1:
+Input: K = 1
+Output: 1
+Explanation: The smallest answer is N = 1, which has length 1.
+
+
+Example 2:
+Input: K = 2
+Output: -1
+Explanation: There is no such positive integer N divisible by 2.
+
+
+Example 3:
+Input: K = 3
+Output: 3
+Explanation: The smallest answer is N = 111, which has length 3.
+
+
+Constraints:
+`1 <= K <= 105`",0,Medium,/articles/smallest-integer-divisible-by-k,41.9,0.0,https://leetcode.com/problems/smallest-integer-divisible-by-k,182,27.4K,65.4K,Google,Math,365,386,49,1,
+1754,Largest Merge Of Two Strings,"You are given two strings `word1` and `word2`. You want to construct a string `merge` in the following way: while either `word1` or `word2` are non-empty, choose one of the following options:
+If `word1` is non-empty, append the first character in `word1` to `merge` and delete it from `word1`.
+
+	
+For example, if `word1 = ""abc"" `and `merge = ""dv""`, then after choosing this operation, `word1 = ""bc""` and `merge = ""dva""`.
+
+If `word2` is non-empty, append the first character in `word2` to `merge` and delete it from `word2`.
+
+	
+For example, if `word2 = ""abc"" `and `merge = """"`, then after choosing this operation, `word2 = ""bc""` and `merge = ""a""`.
+
+Return the lexicographically largest `merge` you can construct.
+
+A string `a` is lexicographically larger than a string `b` (of the same length) if in the first position where `a` and `b` differ, `a` has a character strictly larger than the corresponding character in `b`. For example, `""abcd""` is lexicographically larger than `""abcc""` because the first position they differ is at the fourth character, and `d` is greater than `c`.
+
+
+Example 1:
+Input: word1 = ""cabaa"", word2 = ""bcaaa""
+Output: ""cbcabaaaaa""
+Explanation: One way to get the lexicographically largest merge is:
+- Take from word1: merge = ""c"", word1 = ""abaa"", word2 = ""bcaaa""
+- Take from word2: merge = ""cb"", word1 = ""abaa"", word2 = ""caaa""
+- Take from word2: merge = ""cbc"", word1 = ""abaa"", word2 = ""aaa""
+- Take from word1: merge = ""cbca"", word1 = ""baa"", word2 = ""aaa""
+- Take from word1: merge = ""cbcab"", word1 = ""aa"", word2 = ""aaa""
+- Append the remaining 5 a's from word1 and word2 at the end of merge.
+
+
+Example 2:
+Input: word1 = ""abcabc"", word2 = ""abdcaba""
+Output: ""abdcabcabcaba""
+
+Constraints:
+`1 <= word1.length, word2.length <= 3000`
+`word1` and `word2` consist only of lowercase English letters.",0,Medium,,40.7,0.0,https://leetcode.com/problems/largest-merge-of-two-strings,120,8.8K,21.6K,Snapchat,"Greedy,Suffix Array",179,36,83,0,
+773,Sliding Puzzle,"On a 2x3 `board`, there are 5 tiles represented by the integers 1 through 5, and an empty square represented by 0.
+
+A move consists of choosing `0` and a 4-directionally adjacent number and swapping it.
+
+The state of the board is solved if and only if the `board` is `[[1,2,3],[4,5,0]].`
+Given a puzzle board, return the least number of moves required so that the state of the board is solved. If it is impossible for the state of the board to be solved, return -1.
+
+
+Examples:
+Input: board = [[1,2,3],[4,0,5]]
+Output: 1
+Explanation: Swap the 0 and the 5 in one move.
+
+Input: board = [[1,2,3],[5,4,0]]
+Output: -1
+Explanation: No number of moves will make the board solved.
+
+Input: board = [[4,1,2],[5,0,3]]
+Output: 5
+Explanation: 5 is the smallest number of moves that solves the board.
+
+An example path:
+After move 0: [[4,1,2],[5,0,3]]
+After move 1: [[4,1,2],[0,5,3]]
+After move 2: [[0,1,2],[4,5,3]]
+After move 3: [[1,0,2],[4,5,3]]
+After move 4: [[1,2,0],[4,5,3]]
+After move 5: [[1,2,3],[4,5,0]]
+Input: board = [[3,2,4],[1,5,0]]
+Output: 14
+Note:
+`board` will be a 2 x 3 array as described above.
+
+`board[i][j]` will be a permutation of `[0, 1, 2, 3, 4, 5]`.",0,Hard,/articles/sliding-puzzle,61.2,46.8,https://leetcode.com/problems/sliding-puzzle,331,52.1K,85.1K,"Uber,Airbnb,Facebook",Breadth-first Search,941,30,97,1,
+830,Positions of Large Groups,"In a string `s` of lowercase letters, these letters form consecutive groups of the same character.
+
+For example, a string like `s = ""abbxxxxzyy""` has the groups `""a""`, `""bb""`, `""xxxx""`, `""z""`, and `""yy""`.
+
+A group is identified by an interval `[start, end]`, where `start` and `end` denote the start and end indices (inclusive) of the group. In the above example, `""xxxx""` has the interval `[3,6]`.
+
+A group is considered large if it has 3 or more characters.
+
+Return the intervals of every large group sorted in increasing order by start index.
+
+
+Example 1:
+Input: s = ""abbxxxxzzy""
+Output: [[3,6]]
+Explanation: `""xxxx"" is the only `large group with start index 3 and end index 6.
+
+
+Example 2:
+Input: s = ""abc""
+Output: []
+Explanation: We have groups ""a"", ""b"", and ""c"", none of which are large groups.
+
+
+Example 3:
+Input: s = ""abcdddeeeeaabbbcd""
+Output: [[3,5],[6,9],[12,14]]
+Explanation: The large groups are ""ddd"", ""eeee"", and ""bbb"".
+
+
+Example 4:
+Input: s = ""aba""
+Output: []
+
+Constraints:
+`1 <= s.length <= 1000`
+`s` contains lower-case English letters only.",0,Easy,/articles/positions-of-large-groups,50.5,0.0,https://leetcode.com/problems/positions-of-large-groups,519,55.9K,110.8K,Google,Array,468,100,82,1,
+1253,Reconstruct a 2-Row Binary Matrix,"Given the following details of a matrix with `n` columns and `2` rows :
+The matrix is a binary matrix, which means each element in the matrix can be `0` or `1`.
+
+The sum of elements of the 0-th(upper) row is given as `upper`.
+
+The sum of elements of the 1-st(lower) row is given as `lower`.
+
+The sum of elements in the i-th column(0-indexed) is `colsum[i]`, where `colsum` is given as an integer array with length `n`.
+
+Your task is to reconstruct the matrix with `upper`, `lower` and `colsum`.
+
+Return it as a 2-D integer array.
+
+If there are more than one valid solution, any of them will be accepted.
+
+If no valid solution exists, return an empty 2-D array.
+
+
+Example 1:
+Input: upper = 2, lower = 1, colsum = [1,1,1]
+Output: [[1,1,0],[0,0,1]]
+Explanation: [[1,0,1],[0,1,0]], and [[0,1,1],[1,0,0]] are also correct answers.
+
+
+Example 2:
+Input: upper = 2, lower = 3, colsum = [2,2,1,1]
+Output: []
+
+Example 3:
+Input: upper = 5, lower = 5, colsum = [2,1,2,0,1,0,1,2,0,1]
+Output: [[1,1,1,0,1,0,0,1,0,0],[1,0,1,0,0,0,1,1,0,1]]
+
+Constraints:
+`1 <= colsum.length <= 10^5`
+`0 <= upper, lower <= colsum.length`
+`0 <= colsum[i] <= 2`",0,Medium,,41.8,27.8,https://leetcode.com/problems/reconstruct-a-2-row-binary-matrix,189,14.6K,35K,Grab,"Math,Greedy",202,18,92,0,"[Find Valid Matrix Given Row and Column Sums, /problems/find-valid-matrix-given-row-and-column-sums/, Medium]"
+1340,Jump Game V,"Given an array of integers `arr` and an integer `d`. In one step you can jump from index `i` to index:
+`i + x` where: `i + x < arr.length` and ` 0 < x <= d`.
+
+`i - x` where: `i - x >= 0` and ` 0 < x <= d`.
+
+In addition, you can only jump from index `i` to index `j` if `arr[i] > arr[j]` and `arr[i] > arr[k]` for all indices `k` between `i` and `j` (More formally `min(i, j) < k < max(i, j)`).
+
+You can choose any index of the array and start jumping. Return the maximum number of indices you can visit.
+
+Notice that you can not jump outside of the array at any time.
+
+
+Example 1:
+Input: arr = [6,4,14,6,8,13,9,7,10,6,12], d = 2
+Output: 4
+Explanation: You can start at index 10. You can jump 10 --> 8 --> 6 --> 7 as shown.
+
+Note that if you start at index 6 you can only jump to index 7. You cannot jump to index 5 because 13 > 9. You cannot jump to index 4 because index 5 is between index 4 and 6 and 13 > 9.
+
+Similarly You cannot jump from index 3 to index 2 or index 1.
+
+
+Example 2:
+Input: arr = [3,3,3,3,3], d = 3
+Output: 1
+Explanation: You can start at any index. You always cannot jump to any index.
+
+
+Example 3:
+Input: arr = [7,6,5,4,3,2,1], d = 1
+Output: 7
+Explanation: Start at index 0. You can visit all the indicies. 
+
+Example 4:
+Input: arr = [7,1,7,1,7,1], d = 2
+Output: 2
+
+Example 5:
+Input: arr = [66], d = 1
+Output: 1
+
+Constraints:
+`1 <= arr.length <= 1000`
+`1 <= arr[i] <= 10^5`
+`1 <= d <= arr.length`",0,Hard,,59.3,3.3,https://leetcode.com/problems/jump-game-v,183,11.8K,19.9K,Microsoft,Dynamic Programming,334,13,96,0,
+283,Move Zeroes,"Given an integer array `nums`, move all `0`'s to the end of it while maintaining the relative order of the non-zero elements.
+
+Note that you must do this in-place without making a copy of the array.
+
+
+Example 1:
+Input: nums = [0,1,0,3,12]
+Output: [1,3,12,0,0]
+
+Example 2:
+Input: nums = [0]
+Output: [0]
+
+Constraints:
+`1 <= nums.length <= 104`
+`-231 <= nums[i] <= 231 - 1`
+Follow up: Could you minimize the total number of operations done?",0,Easy,/articles/move-zeroes,58.7,64.7,https://leetcode.com/problems/move-zeroes,999,1.1M,1.9M,"Facebook,Bloomberg,Microsoft,Adobe,Capital One,Apple,Amazon,Google,eBay,SAP,Uber,Paypal,Cisco,Qualcomm,Yandex","Array,Two Pointers",5320,167,97,1,"[Remove Element, /problems/remove-element/, Easy]"
+807,Max Increase to Keep City Skyline,"In a 2 dimensional array `grid`, each value `grid[i][j]` represents the height of a building located there. We are allowed to increase the height of any number of buildings, by any amount (the amounts can be different for different buildings). Height 0 is considered to be a building as well. 
+At the end, the ""skyline"" when viewed from all four directions of the grid, i.e. top, bottom, left, and right, must be the same as the skyline of the original grid. A city's skyline is the outer contour of the rectangles formed by all the buildings when viewed from a distance. See the following example.
+
+What is the maximum total sum that the height of the buildings can be increased?
+
+Example:
+Input: grid = [[3,0,8,4],[2,4,5,7],[9,2,6,3],[0,3,1,0]]
+Output: 35
+Explanation: 
+The grid is:
+[ [3, 0, 8, 4], 
+  [2, 4, 5, 7],
+  [9, 2, 6, 3],
+  [0, 3, 1, 0] ]
+The skyline viewed from top or bottom is: [9, 4, 8, 7]
+The skyline viewed from left or right is: [8, 7, 9, 3]
+The grid after increasing the height of buildings without affecting skylines is:
+gridNew = [ [8, 4, 8, 7],
+            [7, 4, 7, 7],
+            [9, 4, 8, 7],
+            [3, 3, 3, 3] ]
+Notes: 
+`1 < grid.length = grid[0].length <= 50`.
+
+All heights `grid[i][j]` are in the range `[0, 100]`.
+
+All buildings in `grid[i][j]` occupy the entire grid cell: that is, they are a `1 x 1 x grid[i][j]` rectangular prism.",0,Medium,/articles/max-increase-to-keep-city-skyline,84.4,16.5,https://leetcode.com/problems/max-increase-to-keep-city-skyline,618,99.7K,118.1K,Google,,1116,332,77,1,
+1358,Number of Substrings Containing All Three Characters,"Given a string `s` consisting only of characters a, b and c.
+
+Return the number of substrings containing at least one occurrence of all these characters a, b and c.
+
+
+Example 1:
+Input: s = ""abcabc""
+Output: 10
+Explanation: The substrings containing at least one occurrence of the characters a, b and c are ""abc"", ""abca"", ""abcab"", ""abcabc"", ""bca"", ""bcab"", ""bcabc"", ""cab"", ""cabc"" and ""abc"" (again). 
+
+Example 2:
+Input: s = ""aaacb""
+Output: 3
+Explanation: The substrings containing at least one occurrence of the characters a, b and c are ""aaacb"", ""aacb"" and ""acb"". 
+
+Example 3:
+Input: s = ""abc""
+Output: 1
+
+Constraints:
+`3 <= s.length <= 5 x 10^4`
+`s` only consists of a, b or c characters.",0,Medium,,60.5,4.9,https://leetcode.com/problems/number-of-substrings-containing-all-three-characters,210,20.9K,34.5K,"DE Shaw,Microsoft",String,660,15,98,0,
+10,Regular Expression Matching,"Given an input string (`s`) and a pattern (`p`), implement regular expression matching with support for `'.'` and `'*'` where:` `
+`'.'` Matches any single character.​​​​
+`'*'` Matches zero or more of the preceding element.
+
+The matching should cover the entire input string (not partial).
+
+
+Example 1:
+Input: s = ""aa"", p = ""a""
+Output: false
+Explanation: ""a"" does not match the entire string ""aa"".
+
+
+Example 2:
+Input: s = ""aa"", p = ""a*""
+Output: true
+Explanation: '*' means zero or more of the preceding element, 'a'. Therefore, by repeating 'a' once, it becomes ""aa"".
+
+
+Example 3:
+Input: s = ""ab"", p = "".*""
+Output: true
+Explanation: "".*"" means ""zero or more (*) of any character (.)"".
+
+
+Example 4:
+Input: s = ""aab"", p = ""c*a*b""
+Output: true
+Explanation: c can be repeated 0 times, a can be repeated 1 time. Therefore, it matches ""aab"".
+
+
+Example 5:
+Input: s = ""mississippi"", p = ""mis*is*p*.""
+Output: false
+
+Constraints:
+`0 <= s.length <= 20`
+`0 <= p.length <= 30`
+`s` contains only lowercase English letters.
+
+`p` contains only lowercase English letters, `'.'`, and `'*'`.
+
+It is guaranteed for each appearance of the character `'*'`, there will be a previous valid character to match.",0,Hard,/articles/regular-expression-matching,27.4,75.0,https://leetcode.com/problems/regular-expression-matching,999,526.6K,1.9M,"Facebook,Amazon,Microsoft,Google,Adobe,Coursera,Apple","String,Dynamic Programming,Backtracking",5583,841,87,1,"[Wildcard Matching, /problems/wildcard-matching/, Hard]"
+846,Hand of Straights,"Alice has a `hand` of cards, given as an array of integers.
+
+Now she wants to rearrange the cards into groups so that each group is size `W`, and consists of `W` consecutive cards.
+
+Return `true` if and only if she can.
+
+Note: This question is the same as 1296: https://leetcode.com/problems/divide-array-in-sets-of-k-consecutive-numbers/
+
+Example 1:
+Input: hand = [1,2,3,6,2,3,4,7,8], W = 3
+Output: true
+Explanation: Alice's hand can be rearranged as [1,2,3],[2,3,4],[6,7,8]
+
+Example 2:
+Input: hand = [1,2,3,4,5], W = 4
+Output: false
+Explanation: Alice's hand can't be rearranged into groups of 4.
+
+
+Constraints:
+`1 <= hand.length <= 10000`
+`0 <= hand[i] <= 10^9`
+`1 <= W <= hand.length`",0,Medium,/articles/hand-of-straights,55.5,15.5,https://leetcode.com/problems/hand-of-straights,399,68.5K,123.3K,"Apple,Google,eBay",Ordered Map,942,97,91,1,
+870,Advantage Shuffle,"Given two arrays `A` and `B` of equal size, the advantage of `A` with respect to `B` is the number of indices `i` for which `A[i] > B[i]`.
+
+Return any permutation of `A` that maximizes its advantage with respect to `B`.
+
+
+Example 1:
+Input: A = [2,7,11,15], B = [1,10,4,11]
+Output: [2,11,7,15]
+
+Example 2:
+Input: A = [12,24,8,32], B = [13,25,32,11]
+Output: [24,32,8,12]
+Note:
+`1 <= A.length = B.length <= 10000`
+`0 <= A[i] <= 10^9`
+`0 <= B[i] <= 10^9`",0,Medium,/articles/advantage-shuffle,50.7,0.3,https://leetcode.com/problems/advantage-shuffle,398,44.4K,87.6K,"Apple,Facebook","Array,Greedy",975,63,94,1,
+417,Pacific Atlantic Water Flow,"You are given an `m x n` integer matrix `heights` representing the height of each unit cell in a continent. The Pacific ocean touches the continent's left and top edges, and the Atlantic ocean touches the continent's right and bottom edges.
+
+Water can only flow in four directions: up, down, left, and right. Water flows from a cell to an adjacent one with an equal or lower height.
+
+Return a list of grid coordinates where water can flow to both the Pacific and Atlantic oceans.
+
+
+Example 1:
+Input: heights = [[1,2,2,3,5],[3,2,3,4,4],[2,4,5,3,1],[6,7,1,4,5],[5,1,1,2,4]]
+Output: [[0,4],[1,3],[1,4],[2,2],[3,0],[3,1],[4,0]]
+
+Example 2:
+Input: heights = [[2,1],[1,2]]
+Output: [[0,0],[0,1],[1,0],[1,1]]
+
+Constraints:
+`m == heights.length`
+`n == heights[i].length`
+`1 <= m, n <= 200`
+`1 <= heights[i][j] <= 105`",0,Medium,/articles/pacific-atlantic-water-flow,44.0,26.8,https://leetcode.com/problems/pacific-atlantic-water-flow,579,118.2K,268.7K,"ByteDance,Google,Amazon","Depth-first Search,Breadth-first Search",2098,529,80,1,
+403,Frog Jump,"A frog is crossing a river. The river is divided into some number of units, and at each unit, there may or may not exist a stone. The frog can jump on a stone, but it must not jump into the water.
+
+Given a list of `stones`' positions (in units) in sorted ascending order, determine if the frog can cross the river by landing on the last stone. Initially, the frog is on the first stone and assumes the first jump must be `1` unit.
+
+If the frog's last jump was `k` units, its next jump must be either `k - 1`, `k`, or `k + 1` units. The frog can only jump in the forward direction.
+
+
+Example 1:
+Input: stones = [0,1,3,5,6,8,12,17]
+Output: true
+Explanation: The frog can jump to the last stone by jumping 1 unit to the 2nd stone, then 2 units to the 3rd stone, then 2 units to the 4th stone, then 3 units to the 6th stone, 4 units to the 7th stone, and 5 units to the 8th stone.
+
+
+Example 2:
+Input: stones = [0,1,2,3,4,8,9,11]
+Output: false
+Explanation: There is no way to jump to the last stone as the gap between the 5th and 6th stone is too large.
+
+
+Constraints:
+`2 <= stones.length <= 2000`
+`0 <= stones[i] <= 231 - 1`
+`stones[0] == 0`",0,Hard,/articles/frog-jump,41.7,55.5,https://leetcode.com/problems/frog-jump,675,118.6K,284.4K,"Amazon,Microsoft,ByteDance,Google",Dynamic Programming,1497,130,92,1,
+1386,Cinema Seat Allocation,"A cinema has `n` rows of seats, numbered from 1 to `n` and there are ten seats in each row, labelled from 1 to 10 as shown in the figure above.
+
+Given the array `reservedSeats` containing the numbers of seats already reserved, for example, `reservedSeats[i] = [3,8]` means the seat located in row 3 and labelled with 8 is already reserved.
+
+Return the maximum number of four-person groups you can assign on the cinema seats. A four-person group occupies four adjacent seats in one single row. Seats across an aisle (such as [3,3] and [3,4]) are not considered to be adjacent, but there is an exceptional case on which an aisle split a four-person group, in that case, the aisle split a four-person group in the middle, which means to have two people on each side.
+
+
+Example 1:
+Input: n = 3, reservedSeats = [[1,2],[1,3],[1,8],[2,6],[3,1],[3,10]]
+Output: 4
+Explanation: The figure above shows the optimal allocation for four groups, where seats mark with blue are already reserved and contiguous seats mark with orange are for one group.
+
+
+Example 2:
+Input: n = 2, reservedSeats = [[2,1],[1,8],[2,6]]
+Output: 2
+
+Example 3:
+Input: n = 4, reservedSeats = [[4,3],[1,4],[4,6],[1,7]]
+Output: 4
+
+Constraints:
+`1 <= n <= 10^9`
+`1 <= reservedSeats.length <= min(10*n, 10^4)`
+`reservedSeats[i].length == 2`
+`1 <= reservedSeats[i][0] <= n`
+`1 <= reservedSeats[i][1] <= 10`
+All `reservedSeats[i]` are distinct.",0,Medium,,36.0,34.8,https://leetcode.com/problems/cinema-seat-allocation,189,11.9K,33.2K,Amazon,"Array,Greedy",233,159,59,1,
+1646,Get Maximum in Generated Array,"You are given an integer `n`. An array `nums` of length `n + 1` is generated in the following way:
+`nums[0] = 0`
+`nums[1] = 1`
+`nums[2 * i] = nums[i]` when `2 <= 2 * i <= n`
+`nums[2 * i + 1] = nums[i] + nums[i + 1]` when `2 <= 2 * i + 1 <= n`
+Return the maximum integer in the array `nums`​​​.
+
+
+Example 1:
+Input: n = 7
+Output: 3
+Explanation: According to the given rules:
+  nums[0] = 0
+  nums[1] = 1
+  nums[(1 * 2) = 2] = nums[1] = 1
+  nums[(1 * 2) + 1 = 3] = nums[1] + nums[2] = 1 + 1 = 2
+  nums[(2 * 2) = 4] = nums[2] = 1
+  nums[(2 * 2) + 1 = 5] = nums[2] + nums[3] = 1 + 2 = 3
+  nums[(3 * 2) = 6] = nums[3] = 2
+  nums[(3 * 2) + 1 = 7] = nums[3] + nums[4] = 2 + 1 = 3
+Hence, nums = [0,1,1,2,1,3,2,3], and the maximum is 3.
+
+
+Example 2:
+Input: n = 2
+Output: 1
+Explanation: According to the given rules, the maximum between nums[0], nums[1], and nums[2] is 1.
+
+
+Example 3:
+Input: n = 3
+Output: 2
+Explanation: According to the given rules, the maximum between nums[0], nums[1], nums[2], and nums[3] is 2.
+
+
+Constraints:
+`0 <= n <= 100`",0,Easy,/articles/get-maximum-in-generated-array,53.2,1.3,https://leetcode.com/problems/get-maximum-in-generated-array,311,32.9K,61.9K,,,150,231,39,0,
+1574,Shortest Subarray to be Removed to Make Array Sorted,"Given an integer array `arr`, remove a subarray (can be empty) from `arr` such that the remaining elements in `arr` are non-decreasing.
+
+A subarray is a contiguous subsequence of the array.
+
+Return the length of the shortest subarray to remove.
+
+
+Example 1:
+Input: arr = [1,2,3,10,4,2,3,5]
+Output: 3
+Explanation: The shortest subarray we can remove is [10,4,2] of length 3. The remaining elements after that will be [1,2,3,3,5] which are sorted.
+
+Another correct solution is to remove the subarray [3,10,4].
+
+
+Example 2:
+Input: arr = [5,4,3,2,1]
+Output: 4
+Explanation: Since the array is strictly decreasing, we can only keep a single element. Therefore we need to remove a subarray of length 4, either [5,4,3,2] or [4,3,2,1].
+
+
+Example 3:
+Input: arr = [1,2,3]
+Output: 0
+Explanation: The array is already non-decreasing. We do not need to remove any elements.
+
+
+Example 4:
+Input: arr = [1]
+Output: 0
+
+Constraints:
+`1 <= arr.length <= 10^5`
+`0 <= arr[i] <= 10^9`",0,Medium,,34.1,27.3,https://leetcode.com/problems/shortest-subarray-to-be-removed-to-make-array-sorted,114,10.8K,31.5K,"Amazon,Flipkart","Array,Binary Search",532,17,97,1,
+1750,Minimum Length of String After Deleting Similar Ends,"Given a string `s` consisting only of characters `'a'`, `'b'`, and `'c'`. You are asked to apply the following algorithm on the string any number of times:
+Pick a non-empty prefix from the string `s` where all the characters in the prefix are equal.
+
+Pick a non-empty suffix from the string `s` where all the characters in this suffix are equal.
+
+The prefix and the suffix should not intersect at any index.
+
+The characters from the prefix and suffix must be the same.
+
+Delete both the prefix and the suffix.
+
+Return the minimum length of `s` after performing the above operation any number of times (possibly zero times).
+
+
+Example 1:
+Input: s = ""ca""
+Output: 2
+Explanation: You can't remove any characters, so the string stays as is.
+
+
+Example 2:
+Input: s = ""cabaabac""
+Output: 0
+Explanation: An optimal sequence of operations is:
+- Take prefix = ""c"" and suffix = ""c"" and remove them, s = ""abaaba"".
+
+- Take prefix = ""a"" and suffix = ""a"" and remove them, s = ""baab"".
+
+- Take prefix = ""b"" and suffix = ""b"" and remove them, s = ""aa"".
+
+- Take prefix = ""a"" and suffix = ""a"" and remove them, s = """".
+
+
+Example 3:
+Input: s = ""aabccabba""
+Output: 3
+Explanation: An optimal sequence of operations is:
+- Take prefix = ""aa"" and suffix = ""a"" and remove them, s = ""bccabb"".
+
+- Take prefix = ""b"" and suffix = ""bb"" and remove them, s = ""cca"".
+
+
+Constraints:
+`1 <= s.length <= 105`
+`s` only consists of characters `'a'`, `'b'`, and `'c'`.",0,Medium,,42.4,0.0,https://leetcode.com/problems/minimum-length-of-string-after-deleting-similar-ends,142,7.5K,17.8K,"Goldman Sachs,Amazon",Two Pointers,116,10,92,1,
+595,Big Countries,SQL Schema,0,Easy,/articles/big-countries,78.7,0.5,https://leetcode.com/problems/big-countries,170,213K,270.8K,Bloomberg,,577,752,43,0,
+1292,Maximum Side Length of a Square with Sum Less than or Equal to Threshold,"Given a `m x n` matrix `mat` and an integer `threshold`. Return the maximum side-length of a square with a sum less than or equal to `threshold` or return 0 if there is no such square.
+
+
+Example 1:
+Input: mat = [[1,1,3,2,4,3,2],[1,1,3,2,4,3,2],[1,1,3,2,4,3,2]], threshold = 4
+Output: 2
+Explanation: The maximum side length of square with sum less than 4 is 2 as shown.
+
+
+Example 2:
+Input: mat = [[2,2,2,2,2],[2,2,2,2,2],[2,2,2,2,2],[2,2,2,2,2],[2,2,2,2,2]], threshold = 1
+Output: 0
+
+Example 3:
+Input: mat = [[1,1,1,1],[1,0,0,0],[1,0,0,0],[1,0,0,0]], threshold = 6
+Output: 3
+
+Example 4:
+Input: mat = [[18,70],[61,1],[25,85],[14,40],[11,96],[97,96],[63,45]], threshold = 40184
+Output: 2
+
+Constraints:
+`1 <= m, n <= 300`
+`m == mat.length`
+`n == mat[i].length`
+`0 <= mat[i][j] <= 10000`
+`0 <= threshold <= 10^5`",0,Medium,,50.9,13.1,https://leetcode.com/problems/maximum-side-length-of-a-square-with-sum-less-than-or-equal-to-threshold,144,17.6K,34.5K,"Google,Roblox","Array,Binary Search",504,37,93,1,
+1207,Unique Number of Occurrences,"Given an array of integers `arr`, write a function that returns `true` if and only if the number of occurrences of each value in the array is unique.
+
+
+Example 1:
+Input: arr = [1,2,2,1,1,3]
+Output: true
+Explanation: The value 1 has 3 occurrences, 2 has 2 and 3 has 1. No two values have the same number of occurrences.
+
+
+Example 2:
+Input: arr = [1,2]
+Output: false
+
+Example 3:
+Input: arr = [-3,0,1,-3,1,1,1,-3,10,0]
+Output: true
+
+Constraints:
+`1 <= arr.length <= 1000`
+`-1000 <= arr[i] <= 1000`",0,Easy,,71.9,4.5,https://leetcode.com/problems/unique-number-of-occurrences,999,79.9K,111.1K,Apple,Hash Table,662,25,96,1,
+731,My Calendar II,"Implement a `MyCalendarTwo` class to store your events. A new event can be added if adding the event will not cause a triple booking.
+
+Your class will have one method, `book(int start, int end)`. Formally, this represents a booking on the half open interval `[start, end)`, the range of real numbers `x` such that `start <= x < end`.
+
+A triple booking happens when three events have some non-empty intersection (ie., there is some time that is common to all 3 events.)
+For each call to the method `MyCalendar.book`, return `true` if the event can be added to the calendar successfully without causing a triple booking. Otherwise, return `false` and do not add the event to the calendar.
+
+Your class will be called like this: `MyCalendar cal = new MyCalendar();` `MyCalendar.book(start, end)`
+
+Example 1:
+MyCalendar();
+MyCalendar.book(10, 20); // returns true
+MyCalendar.book(50, 60); // returns true
+MyCalendar.book(10, 40); // returns true
+MyCalendar.book(5, 15); // returns false
+MyCalendar.book(5, 10); // returns true
+MyCalendar.book(25, 55); // returns true
+Explanation: 
+The first two events can be booked.  The third event can be double booked.
+
+The fourth event (5, 15) can't be booked, because it would result in a triple booking.
+
+The fifth event (5, 10) can be booked, as it does not use time 10 which is already double booked.
+
+The sixth event (25, 55) can be booked, as the time in [25, 40) will be double booked with the third event;
+the time [40, 50) will be single booked, and the time [50, 55) will be double booked with the second event.
+
+Note:
+The number of calls to `MyCalendar.book` per test case will be at most `1000`.
+
+In calls to `MyCalendar.book(start, end)`, `start` and `end` are integers in the range `[0, 10^9]`.",0,Medium,/articles/my-calendar-ii,50.9,11.9,https://leetcode.com/problems/my-calendar-ii,215,53.4K,104.9K,Bloomberg,Ordered Map,791,102,89,0,"[My Calendar I, /problems/my-calendar-i/, Medium], [My Calendar III, /problems/my-calendar-iii/, Hard]"
+803,Bricks Falling When Hit,"You are given an `m x n` binary `grid`, where each `1` represents a brick and `0` represents an empty space. A brick is stable if:
+It is directly connected to the top of the grid, or
+At least one other brick in its four adjacent cells is stable.
+
+You are also given an array `hits`, which is a sequence of erasures we want to apply. Each time we want to erase the brick at the location `hits[i] = (rowi, coli)`. The brick on that location (if it exists) will disappear. Some other bricks may no longer be stable because of that erasure and will fall. Once a brick falls, it is immediately erased from the `grid` (i.e., it does not land on other stable bricks).
+
+Return an array `result`, where each `result[i]` is the number of bricks that will fall after the `ith` erasure is applied.
+
+Note that an erasure may refer to a location with no brick, and if it does, no bricks drop.
+
+
+Example 1:
+Input: grid = [[1,0,0,0],[1,1,1,0]], hits = [[1,0]]
+Output: [2]
+Explanation: Starting with the grid:
+[[1,0,0,0],
+ [1,1,1,0]]
+We erase the underlined brick at (1,0), resulting in the grid:
+[[1,0,0,0],
+ [0,1,1,0]]
+The two underlined bricks are no longer stable as they are no longer connected to the top nor adjacent to another stable brick, so they will fall. The resulting grid is:
+[[1,0,0,0],
+ [0,0,0,0]]
+Hence the result is [2].
+
+
+Example 2:
+Input: grid = [[1,0,0,0],[1,1,0,0]], hits = [[1,1],[1,0]]
+Output: [0,0]
+Explanation: Starting with the grid:
+[[1,0,0,0],
+ [1,1,0,0]]
+We erase the underlined brick at (1,1), resulting in the grid:
+[[1,0,0,0],
+ [1,0,0,0]]
+All remaining bricks are still stable, so no bricks fall. The grid remains the same:
+[[1,0,0,0],
+ [1,0,0,0]]
+Next, we erase the underlined brick at (1,0), resulting in the grid:
+[[1,0,0,0],
+ [0,0,0,0]]
+Once again, all remaining bricks are still stable, so no bricks fall.
+
+Hence the result is [0,0].
+
+
+Constraints:
+`m == grid.length`
+`n == grid[i].length`
+`1 <= m, n <= 200`
+`grid[i][j]` is `0` or `1`.
+
+`1 <= hits.length <= 4 * 104`
+`hits[i].length == 2`
+`0 <= xi <= m - 1`
+`0 <= yi <= n - 1`
+All `(xi, yi)` are unique.",0,Hard,/articles/bricks-falling-when-hit,31.8,2.4,https://leetcode.com/problems/bricks-falling-when-hit,57,17.8K,55.9K,Google,Union Find,534,151,78,1,
+4,Median of Two Sorted Arrays,"Given two sorted arrays `nums1` and `nums2` of size `m` and `n` respectively, return the median of the two sorted arrays.
+
+
+Example 1:
+Input: nums1 = [1,3], nums2 = [2]
+Output: 2.00000
+Explanation: merged array = [1,2,3] and median is 2.
+
+
+Example 2:
+Input: nums1 = [1,2], nums2 = [3,4]
+Output: 2.50000
+Explanation: merged array = [1,2,3,4] and median is (2 + 3) / 2 = 2.5.
+
+
+Example 3:
+Input: nums1 = [0,0], nums2 = [0,0]
+Output: 0.00000
+
+Example 4:
+Input: nums1 = [], nums2 = [1]
+Output: 1.00000
+
+Example 5:
+Input: nums1 = [2], nums2 = []
+Output: 2.00000
+
+Constraints:
+`nums1.length == m`
+`nums2.length == n`
+`0 <= m <= 1000`
+`0 <= n <= 1000`
+`1 <= m + n <= 2000`
+`-106 <= nums1[i], nums2[i] <= 106`
+Follow up: The overall run time complexity should be `O(log (m+n))`.",0,Hard,/articles/median-of-two-sorted-arrays,31.4,86.2,https://leetcode.com/problems/median-of-two-sorted-arrays,999,904.7K,2.9M,"Amazon,Goldman Sachs,Facebook,Microsoft,Apple,Adobe,Google,Bloomberg,Zillow,Uber,Flipkart,Paypal","Array,Binary Search,Divide and Conquer",9665,1486,87,1,
+1221,Split a String in Balanced Strings,"Balanced strings are those that have an equal quantity of `'L'` and `'R'` characters.
+
+Given a balanced string `s`, split it in the maximum amount of balanced strings.
+
+Return the maximum amount of split balanced strings.
+
+
+Example 1:
+Input: s = ""RLRRLLRLRL""
+Output: 4
+Explanation: s can be split into ""RL"", ""RRLL"", ""RL"", ""RL"", each substring contains same number of 'L' and 'R'.
+
+
+Example 2:
+Input: s = ""RLLLLRRRLR""
+Output: 3
+Explanation: s can be split into ""RL"", ""LLLRRR"", ""LR"", each substring contains same number of 'L' and 'R'.
+
+
+Example 3:
+Input: s = ""LLLLRRRR""
+Output: 1
+Explanation: s can be split into ""LLLLRRRR"".
+
+
+Example 4:
+Input: s = ""RLRRRLLRLL""
+Output: 2
+Explanation: s can be split into ""RL"", ""RRRLLRLL"", since each substring contains an equal number of 'L' and 'R'
+
+Constraints:
+`1 <= s.length <= 1000`
+`s[i]` is either `'L'` or `'R'`.
+
+`s` is a balanced string.",0,Easy,,84.3,11.9,https://leetcode.com/problems/split-a-string-in-balanced-strings,999,141.7K,168K,Walmart Labs,"String,Greedy",1018,593,63,0,
+435,Non-overlapping Intervals,"Given a collection of intervals, find the minimum number of intervals you need to remove to make the rest of the intervals non-overlapping.
+
+
+Example 1:
+Input: [[1,2],[2,3],[3,4],[1,3]]
+Output: 1
+Explanation: [1,3] can be removed and the rest of intervals are non-overlapping.
+
+
+Example 2:
+Input: [[1,2],[1,2],[1,2]]
+Output: 2
+Explanation: You need to remove two [1,2] to make the rest of intervals non-overlapping.
+
+
+Example 3:
+Input: [[1,2],[2,3]]
+Output: 0
+Explanation: You don't need to remove any of the intervals since they're already non-overlapping.
+
+Note:
+You may assume the interval's end point is always bigger than its start point.
+
+Intervals like [1,2] and [2,3] have borders ""touching"" but they don't overlap each other.",0,Medium,/articles/non-overlapping-intervals,43.8,26.8,https://leetcode.com/problems/non-overlapping-intervals,697,135.7K,309.5K,"Facebook,ByteDance,Amazon",Greedy,1974,55,97,1,"[Minimum Number of Arrows to Burst Balloons, /problems/minimum-number-of-arrows-to-burst-balloons/, Medium]"
+819,Most Common Word,"Given a string `paragraph` and a string array of the banned words `banned`, return the most frequent word that is not banned. It is guaranteed there is at least one word that is not banned, and that the answer is unique.
+
+The words in `paragraph` are case-insensitive and the answer should be returned in lowercase.
+
+
+Example 1:
+Input: paragraph = ""Bob hit a ball, the hit BALL flew far after it was hit."", banned = [""hit""]
+Output: ""ball""
+Explanation: 
+""hit"" occurs 3 times, but it is a banned word.
+
+""ball"" occurs twice (and no other word does), so it is the most frequent non-banned word in the paragraph. 
+Note that words in the paragraph are not case sensitive,
+that punctuation is ignored (even if adjacent to words, such as ""ball,""), 
+and that ""hit"" isn't the answer even though it occurs more because it is banned.
+
+
+Example 2:
+Input: paragraph = ""a."", banned = []
+Output: ""a""
+
+Constraints:
+`1 <= paragraph.length <= 1000`
+paragraph consists of English letters, space `' '`, or one of the symbols: `""!?',;.""`.
+
+`0 <= banned.length <= 100`
+`1 <= banned[i].length <= 10`
+`banned[i]` consists of only lowercase English letters.",0,Easy,/articles/most-common-word,45.5,20.9,https://leetcode.com/problems/most-common-word,999,225.7K,496.2K,Amazon,String,948,2069,31,1,
+218,The Skyline Problem,"A city's skyline is the outer contour of the silhouette formed by all the buildings in that city when viewed from a distance. Given the locations and heights of all the buildings, return the skyline formed by these buildings collectively.
+
+The geometric information of each building is given in the array `buildings` where `buildings[i] = [lefti, righti, heighti]`:
+`lefti` is the x coordinate of the left edge of the `ith` building.
+
+`righti` is the x coordinate of the right edge of the `ith` building.
+
+`heighti` is the height of the `ith` building.
+
+You may assume all buildings are perfect rectangles grounded on an absolutely flat surface at height `0`.
+
+The skyline should be represented as a list of ""key points"" sorted by their x-coordinate in the form `[[x1,y1],[x2,y2],...]`. Each key point is the left endpoint of some horizontal segment in the skyline except the last point in the list, which always has a y-coordinate `0` and is used to mark the skyline's termination where the rightmost building ends. Any ground between the leftmost and rightmost buildings should be part of the skyline's contour.
+
+Note: There must be no consecutive horizontal lines of equal height in the output skyline. For instance, `[...,[2 3],[4 5],[7 5],[11 5],[12 7],...]` is not acceptable; the three lines of height 5 should be merged into one in the final output as such: `[...,[2 3],[4 5],[12 7],...]`
+
+Example 1:
+Input: buildings = [[2,9,10],[3,7,15],[5,12,12],[15,20,10],[19,24,8]]
+Output: [[2,10],[3,15],[7,12],[12,0],[15,10],[20,8],[24,0]]
+Explanation:
+Figure A shows the buildings of the input.
+
+Figure B shows the skyline formed by those buildings. The red points in figure B represent the key points in the output list.
+
+
+Example 2:
+Input: buildings = [[0,2,3],[2,5,3]]
+Output: [[0,3],[5,0]]
+
+Constraints:
+`1 <= buildings.length <= 104`
+`0 <= lefti < righti <= 231 - 1`
+`1 <= heighti <= 231 - 1`
+`buildings` is sorted by `lefti` in non-decreasing order.",0,Hard,/articles/skyline-problem,36.6,51.9,https://leetcode.com/problems/the-skyline-problem,659,167.7K,457.8K,"Microsoft,Amazon,Google,Twitter,Uber","Divide and Conquer,Heap,Binary Indexed Tree,Segment Tree,Line Sweep",2792,157,95,1,"[Falling Squares, /problems/falling-squares/, Hard]"
+1021,Remove Outermost Parentheses,"A valid parentheses string is either empty `("""")`, `""("" + A + "")""`, or `A + B`, where `A` and `B` are valid parentheses strings, and `+` represents string concatenation.  For example, `""""`, `""()""`, `""(())()""`, and `""(()(()))""` are all valid parentheses strings.
+
+A valid parentheses string `S` is primitive if it is nonempty, and there does not exist a way to split it into `S = A+B`, with `A` and `B` nonempty valid parentheses strings.
+
+Given a valid parentheses string `S`, consider its primitive decomposition: `S = P_1 + P_2 + ... + P_k`, where `P_i` are primitive valid parentheses strings.
+
+Return `S` after removing the outermost parentheses of every primitive string in the primitive decomposition of `S`.
+
+
+Example 1:
+Input: ""(()())(())""
+Output: ""()()()""
+Explanation: 
+The input string is ""(()())(())"", with primitive decomposition ""(()())"" + ""(())"".
+
+After removing outer parentheses of each part, this is ""()()"" + ""()"" = ""()()()"".
+
+
+Example 2:
+Input: ""(()())(())(()(()))""
+Output: ""()()()()(())""
+Explanation: 
+The input string is ""(()())(())(()(()))"", with primitive decomposition ""(()())"" + ""(())"" + ""(()(()))"".
+
+After removing outer parentheses of each part, this is ""()()"" + ""()"" + ""()(())"" = ""()()()()(())"".
+
+
+Example 3:
+Input: ""()()""
+Output: """"
+Explanation: 
+The input string is ""()()"", with primitive decomposition ""()"" + ""()"".
+
+After removing outer parentheses of each part, this is """" + """" = """".
+
+Note:
+`S.length <= 10000`
+`S[i]` is `""(""` or `"")""`
+`S` is a valid parentheses string",0,Easy,,79.2,10.9,https://leetcode.com/problems/remove-outermost-parentheses,999,130.1K,164.3K,Google,Stack,777,839,48,1,
+1791,Find Center of Star Graph,"There is an undirected star graph consisting of `n` nodes labeled from `1` to `n`. A star graph is a graph where there is one center node and exactly `n - 1` edges that connect the center node with every other node.
+
+You are given a 2D integer array `edges` where each `edges[i] = [ui, vi]` indicates that there is an edge between the nodes `ui` and `vi`. Return the center of the given star graph.
+
+
+Example 1:
+Input: edges = [[1,2],[2,3],[4,2]]
+Output: 2
+Explanation: As shown in the figure above, node 2 is connected to every other node, so 2 is the center.
+
+
+Example 2:
+Input: edges = [[1,2],[5,1],[1,3],[1,4]]
+Output: 1
+
+Constraints:
+`3 <= n <= 105`
+`edges.length == n - 1`
+`edges[i].length == 2`
+`1 <= ui, vi <= n`
+`ui != vi`
+The given `edges` represent a valid star graph.",0,Medium,,84.8,0.0,https://leetcode.com/problems/find-center-of-star-graph,231,15K,17.7K,Microsoft,Graph,73,202,27,0,
+974,Subarray Sums Divisible by K,"Given an array `A` of integers, return the number of (contiguous, non-empty) subarrays that have a sum divisible by `K`.
+
+
+Example 1:
+Input: A = [4,5,0,-2,-3,1], K = 5
+Output: 7
+Explanation: There are 7 subarrays with a sum divisible by K = 5:
+[4, 5, 0, -2, -3, 1], [5], [5, 0], [5, 0, -2, -3], [0], [0, -2, -3], [-2, -3]
+Note:
+`1 <= A.length <= 30000`
+`-10000 <= A[i] <= 10000`
+`2 <= K <= 10000`",0,Medium,/articles/subarray-sums-divisible-by-k,51.0,42.7,https://leetcode.com/problems/subarray-sums-divisible-by-k,284,57K,111.8K,"Twilio,Facebook,ByteDance","Array,Hash Table",1535,118,93,1,"[Subarray Sum Equals K, /problems/subarray-sum-equals-k/, Medium], [Make Sum Divisible by P, /problems/make-sum-divisible-by-p/, Medium]"
+810,Chalkboard XOR Game,"We are given non-negative integers nums[i] which are written on a chalkboard.  Alice and Bob take turns erasing exactly one number from the chalkboard, with Alice starting first.  If erasing a number causes the bitwise XOR of all the elements of the chalkboard to become 0, then that player loses.  (Also, we'll say the bitwise XOR of one element is that element itself, and the bitwise XOR of no elements is 0.)
+Also, if any player starts their turn with the bitwise XOR of all the elements of the chalkboard equal to 0, then that player wins.
+
+Return True if and only if Alice wins the game, assuming both players play optimally.
+
+
+Example:
+Input: nums = [1, 1, 2]
+Output: false
+Explanation: 
+Alice has two choices: erase 1 or erase 2. 
+If she erases 1, the nums array becomes [1, 2]. The bitwise XOR of all the elements of the chalkboard is 1 XOR 2 = 3. Now Bob can remove any element he wants, because Alice will be the one to erase the last element and she will lose. 
+If Alice erases 2 first, now nums becomes [1, 1]. The bitwise XOR of all the elements of the chalkboard is 1 XOR 1 = 0. Alice will lose.
+
+Notes: 
+`1 <= N <= 1000`. 
+`0 <= nums[i] <= 2^16`.",0,Hard,/articles/chalkboard-xor-game,50.2,4.8,https://leetcode.com/problems/chalkboard-xor-game,41,5K,9.9K,Garena,Math,80,197,29,0,
+964,Least Operators to Express Number,"Given a single positive integer `x`, we will write an expression of the form `x (op1) x (op2) x (op3) x ...` where each operator `op1`, `op2`, etc. is either addition, subtraction, multiplication, or division (`+`, `-`, `*`, or `/)`. For example, with `x = 3`, we might write `3 * 3 / 3 + 3 - 3` which is a value of 3.
+
+When writing such an expression, we adhere to the following conventions:
+The division operator (`/`) returns rational numbers.
+
+There are no parentheses placed anywhere.
+
+We use the usual order of operations: multiplication and division happen before addition and subtraction.
+
+It is not allowed to use the unary negation operator (`-`). For example, ""`x - x`"" is a valid expression as it only uses subtraction, but ""`-x + x`"" is not because it uses negation.
+
+We would like to write an expression with the least number of operators such that the expression equals the given `target`. Return the least number of operators used.
+
+
+Example 1:
+Input: x = 3, target = 19
+Output: 5
+Explanation: 3 * 3 + 3 * 3 + 3 / 3.
+
+The expression contains 5 operations.
+
+
+Example 2:
+Input: x = 5, target = 501
+Output: 8
+Explanation: 5 * 5 * 5 * 5 - 5 * 5 * 5 + 5 / 5.
+
+The expression contains 8 operations.
+
+
+Example 3:
+Input: x = 100, target = 100000000
+Output: 3
+Explanation: 100 * 100 * 100 * 100.
+
+The expression contains 3 operations.
+
+
+Constraints:
+`2 <= x <= 100`
+`1 <= target <= 2 * 108`",0,Hard,/articles/least-operators-to-express-number,45.2,11.4,https://leetcode.com/problems/least-operators-to-express-number,42,6.3K,13.9K,Snapchat,"Math,Dynamic Programming",207,54,79,0,
+48,Rotate Image,"You are given an n x n 2D `matrix` representing an image, rotate the image by 90 degrees (clockwise).
+
+You have to rotate the image in-place, which means you have to modify the input 2D matrix directly. DO NOT allocate another 2D matrix and do the rotation.
+
+
+Example 1:
+Input: matrix = [[1,2,3],[4,5,6],[7,8,9]]
+Output: [[7,4,1],[8,5,2],[9,6,3]]
+
+Example 2:
+Input: matrix = [[5,1,9,11],[2,4,8,10],[13,3,6,7],[15,14,12,16]]
+Output: [[15,13,2,5],[14,3,4,1],[12,6,8,9],[16,7,10,11]]
+
+Example 3:
+Input: matrix = [[1]]
+Output: [[1]]
+
+Example 4:
+Input: matrix = [[1,2],[3,4]]
+Output: [[3,1],[4,2]]
+
+Constraints:
+`matrix.length == n`
+`matrix[i].length == n`
+`1 <= n <= 20`
+`-1000 <= matrix[i][j] <= 1000`",0,Medium,/articles/rotate-image,60.5,69.9,https://leetcode.com/problems/rotate-image,999,553.5K,915.2K,"Amazon,Microsoft,Apple,Uber,Cisco,Facebook,Rubrik,Adobe,Nvidia,Google,Quora,eBay,PayTM",Array,4619,329,93,1,
+1556,Thousand Separator,"Given an integer `n`, add a dot (""."") as the thousands separator and return it in string format.
+
+
+Example 1:
+Input: n = 987
+Output: ""987""
+
+Example 2:
+Input: n = 1234
+Output: ""1.234""
+
+Example 3:
+Input: n = 123456789
+Output: ""123.456.789""
+
+Example 4:
+Input: n = 0
+Output: ""0""
+
+Constraints:
+`0 <= n < 2^31`",0,Easy,,57.2,5.5,https://leetcode.com/problems/thousand-separator,404,21.9K,38.3K,,,198,7,97,0,
+1508,Range Sum of Sorted Subarray Sums,"Given the array `nums` consisting of `n` positive integers. You computed the sum of all non-empty continous subarrays from the array and then sort them in non-decreasing order, creating a new array of `n * (n + 1) / 2` numbers.
+
+Return the sum of the numbers from index `left` to index `right` (indexed from 1), inclusive, in the new array. Since the answer can be a huge number return it modulo 10^9 + 7.
+
+
+Example 1:
+Input: nums = [1,2,3,4], n = 4, left = 1, right = 5
+Output: 13 
+Explanation: All subarray sums are 1, 3, 6, 10, 2, 5, 9, 3, 7, 4. After sorting them in non-decreasing order we have the new array [1, 2, 3, 3, 4, 5, 6, 7, 9, 10]. The sum of the numbers from index le = 1 to ri = 5 is 1 + 2 + 3 + 3 + 4 = 13. 
+
+Example 2:
+Input: nums = [1,2,3,4], n = 4, left = 3, right = 4
+Output: 6
+Explanation: The given array is the same as example 1. We have the new array [1, 2, 3, 3, 4, 5, 6, 7, 9, 10]. The sum of the numbers from index le = 3 to ri = 4 is 3 + 3 = 6.
+
+
+Example 3:
+Input: nums = [1,2,3,4], n = 4, left = 1, right = 10
+Output: 50
+
+Constraints:
+`1 <= nums.length <= 10^3`
+`nums.length == n`
+`1 <= nums[i] <= 100`
+`1 <= left <= right <= n * (n + 1) / 2`",0,Medium,,60.4,1.9,https://leetcode.com/problems/range-sum-of-sorted-subarray-sums,170,16.7K,27.7K,Google,"Array,Sort",294,62,83,1,
+814,Binary Tree Pruning,"We are given the head node `root` of a binary tree, where additionally every node's value is either a 0 or a 1.
+
+Return the same tree where every subtree (of the given tree) not containing a 1 has been removed.
+
+(Recall that the subtree of a node X is X, plus every node that is a descendant of X.)
+
+Example 1:
+Input: [1,null,0,0,1]
+Output: [1,null,0,null,1]
+Explanation: 
+Only the red nodes satisfy the property ""every subtree not containing a 1"".
+
+The diagram on the right represents the answer.
+
+
+Example 2:
+Input: [1,0,1,0,0,0,1]
+Output: [1,null,1,null,1]
+
+Example 3:
+Input: [1,1,0,1,1,0,1,0]
+Output: [1,1,0,1,1,null,1]
+Note: 
+The binary tree will have at most `200 nodes`.
+
+The value of each node will only be `0` or `1`.",0,Medium,/articles/binary-tree-pruning,72.1,10.4,https://leetcode.com/problems/binary-tree-pruning,822,84.9K,117.7K,"Amazon,Facebook",Tree,1397,53,96,1,
+820,Short Encoding of Words,"A valid encoding of an array of `words` is any reference string `s` and array of indices `indices` such that:
+`words.length == indices.length`
+The reference string `s` ends with the `'#'` character.
+
+For each index `indices[i]`, the substring of `s` starting from `indices[i]` and up to (but not including) the next `'#'` character is equal to `words[i]`.
+
+Given an array of `words`, return the length of the shortest reference string `s` possible of any valid encoding of `words`.
+
+
+Example 1:
+Input: words = [""time"", ""me"", ""bell""]
+Output: 10
+Explanation: A valid encoding would be s = `""time#bell#"" and indices = [0, 2, 5`].
+
+words[0] = ""time"", the substring of s starting from indices[0] = 0 to the next '#' is underlined in ""time#bell#""
+words[1] = ""me"", the substring of s starting from indices[1] = 2 to the next '#' is underlined in ""time#bell#""
+words[2] = ""bell"", the substring of s starting from indices[2] = 5 to the next '#' is underlined in ""time#bell#""
+
+Example 2:
+Input: words = [""t""]
+Output: 2
+Explanation: A valid encoding would be s = ""t#"" and indices = [0].
+
+
+Constraints:
+`1 <= words.length <= 2000`
+`1 <= words[i].length <= 7`
+`words[i]` consists of only lowercase letters.",0,Medium,/articles/short-encoding-of-words,55.0,10.4,https://leetcode.com/problems/short-encoding-of-words,287,40.5K,73.7K,,,595,215,73,0,
+752,Open the Lock,"You have a lock in front of you with 4 circular wheels. Each wheel has 10 slots: `'0', '1', '2', '3', '4', '5', '6', '7', '8', '9'`. The wheels can rotate freely and wrap around: for example we can turn `'9'` to be `'0'`, or `'0'` to be `'9'`. Each move consists of turning one wheel one slot.
+
+The lock initially starts at `'0000'`, a string representing the state of the 4 wheels.
+
+You are given a list of `deadends` dead ends, meaning if the lock displays any of these codes, the wheels of the lock will stop turning and you will be unable to open it.
+
+Given a `target` representing the value of the wheels that will unlock the lock, return the minimum total number of turns required to open the lock, or -1 if it is impossible.
+
+
+Example 1:
+Input: deadends = [""0201"",""0101"",""0102"",""1212"",""2002""], target = ""0202""
+Output: 6
+Explanation:
+A sequence of valid moves would be ""0000"" -> ""1000"" -> ""1100"" -> ""1200"" -> ""1201"" -> ""1202"" -> ""0202"".
+
+Note that a sequence like ""0000"" -> ""0001"" -> ""0002"" -> ""0102"" -> ""0202"" would be invalid,
+because the wheels of the lock become stuck after the display becomes the dead end ""0102"".
+
+
+Example 2:
+Input: deadends = [""8888""], target = ""0009""
+Output: 1
+Explanation:
+We can turn the last wheel in reverse to move from ""0000"" -> ""0009"".
+
+
+Example 3:
+Input: deadends = [""8887"",""8889"",""8878"",""8898"",""8788"",""8988"",""7888"",""9888""], target = ""8888""
+Output: -1
+Explanation:
+We can't reach the target without getting stuck.
+
+
+Example 4:
+Input: deadends = [""0000""], target = ""8888""
+Output: -1
+
+Constraints:
+`1 <= deadends.length <= 500`
+`deadends[i].length == 4`
+`target.length == 4`
+target will not be in the list `deadends`.
+
+`target` and `deadends[i]` consist of digits only.",0,Medium,/articles/open-the-lock,53.0,42.2,https://leetcode.com/problems/open-the-lock,497,92.8K,175.1K,"Facebook,Amazon,Citadel,Bloomberg",Breadth-first Search,1534,57,96,1,
+857,Minimum Cost to Hire K Workers,"There are `N` workers.  The `i`-th worker has a `quality[i]` and a minimum wage expectation `wage[i]`.
+
+Now we want to hire exactly `K` workers to form a paid group.  When hiring a group of K workers, we must pay them according to the following rules:
+Every worker in the paid group should be paid in the ratio of their quality compared to other workers in the paid group.
+
+Every worker in the paid group must be paid at least their minimum wage expectation.
+
+Return the least amount of money needed to form a paid group satisfying the above conditions.
+
+
+Example 1:
+Input: quality = [10,20,5], wage = [70,50,30], K = 2
+Output: 105.00000
+Explanation: We pay 70 to 0-th worker and 35 to 2-th worker.
+
+
+Example 2:
+Input: quality = [3,1,10,10,1], wage = [4,8,2,2,7], K = 3
+Output: 30.66667
+Explanation: We pay 4 to 0-th worker, 13.33333 to 2-th and 3-th workers seperately. 
+Note:
+`1 <= K <= N <= 10000`, where `N = quality.length = wage.length`
+`1 <= quality[i] <= 10000`
+`1 <= wage[i] <= 10000`
+Answers within `10^-5` of the correct answer will be considered correct.",0,Hard,/articles/minimum-cost-to-hire-k-workers,50.5,23.6,https://leetcode.com/problems/minimum-cost-to-hire-k-workers,132,37.8K,74.8K,Google,Heap,1142,134,89,1,
+886,Possible Bipartition,"Given a set of `N` people (numbered `1, 2, ..., N`), we would like to split everyone into two groups of any size.
+
+Each person may dislike some other people, and they should not go into the same group. 
+Formally, if `dislikes[i] = [a, b]`, it means it is not allowed to put the people numbered `a` and `b` into the same group.
+
+Return `true` if and only if it is possible to split everyone into two groups in this way.
+
+
+Example 1:
+Input: N = 4, dislikes = [[1,2],[1,3],[2,4]]
+Output: true
+Explanation: group1 [1,4], group2 [2,3]
+
+Example 2:
+Input: N = 3, dislikes = [[1,2],[1,3],[2,3]]
+Output: false
+
+Example 3:
+Input: N = 5, dislikes = [[1,2],[2,3],[3,4],[4,5],[1,5]]
+Output: false
+
+Constraints:
+`1 <= N <= 2000`
+`0 <= dislikes.length <= 10000`
+`dislikes[i].length == 2`
+`1 <= dislikes[i][j] <= N`
+`dislikes[i][0] < dislikes[i][1]`
+There does not exist `i != j` for which `dislikes[i] == dislikes[j]`.",0,Medium,/articles/possible-bipartition,45.3,20.1,https://leetcode.com/problems/possible-bipartition,520,73.6K,162.5K,"Amazon,Google,Apple,Coupang","Depth-first Search,Graph",1368,37,97,1,
+1375,Bulb Switcher III,"There is a room with `n` bulbs, numbered from `1` to `n`, arranged in a row from left to right. Initially, all the bulbs are turned off.
+
+At moment k (for k from `0` to `n - 1`), we turn on the `light[k]` bulb. A bulb change color to blue only if it is on and all the previous bulbs (to the left) are turned on too.
+
+Return the number of moments in which all turned on bulbs are blue.
+
+
+Example 1:
+Input: light = [2,1,3,5,4]
+Output: 3
+Explanation: All bulbs turned on, are blue at the moment 1, 2 and 4.
+
+
+Example 2:
+Input: light = [3,2,4,1,5]
+Output: 2
+Explanation: All bulbs turned on, are blue at the moment 3, and 4 (index-0).
+
+
+Example 3:
+Input: light = [4,1,2,3]
+Output: 1
+Explanation: All bulbs turned on, are blue at the moment 3 (index-0).
+
+Bulb 4th changes to blue at the moment 3.
+
+
+Example 4:
+Input: light = [2,1,4,3,6,5]
+Output: 3
+
+Example 5:
+Input: light = [1,2,3,4,5,6]
+Output: 6
+
+Constraints:
+`n == light.length`
+`1 <= n <= 5 * 10^4`
+`light` is a permutation of  `[1, 2, ..., n]`",0,Medium,,64.3,24.4,https://leetcode.com/problems/bulb-switcher-iii,313,27.2K,42.3K,Amazon,Array,466,77,86,1,"[Bulb Switcher, /problems/bulb-switcher/, Medium], [Bulb Switcher II, /problems/bulb-switcher-ii/, Medium]"
+1332,Remove Palindromic Subsequences,"You are given a string `s` consisting only of letters `'a'` and `'b'`. In a single step you can remove one palindromic subsequence from `s`.
+
+Return the minimum number of steps to make the given string empty.
+
+A string is a subsequence of a given string if it is generated by deleting some characters of a given string without changing its order. Note that a subsequence does not necessarily need to be contiguous.
+
+A string is called palindrome if is one that reads the same backward as well as forward.
+
+
+Example 1:
+Input: s = ""ababa""
+Output: 1
+Explanation: s is already a palindrome, so its entirety can be removed in a single step.
+
+
+Example 2:
+Input: s = ""abb""
+Output: 2
+Explanation: ""abb"" -> ""bb"" -> """". 
+Remove palindromic subsequence ""a"" then ""bb"".
+
+
+Example 3:
+Input: s = ""baabb""
+Output: 2
+Explanation: ""baabb"" -> ""b"" -> """". 
+Remove palindromic subsequence ""baab"" then ""b"".
+
+
+Constraints:
+`1 <= s.length <= 1000`
+`s[i]` is either `'a'` or `'b'`.",0,Easy,/articles/remove-palindrome-subsequences,68.3,0.4,https://leetcode.com/problems/remove-palindromic-subsequences,336,43.9K,64.3K,Amazon,String,21,44,32,1,
+1037,Valid Boomerang,"Given an array `points` where `points[i] = [xi, yi]` represents a point on the X-Y plane, return `true` if these points are a boomerang.
+
+A boomerang is a set of three points that are all distinct and not in a straight line.
+
+
+Example 1:
+Input: points = [[1,1],[2,3],[3,2]]
+Output: true
+
+Example 2:
+Input: points = [[1,1],[2,2],[3,3]]
+Output: false
+
+Constraints:
+`points.length == 3`
+`points[i].length == 2`
+`0 <= xi, yi <= 100`",0,Easy,,37.7,0.0,https://leetcode.com/problems/valid-boomerang,304,23.5K,62.4K,Google,Math,152,284,35,1,
+905,Sort Array By Parity,"Given an array `A` of non-negative integers, return an array consisting of all the even elements of `A`, followed by all the odd elements of `A`.
+
+You may return any answer array that satisfies this condition.
+
+
+Example 1:
+Input: [3,1,2,4]
+Output: [2,4,3,1]
+The outputs [4,2,3,1], [2,4,1,3], and [4,2,1,3] would also be accepted.
+
+Note:
+`1 <= A.length <= 5000`
+`0 <= A[i] <= 5000`",0,Easy,/articles/sort-array-by-parity,75.0,24.7,https://leetcode.com/problems/sort-array-by-parity,999,313.7K,418.3K,"Capital One,VMware",Array,1633,88,95,0,
+1531,String Compression II,"Run-length encoding is a string compression method that works by replacing consecutive identical characters (repeated 2 or more times) with the concatenation of the character and the number marking the count of the characters (length of the run). For example, to compress the string `""aabccc""` we replace `""aa""` by `""a2""` and replace `""ccc""` by `""c3""`. Thus the compressed string becomes `""a2bc3""`.
+
+Notice that in this problem, we are not adding `'1'` after single characters.
+
+Given a string `s` and an integer `k`. You need to delete at most `k` characters from `s` such that the run-length encoded version of `s` has minimum length.
+
+Find the minimum length of the run-length encoded version of `s` after deleting at most `k` characters.
+
+
+Example 1:
+Input: s = ""aaabcccd"", k = 2
+Output: 4
+Explanation: Compressing s without deleting anything will give us ""a3bc3d"" of length 6. Deleting any of the characters 'a' or 'c' would at most decrease the length of the compressed string to 5, for instance delete 2 'a' then we will have s = ""abcccd"" which compressed is abc3d. Therefore, the optimal way is to delete 'b' and 'd', then the compressed version of s will be ""a3c3"" of length 4.
+
+
+Example 2:
+Input: s = ""aabbaa"", k = 2
+Output: 2
+Explanation: If we delete both 'b' characters, the resulting compressed string would be ""a4"" of length 2.
+
+
+Example 3:
+Input: s = ""aaaaaaaaaaa"", k = 0
+Output: 3
+Explanation: Since k is zero, we cannot delete anything. The compressed string is ""a11"" of length 3.
+
+
+Constraints:
+`1 <= s.length <= 100`
+`0 <= k <= s.length`
+`s` contains only lowercase English letters.",0,Hard,,34.1,61.4,https://leetcode.com/problems/string-compression-ii,62,6.4K,18.7K,Toptal,"String,Dynamic Programming",286,29,91,0,
+481,Magical String,"A magical string S consists of only '1' and '2' and obeys the following rules:
+The string S is magical because concatenating the number of contiguous occurrences of characters '1' and '2' generates the string S itself.
+
+The first few elements of string S is the following:
+S = ""1221121221221121122......""
+If we group the consecutive '1's and '2's in S, it will be:
+1   22  11  2  1  22  1  22  11  2  11  22 ......
+
+and the occurrences of '1's or '2's in each group are:
+1   2	   2    1   1    2     1    2     2    1    2    2 ......
+
+You can see that the occurrence sequence above is the S itself. 
+Given an integer N as input, return the number of '1's in the first N number in the magical string S.
+
+Note:
+N will not exceed 100,000.
+
+
+Example 1:
+Input: 6
+Output: 3
+Explanation: The first 6 elements of magical string S is ""12211"" and it contains three 1's, so return 3.",0,Medium,,48.1,18.1,https://leetcode.com/problems/magical-string,152,24.2K,50.4K,Google,,128,756,14,1,
+621,Task Scheduler,"Given a characters array `tasks`, representing the tasks a CPU needs to do, where each letter represents a different task. Tasks could be done in any order. Each task is done in one unit of time. For each unit of time, the CPU could complete either one task or just be idle.
+
+However, there is a non-negative integer `n` that represents the cooldown period between two same tasks (the same letter in the array), that is that there must be at least `n` units of time between any two same tasks.
+
+Return the least number of units of times that the CPU will take to finish all the given tasks.
+
+
+Example 1:
+Input: tasks = [""A"",""A"",""A"",""B"",""B"",""B""], n = 2
+Output: 8
+Explanation: 
+A -> B -> idle -> A -> B -> idle -> A -> B
+There is at least 2 units of time between any two same tasks.
+
+
+Example 2:
+Input: tasks = [""A"",""A"",""A"",""B"",""B"",""B""], n = 0
+Output: 6
+Explanation: On this case any permutation of size 6 would work since n = 0.
+
+[""A"",""A"",""A"",""B"",""B"",""B""]
+[""A"",""B"",""A"",""B"",""A"",""B""]
+[""B"",""B"",""B"",""A"",""A"",""A""]
+...
+
+And so on.
+
+
+Example 3:
+Input: tasks = [""A"",""A"",""A"",""A"",""A"",""A"",""B"",""C"",""D"",""E"",""F"",""G""], n = 2
+Output: 16
+Explanation: 
+One possible solution is
+A -> B -> C -> A -> D -> E -> A -> F -> G -> A -> idle -> idle -> A -> idle -> idle -> A
+
+Constraints:
+`1 <= task.length <= 104`
+`tasks[i]` is upper-case English letter.
+
+The integer `n` is in the range `[0, 100]`.",0,Medium,/articles/task-scheduler,52.2,65.2,https://leetcode.com/problems/task-scheduler,732,255.9K,489.8K,"Facebook,Rubrik,Amazon,Pinterest,Google,Microsoft,Bloomberg,Airtel","Array,Greedy,Queue",4588,874,84,1,"[Rearrange String k Distance Apart, /problems/rearrange-string-k-distance-apart/, Hard], [Reorganize String, /problems/reorganize-string/, Medium]"
+135,Candy,"There are `n` children standing in a line. Each child is assigned a rating value given in the integer array `ratings`.
+
+You are giving candies to these children subjected to the following requirements:
+Each child must have at least one candy.
+
+Children with a higher rating get more candies than their neighbors.
+
+Return the minimum number of candies you need to have to distribute the candies to the children.
+
+
+Example 1:
+Input: ratings = [1,0,2]
+Output: 5
+Explanation: You can allocate to the first, second and third child with 2, 1, 2 candies respectively.
+
+
+Example 2:
+Input: ratings = [1,2,2]
+Output: 4
+Explanation: You can allocate to the first, second and third child with 1, 2, 1 candies respectively.
+
+The third child gets 1 candy because it satisfies the above two conditions.
+
+
+Constraints:
+`n == ratings.length`
+`1 <= n <= 2 * 104`
+`0 <= ratings[i] <= 2 * 104`",0,Hard,/articles/candy,33.3,45.7,https://leetcode.com/problems/candy,584,153.8K,462.1K,Amazon,Greedy,1402,195,88,1,
+793,Preimage Size of Factorial Zeroes Function,"Let `f(x)` be the number of zeroes at the end of `x!`. (Recall that `x! = 1 * 2 * 3 * ... * x`, and by convention, `0! = 1`.)
+For example, `f(3) = 0` because 3! = 6 has no zeroes at the end, while `f(11) = 2` because 11! = 39916800 has 2 zeroes at the end. Given `K`, find how many non-negative integers `x` have the property that `f(x) = K`.
+
+
+Example 1:
+Input: K = 0
+Output: 5
+Explanation: 0!, 1!, 2!, 3!, and 4! end with K = 0 zeroes.
+
+
+Example 2:
+Input: K = 5
+Output: 0
+Explanation: There is no x such that x! ends in K = 5 zeroes.
+
+Note:
+`K` will be an integer in the range `[0, 10^9]`.",0,Hard,/articles/preimage-size-of-factorial-zeroes-function,40.6,0.0,https://leetcode.com/problems/preimage-size-of-factorial-zeroes-function,91,9.5K,23.4K,Adobe,Binary Search,217,62,78,0,"[Factorial Trailing Zeroes, /problems/factorial-trailing-zeroes/, Easy]"
+745,Prefix and Suffix Search,"Design a special dictionary which has some words and allows you to search the words in it by a prefix and a suffix.
+
+Implement the `WordFilter` class:
+`WordFilter(string[] words)` Initializes the object with the `words` in the dictionary.
+
+`f(string prefix, string suffix)` Returns the index of the word in the dictionary which has the prefix `prefix` and the suffix `suffix`. If there is more than one valid index, return the largest of them. If there is no such word in the dictionary, return `-1`.
+
+
+Example 1:
+Input
+[""WordFilter"", ""f""]
+[[[""apple""]], [""a"", ""e""]]
+Output
+[null, 0]
+Explanation
+WordFilter wordFilter = new WordFilter([""apple""]);
+wordFilter.f(""a"", ""e""); // return 0, because the word at index 0 has prefix = ""a"" and suffix = 'e"".
+
+
+Constraints:
+`1 <= words.length <= 15000`
+`1 <= words[i].length <= 10`
+`1 <= prefix.length, suffix.length <= 10`
+`words[i]`, `prefix` and `suffix` consist of lower-case English letters only.
+
+At most `15000` calls will be made to the function `f`.",0,Hard,/articles/prefix-and-suffix-search,35.5,3.3,https://leetcode.com/problems/prefix-and-suffix-search,167,22.3K,62.7K,"Amazon,Facebook",Trie,461,234,66,1,"[Design Add and Search Words Data Structure, /problems/design-add-and-search-words-data-structure/, Medium]"
+715,Range Module,"A Range Module is a module that tracks ranges of numbers. Your task is to design and implement the following interfaces in an efficient manner.
+
+`addRange(int left, int right)` Adds the half-open interval `[left, right)`, tracking every real number in that interval.  Adding an interval that partially overlaps with currently tracked numbers should add any numbers in the interval `[left, right)` that are not already tracked.
+
+`queryRange(int left, int right)` Returns true if and only if every real number in the interval `[left, right)`
+ is currently being tracked.
+
+`removeRange(int left, int right)` Stops tracking every real number currently being tracked in the interval `[left, right)`.
+
+
+Example 1:
+addRange(10, 20): null
+removeRange(14, 16): null
+queryRange(10, 14): true (Every number in [10, 14) is being tracked)
+queryRange(13, 15): false (Numbers like 14, 14.03, 14.17 in [13, 15) are not being tracked)
+queryRange(16, 17): true (The number 16 in [16, 17) is still being tracked, despite the remove operation)
+Note:
+A half open interval `[left, right)` denotes all real numbers `left <= x < right`.
+
+`0 < left < right < 10^9` in all calls to `addRange, queryRange, removeRange`.
+
+The total number of calls to `addRange` in a single test case is at most `1000`.
+
+The total number of calls to `queryRange` in a single test case is at most `5000`.
+
+The total number of calls to `removeRange` in a single test case is at most `1000`.",0,Hard,/articles/range-module,40.7,46.0,https://leetcode.com/problems/range-module,124,27.3K,67.2K,"Google,Amazon","Segment Tree,Ordered Map",627,51,92,1,"[Merge Intervals, /problems/merge-intervals/, Medium], [Insert Interval, /problems/insert-interval/, Medium], [Data Stream as Disjoint Intervals, /problems/data-stream-as-disjoint-intervals/, Hard]"
+1455,Check If a Word Occurs As a Prefix of Any Word in a Sentence,"Given a `sentence` that consists of some words separated by a single space, and a `searchWord`.
+
+You have to check if `searchWord` is a prefix of any word in `sentence`.
+
+Return the index of the word in `sentence` where `searchWord` is a prefix of this word (1-indexed).
+
+If `searchWord` is a prefix of more than one word, return the index of the first word (minimum index). If there is no such word return -1.
+
+A prefix of a string `S` is any leading contiguous substring of `S`.
+
+
+Example 1:
+Input: sentence = ""i love eating burger"", searchWord = ""burg""
+Output: 4
+Explanation: ""burg"" is prefix of ""burger"" which is the 4th word in the sentence.
+
+
+Example 2:
+Input: sentence = ""this problem is an easy problem"", searchWord = ""pro""
+Output: 2
+Explanation: ""pro"" is prefix of ""problem"" which is the 2nd and the 6th word in the sentence, but we return 2 as it's the minimal index.
+
+
+Example 3:
+Input: sentence = ""i am tired"", searchWord = ""you""
+Output: -1
+Explanation: ""you"" is not a prefix of any word in the sentence.
+
+
+Example 4:
+Input: sentence = ""i use triple pillow"", searchWord = ""pill""
+Output: 4
+
+Example 5:
+Input: sentence = ""hello from the other side"", searchWord = ""they""
+Output: -1
+
+Constraints:
+`1 <= sentence.length <= 100`
+`1 <= searchWord.length <= 10`
+`sentence` consists of lowercase English letters and spaces.
+
+`searchWord` consists of lowercase English letters.",0,Easy,,65.5,0.0,https://leetcode.com/problems/check-if-a-word-occurs-as-a-prefix-of-any-word-in-a-sentence,584,34.9K,53.3K,Yelp,String,289,8,97,0,
+150,Evaluate Reverse Polish Notation,"Evaluate the value of an arithmetic expression in Reverse Polish Notation.
+
+Valid operators are `+`, `-`, `*`, and `/`. Each operand may be an integer or another expression.
+
+Note that division between two integers should truncate toward zero.
+
+It is guaranteed that the given RPN expression is always valid. That means the expression would always evaluate to a result, and there will not be any division by zero operation.
+
+
+Example 1:
+Input: tokens = [""2"",""1"",""+"",""3"",""*""]
+Output: 9
+Explanation: ((2 + 1) * 3) = 9
+
+Example 2:
+Input: tokens = [""4"",""13"",""5"",""/"",""+""]
+Output: 6
+Explanation: (4 + (13 / 5)) = 6
+
+Example 3:
+Input: tokens = [""10"",""6"",""9"",""3"",""+"",""-11"",""*"",""/"",""*"",""17"",""+"",""5"",""+""]
+Output: 22
+Explanation: ((10 * (6 / ((9 + 3) * -11))) + 17) + 5
+= ((10 * (6 / (12 * -11))) + 17) + 5
+= ((10 * (6 / -132)) + 17) + 5
+= ((10 * 0) + 17) + 5
+= (0 + 17) + 5
+= 17 + 5
+= 22
+
+Constraints:
+`1 <= tokens.length <= 104`
+`tokens[i]` is either an operator: `""+""`, `""-""`, `""*""`, or `""/""`, or an integer in the range `[-200, 200]`.",0,Medium,/articles/evaluate-reverse-polish-notation,38.2,50.7,https://leetcode.com/problems/evaluate-reverse-polish-notation,999,277.4K,725.8K,"Amazon,Oracle,LinkedIn,Google,Microsoft",Stack,1528,520,75,1,"[Basic Calculator, /problems/basic-calculator/, Hard], [Expression Add Operators, /problems/expression-add-operators/, Hard]"
+98,Validate Binary Search Tree,"Given the `root` of a binary tree, determine if it is a valid binary search tree (BST).
+
+A valid BST is defined as follows:
+The left subtree of a node contains only nodes with keys less than the node's key.
+
+The right subtree of a node contains only nodes with keys greater than the node's key.
+
+Both the left and right subtrees must also be binary search trees.
+
+
+Example 1:
+Input: root = [2,1,3]
+Output: true
+
+Example 2:
+Input: root = [5,1,4,null,null,3,6]
+Output: false
+Explanation: The root node's value is 5 but its right child's value is 4.
+
+
+Constraints:
+The number of nodes in the tree is in the range `[1, 104]`.
+
+`-231 <= Node.val <= 231 - 1`",0,Medium,/articles/validate-binary-search-tree,28.9,65.3,https://leetcode.com/problems/validate-binary-search-tree,999,950.5K,3.3M,,,5790,671,90,0,
+1716,Calculate Money in Leetcode Bank,"Hercy wants to save money for his first car. He puts money in the Leetcode bank every day.
+
+He starts by putting in `$1` on Monday, the first day. Every day from Tuesday to Sunday, he will put in `$1` more than the day before. On every subsequent Monday, he will put in `$1` more than the previous Monday. 
+Given `n`, return the total amount of money he will have in the Leetcode bank at the end of the `nth` day.
+
+
+Example 1:
+Input: n = 4
+Output: 10
+Explanation: After the 4th day, the total is 1 + 2 + 3 + 4 = 10.
+
+
+Example 2:
+Input: n = 10
+Output: 37
+Explanation: After the 10th day, the total is (1 + 2 + 3 + 4 + 5 + 6 + 7) + (2 + 3 + 4) = 37. Notice that on the 2nd Monday, Hercy only puts in $2.
+
+
+Example 3:
+Input: n = 20
+Output: 96
+Explanation: After the 20th day, the total is (1 + 2 + 3 + 4 + 5 + 6 + 7) + (2 + 3 + 4 + 5 + 6 + 7 + 8) + (3 + 4 + 5 + 6 + 7 + 8) = 96.
+
+
+Constraints:
+`1 <= n <= 1000`",0,Easy,,65.4,0.6,https://leetcode.com/problems/calculate-money-in-leetcode-bank,353,15.6K,23.8K,edabit,"Math,Greedy",215,6,97,0,
+1413,Minimum Value to Get Positive Step by Step Sum,"Given an array of integers `nums`, you start with an initial positive value startValue.
+
+In each iteration, you calculate the step by step sum of startValue plus elements in `nums` (from left to right).
+
+Return the minimum positive value of startValue such that the step by step sum is never less than 1.
+
+
+Example 1:
+Input: nums = [-3,2,-3,4,2]
+Output: 5
+Explanation: If you choose startValue = 4, in the third iteration your step by step sum is less than 1.
+
+                step by step sum
+                startValue = 4 | startValue = 5 | nums
+                  (4 -3 ) = 1  | (5 -3 ) = 2    |  -3
+                  (1 +2 ) = 3  | (2 +2 ) = 4    |   2
+                  (3 -3 ) = 0  | (4 -3 ) = 1    |  -3
+                  (0 +4 ) = 4  | (1 +4 ) = 5    |   4
+                  (4 +2 ) = 6  | (5 +2 ) = 7    |   2
+
+Example 2:
+Input: nums = [1,2]
+Output: 1
+Explanation: Minimum start value should be positive. 
+
+Example 3:
+Input: nums = [1,-2,-3]
+Output: 5
+
+Constraints:
+`1 <= nums.length <= 100`
+`-100 <= nums[i] <= 100`",0,Easy,,65.5,30.3,https://leetcode.com/problems/minimum-value-to-get-positive-step-by-step-sum,418,28.1K,42.8K,Swiggy,Array,345,98,78,0,
+268,Missing Number,"Given an array `nums` containing `n` distinct numbers in the range `[0, n]`, return the only number in the range that is missing from the array.
+
+Follow up: Could you implement a solution using only `O(1)` extra space complexity and `O(n)` runtime complexity?
+
+Example 1:
+Input: nums = [3,0,1]
+Output: 2
+Explanation: n = 3 since there are 3 numbers, so all numbers are in the range [0,3]. 2 is the missing number in the range since it does not appear in nums.
+
+
+Example 2:
+Input: nums = [0,1]
+Output: 2
+Explanation: n = 2 since there are 2 numbers, so all numbers are in the range [0,2]. 2 is the missing number in the range since it does not appear in nums.
+
+
+Example 3:
+Input: nums = [9,6,4,2,3,5,7,0,1]
+Output: 8
+Explanation: n = 9 since there are 9 numbers, so all numbers are in the range [0,9]. 8 is the missing number in the range since it does not appear in nums.
+
+
+Example 4:
+Input: nums = [0]
+Output: 1
+Explanation: n = 1 since there is 1 number, so all numbers are in the range [0,1]. 1 is the missing number in the range since it does not appear in nums.
+
+
+Constraints:
+`n == nums.length`
+`1 <= n <= 104`
+`0 <= nums[i] <= n`
+All the numbers of `nums` are unique.",0,Easy,/articles/missing-number,55.2,35.5,https://leetcode.com/problems/missing-number,999,650K,1.2M,"Capital One,Amazon,Facebook,Apple,Microsoft,Oracle,Goldman Sachs,Cisco,Arista Networks","Array,Math,Bit Manipulation",2889,2501,54,1,"[First Missing Positive, /problems/first-missing-positive/, Hard], [Single Number, /problems/single-number/, Easy], [Find the Duplicate Number, /problems/find-the-duplicate-number/, Medium], [Couples Holding Hands, /problems/couples-holding-hands/, Hard]"
+1632,Rank Transform of a Matrix,"Given an `m x n` `matrix`, return a new matrix `answer` where `answer[row][col]` is the rank of `matrix[row][col]`.
+
+The rank is an integer that represents how large an element is compared to other elements. It is calculated using the following rules:
+The rank is an integer starting from `1`.
+
+If two elements `p` and `q` are in the same row or column, then:
+	
+If `p < q` then `rank(p) < rank(q)`
+If `p == q` then `rank(p) == rank(q)`
+If `p > q` then `rank(p) > rank(q)`
+The rank should be as small as possible.
+
+It is guaranteed that `answer` is unique under the given rules.
+
+
+Example 1:
+Input: matrix = [[1,2],[3,4]]
+Output: [[1,2],[2,3]]
+Explanation:
+The rank of matrix[0][0] is 1 because it is the smallest integer in its row and column.
+
+The rank of matrix[0][1] is 2 because matrix[0][1] > matrix[0][0] and matrix[0][0] is rank 1.
+
+The rank of matrix[1][0] is 2 because matrix[1][0] > matrix[0][0] and matrix[0][0] is rank 1.
+
+The rank of matrix[1][1] is 3 because matrix[1][1] > matrix[0][1], matrix[1][1] > matrix[1][0], and both matrix[0][1] and matrix[1][0] are rank 2.
+
+
+Example 2:
+Input: matrix = [[7,7],[7,7]]
+Output: [[1,1],[1,1]]
+
+Example 3:
+Input: matrix = [[20,-21,14],[-19,4,19],[22,-47,24],[-19,4,19]]
+Output: [[4,2,3],[1,3,4],[5,1,6],[1,3,4]]
+
+Example 4:
+Input: matrix = [[7,3,6],[1,4,5],[9,8,2]]
+Output: [[5,1,4],[1,2,3],[6,3,1]]
+
+Constraints:
+`m == matrix.length`
+`n == matrix[i].length`
+`1 <= m, n <= 500`
+`-109 <= matrix[row][col] <= 109`",0,Hard,/articles/rank-transform-of-a-matrix,31.9,5.8,https://leetcode.com/problems/rank-transform-of-a-matrix,45,3.6K,11.1K,Google,"Greedy,Union Find",193,6,97,1,"[Rank Transform of an Array, /problems/rank-transform-of-an-array/, Easy]"
+452,Minimum Number of Arrows to Burst Balloons,"There are some spherical balloons spread in two-dimensional space. For each balloon, provided input is the start and end coordinates of the horizontal diameter. Since it's horizontal, y-coordinates don't matter, and hence the x-coordinates of start and end of the diameter suffice. The start is always smaller than the end.
+
+An arrow can be shot up exactly vertically from different points along the x-axis. A balloon with `xstart` and `xend` bursts by an arrow shot at `x` if `xstart ≤ x ≤ xend`. There is no limit to the number of arrows that can be shot. An arrow once shot keeps traveling up infinitely.
+
+Given an array `points` where `points[i] = [xstart, xend]`, return the minimum number of arrows that must be shot to burst all balloons.
+
+
+Example 1:
+Input: points = [[10,16],[2,8],[1,6],[7,12]]
+Output: 2
+Explanation: One way is to shoot one arrow for example at x = 6 (bursting the balloons [2,8] and [1,6]) and another arrow at x = 11 (bursting the other two balloons).
+
+
+Example 2:
+Input: points = [[1,2],[3,4],[5,6],[7,8]]
+Output: 4
+
+Example 3:
+Input: points = [[1,2],[2,3],[3,4],[4,5]]
+Output: 2
+
+Constraints:
+`0 <= points.length <= 104`
+`points[i].length == 2`
+`-231 <= xstart < xend <= 231 - 1`",0,Medium,/articles/minimum-number-of-arrows-to-burst-balloons,49.8,25.3,https://leetcode.com/problems/minimum-number-of-arrows-to-burst-balloons,658,111.2K,223.3K,"Facebook,Google","Greedy,Sort",1681,62,96,1,"[Meeting Rooms II, /problems/meeting-rooms-ii/, Medium], [Non-overlapping Intervals, /problems/non-overlapping-intervals/, Medium]"
+1004,Max Consecutive Ones III,"Given an array `A` of 0s and 1s, we may change up to `K` values from 0 to 1.
+
+Return the length of the longest (contiguous) subarray that contains only 1s. 
+
+Example 1:
+Input: A = [1,1,1,0,0,0,1,1,1,1,0], K = 2
+Output: 6
+Explanation: 
+[1,1,1,0,0,1,1,1,1,1,1]
+Bolded numbers were flipped from 0 to 1.  The longest subarray is underlined.
+
+
+Example 2:
+Input: A = [0,0,1,1,0,0,1,1,1,0,1,1,0,0,0,1,1,1,1], K = 3
+Output: 10
+Explanation: 
+[0,0,1,1,1,1,1,1,1,1,1,1,0,0,0,1,1,1,1]
+Bolded numbers were flipped from 0 to 1.  The longest subarray is underlined.
+
+Note:
+`1 <= A.length <= 20000`
+`0 <= K <= A.length`
+`A[i]` is `0` or `1`",0,Medium,/articles/max-consecutive-ones-iii,60.8,32.8,https://leetcode.com/problems/max-consecutive-ones-iii,615,96.6K,158.9K,"Facebook,Coupang,HBO","Two Pointers,Sliding Window",2020,31,98,1,"[Longest Substring with At Most K Distinct Characters, /problems/longest-substring-with-at-most-k-distinct-characters/, Medium], [Longest Repeating Character Replacement, /problems/longest-repeating-character-replacement/, Medium], [Max Consecutive Ones, /problems/max-consecutive-ones/, Easy], [Max Consecutive Ones II, /problems/max-consecutive-ones-ii/, Medium]"
+162,Find Peak Element,"A peak element is an element that is strictly greater than its neighbors.
+
+Given an integer array `nums`, find a peak element, and return its index. If the array contains multiple peaks, return the index to any of the peaks.
+
+You may imagine that `nums[-1] = nums[n] = -∞`.
+
+
+Example 1:
+Input: nums = [1,2,3,1]
+Output: 2
+Explanation: 3 is a peak element and your function should return the index number 2.
+
+
+Example 2:
+Input: nums = [1,2,1,3,5,6,4]
+Output: 5
+Explanation: Your function can return either index number 1 where the peak element is 2, or index number 5 where the peak element is 6.
+
+
+Constraints:
+`1 <= nums.length <= 1000`
+`-231 <= nums[i] <= 231 - 1`
+`nums[i] != nums[i + 1]` for all valid `i`.
+
+Follow up: Could you implement a solution with logarithmic complexity?",0,Medium,/articles/find-peak-element,44.1,49.0,https://leetcode.com/problems/find-peak-element,999,476.9K,1.1M,"Facebook,Amazon,Google,Bloomberg,Quora","Array,Binary Search",2711,2601,51,1,"[Peak Index in a Mountain Array, /problems/peak-index-in-a-mountain-array/, Easy]"
+122,Best Time to Buy and Sell Stock II,"You are given an array `prices` where `prices[i]` is the price of a given stock on the `ith` day.
+
+Find the maximum profit you can achieve. You may complete as many transactions as you like (i.e., buy one and sell one share of the stock multiple times).
+
+Note: You may not engage in multiple transactions simultaneously (i.e., you must sell the stock before you buy again).
+
+
+Example 1:
+Input: prices = [7,1,5,3,6,4]
+Output: 7
+Explanation: Buy on day 2 (price = 1) and sell on day 3 (price = 5), profit = 5-1 = 4.
+
+Then buy on day 4 (price = 3) and sell on day 5 (price = 6), profit = 6-3 = 3.
+
+
+Example 2:
+Input: prices = [1,2,3,4,5]
+Output: 4
+Explanation: Buy on day 1 (price = 1) and sell on day 5 (price = 5), profit = 5-1 = 4.
+
+Note that you cannot buy on day 1, buy on day 2 and sell them later, as you are engaging multiple transactions at the same time. You must sell before buying again.
+
+
+Example 3:
+Input: prices = [7,6,4,3,1]
+Output: 0
+Explanation: In this case, no transaction is done, i.e., max profit = 0.
+
+
+Constraints:
+`1 <= prices.length <= 3 * 104`
+`0 <= prices[i] <= 104`",0,Easy,/articles/best-time-to-buy-and-sell-stock-ii,58.8,46.6,https://leetcode.com/problems/best-time-to-buy-and-sell-stock-ii,999,804.1K,1.4M,"Amazon,Apple,tcs,Microsoft,Facebook,Uber","Array,Greedy",3950,1953,67,1,"[Best Time to Buy and Sell Stock, /problems/best-time-to-buy-and-sell-stock/, Easy], [Best Time to Buy and Sell Stock III, /problems/best-time-to-buy-and-sell-stock-iii/, Hard], [Best Time to Buy and Sell Stock IV, /problems/best-time-to-buy-and-sell-stock-iv/, Hard], [Best Time to Buy and Sell Stock with Cooldown, /problems/best-time-to-buy-and-sell-stock-with-cooldown/, Medium], [Best Time to Buy and Sell Stock with Transaction Fee, /problems/best-time-to-buy-and-sell-stock-with-transaction-fee/, Medium]"
+930,Binary Subarrays With Sum,"In an array `A` of `0`s and `1`s, how many non-empty subarrays have sum `S`?
+
+Example 1:
+Input: A = [1,0,1,0,1], S = 2
+Output: 4
+Explanation: 
+The 4 subarrays are bolded below:
+[1,0,1,0,1]
+[1,0,1,0,1]
+[1,0,1,0,1]
+[1,0,1,0,1]
+Note:
+`A.length <= 30000`
+`0 <= S <= A.length`
+`A[i]` is either `0` or `1`.",0,Medium,/articles/binary-subarrays-with-sum,44.8,4.5,https://leetcode.com/problems/binary-subarrays-with-sum,206,30.5K,68K,C3 IoT,"Hash Table,Two Pointers",772,32,96,0,
+771,Jewels and Stones,"You're given strings `jewels` representing the types of stones that are jewels, and `stones` representing the stones you have. Each character in `stones` is a type of stone you have. You want to know how many of the stones you have are also jewels.
+
+Letters are case sensitive, so `""a""` is considered a different type of stone from `""A""`.
+
+
+Example 1:
+Input: jewels = ""aA"", stones = ""aAAbbbb""
+Output: 3
+
+Example 2:
+Input: jewels = ""z"", stones = ""ZZ""
+Output: 0
+
+Constraints:
+`1 <= jewels.length, stones.length <= 50`
+`jewels` and `stones` consist of only English letters.
+
+All the characters of `jewels` are unique.",0,Easy,/articles/jewels-and-stones,87.0,19.7,https://leetcode.com/problems/jewels-and-stones,999,612.3K,703.9K,Apple,Hash Table,2588,409,86,1,
+9,Palindrome Number,"Given an integer `x`, return `true` if `x` is palindrome integer.
+
+An integer is a palindrome when it reads the same backward as forward. For example, `121` is palindrome while `123` is not.
+
+
+Example 1:
+Input: x = 121
+Output: true
+
+Example 2:
+Input: x = -121
+Output: false
+Explanation: From left to right, it reads -121. From right to left, it becomes 121-. Therefore it is not a palindrome.
+
+
+Example 3:
+Input: x = 10
+Output: false
+Explanation: Reads 01 from right to left. Therefore it is not a palindrome.
+
+
+Example 4:
+Input: x = -101
+Output: false
+
+Constraints:
+`-231 <= x <= 231 - 1`
+Follow up: Could you solve it without converting the integer to a string?",0,Easy,/articles/palindrome-number,50.0,58.2,https://leetcode.com/problems/palindrome-number,999,1.2M,2.4M,"Microsoft,Adobe,Bloomberg,Facebook,Google,Yahoo",Math,3199,1724,65,1,"[Palindrome Linked List, /problems/palindrome-linked-list/, Easy]"
+840,Magic Squares In Grid,"A `3 x 3` magic square is a `3 x 3` grid filled with distinct numbers from `1` to `9` such that each row, column, and both diagonals all have the same sum.
+
+Given a `row x col` `grid` of integers, how many `3 x 3` ""magic square"" subgrids are there?  (Each subgrid is contiguous).
+
+
+Example 1:
+Input: grid = [[4,3,8,4],[9,5,1,9],[2,7,6,2]]
+Output: 1
+Explanation: 
+The following subgrid is a 3 x 3 magic square:
+while this one is not:
+In total, there is only one magic square inside the given grid.
+
+
+Example 2:
+Input: grid = [[8]]
+Output: 0
+
+Example 3:
+Input: grid = [[4,4],[3,3]]
+Output: 0
+
+Example 4:
+Input: grid = [[4,7,8],[9,5,1],[2,3,6]]
+Output: 0
+
+Constraints:
+`row == grid.length`
+`col == grid[i].length`
+`1 <= row, col <= 10`
+`0 <= grid[i][j] <= 15`",0,Medium,/articles/magic-squares-in-grid,37.9,10.8,https://leetcode.com/problems/magic-squares-in-grid,239,28.1K,74.4K,Google,Array,190,1341,12,1,
+192,Word Frequency,"Write a bash script to calculate the frequency of each word in a text file `words.txt`.
+
+For simplicity sake, you may assume:
+`words.txt` contains only lowercase characters and space `' '` characters.
+
+Each word must consist of lowercase characters only.
+
+Words are separated by one or more whitespace characters.
+
+
+Example:
+Assume that `words.txt` has the following content:
+the day is sunny the the
+the sunny is is
+Your script should output the following, sorted by descending frequency:
+the 4
+is 3
+sunny 2
+day 1
+Note:
+Don't worry about handling ties, it is guaranteed that each word's frequency count is unique.
+
+Could you write it in one-line using Unix pipes?",0,Medium,,25.6,20.9,https://leetcode.com/problems/word-frequency,133,31K,121.1K,Apple,,259,181,59,1,
+1179,Reformat Department Table,SQL Schema,0,Easy,,82.1,18.1,https://leetcode.com/problems/reformat-department-table,143,41.8K,50.9K,Amazon,,259,188,58,1,
+954,Array of Doubled Pairs,"Given an array of integers `arr` of even length, return `true` if and only if it is possible to reorder it such that `arr[2 * i + 1] = 2 * arr[2 * i]` for every `0 <= i < len(arr) / 2`.
+
+
+Example 1:
+Input: arr = [3,1,3,6]
+Output: false
+
+Example 2:
+Input: arr = [2,1,2,6]
+Output: false
+
+Example 3:
+Input: arr = [4,-2,2,-4]
+Output: true
+Explanation: We can take two groups, [-2,-4] and [2,4] to form [-2,-4,2,4] or [2,4,-2,-4].
+
+
+Example 4:
+Input: arr = [1,2,4,16,8,4]
+Output: false
+
+Constraints:
+`0 <= arr.length <= 3 * 104`
+`arr.length` is even.
+
+`-105 <= arr[i] <= 105`",0,Medium,/articles/array-of-doubled-pairs,35.1,0.0,https://leetcode.com/problems/array-of-doubled-pairs,193,24K,68.3K,Google,"Array,Hash Table",406,62,87,1,
+1499,Max Value of Equation,"Given an array `points` containing the coordinates of points on a 2D plane, sorted by the x-values, where `points[i] = [xi, yi]` such that `xi < xj` for all `1 <= i < j <= points.length`. You are also given an integer `k`.
+
+Find the maximum value of the equation `yi + yj + |xi - xj|` where `|xi - xj| <= k` and `1 <= i < j <= points.length`. It is guaranteed that there exists at least one pair of points that satisfy the constraint `|xi - xj| <= k`.
+
+
+Example 1:
+Input: points = [[1,3],[2,0],[5,10],[6,-10]], k = 1
+Output: 4
+Explanation: The first two points satisfy the condition |xi - xj| <= 1 and if we calculate the equation we get 3 + 0 + |1 - 2| = 4. Third and fourth points also satisfy the condition and give a value of 10 + -10 + |5 - 6| = 1.
+
+No other pairs satisfy the condition, so we return the max of 4 and 1.
+
+
+Example 2:
+Input: points = [[0,0],[3,0],[9,2]], k = 3
+Output: 3
+Explanation: Only the first two points have an absolute difference of 3 or less in the x-values, and give the value of 0 + 0 + |0 - 3| = 3.
+
+
+Constraints:
+`2 <= points.length <= 10^5`
+`points[i].length == 2`
+`-10^8 <= points[i][0], points[i][1] <= 10^8`
+`0 <= k <= 2 * 10^8`
+`points[i][0] < points[j][0]` for all `1 <= i < j <= points.length`
+`xi` form a strictly increasing sequence.",0,Hard,,45.0,26.4,https://leetcode.com/problems/max-value-of-equation,91,11.2K,24.9K,Google,"Array,Sliding Window",349,14,96,1,
+937,Reorder Data in Log Files,"You are given an array of `logs`. Each log is a space-delimited string of words, where the first word is the identifier.
+
+There are two types of logs:
+Letter-logs: All words (except the identifier) consist of lowercase English letters.
+
+Digit-logs: All words (except the identifier) consist of digits.
+
+Reorder these logs so that:
+The letter-logs come before all digit-logs.
+
+The letter-logs are sorted lexicographically by their contents. If their contents are the same, then sort them lexicographically by their identifiers.
+
+The digit-logs maintain their relative ordering.
+
+Return the final order of the logs.
+
+
+Example 1:
+Input: logs = [""dig1 8 1 5 1"",""let1 art can"",""dig2 3 6"",""let2 own kit dig"",""let3 art zero""]
+Output: [""let1 art can"",""let3 art zero"",""let2 own kit dig"",""dig1 8 1 5 1"",""dig2 3 6""]
+Explanation:
+The letter-log contents are all different, so their ordering is ""art can"", ""art zero"", ""own kit dig"".
+
+The digit-logs have a relative order of ""dig1 8 1 5 1"", ""dig2 3 6"".
+
+
+Example 2:
+Input: logs = [""a1 9 2 3 1"",""g1 act car"",""zo4 4 7"",""ab1 off key dog"",""a8 act zoo""]
+Output: [""g1 act car"",""a8 act zoo"",""ab1 off key dog"",""a1 9 2 3 1"",""zo4 4 7""]
+
+Constraints:
+`1 <= logs.length <= 100`
+`3 <= logs[i].length <= 100`
+All the tokens of `logs[i]` are separated by a single space.
+
+`logs[i]` is guaranteed to have an identifier and at least one word after the identifier.",0,Easy,/articles/reorder-data-in-log-files,54.8,65.2,https://leetcode.com/problems/reorder-data-in-log-files,935,202.8K,370.2K,"Amazon,Audible",String,1056,2863,27,1,
+472,Concatenated Words,"Given an array of strings `words` (without duplicates), return all the concatenated words in the given list of `words`.
+
+A concatenated word is defined as a string that is comprised entirely of at least two shorter words in the given array.
+
+
+Example 1:
+Input: words = [""cat"",""cats"",""catsdogcats"",""dog"",""dogcatsdog"",""hippopotamuses"",""rat"",""ratcatdogcat""]
+Output: [""catsdogcats"",""dogcatsdog"",""ratcatdogcat""]
+Explanation: ""catsdogcats"" can be concatenated by ""cats"", ""dog"" and ""cats""; 
+""dogcatsdog"" can be concatenated by ""dog"", ""cats"" and ""dog""; 
+""ratcatdogcat"" can be concatenated by ""rat"", ""cat"", ""dog"" and ""cat"".
+
+
+Example 2:
+Input: words = [""cat"",""dog"",""catdog""]
+Output: [""catdog""]
+
+Constraints:
+`1 <= words.length <= 104`
+`0 <= words[i].length <= 1000`
+`words[i]` consists of only lowercase English letters.
+
+`0 <= sum(words[i].length) <= 6 * 105`",0,Hard,,43.7,50.3,https://leetcode.com/problems/concatenated-words,471,90.3K,206.5K,Amazon,"Dynamic Programming,Depth-first Search,Trie",1133,146,89,1,"[Word Break II, /problems/word-break-ii/, Hard]"
+863,All Nodes Distance K in Binary Tree,"We are given a binary tree (with root node `root`), a `target` node, and an integer value `K`.
+
+Return a list of the values of all nodes that have a distance `K` from the `target` node.  The answer can be returned in any order.
+
+
+Example 1:
+Input: root = [3,5,1,6,2,0,8,null,null,7,4], target = 5, K = 2
+Output: [7,4,1]
+Explanation: 
+The nodes that are a distance 2 from the target node (with value 5)
+have values 7, 4, and 1.
+
+Note that the inputs ""root"" and ""target"" are actually TreeNodes.
+
+The descriptions of the inputs above are just serializations of these objects.
+
+Note:
+The given tree is non-empty.
+
+Each node in the tree has unique values `0 <= node.val <= 500`.
+
+The `target` node is a node in the tree.
+
+`0 <= K <= 1000`.",0,Medium,/articles/all-nodes-distance-k-in-binary-tree,58.2,63.0,https://leetcode.com/problems/all-nodes-distance-k-in-binary-tree,999,128.5K,220.9K,"Amazon,Facebook,Google","Tree,Depth-first Search,Breadth-first Search",3408,70,98,1,
+530,Minimum Absolute Difference in BST,"Given a binary search tree with non-negative values, find the minimum absolute difference between values of any two nodes.
+
+
+Example:
+Input:
+   1
+    \
+     3
+    /
+   2
+Output:
+1
+Explanation:
+The minimum absolute difference is 1, which is the difference between 2 and 1 (or between 2 and 3).
+
+Note:
+There are at least two nodes in this BST.
+
+This question is the same as 783: https://leetcode.com/problems/minimum-distance-between-bst-nodes/",0,Easy,,55.0,18.6,https://leetcode.com/problems/minimum-absolute-difference-in-bst,614,110.4K,200.6K,Google,Tree,1203,91,93,1,"[K-diff Pairs in an Array, /problems/k-diff-pairs-in-an-array/, Medium]"
+282,Expression Add Operators,"Given a string `num` that contains only digits and an integer `target`, return all possibilities to add the binary operators `'+'`, `'-'`, or `'*'` between the digits of `num` so that the resultant expression evaluates to the `target` value.
+
+
+Example 1:
+Input: num = ""123"", target = 6
+Output: [""1*2*3"",""1+2+3""]
+
+Example 2:
+Input: num = ""232"", target = 8
+Output: [""2*3+2"",""2+3*2""]
+
+Example 3:
+Input: num = ""105"", target = 5
+Output: [""1*0+5"",""10-5""]
+
+Example 4:
+Input: num = ""00"", target = 0
+Output: [""0*0"",""0+0"",""0-0""]
+
+Example 5:
+Input: num = ""3456237490"", target = 9191
+Output: []
+
+Constraints:
+`1 <= num.length <= 10`
+`num` consists of only digits.
+
+`-231 <= target <= 231 - 1`",0,Hard,/articles/expression-add-operators,36.9,37.5,https://leetcode.com/problems/expression-add-operators,311,129.2K,350K,"Facebook,Citadel",Divide and Conquer,1622,272,86,1,"[Evaluate Reverse Polish Notation, /problems/evaluate-reverse-polish-notation/, Medium], [Basic Calculator, /problems/basic-calculator/, Hard], [Basic Calculator II, /problems/basic-calculator-ii/, Medium], [Different Ways to Add Parentheses, /problems/different-ways-to-add-parentheses/, Medium], [Target Sum, /problems/target-sum/, Medium]"
+952,Largest Component Size by Common Factor,"Given a non-empty array of unique positive integers `A`, consider the following graph:
+There are `A.length` nodes, labelled `A[0]` to `A[A.length - 1];`
+There is an edge between `A[i]` and `A[j]` if and only if `A[i]` and `A[j]` share a common factor greater than 1.
+
+Return the size of the largest connected component in the graph.
+
+
+Example 1:
+Input: [4,6,15,35]
+Output: 4
+
+Example 2:
+Input: [20,50,9,63]
+Output: 2
+
+Example 3:
+Input: [2,3,6,7,4,12,21,39]
+Output: 8
+Note:
+`1 <= A.length <= 20000`
+`1 <= A[i] <= 100000`",0,Hard,/articles/largest-component-size-by-common-factor,36.4,2.2,https://leetcode.com/problems/largest-component-size-by-common-factor,145,26.1K,71.8K,Google,"Math,Union Find",564,67,89,1,
+1663,Smallest String With A Given Numeric Value,"The numeric value of a lowercase character is defined as its position `(1-indexed)` in the alphabet, so the numeric value of `a` is `1`, the numeric value of `b` is `2`, the numeric value of `c` is `3`, and so on.
+
+The numeric value of a string consisting of lowercase characters is defined as the sum of its characters' numeric values. For example, the numeric value of the string `""abe""` is equal to `1 + 2 + 5 = 8`.
+
+You are given two integers `n` and `k`. Return the lexicographically smallest string with length equal to `n` and numeric value equal to `k`.
+
+Note that a string `x` is lexicographically smaller than string `y` if `x` comes before `y` in dictionary order, that is, either `x` is a prefix of `y`, or if `i` is the first position such that `x[i] != y[i]`, then `x[i]` comes before `y[i]` in alphabetic order.
+
+
+Example 1:
+Input: n = 3, k = 27
+Output: ""aay""
+Explanation: The numeric value of the string is 1 + 1 + 25 = 27, and it is the smallest string with such a value and length equal to 3.
+
+
+Example 2:
+Input: n = 5, k = 73
+Output: ""aaszz""
+
+Constraints:
+`1 <= n <= 105`
+`n <= k <= 26 * n`",0,Medium,/articles/smallest-string-with-a-given-numeric-value,64.4,1.9,https://leetcode.com/problems/smallest-string-with-a-given-numeric-value,367,31K,48.2K,Lendingkart,Greedy,390,10,98,0,
+115,Distinct Subsequences,"Given two strings `s` and `t`, return the number of distinct subsequences of `s` which equals `t`.
+
+A string's subsequence is a new string formed from the original string by deleting some (can be none) of the characters without disturbing the remaining characters' relative positions. (i.e., `""ACE""` is a subsequence of `""ABCDE""` while `""AEC""` is not).
+
+It is guaranteed the answer fits on a 32-bit signed integer.
+
+
+Example 1:
+Input: s = ""rabbbit"", t = ""rabbit""
+Output: 3
+Explanation:
+As shown below, there are 3 ways you can generate ""rabbit"" from S.
+
+`rabbbit`
+`rabbbit`
+`rabbbit`
+
+Example 2:
+Input: s = ""babgbag"", t = ""bag""
+Output: 5
+Explanation:
+As shown below, there are 5 ways you can generate ""bag"" from S.
+
+`babgbag`
+`babgbag`
+`babgbag`
+`babgbag`
+`babgbag`
+
+Constraints:
+`1 <= s.length, t.length <= 1000`
+`s` and `t` consist of English letters.",0,Hard,/articles/distinct-subsequences,40.0,49.9,https://leetcode.com/problems/distinct-subsequences,654,160.9K,402.3K,"Mathworks,Google,Amazon,Bloomberg","String,Dynamic Programming",1859,63,97,1,
+655,Print Binary Tree,"Print a binary tree in an m*n 2D string array following these rules: 
+The row number `m` should be equal to the height of the given binary tree.
+
+The column number `n` should always be an odd number.
+
+The root node's value (in string format) should be put in the exactly middle of the first row it can be put. The column and the row where the root node belongs will separate the rest space into two parts (left-bottom part and right-bottom part). You should print the left subtree in the left-bottom part and print the right subtree in the right-bottom part. The left-bottom part and the right-bottom part should have the same size. Even if one subtree is none while the other is not, you don't need to print anything for the none subtree but still need to leave the space as large as that for the other subtree. However, if two subtrees are none, then you don't need to leave space for both of them. 
+Each unused space should contain an empty string `""""`.
+
+Print the subtrees following the same rules.
+
+
+Example 1:
+Input:
+     1
+    /
+   2
+Output:
+[["""", ""1"", """"],
+ [""2"", """", """"]]
+
+Example 2:
+Input:
+     1
+    / \
+   2   3
+    \
+     4
+Output:
+[["""", """", """", ""1"", """", """", """"],
+ ["""", ""2"", """", """", """", ""3"", """"],
+ ["""", """", ""4"", """", """", """", """"]]
+
+Example 3:
+Input:
+      1
+     / \
+    2   5
+   / 
+  3 
+ / 
+4 
+Output:
+[["""",  """",  """", """",  """", """", """", ""1"", """",  """",  """",  """",  """", """", """"]
+ ["""",  """",  """", ""2"", """", """", """", """",  """",  """",  """",  ""5"", """", """", """"]
+ ["""",  ""3"", """", """",  """", """", """", """",  """",  """",  """",  """",  """", """", """"]
+ [""4"", """",  """", """",  """", """", """", """",  """",  """",  """",  """",  """", """", """"]]
+Note:
+The height of binary tree is in the range of [1, 10].",0,Medium,/articles/print-binary-tree,56.3,24.4,https://leetcode.com/problems/print-binary-tree,320,38.7K,68.8K,Uber,Tree,421,971,30,0,
+496,Next Greater Element I,"You are given two integer arrays `nums1` and `nums2` both of unique elements, where `nums1` is a subset of `nums2`.
+
+Find all the next greater numbers for `nums1`'s elements in the corresponding places of `nums2`.
+
+The Next Greater Number of a number `x` in `nums1` is the first greater number to its right in `nums2`. If it does not exist, return `-1` for this number.
+
+
+Example 1:
+Input: nums1 = [4,1,2], nums2 = [1,3,4,2]
+Output: [-1,3,-1]
+Explanation:
+For number 4 in the first array, you cannot find the next greater number for it in the second array, so output -1.
+
+For number 1 in the first array, the next greater number for it in the second array is 3.
+
+For number 2 in the first array, there is no next greater number for it in the second array, so output -1.
+
+
+Example 2:
+Input: nums1 = [2,4], nums2 = [1,2,3,4]
+Output: [3,-1]
+Explanation:
+For number 2 in the first array, the next greater number for it in the second array is 3.
+
+For number 4 in the first array, there is no next greater number for it in the second array, so output -1.
+
+
+Constraints:
+`1 <= nums1.length <= nums2.length <= 1000`
+`0 <= nums1[i], nums2[i] <= 104`
+All integers in `nums1` and `nums2` are unique.
+
+All the integers of `nums1` also appear in `nums2`.
+
+Follow up: Could you find an `O(nums1.length + nums2.length)` solution?",0,Easy,/articles/greater-element-i,65.9,35.9,https://leetcode.com/problems/next-greater-element-i,999,211.3K,320.7K,"Amazon,Microsoft",Stack,2367,2825,46,1,"[Next Greater Element II, /problems/next-greater-element-ii/, Medium], [Next Greater Element III, /problems/next-greater-element-iii/, Medium], [Daily Temperatures, /problems/daily-temperatures/, Medium]"
+1022,Sum of Root To Leaf Binary Numbers,"You are given the `root` of a binary tree where each node has a value `0` or `1`.  Each root-to-leaf path represents a binary number starting with the most significant bit.  For example, if the path is `0 -> 1 -> 1 -> 0 -> 1`, then this could represent `01101` in binary, which is `13`.
+
+For all leaves in the tree, consider the numbers represented by the path from the root to that leaf.
+
+Return the sum of these numbers. The answer is guaranteed to fit in a 32-bits integer.
+
+
+Example 1:
+Input: root = [1,0,1,0,1,0,1]
+Output: 22
+Explanation: (100) + (101) + (110) + (111) = 4 + 5 + 6 + 7 = 22
+
+Example 2:
+Input: root = [0]
+Output: 0
+
+Example 3:
+Input: root = [1]
+Output: 1
+
+Example 4:
+Input: root = [1,1]
+Output: 3
+
+Constraints:
+The number of nodes in the tree is in the range `[1, 1000]`.
+
+`Node.val` is `0` or `1`.",0,Easy,/articles/sum-root-to-leaf-binary-numbers,71.6,4.2,https://leetcode.com/problems/sum-of-root-to-leaf-binary-numbers,839,91.1K,127.3K,Amazon,Tree,1131,90,93,1,
+547,Number of Provinces,"There are `n` cities. Some of them are connected, while some are not. If city `a` is connected directly with city `b`, and city `b` is connected directly with city `c`, then city `a` is connected indirectly with city `c`.
+
+A province is a group of directly or indirectly connected cities and no other cities outside of the group.
+
+You are given an `n x n` matrix `isConnected` where `isConnected[i][j] = 1` if the `ith` city and the `jth` city are directly connected, and `isConnected[i][j] = 0` otherwise.
+
+Return the total number of provinces.
+
+
+Example 1:
+Input: isConnected = [[1,1,0],[1,1,0],[0,0,1]]
+Output: 2
+
+Example 2:
+Input: isConnected = [[1,0,0],[0,1,0],[0,0,1]]
+Output: 3
+
+Constraints:
+`1 <= n <= 200`
+`n == isConnected.length`
+`n == isConnected[i].length`
+`isConnected[i][j]` is `1` or `0`.
+
+`isConnected[i][i] == 1`
+`isConnected[i][j] == isConnected[j][i]`",0,Medium,/articles/friend-circles,60.7,76.6,https://leetcode.com/problems/number-of-provinces,999,257.5K,424.1K,"Amazon,Two Sigma,Goldman Sachs,Dropbox,Facebook,Audible","Depth-first Search,Union Find",2921,178,94,1,"[Number of Connected Components in an Undirected Graph, /problems/number-of-connected-components-in-an-undirected-graph/, Medium], [Robot Return to Origin, /problems/robot-return-to-origin/, Easy], [Sentence Similarity, /problems/sentence-similarity/, Easy], [Sentence Similarity II, /problems/sentence-similarity-ii/, Medium], [The Earliest Moment When Everyone Become Friends, /problems/the-earliest-moment-when-everyone-become-friends/, Medium]"
+643,Maximum Average Subarray I,"Given an array consisting of `n` integers, find the contiguous subarray of given length `k` that has the maximum average value. And you need to output the maximum average value.
+
+
+Example 1:
+Input: [1,12,-5,-6,50,3], k = 4
+Output: 12.75
+Explanation: Maximum average is (12-5-6+50)/4 = 51/4 = 12.75
+Note:
+1 <= `k` <= `n` <= 30,000.
+
+Elements of the given array will be in the range [-10,000, 10,000].",0,Easy,/articles/maximum-average-subarray,42.0,4.9,https://leetcode.com/problems/maximum-average-subarray-i,459,97.8K,232.8K,Amazon,Array,953,134,88,1,"[Maximum Average Subarray II, /problems/maximum-average-subarray-ii/, Hard]"
+560,Subarray Sum Equals K,"Given an array of integers `nums` and an integer `k`, return the total number of continuous subarrays whose sum equals to `k`.
+
+
+Example 1:
+Input: nums = [1,1,1], k = 2
+Output: 2
+
+Example 2:
+Input: nums = [1,2,3], k = 3
+Output: 2
+
+Constraints:
+`1 <= nums.length <= 2 * 104`
+`-1000 <= nums[i] <= 1000`
+`-107 <= k <= 107`",0,Medium,/articles/subarray-sum-equals-k,43.7,83.0,https://leetcode.com/problems/subarray-sum-equals-k,871,461.9K,1.1M,"Facebook,Yandex,Amazon,Bloomberg,Microsoft,ByteDance,Google,Adobe,Oracle","Array,Hash Table",6966,241,97,1,"[Two Sum, /problems/two-sum/, Easy], [Continuous Subarray Sum, /problems/continuous-subarray-sum/, Medium], [Subarray Product Less Than K, /problems/subarray-product-less-than-k/, Medium], [Find Pivot Index, /problems/find-pivot-index/, Easy], [Subarray Sums Divisible by K, /problems/subarray-sums-divisible-by-k/, Medium], [Minimum Operations to Reduce X to Zero, /problems/minimum-operations-to-reduce-x-to-zero/, Medium]"
+940,Distinct Subsequences II,"Given a string `S`, count the number of distinct, non-empty subsequences of `S` .
+
+Since the result may be large, return the answer modulo `10^9 + 7`.
+
+
+Example 1:
+Input: ""abc""
+Output: 7
+Explanation: The 7 distinct subsequences are ""a"", ""b"", ""c"", ""ab"", ""ac"", ""bc"", and ""abc"".
+
+
+Example 2:
+Input: ""aba""
+Output: 6
+Explanation: The 6 distinct subsequences are ""a"", ""b"", ""ab"", ""ba"", ""aa"" and ""aba"".
+
+
+Example 3:
+Input: ""aaa""
+Output: 3
+Explanation: The 3 distinct subsequences are ""a"", ""aa"" and ""aaa"".
+
+Note:
+`S` contains only lowercase letters.
+
+`1 <= S.length <= 2000`",0,Hard,/articles/distinct-subsequences-ii,41.5,25.4,https://leetcode.com/problems/distinct-subsequences-ii,84,13.9K,33.4K,,,520,17,97,0,
+130,Surrounded Regions,"Given an `m x n` matrix `board` containing `'X'` and `'O'`, capture all regions surrounded by `'X'`.
+
+A region is captured by flipping all `'O'`s into `'X'`s in that surrounded region.
+
+
+Example 1:
+Input: board = [[""X"",""X"",""X"",""X""],[""X"",""O"",""O"",""X""],[""X"",""X"",""O"",""X""],[""X"",""O"",""X"",""X""]]
+Output: [[""X"",""X"",""X"",""X""],[""X"",""X"",""X"",""X""],[""X"",""X"",""X"",""X""],[""X"",""O"",""X"",""X""]]
+Explanation: Surrounded regions should not be on the border, which means that any 'O' on the border of the board are not flipped to 'X'. Any 'O' that is not on the border and it is not connected to an 'O' on the border will be flipped to 'X'. Two cells are connected if they are adjacent cells connected horizontally or vertically.
+
+
+Example 2:
+Input: board = [[""X""]]
+Output: [[""X""]]
+
+Constraints:
+`m == board.length`
+`n == board[i].length`
+`1 <= m, n <= 200`
+`board[i][j]` is `'X'` or `'O'`.",0,Medium,/articles/surrounded-regions,29.8,35.9,https://leetcode.com/problems/surrounded-regions,999,292.7K,983.8K,"Google,Amazon,Uber","Depth-first Search,Breadth-first Search,Union Find",2640,767,77,1,"[Number of Islands, /problems/number-of-islands/, Medium], [Walls and Gates, /problems/walls-and-gates/, Medium]"
+1778,Shortest Path in a Hidden Grid,"This is an interactive problem.
+
+There is a robot in a hidden grid, and you are trying to get it from its starting cell to the target cell in this grid. The grid is of size `m x n`, and each cell in the grid is either empty or blocked. It is guaranteed that the starting cell and the target cell are different, and neither of them is blocked.
+
+You want to find the minimum distance to the target cell. However, you do not know the grid's dimensions, the starting cell, nor the target cell. You are only allowed to ask queries to the `GridMaster` object.
+
+Thr `GridMaster` class has the following functions:
+`boolean canMove(char direction)` Returns `true` if the robot can move in that direction. Otherwise, it returns `false`.
+
+`void move(char direction)` Moves the robot in that direction. If this move would move the robot to a blocked cell or off the grid, the move will be ignored, and the robot will remain in the same position.
+
+`boolean isTarget()` Returns `true` if the robot is currently on the target cell. Otherwise, it returns `false`.
+
+Note that `direction` in the above functions should be a character from `{'U','D','L','R'}`, representing the directions up, down, left, and right, respectively.
+
+Return the minimum distance between the robot's initial starting cell and the target cell. If there is no valid path between the cells, return `-1`.
+
+Custom testing:
+The test input is read as a 2D matrix `grid` of size `m x n` where:
+`grid[i][j] == -1` indicates that the robot is in cell `(i, j)` (the starting cell).
+
+`grid[i][j] == 0` indicates that the cell `(i, j)` is blocked.
+
+`grid[i][j] == 1` indicates that the cell `(i, j)` is empty.
+
+`grid[i][j] == 2` indicates that the cell `(i, j)` is the target cell.
+
+There is exactly one `-1` and `2` in `grid`. Remember that you will not have this information in your code.
+
+
+Example 1:
+Input: grid = [[1,2],[-1,0]]
+Output: 2
+Explanation: One possible interaction is described below:
+The robot is initially standing on cell (1, 0), denoted by the -1.
+
+- master.canMove('U') returns true.
+
+- master.canMove('D') returns false.
+
+- master.canMove('L') returns false.
+
+- master.canMove('R') returns false.
+
+- master.move('U') moves the robot to the cell (0, 0).
+
+- master.isTarget() returns false.
+
+- master.canMove('U') returns false.
+
+- master.canMove('D') returns true.
+
+- master.canMove('L') returns false.
+
+- master.canMove('R') returns true.
+
+- master.move('R') moves the robot to the cell (0, 1).
+
+- master.isTarget() returns true. 
+We now know that the target is the cell (0, 1), and the shortest path to the target cell is 2.
+
+
+Example 2:
+Input: grid = [[0,0,-1],[1,1,1],[2,0,0]]
+Output: 4
+Explanation: The minimum distance between the robot and the target cell is 4.
+
+
+Example 3:
+Input: grid = [[-1,0],[0,2]]
+Output: -1
+Explanation: There is no path from the robot to the target cell.
+
+
+Constraints:
+`1 <= n, m <= 500`
+`m == grid.length`
+`n == grid[i].length`
+`grid[i][j]` is either `-1`, `0`, `1`, or `2`.
+
+There is exactly one `-1` in `grid`.
+
+There is exactly one `2` in `grid`.",1,Medium,,46.2,4.5,https://leetcode.com/problems/shortest-path-in-a-hidden-grid,23,857,1.8K,Google,"Depth-first Search,Breadth-first Search,Graph",32,18,64,1,"[Robot Room Cleaner, /problems/robot-room-cleaner/, Hard], [Minimum Path Cost in a Hidden Grid, /problems/minimum-path-cost-in-a-hidden-grid/, Medium]"
+1511,Customer Order Frequency,SQL Schema,1,Easy,,74.1,2.5,https://leetcode.com/problems/customer-order-frequency,227,10K,13.5K,Amazon,,102,21,83,1,
+1069,Product Sales Analysis II,SQL Schema,1,Easy,,83.1,0.0,https://leetcode.com/problems/product-sales-analysis-ii,81,26K,31.2K,Amazon,,34,95,26,1,
+1271,Hexspeak,"A decimal number can be converted to its Hexspeak representation by first converting it to an uppercase hexadecimal string, then replacing all occurrences of the digit `0` with the letter `O`, and the digit `1` with the letter `I`.  Such a representation is valid if and only if it consists only of the letters in the set `{""A"", ""B"", ""C"", ""D"", ""E"", ""F"", ""I"", ""O""}`.
+
+Given a string `num` representing a decimal integer `N`, return the Hexspeak representation of `N` if it is valid, otherwise return `""ERROR""`.
+
+
+Example 1:
+Input: num = ""257""
+Output: ""IOI""
+Explanation:  257 is 101 in hexadecimal.
+
+
+Example 2:
+Input: num = ""3""
+Output: ""ERROR""
+
+Constraints:
+`1 <= N <= 10^12`
+There are no leading zeros in the given string.
+
+All answers must be in uppercase letters.",1,Easy,,55.5,26.6,https://leetcode.com/problems/hexspeak,99,6.3K,11.4K,Virtu Financial,"Math,String",46,79,37,0,
+1216,Valid Palindrome III,"Given a string `s` and an integer `k`, return `true` if `s` is a `k`-palindrome.
+
+A string is `k`-palindrome if it can be transformed into a palindrome by removing at most `k` characters from it.
+
+
+Example 1:
+Input: s = ""abcdeca"", k = 2
+Output: true
+Explanation: Remove 'b' and 'e' characters.
+
+
+Example 2:
+Input: s = ""abbababa"", k = 1
+Output: true
+
+Constraints:
+`1 <= s.length <= 1000`
+`s` consists of only lowercase English letters.
+
+`1 <= k <= s.length`",1,Hard,/articles/valid-palindrome-iii,50.0,7.9,https://leetcode.com/problems/valid-palindrome-iii,121,14.2K,28.5K,Facebook,"String,Dynamic Programming",234,6,98,1,
+426,Convert Binary Search Tree to Sorted Doubly Linked List,"Convert a Binary Search Tree to a sorted Circular Doubly-Linked List in place.
+
+You can think of the left and right pointers as synonymous to the predecessor and successor pointers in a doubly-linked list. For a circular doubly linked list, the predecessor of the first element is the last element, and the successor of the last element is the first element.
+
+We want to do the transformation in place. After the transformation, the left pointer of the tree node should point to its predecessor, and the right pointer should point to its successor. You should return the pointer to the smallest element of the linked list.
+
+
+Example 1:
+Input: root = [4,2,5,1,3]
+Output: [1,2,3,4,5]
+Explanation: The figure below shows the transformed BST. The solid line indicates the successor relationship, while the dashed line means the predecessor relationship.
+
+
+Example 2:
+Input: root = [2,1,3]
+Output: [1,2,3]
+
+Example 3:
+Input: root = []
+Output: []
+Explanation: Input is an empty tree. Output is also an empty Linked List.
+
+Example 4:
+Input: root = [1]
+Output: [1]
+
+Constraints:
+The number of nodes in the tree is in the range `[0, 2000]`.
+
+`-1000 <= Node.val <= 1000`
+All the values of the tree are unique.",1,Medium,/articles/convert-binary-search-tree-to-sorted-doubly-linked-list,61.6,53.6,https://leetcode.com/problems/convert-binary-search-tree-to-sorted-doubly-linked-list,635,114.8K,186.5K,"Facebook,Microsoft,Google,VMware,Amazon,Expedia","Linked List,Divide and Conquer,Tree",1302,117,92,1,"[Binary Tree Inorder Traversal, /problems/binary-tree-inorder-traversal/, Medium]"
+1057,Campus Bikes,"On a campus represented as a 2D grid, there are `N` workers and `M` bikes, with `N <= M`. Each worker and bike is a 2D coordinate on this grid.
+
+Our goal is to assign a bike to each worker. Among the available bikes and workers, we choose the (worker, bike) pair with the shortest Manhattan distance between each other, and assign the bike to that worker. (If there are multiple (worker, bike) pairs with the same shortest Manhattan distance, we choose the pair with the smallest worker index; if there are multiple ways to do that, we choose the pair with the smallest bike index). We repeat this process until there are no available workers.
+
+The Manhattan distance between two points `p1` and `p2` is `Manhattan(p1, p2) = |p1.x - p2.x| + |p1.y - p2.y|`.
+
+Return a vector `ans` of length `N`, where `ans[i]` is the index (0-indexed) of the bike that the `i`-th worker is assigned to.
+
+
+Example 1:
+Input: workers = [[0,0],[2,1]], bikes = [[1,2],[3,3]]
+Output: [1,0]
+Explanation: 
+Worker 1 grabs Bike 0 as they are closest (without ties), and Worker 0 is assigned Bike 1. So the output is [1, 0].
+
+
+Example 2:
+Input: workers = [[0,0],[1,1],[2,0]], bikes = [[1,0],[2,2],[2,1]]
+Output: [0,2,1]
+Explanation: 
+Worker 0 grabs Bike 0 at first. Worker 1 and Worker 2 share the same distance to Bike 2, thus Worker 1 is assigned to Bike 2, and Worker 2 will take Bike 1. So the output is [0,2,1].
+
+Note:
+`0 <= workers[i][j], bikes[i][j] < 1000`
+All worker and bike locations are distinct.
+
+`1 <= workers.length <= bikes.length <= 1000`",1,Medium,,57.9,33.8,https://leetcode.com/problems/campus-bikes,227,47.4K,81.8K,"Google,Amazon,ByteDance","Greedy,Sort",673,121,85,1,"[Campus Bikes II, /problems/campus-bikes-ii/, Medium]"
+277,Find the Celebrity,"Suppose you are at a party with `n` people (labeled from `0` to `n - 1`), and among them, there may exist one celebrity. The definition of a celebrity is that all the other `n - 1` people know him/her, but he/she does not know any of them.
+
+Now you want to find out who the celebrity is or verify that there is not one. The only thing you are allowed to do is to ask questions like: ""Hi, A. Do you know B?"" to get information about whether A knows B. You need to find out the celebrity (or verify there is not one) by asking as few questions as possible (in the asymptotic sense).
+
+You are given a helper function `bool knows(a, b)` which tells you whether A knows B. Implement a function `int findCelebrity(n)`. There will be exactly one celebrity if he/she is in the party. Return the celebrity's label if there is a celebrity in the party. If there is no celebrity, return `-1`.
+
+
+Example 1:
+Input: graph = [[1,1,0],[0,1,0],[1,1,1]]
+Output: 1
+Explanation: There are three persons labeled with 0, 1 and 2. graph[i][j] = 1 means person i knows person j, otherwise graph[i][j] = 0 means person i does not know person j. The celebrity is the person labeled as 1 because both 0 and 2 know him but 1 does not know anybody.
+
+
+Example 2:
+Input: graph = [[1,0,1],[1,1,0],[0,1,1]]
+Output: -1
+Explanation: There is no celebrity.
+
+
+Constraints:
+`n == graph.length`
+`n == graph[i].length`
+`2 <= n <= 100`
+`graph[i][j]` is `0` or `1`.
+
+`graph[i][i] == 1`
+Follow up: If the maximum number of allowed calls to the API `knows` is `3 * n`, could you find a solution without exceeding the maximum number of calls?",1,Medium,/articles/find-the-celebrity,44.0,43.1,https://leetcode.com/problems/find-the-celebrity,293,162.6K,369.4K,"Microsoft,Amazon,Facebook,LinkedIn,Apple,Snapchat",Array,1557,160,91,1,"[Find the Town Judge, /problems/find-the-town-judge/, Easy]"
+1119,Remove Vowels from a String,"Given a string `s`, remove the vowels `'a'`, `'e'`, `'i'`, `'o'`, and `'u'` from it, and return the new string.
+
+
+Example 1:
+Input: s = ""leetcodeisacommunityforcoders""
+Output: ""ltcdscmmntyfrcdrs""
+
+Example 2:
+Input: s = ""aeiou""
+Output: """"
+
+Constraints:
+`1 <= s.length <= 1000`
+`s` consists of only lowercase English letters.",1,Easy,,90.5,11.4,https://leetcode.com/problems/remove-vowels-from-a-string,489,64.4K,71.2K,Amazon,String,177,89,67,1,"[Reverse Vowels of a String, /problems/reverse-vowels-of-a-string/, Easy]"
+1064,Fixed Point,"Given an array of distinct integers `arr`, where `arr` is sorted in ascending order, return the smallest index `i` that satisfies `arr[i] == i`. If there is no such index, return `-1`.
+
+
+Example 1:
+Input: arr = [-10,-5,0,3,7]
+Output: 3
+Explanation: For the given array, `arr[0] = -10, arr[1] = -5, arr[2] = 0, arr[3] = 3`, thus the output is 3.
+
+
+Example 2:
+Input: arr = [0,2,5,8,17]
+Output: 0
+Explanation: `arr[0] = 0`, thus the output is 0.
+
+
+Example 3:
+Input: arr = [-10,-5,3,4,7,9]
+Output: -1
+Explanation: There is no such `i` that `arr[i] == i`, thus the output is -1.
+
+
+Constraints:
+`1 <= arr.length < 104`
+`-109 <= arr[i] <= 109`
+Follow up: The `O(n)` solution is very straightforward. Can we do better?",1,Easy,,64.8,2.0,https://leetcode.com/problems/fixed-point,208,23.3K,36K,Uber,"Array,Binary Search",193,49,80,0,
+536,Construct Binary Tree from String,"You need to construct a binary tree from a string consisting of parenthesis and integers.
+
+The whole input represents a binary tree. It contains an integer followed by zero, one or two pairs of parenthesis. The integer represents the root's value and a pair of parenthesis contains a child binary tree with the same structure.
+
+You always start to construct the left child node of the parent first if it exists.
+
+
+Example 1:
+Input: s = ""4(2(3)(1))(6(5))""
+Output: [4,2,6,3,1,5]
+
+Example 2:
+Input: s = ""4(2(3)(1))(6(5)(7))""
+Output: [4,2,6,3,1,5,7]
+
+Example 3:
+Input: s = ""-4(2(3)(1))(6(5)(7))""
+Output: [-4,2,6,3,1,5,7]
+
+Constraints:
+`0 <= s.length <= 3 * 104`
+`s` consists of digits, `'('`, `')'`, and `'-'` only.",1,Medium,/articles/construct-binary-tree-from-string,52.1,13.8,https://leetcode.com/problems/construct-binary-tree-from-string,301,43.6K,83.6K,Facebook,"String,Tree",590,105,85,1,"[Construct String from Binary Tree, /problems/construct-string-from-binary-tree/, Easy]"
+1341,Movie Rating,SQL Schema,1,Medium,,59.0,0.0,https://leetcode.com/problems/movie-rating,168,11.6K,19.6K,SAP,,60,29,67,0,
+613,Shortest Distance in a Line,SQL Schema,1,Easy,/articles/shortest-distance-in-a-line,79.9,0.0,https://leetcode.com/problems/shortest-distance-in-a-line,127,34.1K,42.7K,,,196,26,88,0,
+651,4 Keys Keyboard,"Imagine you have a special keyboard with the following keys: 
+`Key 1: (A)`:  Print one 'A' on screen.
+
+`Key 2: (Ctrl-A)`: Select the whole screen.
+
+`Key 3: (Ctrl-C)`: Copy selection to buffer.
+
+`Key 4: (Ctrl-V)`: Print buffer on screen appending it after what has already been printed. 
+Now, you can only press the keyboard for N times (with the above four keys), find out the maximum numbers of 'A' you can print on screen.
+
+
+Example 1:
+Input: N = 3
+Output: 3
+Explanation: 
+We can at most get 3 A's on screen by pressing following key sequence:
+A, A, A
+
+Example 2:
+Input: N = 7
+Output: 9
+Explanation: 
+We can at most get 9 A's on screen by pressing following key sequence:
+A, A, A, Ctrl A, Ctrl C, Ctrl V, Ctrl V
+Note:
+1 <= N <= 50 
+Answers will be in the range of 32-bit signed integer.",1,Medium,/articles/4-keys-keyboard,53.2,5.0,https://leetcode.com/problems/4-keys-keyboard,85,18.3K,34.5K,"Google,Microsoft","Math,Dynamic Programming,Greedy",431,65,87,1,"[2 Keys Keyboard, /problems/2-keys-keyboard/, Medium]"
+272,Closest Binary Search Tree Value II,"Given the `root` of a binary search tree, a `target` value, and an integer `k`, return the `k` values in the BST that are closest to the `target`. You may return the answer in any order.
+
+You are guaranteed to have only one unique set of `k` values in the BST that are closest to the `target`.
+
+
+Example 1:
+Input: root = [4,2,5,1,3], target = 3.714286, k = 2
+Output: [4,3]
+
+Example 2:
+Input: root = [1], target = 0.000000, k = 1
+Output: [1]
+
+Constraints:
+The number of nodes in the tree is `n`.
+
+`1 <= k <= n <= 104`.
+
+`0 <= Node.val <= 109`
+`-109 <= target <= 109`
+Follow up: Assume that the BST is balanced. Could you solve it in less than `O(n)` runtime (where `n = total nodes`)?",1,Hard,/articles/closest-bst-value-ii,52.6,15.7,https://leetcode.com/problems/closest-binary-search-tree-value-ii,380,68.6K,130.3K,"LinkedIn,Oracle","Stack,Tree",759,21,97,0,"[Binary Tree Inorder Traversal, /problems/binary-tree-inorder-traversal/, Medium], [Closest Binary Search Tree Value, /problems/closest-binary-search-tree-value/, Easy]"
+1273,Delete Tree Nodes,"A tree rooted at node 0 is given as follows:
+The number of nodes is `nodes`;
+The value of the `i`-th node is `value[i]`;
+The parent of the `i`-th node is `parent[i]`.
+
+Remove every subtree whose sum of values of nodes is zero.
+
+After doing so, return the number of nodes remaining in the tree.
+
+
+Example 1:
+Input: nodes = 7, parent = [-1,0,0,1,2,2,2], value = [1,-2,4,0,-2,-1,-1]
+Output: 2
+
+Example 2:
+Input: nodes = 7, parent = [-1,0,0,1,2,2,2], value = [1,-2,4,0,-2,-1,-2]
+Output: 6
+
+Example 3:
+Input: nodes = 5, parent = [-1,0,1,0,0], value = [-672,441,18,728,378]
+Output: 5
+
+Example 4:
+Input: nodes = 5, parent = [-1,0,0,1,1], value = [-686,-842,616,-739,-746]
+Output: 5
+
+Constraints:
+`1 <= nodes <= 10^4`
+`parent.length == nodes`
+`0 <= parent[i] <= nodes - 1`
+`parent[0] == -1` which indicates that `0` is the root.
+
+`value.length == nodes`
+`-10^5 <= value[i] <= 10^5`
+The given input is guaranteed to represent a valid tree.",1,Medium,,62.0,0.0,https://leetcode.com/problems/delete-tree-nodes,101,6.8K,10.9K,Microsoft,"Dynamic Programming,Depth-first Search",154,46,77,0,
+711,Number of Distinct Islands II,"Given a non-empty 2D array `grid` of 0's and 1's, an island is a group of `1`'s (representing land) connected 4-directionally (horizontal or vertical.)  You may assume all four edges of the grid are surrounded by water.
+
+Count the number of distinct islands.  An island is considered to be the same as another if they have the same shape, or have the same shape after rotation (90, 180, or 270 degrees only) or reflection (left/right direction or up/down direction).
+
+
+Example 1:
+11000
+10000
+00001
+00011
+Given the above grid map, return `1`.
+
+Notice that:
+11
+1
+and
+ 1
+11
+are considered same island shapes. Because if we make a 180 degrees clockwise rotation on the first island, then two islands will have the same shapes.
+
+
+Example 2:
+11100
+10001
+01001
+01110
+Given the above grid map, return `2`.
+
+Here are the two distinct islands:
+111
+1
+and
+1
+1
+Notice that:
+111
+1
+and
+1
+111
+are considered same island shapes. Because if we flip the first array in the up/down direction, then they have the same shapes.
+
+Note:
+The length of each dimension in the given `grid` does not exceed 50.",1,Hard,/articles/number-of-distinct-islands-ii,49.6,0.0,https://leetcode.com/problems/number-of-distinct-islands-ii,48,6.9K,14K,Amazon,"Hash Table,Depth-first Search",177,192,48,1,"[Number of Distinct Islands, /problems/number-of-distinct-islands/, Medium]"
+358,Rearrange String k Distance Apart,"Given a string `s` and an integer `k`, rearrange `s` such that the same characters are at least distance `k` from each other. If it is not possible to rearrange the string, return an empty string `""""`.
+
+
+Example 1:
+Input: s = ""aabbcc"", k = 3
+Output: ""abcabc""
+Explanation: The same letters are at least a distance of 3 from each other.
+
+
+Example 2:
+Input: s = ""aaabc"", k = 3
+Output: """"
+Explanation: It is not possible to rearrange the string.
+
+
+Example 3:
+Input: s = ""aaadbbcc"", k = 2
+Output: ""abacabcd""
+Explanation: The same letters are at least a distance of 2 from each other.
+
+
+Constraints:
+`1 <= s.length <= 3 * 105`
+`s` consists of only lowercase English letters.
+
+`0 <= k <= s.length`",1,Hard,,35.7,14.7,https://leetcode.com/problems/rearrange-string-k-distance-apart,206,42.5K,118.8K,"Microsoft,Facebook","Hash Table,Heap,Greedy",577,23,96,1,"[Task Scheduler, /problems/task-scheduler/, Medium], [Reorganize String, /problems/reorganize-string/, Medium]"
+1264,Page Recommendations,SQL Schema,1,Medium,,69.2,0.0,https://leetcode.com/problems/page-recommendations,225,12.6K,18.3K,Facebook,,80,1,99,1,
+751,IP to CIDR,"Given a start IP address `ip` and a number of ips we need to cover `n`, return a representation of the range as a list (of smallest possible length) of CIDR blocks.
+
+A CIDR block is a string consisting of an IP, followed by a slash, and then the prefix length.  For example: ""123.45.67.89/20"".  That prefix length ""20"" represents the number of common prefix bits in the specified range.
+
+
+Example 1:
+Input: ip = ""255.0.0.7"", n = 10
+Output: [""255.0.0.7/32"",""255.0.0.8/29"",""255.0.0.16/32""]
+Explanation:
+The initial ip address, when converted to binary, looks like this (spaces added for clarity):
+255.0.0.7 -> 11111111 00000000 00000000 00000111
+The address ""255.0.0.7/32"" specifies all addresses with a common prefix of 32 bits to the given address,
+ie. just this one address.
+
+The address ""255.0.0.8/29"" specifies all addresses with a common prefix of 29 bits to the given address:
+255.0.0.8 -> 11111111 00000000 00000000 00001000
+Addresses with common prefix of 29 bits are:
+11111111 00000000 00000000 00001000
+11111111 00000000 00000000 00001001
+11111111 00000000 00000000 00001010
+11111111 00000000 00000000 00001011
+11111111 00000000 00000000 00001100
+11111111 00000000 00000000 00001101
+11111111 00000000 00000000 00001110
+11111111 00000000 00000000 00001111
+The address ""255.0.0.16/32"" specifies all addresses with a common prefix of 32 bits to the given address,
+ie. just 11111111 00000000 00000000 00010000.
+
+In total, the answer specifies the range of 10 ips starting with the address 255.0.0.7 .
+
+There were other representations, such as:
+[""255.0.0.7/32"",""255.0.0.8/30"", ""255.0.0.12/30"", ""255.0.0.16/32""],
+but our answer was the shortest possible.
+
+Also note that a representation beginning with say, ""255.0.0.7/30"" would be incorrect,
+because it includes addresses like 255.0.0.4 = 11111111 00000000 00000000 00000100 
+that are outside the specified range.
+
+Note:
+`ip` will be a valid IPv4 address.
+
+Every implied address `ip + x` (for `x < n`) will be a valid IPv4 address.
+
+`n` will be an integer in the range `[1, 1000]`.",1,Medium,/articles/ip-to-cidr,59.3,20.1,https://leetcode.com/problems/ip-to-cidr,68,11.5K,19.4K,Airbnb,Bit Manipulation,104,847,11,0,"[Restore IP Addresses, /problems/restore-ip-addresses/, Medium], [Validate IP Address, /problems/validate-ip-address/, Medium]"
+293,Flip Game,"You are playing a Flip Game with your friend.
+
+You are given a string `currentState` that contains only `'+'` and `'-'`. You and your friend take turns to flip two consecutive `""++""` into `""--""`. The game ends when a person can no longer make a move, and therefore the other person will be the winner.
+
+Return all possible states of the string `currentState` after one valid move. You may return the answer in any order. If there is no valid move, return an empty list `[]`.
+
+
+Example 1:
+Input: currentState = ""++++""
+Output: [""--++"",""+--+"",""++--""]
+
+Example 2:
+Input: currentState = ""+""
+Output: []
+
+Constraints:
+`1 <= currentState.length <= 500`
+`currentState[i]` is either `'+'` or `'-'`.",1,Easy,,61.5,3.2,https://leetcode.com/problems/flip-game,161,53.3K,86.7K,Google,String,128,319,29,1,"[Flip Game II, /problems/flip-game-ii/, Medium]"
+1435,Create a Session Bar Chart,SQL Schema,1,Easy,,77.8,0.0,https://leetcode.com/problems/create-a-session-bar-chart,109,9K,11.6K,Twitch,,63,115,35,0,
+1407,Top Travellers,SQL Schema,1,Easy,,84.0,0.0,https://leetcode.com/problems/top-travellers,124,13.9K,16.6K,Point72,,53,5,91,0,
+562,Longest Line of Consecutive One in Matrix,"Given a 01 matrix M, find the longest line of consecutive one in the matrix. The line could be horizontal, vertical, diagonal or anti-diagonal.
+
+
+Example:
+Input:
+[[0,1,1,0],
+ [0,1,1,0],
+ [0,0,0,1]]
+Output: 3
+Hint:
+The number of elements in the given matrix will not exceed 10,000.",1,Medium,/articles/longest-line-of-consecutive-one-in-matrix,46.2,19.9,https://leetcode.com/problems/longest-line-of-consecutive-one-in-matrix,224,36.3K,78.5K,Google,Array,460,83,85,1,
+1570,Dot Product of Two Sparse Vectors,"Given two sparse vectors, compute their dot product.
+
+Implement class `SparseVector`:
+`SparseVector(nums)` Initializes the object with the vector `nums`
+`dotProduct(vec)` Compute the dot product between the instance of SparseVector and `vec`
+A sparse vector is a vector that has mostly zero values, you should store the sparse vector efficiently and compute the dot product between two SparseVector.
+
+Follow up: What if only one of the vectors is sparse?
+
+Example 1:
+Input: nums1 = [1,0,0,2,3], nums2 = [0,3,0,4,0]
+Output: 8
+Explanation: v1 = SparseVector(nums1) , v2 = SparseVector(nums2)
+v1.dotProduct(v2) = 1*0 + 0*3 + 0*0 + 2*4 + 3*0 = 8
+
+Example 2:
+Input: nums1 = [0,1,0,0,0], nums2 = [0,0,0,0,2]
+Output: 0
+Explanation: v1 = SparseVector(nums1) , v2 = SparseVector(nums2)
+v1.dotProduct(v2) = 0*0 + 1*0 + 0*0 + 0*0 + 0*2 = 0
+
+Example 3:
+Input: nums1 = [0,1,0,0,2,0,0], nums2 = [1,0,0,0,3,0,4]
+Output: 6
+
+Constraints:
+`n == nums1.length == nums2.length`
+`1 <= n <= 10^5`
+`0 <= nums1[i], nums2[i] <= 100`",1,Medium,/articles/dot-product-of-two-sparse-vectors,91.2,60.7,https://leetcode.com/problems/dot-product-of-two-sparse-vectors,223,36.4K,39.9K,"Facebook,Apple","Array,Hash Table,Two Pointers",239,38,86,1,

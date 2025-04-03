@@ -1,0 +1,1 @@
+I'm happy to help! However, I need more details about the "SQL Schema" problem you're referring to. Could you please provide the full problem statement, including the inputs, expected outputs, and any specific requirements? This will allow me to create an appropriate Python function to solve the problem and run the tests as you've described.

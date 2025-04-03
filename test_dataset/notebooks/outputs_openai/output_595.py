@@ -1,0 +1,1 @@
+It seems like the problem description is incomplete. Could you please provide the full details of the problem, including the SQL schema and any specific requirements or input/output examples? This will help me generate the appropriate Python solution for you.

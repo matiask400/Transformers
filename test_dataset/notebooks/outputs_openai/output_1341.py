@@ -1,0 +1,1 @@
+Hello! It looks like you've mentioned "SQL Schema" but haven't provided the specific problem or details related to it. Could you please share the complete problem statement or additional information? This will help me assist you more effectively.
