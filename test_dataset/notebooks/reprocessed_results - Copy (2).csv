@@ -1,0 +1,33 @@
+ID,ProblemID,model,temperature,top_p,top_k,code,result,true_count,false_count,execution_time,memory_usage_MB,algorithmic_complexity,input_tokens,output_tokens,full_response,full_prompt
+1,1015,gemini-2.5-pro-exp-03-25,0,0.1,10,list index out of range,"File ""C:\Users\mkoro\Desktop\Transformers\test_dataset\outputs\outputs1134\temperature-0.0\gemini-2.5-pro-exp-03-25\top_p-0.1_top_k-10.0\output_1.py"", line 1
+    list index out of range
+         ^^^^^
+SyntaxError: invalid syntax",0,0,0.11,2.01,N/A,N/A,N/A,list index out of range,"Solve the following problem in Python. The solution should implement a function that, given the specified input(s) in the problem, compares its output with the expected output and runs the tests. The function should print 'True' for each test passed and 'False' for each test failed, and finally print the number of correct tests over the total. Provide only executable Python code.(Indicate the code with ```python)
+
+Given a positive integer `K`, you need to find the length of the smallest positive integer `N` such that `N` is divisible by `K`, and `N` only contains the digit `1`.
+
+Return the length of `N`. If there is no such `N`, return -1.
+
+Note: `N` may not fit in a 64-bit signed integer.
+
+
+Example 1:
+Input: K = 1
+Output: 1
+Explanation: The smallest answer is N = 1, which has length 1.
+
+
+Example 2:
+Input: K = 2
+Output: -1
+Explanation: There is no such positive integer N divisible by 2.
+
+
+Example 3:
+Input: K = 3
+Output: 3
+Explanation: The smallest answer is N = 111, which has length 3.
+
+
+Constraints:
+`1 <= K <= 105`"

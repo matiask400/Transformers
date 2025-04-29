@@ -1,0 +1,1 @@
+It seems you've mentioned "SQL Schema," but I need more details about the specific problem you'd like to solve. Please provide the complete problem statement, including the SQL schema and any specific requirements or examples, so I can help you create the appropriate Python function with test cases.

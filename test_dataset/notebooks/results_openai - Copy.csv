@@ -1,0 +1,583 @@
+ID,model,temperature,top_p,code,result,true_count,false_count,execution_time,memory_usage_MB,algorithmic_complexity,input_tokens,output_tokens
+762,o1-mini,0,0.1,,"Error code: 400 - {'error': {'message': ""Unsupported value: 'temperature' does not support 0 with this model. Only the default (1) value is supported."", 'type': 'invalid_request_error', 'param': 'temperature', 'code': 'unsupported_value'}}",ERROR,ERROR,ERROR,ERROR,ERROR,N/A,N/A
+1015,o1-mini,0,0.1,,"Error code: 400 - {'error': {'message': ""Unsupported value: 'temperature' does not support 0 with this model. Only the default (1) value is supported."", 'type': 'invalid_request_error', 'param': 'temperature', 'code': 'unsupported_value'}}",ERROR,ERROR,ERROR,ERROR,ERROR,N/A,N/A
+1754,o1-mini,0,0.1,,"Error code: 400 - {'error': {'message': ""Unsupported value: 'temperature' does not support 0 with this model. Only the default (1) value is supported."", 'type': 'invalid_request_error', 'param': 'temperature', 'code': 'unsupported_value'}}",ERROR,ERROR,ERROR,ERROR,ERROR,N/A,N/A
+773,o1-mini,0,0.1,,"Error code: 400 - {'error': {'message': ""Unsupported value: 'temperature' does not support 0 with this model. Only the default (1) value is supported."", 'type': 'invalid_request_error', 'param': 'temperature', 'code': 'unsupported_value'}}",ERROR,ERROR,ERROR,ERROR,ERROR,N/A,N/A
+830,o1-mini,0,0.1,,"Error code: 400 - {'error': {'message': ""Unsupported value: 'temperature' does not support 0 with this model. Only the default (1) value is supported."", 'type': 'invalid_request_error', 'param': 'temperature', 'code': 'unsupported_value'}}",ERROR,ERROR,ERROR,ERROR,ERROR,N/A,N/A
+1253,o1-mini,0,0.1,,"Error code: 400 - {'error': {'message': ""Unsupported value: 'temperature' does not support 0 with this model. Only the default (1) value is supported."", 'type': 'invalid_request_error', 'param': 'temperature', 'code': 'unsupported_value'}}",ERROR,ERROR,ERROR,ERROR,ERROR,N/A,N/A
+1340,o1-mini,0,0.1,,"Error code: 400 - {'error': {'message': ""Unsupported value: 'temperature' does not support 0 with this model. Only the default (1) value is supported."", 'type': 'invalid_request_error', 'param': 'temperature', 'code': 'unsupported_value'}}",ERROR,ERROR,ERROR,ERROR,ERROR,N/A,N/A
+283,o1-mini,0,0.1,,"Error code: 400 - {'error': {'message': ""Unsupported value: 'temperature' does not support 0 with this model. Only the default (1) value is supported."", 'type': 'invalid_request_error', 'param': 'temperature', 'code': 'unsupported_value'}}",ERROR,ERROR,ERROR,ERROR,ERROR,N/A,N/A
+807,o1-mini,0,0.1,,"Error code: 400 - {'error': {'message': ""Unsupported value: 'temperature' does not support 0 with this model. Only the default (1) value is supported."", 'type': 'invalid_request_error', 'param': 'temperature', 'code': 'unsupported_value'}}",ERROR,ERROR,ERROR,ERROR,ERROR,N/A,N/A
+1358,o1-mini,0,0.1,,"Error code: 400 - {'error': {'message': ""Unsupported value: 'temperature' does not support 0 with this model. Only the default (1) value is supported."", 'type': 'invalid_request_error', 'param': 'temperature', 'code': 'unsupported_value'}}",ERROR,ERROR,ERROR,ERROR,ERROR,N/A,N/A
+10,o1-mini,0,0.1,,"Error code: 400 - {'error': {'message': ""Unsupported value: 'temperature' does not support 0 with this model. Only the default (1) value is supported."", 'type': 'invalid_request_error', 'param': 'temperature', 'code': 'unsupported_value'}}",ERROR,ERROR,ERROR,ERROR,ERROR,N/A,N/A
+846,o1-mini,0,0.1,,"Error code: 400 - {'error': {'message': ""Unsupported value: 'temperature' does not support 0 with this model. Only the default (1) value is supported."", 'type': 'invalid_request_error', 'param': 'temperature', 'code': 'unsupported_value'}}",ERROR,ERROR,ERROR,ERROR,ERROR,N/A,N/A
+870,o1-mini,0,0.1,,"Error code: 400 - {'error': {'message': ""Unsupported value: 'temperature' does not support 0 with this model. Only the default (1) value is supported."", 'type': 'invalid_request_error', 'param': 'temperature', 'code': 'unsupported_value'}}",ERROR,ERROR,ERROR,ERROR,ERROR,N/A,N/A
+417,o1-mini,0,0.1,,"Error code: 400 - {'error': {'message': ""Unsupported value: 'temperature' does not support 0 with this model. Only the default (1) value is supported."", 'type': 'invalid_request_error', 'param': 'temperature', 'code': 'unsupported_value'}}",ERROR,ERROR,ERROR,ERROR,ERROR,N/A,N/A
+403,o1-mini,0,0.1,,"Error code: 400 - {'error': {'message': ""Unsupported value: 'temperature' does not support 0 with this model. Only the default (1) value is supported."", 'type': 'invalid_request_error', 'param': 'temperature', 'code': 'unsupported_value'}}",ERROR,ERROR,ERROR,ERROR,ERROR,N/A,N/A
+1386,o1-mini,0,0.1,,"Error code: 400 - {'error': {'message': ""Unsupported value: 'temperature' does not support 0 with this model. Only the default (1) value is supported."", 'type': 'invalid_request_error', 'param': 'temperature', 'code': 'unsupported_value'}}",ERROR,ERROR,ERROR,ERROR,ERROR,N/A,N/A
+1646,o1-mini,0,0.1,,"Error code: 400 - {'error': {'message': ""Unsupported value: 'temperature' does not support 0 with this model. Only the default (1) value is supported."", 'type': 'invalid_request_error', 'param': 'temperature', 'code': 'unsupported_value'}}",ERROR,ERROR,ERROR,ERROR,ERROR,N/A,N/A
+1574,o1-mini,0,0.1,,"Error code: 400 - {'error': {'message': ""Unsupported value: 'temperature' does not support 0 with this model. Only the default (1) value is supported."", 'type': 'invalid_request_error', 'param': 'temperature', 'code': 'unsupported_value'}}",ERROR,ERROR,ERROR,ERROR,ERROR,N/A,N/A
+1750,o1-mini,0,0.1,,"Error code: 400 - {'error': {'message': ""Unsupported value: 'temperature' does not support 0 with this model. Only the default (1) value is supported."", 'type': 'invalid_request_error', 'param': 'temperature', 'code': 'unsupported_value'}}",ERROR,ERROR,ERROR,ERROR,ERROR,N/A,N/A
+595,o1-mini,0,0.1,,"Error code: 400 - {'error': {'message': ""Unsupported value: 'temperature' does not support 0 with this model. Only the default (1) value is supported."", 'type': 'invalid_request_error', 'param': 'temperature', 'code': 'unsupported_value'}}",ERROR,ERROR,ERROR,ERROR,ERROR,N/A,N/A
+1292,o1-mini,0,0.1,,"Error code: 400 - {'error': {'message': ""Unsupported value: 'temperature' does not support 0 with this model. Only the default (1) value is supported."", 'type': 'invalid_request_error', 'param': 'temperature', 'code': 'unsupported_value'}}",ERROR,ERROR,ERROR,ERROR,ERROR,N/A,N/A
+1207,o1-mini,0,0.1,,"Error code: 400 - {'error': {'message': ""Unsupported value: 'temperature' does not support 0 with this model. Only the default (1) value is supported."", 'type': 'invalid_request_error', 'param': 'temperature', 'code': 'unsupported_value'}}",ERROR,ERROR,ERROR,ERROR,ERROR,N/A,N/A
+731,o1-mini,0,0.1,,"Error code: 400 - {'error': {'message': ""Unsupported value: 'temperature' does not support 0 with this model. Only the default (1) value is supported."", 'type': 'invalid_request_error', 'param': 'temperature', 'code': 'unsupported_value'}}",ERROR,ERROR,ERROR,ERROR,ERROR,N/A,N/A
+803,o1-mini,0,0.1,,"Error code: 400 - {'error': {'message': ""Unsupported value: 'temperature' does not support 0 with this model. Only the default (1) value is supported."", 'type': 'invalid_request_error', 'param': 'temperature', 'code': 'unsupported_value'}}",ERROR,ERROR,ERROR,ERROR,ERROR,N/A,N/A
+4,o1-mini,0,0.1,,"Error code: 400 - {'error': {'message': ""Unsupported value: 'temperature' does not support 0 with this model. Only the default (1) value is supported."", 'type': 'invalid_request_error', 'param': 'temperature', 'code': 'unsupported_value'}}",ERROR,ERROR,ERROR,ERROR,ERROR,N/A,N/A
+1221,o1-mini,0,0.1,,"Error code: 400 - {'error': {'message': ""Unsupported value: 'temperature' does not support 0 with this model. Only the default (1) value is supported."", 'type': 'invalid_request_error', 'param': 'temperature', 'code': 'unsupported_value'}}",ERROR,ERROR,ERROR,ERROR,ERROR,N/A,N/A
+435,o1-mini,0,0.1,,"Error code: 400 - {'error': {'message': ""Unsupported value: 'temperature' does not support 0 with this model. Only the default (1) value is supported."", 'type': 'invalid_request_error', 'param': 'temperature', 'code': 'unsupported_value'}}",ERROR,ERROR,ERROR,ERROR,ERROR,N/A,N/A
+819,o1-mini,0,0.1,,"Error code: 400 - {'error': {'message': ""Unsupported value: 'temperature' does not support 0 with this model. Only the default (1) value is supported."", 'type': 'invalid_request_error', 'param': 'temperature', 'code': 'unsupported_value'}}",ERROR,ERROR,ERROR,ERROR,ERROR,N/A,N/A
+218,o1-mini,0,0.1,,"Error code: 400 - {'error': {'message': ""Unsupported value: 'temperature' does not support 0 with this model. Only the default (1) value is supported."", 'type': 'invalid_request_error', 'param': 'temperature', 'code': 'unsupported_value'}}",ERROR,ERROR,ERROR,ERROR,ERROR,N/A,N/A
+1021,o1-mini,0,0.1,,"Error code: 400 - {'error': {'message': ""Unsupported value: 'temperature' does not support 0 with this model. Only the default (1) value is supported."", 'type': 'invalid_request_error', 'param': 'temperature', 'code': 'unsupported_value'}}",ERROR,ERROR,ERROR,ERROR,ERROR,N/A,N/A
+1791,o1-mini,0,0.1,,"Error code: 400 - {'error': {'message': ""Unsupported value: 'temperature' does not support 0 with this model. Only the default (1) value is supported."", 'type': 'invalid_request_error', 'param': 'temperature', 'code': 'unsupported_value'}}",ERROR,ERROR,ERROR,ERROR,ERROR,N/A,N/A
+974,o1-mini,0,0.1,,"Error code: 400 - {'error': {'message': ""Unsupported value: 'temperature' does not support 0 with this model. Only the default (1) value is supported."", 'type': 'invalid_request_error', 'param': 'temperature', 'code': 'unsupported_value'}}",ERROR,ERROR,ERROR,ERROR,ERROR,N/A,N/A
+810,o1-mini,0,0.1,,"Error code: 400 - {'error': {'message': ""Unsupported value: 'temperature' does not support 0 with this model. Only the default (1) value is supported."", 'type': 'invalid_request_error', 'param': 'temperature', 'code': 'unsupported_value'}}",ERROR,ERROR,ERROR,ERROR,ERROR,N/A,N/A
+964,o1-mini,0,0.1,,"Error code: 400 - {'error': {'message': ""Unsupported value: 'temperature' does not support 0 with this model. Only the default (1) value is supported."", 'type': 'invalid_request_error', 'param': 'temperature', 'code': 'unsupported_value'}}",ERROR,ERROR,ERROR,ERROR,ERROR,N/A,N/A
+48,o1-mini,0,0.1,,"Error code: 400 - {'error': {'message': ""Unsupported value: 'temperature' does not support 0 with this model. Only the default (1) value is supported."", 'type': 'invalid_request_error', 'param': 'temperature', 'code': 'unsupported_value'}}",ERROR,ERROR,ERROR,ERROR,ERROR,N/A,N/A
+1556,o1-mini,0,0.1,,"Error code: 400 - {'error': {'message': ""Unsupported value: 'temperature' does not support 0 with this model. Only the default (1) value is supported."", 'type': 'invalid_request_error', 'param': 'temperature', 'code': 'unsupported_value'}}",ERROR,ERROR,ERROR,ERROR,ERROR,N/A,N/A
+1508,o1-mini,0,0.1,,"Error code: 400 - {'error': {'message': ""Unsupported value: 'temperature' does not support 0 with this model. Only the default (1) value is supported."", 'type': 'invalid_request_error', 'param': 'temperature', 'code': 'unsupported_value'}}",ERROR,ERROR,ERROR,ERROR,ERROR,N/A,N/A
+814,o1-mini,0,0.1,,"Error code: 400 - {'error': {'message': ""Unsupported value: 'temperature' does not support 0 with this model. Only the default (1) value is supported."", 'type': 'invalid_request_error', 'param': 'temperature', 'code': 'unsupported_value'}}",ERROR,ERROR,ERROR,ERROR,ERROR,N/A,N/A
+820,o1-mini,0,0.1,,"Error code: 400 - {'error': {'message': ""Unsupported value: 'temperature' does not support 0 with this model. Only the default (1) value is supported."", 'type': 'invalid_request_error', 'param': 'temperature', 'code': 'unsupported_value'}}",ERROR,ERROR,ERROR,ERROR,ERROR,N/A,N/A
+752,o1-mini,0,0.1,,"Error code: 400 - {'error': {'message': ""Unsupported value: 'temperature' does not support 0 with this model. Only the default (1) value is supported."", 'type': 'invalid_request_error', 'param': 'temperature', 'code': 'unsupported_value'}}",ERROR,ERROR,ERROR,ERROR,ERROR,N/A,N/A
+857,o1-mini,0,0.1,,"Error code: 400 - {'error': {'message': ""Unsupported value: 'temperature' does not support 0 with this model. Only the default (1) value is supported."", 'type': 'invalid_request_error', 'param': 'temperature', 'code': 'unsupported_value'}}",ERROR,ERROR,ERROR,ERROR,ERROR,N/A,N/A
+886,o1-mini,0,0.1,,"Error code: 400 - {'error': {'message': ""Unsupported value: 'temperature' does not support 0 with this model. Only the default (1) value is supported."", 'type': 'invalid_request_error', 'param': 'temperature', 'code': 'unsupported_value'}}",ERROR,ERROR,ERROR,ERROR,ERROR,N/A,N/A
+1375,o1-mini,0,0.1,,"Error code: 400 - {'error': {'message': ""Unsupported value: 'temperature' does not support 0 with this model. Only the default (1) value is supported."", 'type': 'invalid_request_error', 'param': 'temperature', 'code': 'unsupported_value'}}",ERROR,ERROR,ERROR,ERROR,ERROR,N/A,N/A
+1332,o1-mini,0,0.1,,"Error code: 400 - {'error': {'message': ""Unsupported value: 'temperature' does not support 0 with this model. Only the default (1) value is supported."", 'type': 'invalid_request_error', 'param': 'temperature', 'code': 'unsupported_value'}}",ERROR,ERROR,ERROR,ERROR,ERROR,N/A,N/A
+1037,o1-mini,0,0.1,,"Error code: 400 - {'error': {'message': ""Unsupported value: 'temperature' does not support 0 with this model. Only the default (1) value is supported."", 'type': 'invalid_request_error', 'param': 'temperature', 'code': 'unsupported_value'}}",ERROR,ERROR,ERROR,ERROR,ERROR,N/A,N/A
+905,o1-mini,0,0.1,,"Error code: 400 - {'error': {'message': ""Unsupported value: 'temperature' does not support 0 with this model. Only the default (1) value is supported."", 'type': 'invalid_request_error', 'param': 'temperature', 'code': 'unsupported_value'}}",ERROR,ERROR,ERROR,ERROR,ERROR,N/A,N/A
+1531,o1-mini,0,0.1,,"Error code: 400 - {'error': {'message': ""Unsupported value: 'temperature' does not support 0 with this model. Only the default (1) value is supported."", 'type': 'invalid_request_error', 'param': 'temperature', 'code': 'unsupported_value'}}",ERROR,ERROR,ERROR,ERROR,ERROR,N/A,N/A
+481,o1-mini,0,0.1,,"Error code: 400 - {'error': {'message': ""Unsupported value: 'temperature' does not support 0 with this model. Only the default (1) value is supported."", 'type': 'invalid_request_error', 'param': 'temperature', 'code': 'unsupported_value'}}",ERROR,ERROR,ERROR,ERROR,ERROR,N/A,N/A
+621,o1-mini,0,0.1,,"Error code: 400 - {'error': {'message': ""Unsupported value: 'temperature' does not support 0 with this model. Only the default (1) value is supported."", 'type': 'invalid_request_error', 'param': 'temperature', 'code': 'unsupported_value'}}",ERROR,ERROR,ERROR,ERROR,ERROR,N/A,N/A
+135,o1-mini,0,0.1,,"Error code: 400 - {'error': {'message': ""Unsupported value: 'temperature' does not support 0 with this model. Only the default (1) value is supported."", 'type': 'invalid_request_error', 'param': 'temperature', 'code': 'unsupported_value'}}",ERROR,ERROR,ERROR,ERROR,ERROR,N/A,N/A
+793,o1-mini,0,0.1,,"Error code: 400 - {'error': {'message': ""Unsupported value: 'temperature' does not support 0 with this model. Only the default (1) value is supported."", 'type': 'invalid_request_error', 'param': 'temperature', 'code': 'unsupported_value'}}",ERROR,ERROR,ERROR,ERROR,ERROR,N/A,N/A
+745,o1-mini,0,0.1,,"Error code: 400 - {'error': {'message': ""Unsupported value: 'temperature' does not support 0 with this model. Only the default (1) value is supported."", 'type': 'invalid_request_error', 'param': 'temperature', 'code': 'unsupported_value'}}",ERROR,ERROR,ERROR,ERROR,ERROR,N/A,N/A
+715,o1-mini,0,0.1,,"Error code: 400 - {'error': {'message': ""Unsupported value: 'temperature' does not support 0 with this model. Only the default (1) value is supported."", 'type': 'invalid_request_error', 'param': 'temperature', 'code': 'unsupported_value'}}",ERROR,ERROR,ERROR,ERROR,ERROR,N/A,N/A
+1455,o1-mini,0,0.1,,"Error code: 400 - {'error': {'message': ""Unsupported value: 'temperature' does not support 0 with this model. Only the default (1) value is supported."", 'type': 'invalid_request_error', 'param': 'temperature', 'code': 'unsupported_value'}}",ERROR,ERROR,ERROR,ERROR,ERROR,N/A,N/A
+150,o1-mini,0,0.1,,"Error code: 400 - {'error': {'message': ""Unsupported value: 'temperature' does not support 0 with this model. Only the default (1) value is supported."", 'type': 'invalid_request_error', 'param': 'temperature', 'code': 'unsupported_value'}}",ERROR,ERROR,ERROR,ERROR,ERROR,N/A,N/A
+98,o1-mini,0,0.1,,"Error code: 400 - {'error': {'message': ""Unsupported value: 'temperature' does not support 0 with this model. Only the default (1) value is supported."", 'type': 'invalid_request_error', 'param': 'temperature', 'code': 'unsupported_value'}}",ERROR,ERROR,ERROR,ERROR,ERROR,N/A,N/A
+1716,o1-mini,0,0.1,,"Error code: 400 - {'error': {'message': ""Unsupported value: 'temperature' does not support 0 with this model. Only the default (1) value is supported."", 'type': 'invalid_request_error', 'param': 'temperature', 'code': 'unsupported_value'}}",ERROR,ERROR,ERROR,ERROR,ERROR,N/A,N/A
+1413,o1-mini,0,0.1,,"Error code: 400 - {'error': {'message': ""Unsupported value: 'temperature' does not support 0 with this model. Only the default (1) value is supported."", 'type': 'invalid_request_error', 'param': 'temperature', 'code': 'unsupported_value'}}",ERROR,ERROR,ERROR,ERROR,ERROR,N/A,N/A
+268,o1-mini,0,0.1,,"Error code: 400 - {'error': {'message': ""Unsupported value: 'temperature' does not support 0 with this model. Only the default (1) value is supported."", 'type': 'invalid_request_error', 'param': 'temperature', 'code': 'unsupported_value'}}",ERROR,ERROR,ERROR,ERROR,ERROR,N/A,N/A
+1632,o1-mini,0,0.1,,"Error code: 400 - {'error': {'message': ""Unsupported value: 'temperature' does not support 0 with this model. Only the default (1) value is supported."", 'type': 'invalid_request_error', 'param': 'temperature', 'code': 'unsupported_value'}}",ERROR,ERROR,ERROR,ERROR,ERROR,N/A,N/A
+452,o1-mini,0,0.1,,"Error code: 400 - {'error': {'message': ""Unsupported value: 'temperature' does not support 0 with this model. Only the default (1) value is supported."", 'type': 'invalid_request_error', 'param': 'temperature', 'code': 'unsupported_value'}}",ERROR,ERROR,ERROR,ERROR,ERROR,N/A,N/A
+1004,o1-mini,0,0.1,,"Error code: 400 - {'error': {'message': ""Unsupported value: 'temperature' does not support 0 with this model. Only the default (1) value is supported."", 'type': 'invalid_request_error', 'param': 'temperature', 'code': 'unsupported_value'}}",ERROR,ERROR,ERROR,ERROR,ERROR,N/A,N/A
+162,o1-mini,0,0.1,,"Error code: 400 - {'error': {'message': ""Unsupported value: 'temperature' does not support 0 with this model. Only the default (1) value is supported."", 'type': 'invalid_request_error', 'param': 'temperature', 'code': 'unsupported_value'}}",ERROR,ERROR,ERROR,ERROR,ERROR,N/A,N/A
+122,o1-mini,0,0.1,,"Error code: 400 - {'error': {'message': ""Unsupported value: 'temperature' does not support 0 with this model. Only the default (1) value is supported."", 'type': 'invalid_request_error', 'param': 'temperature', 'code': 'unsupported_value'}}",ERROR,ERROR,ERROR,ERROR,ERROR,N/A,N/A
+930,o1-mini,0,0.1,,"Error code: 400 - {'error': {'message': ""Unsupported value: 'temperature' does not support 0 with this model. Only the default (1) value is supported."", 'type': 'invalid_request_error', 'param': 'temperature', 'code': 'unsupported_value'}}",ERROR,ERROR,ERROR,ERROR,ERROR,N/A,N/A
+771,o1-mini,0,0.1,,"Error code: 400 - {'error': {'message': ""Unsupported value: 'temperature' does not support 0 with this model. Only the default (1) value is supported."", 'type': 'invalid_request_error', 'param': 'temperature', 'code': 'unsupported_value'}}",ERROR,ERROR,ERROR,ERROR,ERROR,N/A,N/A
+9,o1-mini,0,0.1,,"Error code: 400 - {'error': {'message': ""Unsupported value: 'temperature' does not support 0 with this model. Only the default (1) value is supported."", 'type': 'invalid_request_error', 'param': 'temperature', 'code': 'unsupported_value'}}",ERROR,ERROR,ERROR,ERROR,ERROR,N/A,N/A
+840,o1-mini,0,0.1,,"Error code: 400 - {'error': {'message': ""Unsupported value: 'temperature' does not support 0 with this model. Only the default (1) value is supported."", 'type': 'invalid_request_error', 'param': 'temperature', 'code': 'unsupported_value'}}",ERROR,ERROR,ERROR,ERROR,ERROR,N/A,N/A
+192,o1-mini,0,0.1,,"Error code: 400 - {'error': {'message': ""Unsupported value: 'temperature' does not support 0 with this model. Only the default (1) value is supported."", 'type': 'invalid_request_error', 'param': 'temperature', 'code': 'unsupported_value'}}",ERROR,ERROR,ERROR,ERROR,ERROR,N/A,N/A
+1179,o1-mini,0,0.1,,"Error code: 400 - {'error': {'message': ""Unsupported value: 'temperature' does not support 0 with this model. Only the default (1) value is supported."", 'type': 'invalid_request_error', 'param': 'temperature', 'code': 'unsupported_value'}}",ERROR,ERROR,ERROR,ERROR,ERROR,N/A,N/A
+954,o1-mini,0,0.1,,"Error code: 400 - {'error': {'message': ""Unsupported value: 'temperature' does not support 0 with this model. Only the default (1) value is supported."", 'type': 'invalid_request_error', 'param': 'temperature', 'code': 'unsupported_value'}}",ERROR,ERROR,ERROR,ERROR,ERROR,N/A,N/A
+1499,o1-mini,0,0.1,,"Error code: 400 - {'error': {'message': ""Unsupported value: 'temperature' does not support 0 with this model. Only the default (1) value is supported."", 'type': 'invalid_request_error', 'param': 'temperature', 'code': 'unsupported_value'}}",ERROR,ERROR,ERROR,ERROR,ERROR,N/A,N/A
+937,o1-mini,0,0.1,,"Error code: 400 - {'error': {'message': ""Unsupported value: 'temperature' does not support 0 with this model. Only the default (1) value is supported."", 'type': 'invalid_request_error', 'param': 'temperature', 'code': 'unsupported_value'}}",ERROR,ERROR,ERROR,ERROR,ERROR,N/A,N/A
+472,o1-mini,0,0.1,,"Error code: 400 - {'error': {'message': ""Unsupported value: 'temperature' does not support 0 with this model. Only the default (1) value is supported."", 'type': 'invalid_request_error', 'param': 'temperature', 'code': 'unsupported_value'}}",ERROR,ERROR,ERROR,ERROR,ERROR,N/A,N/A
+863,o1-mini,0,0.1,,"Error code: 400 - {'error': {'message': ""Unsupported value: 'temperature' does not support 0 with this model. Only the default (1) value is supported."", 'type': 'invalid_request_error', 'param': 'temperature', 'code': 'unsupported_value'}}",ERROR,ERROR,ERROR,ERROR,ERROR,N/A,N/A
+530,o1-mini,0,0.1,,"Error code: 400 - {'error': {'message': ""Unsupported value: 'temperature' does not support 0 with this model. Only the default (1) value is supported."", 'type': 'invalid_request_error', 'param': 'temperature', 'code': 'unsupported_value'}}",ERROR,ERROR,ERROR,ERROR,ERROR,N/A,N/A
+282,o1-mini,0,0.1,,"Error code: 400 - {'error': {'message': ""Unsupported value: 'temperature' does not support 0 with this model. Only the default (1) value is supported."", 'type': 'invalid_request_error', 'param': 'temperature', 'code': 'unsupported_value'}}",ERROR,ERROR,ERROR,ERROR,ERROR,N/A,N/A
+952,o1-mini,0,0.1,,"Error code: 400 - {'error': {'message': ""Unsupported value: 'temperature' does not support 0 with this model. Only the default (1) value is supported."", 'type': 'invalid_request_error', 'param': 'temperature', 'code': 'unsupported_value'}}",ERROR,ERROR,ERROR,ERROR,ERROR,N/A,N/A
+1663,o1-mini,0,0.1,,"Error code: 400 - {'error': {'message': ""Unsupported value: 'temperature' does not support 0 with this model. Only the default (1) value is supported."", 'type': 'invalid_request_error', 'param': 'temperature', 'code': 'unsupported_value'}}",ERROR,ERROR,ERROR,ERROR,ERROR,N/A,N/A
+115,o1-mini,0,0.1,,"Error code: 400 - {'error': {'message': ""Unsupported value: 'temperature' does not support 0 with this model. Only the default (1) value is supported."", 'type': 'invalid_request_error', 'param': 'temperature', 'code': 'unsupported_value'}}",ERROR,ERROR,ERROR,ERROR,ERROR,N/A,N/A
+655,o1-mini,0,0.1,,"Error code: 400 - {'error': {'message': ""Unsupported value: 'temperature' does not support 0 with this model. Only the default (1) value is supported."", 'type': 'invalid_request_error', 'param': 'temperature', 'code': 'unsupported_value'}}",ERROR,ERROR,ERROR,ERROR,ERROR,N/A,N/A
+496,o1-mini,0,0.1,,"Error code: 400 - {'error': {'message': ""Unsupported value: 'temperature' does not support 0 with this model. Only the default (1) value is supported."", 'type': 'invalid_request_error', 'param': 'temperature', 'code': 'unsupported_value'}}",ERROR,ERROR,ERROR,ERROR,ERROR,N/A,N/A
+1022,o1-mini,0,0.1,,"Error code: 400 - {'error': {'message': ""Unsupported value: 'temperature' does not support 0 with this model. Only the default (1) value is supported."", 'type': 'invalid_request_error', 'param': 'temperature', 'code': 'unsupported_value'}}",ERROR,ERROR,ERROR,ERROR,ERROR,N/A,N/A
+547,o1-mini,0,0.1,,"Error code: 400 - {'error': {'message': ""Unsupported value: 'temperature' does not support 0 with this model. Only the default (1) value is supported."", 'type': 'invalid_request_error', 'param': 'temperature', 'code': 'unsupported_value'}}",ERROR,ERROR,ERROR,ERROR,ERROR,N/A,N/A
+643,o1-mini,0,0.1,,"Error code: 400 - {'error': {'message': ""Unsupported value: 'temperature' does not support 0 with this model. Only the default (1) value is supported."", 'type': 'invalid_request_error', 'param': 'temperature', 'code': 'unsupported_value'}}",ERROR,ERROR,ERROR,ERROR,ERROR,N/A,N/A
+560,o1-mini,0,0.1,,"Error code: 400 - {'error': {'message': ""Unsupported value: 'temperature' does not support 0 with this model. Only the default (1) value is supported."", 'type': 'invalid_request_error', 'param': 'temperature', 'code': 'unsupported_value'}}",ERROR,ERROR,ERROR,ERROR,ERROR,N/A,N/A
+940,o1-mini,0,0.1,,"Error code: 400 - {'error': {'message': ""Unsupported value: 'temperature' does not support 0 with this model. Only the default (1) value is supported."", 'type': 'invalid_request_error', 'param': 'temperature', 'code': 'unsupported_value'}}",ERROR,ERROR,ERROR,ERROR,ERROR,N/A,N/A
+130,o1-mini,0,0.1,,"Error code: 400 - {'error': {'message': ""Unsupported value: 'temperature' does not support 0 with this model. Only the default (1) value is supported."", 'type': 'invalid_request_error', 'param': 'temperature', 'code': 'unsupported_value'}}",ERROR,ERROR,ERROR,ERROR,ERROR,N/A,N/A
+1778,o1-mini,0,0.1,,"Error code: 400 - {'error': {'message': ""Unsupported value: 'temperature' does not support 0 with this model. Only the default (1) value is supported."", 'type': 'invalid_request_error', 'param': 'temperature', 'code': 'unsupported_value'}}",ERROR,ERROR,ERROR,ERROR,ERROR,N/A,N/A
+1511,o1-mini,0,0.1,,"Error code: 400 - {'error': {'message': ""Unsupported value: 'temperature' does not support 0 with this model. Only the default (1) value is supported."", 'type': 'invalid_request_error', 'param': 'temperature', 'code': 'unsupported_value'}}",ERROR,ERROR,ERROR,ERROR,ERROR,N/A,N/A
+1069,o1-mini,0,0.1,,"Error code: 400 - {'error': {'message': ""Unsupported value: 'temperature' does not support 0 with this model. Only the default (1) value is supported."", 'type': 'invalid_request_error', 'param': 'temperature', 'code': 'unsupported_value'}}",ERROR,ERROR,ERROR,ERROR,ERROR,N/A,N/A
+1271,o1-mini,0,0.1,,"Error code: 400 - {'error': {'message': ""Unsupported value: 'temperature' does not support 0 with this model. Only the default (1) value is supported."", 'type': 'invalid_request_error', 'param': 'temperature', 'code': 'unsupported_value'}}",ERROR,ERROR,ERROR,ERROR,ERROR,N/A,N/A
+1216,o1-mini,0,0.1,,"Error code: 400 - {'error': {'message': ""Unsupported value: 'temperature' does not support 0 with this model. Only the default (1) value is supported."", 'type': 'invalid_request_error', 'param': 'temperature', 'code': 'unsupported_value'}}",ERROR,ERROR,ERROR,ERROR,ERROR,N/A,N/A
+426,o1-mini,0,0.1,,"Error code: 400 - {'error': {'message': ""Unsupported value: 'temperature' does not support 0 with this model. Only the default (1) value is supported."", 'type': 'invalid_request_error', 'param': 'temperature', 'code': 'unsupported_value'}}",ERROR,ERROR,ERROR,ERROR,ERROR,N/A,N/A
+1057,o1-mini,0,0.1,,"Error code: 400 - {'error': {'message': ""Unsupported value: 'temperature' does not support 0 with this model. Only the default (1) value is supported."", 'type': 'invalid_request_error', 'param': 'temperature', 'code': 'unsupported_value'}}",ERROR,ERROR,ERROR,ERROR,ERROR,N/A,N/A
+277,o1-mini,0,0.1,,"Error code: 400 - {'error': {'message': ""Unsupported value: 'temperature' does not support 0 with this model. Only the default (1) value is supported."", 'type': 'invalid_request_error', 'param': 'temperature', 'code': 'unsupported_value'}}",ERROR,ERROR,ERROR,ERROR,ERROR,N/A,N/A
+1119,o1-mini,0,0.1,,"Error code: 400 - {'error': {'message': ""Unsupported value: 'temperature' does not support 0 with this model. Only the default (1) value is supported."", 'type': 'invalid_request_error', 'param': 'temperature', 'code': 'unsupported_value'}}",ERROR,ERROR,ERROR,ERROR,ERROR,N/A,N/A
+1064,o1-mini,0,0.1,,"Error code: 400 - {'error': {'message': ""Unsupported value: 'temperature' does not support 0 with this model. Only the default (1) value is supported."", 'type': 'invalid_request_error', 'param': 'temperature', 'code': 'unsupported_value'}}",ERROR,ERROR,ERROR,ERROR,ERROR,N/A,N/A
+536,o1-mini,0,0.1,,"Error code: 400 - {'error': {'message': ""Unsupported value: 'temperature' does not support 0 with this model. Only the default (1) value is supported."", 'type': 'invalid_request_error', 'param': 'temperature', 'code': 'unsupported_value'}}",ERROR,ERROR,ERROR,ERROR,ERROR,N/A,N/A
+1341,o1-mini,0,0.1,,"Error code: 400 - {'error': {'message': ""Unsupported value: 'temperature' does not support 0 with this model. Only the default (1) value is supported."", 'type': 'invalid_request_error', 'param': 'temperature', 'code': 'unsupported_value'}}",ERROR,ERROR,ERROR,ERROR,ERROR,N/A,N/A
+613,o1-mini,0,0.1,,"Error code: 400 - {'error': {'message': ""Unsupported value: 'temperature' does not support 0 with this model. Only the default (1) value is supported."", 'type': 'invalid_request_error', 'param': 'temperature', 'code': 'unsupported_value'}}",ERROR,ERROR,ERROR,ERROR,ERROR,N/A,N/A
+651,o1-mini,0,0.1,,"Error code: 400 - {'error': {'message': ""Unsupported value: 'temperature' does not support 0 with this model. Only the default (1) value is supported."", 'type': 'invalid_request_error', 'param': 'temperature', 'code': 'unsupported_value'}}",ERROR,ERROR,ERROR,ERROR,ERROR,N/A,N/A
+272,o1-mini,0,0.1,,"Error code: 400 - {'error': {'message': ""Unsupported value: 'temperature' does not support 0 with this model. Only the default (1) value is supported."", 'type': 'invalid_request_error', 'param': 'temperature', 'code': 'unsupported_value'}}",ERROR,ERROR,ERROR,ERROR,ERROR,N/A,N/A
+1273,o1-mini,0,0.1,,"Error code: 400 - {'error': {'message': ""Unsupported value: 'temperature' does not support 0 with this model. Only the default (1) value is supported."", 'type': 'invalid_request_error', 'param': 'temperature', 'code': 'unsupported_value'}}",ERROR,ERROR,ERROR,ERROR,ERROR,N/A,N/A
+711,o1-mini,0,0.1,,"Error code: 400 - {'error': {'message': ""Unsupported value: 'temperature' does not support 0 with this model. Only the default (1) value is supported."", 'type': 'invalid_request_error', 'param': 'temperature', 'code': 'unsupported_value'}}",ERROR,ERROR,ERROR,ERROR,ERROR,N/A,N/A
+358,o1-mini,0,0.1,,"Error code: 400 - {'error': {'message': ""Unsupported value: 'temperature' does not support 0 with this model. Only the default (1) value is supported."", 'type': 'invalid_request_error', 'param': 'temperature', 'code': 'unsupported_value'}}",ERROR,ERROR,ERROR,ERROR,ERROR,N/A,N/A
+1264,o1-mini,0,0.1,,"Error code: 400 - {'error': {'message': ""Unsupported value: 'temperature' does not support 0 with this model. Only the default (1) value is supported."", 'type': 'invalid_request_error', 'param': 'temperature', 'code': 'unsupported_value'}}",ERROR,ERROR,ERROR,ERROR,ERROR,N/A,N/A
+751,o1-mini,0,0.1,,"Error code: 400 - {'error': {'message': ""Unsupported value: 'temperature' does not support 0 with this model. Only the default (1) value is supported."", 'type': 'invalid_request_error', 'param': 'temperature', 'code': 'unsupported_value'}}",ERROR,ERROR,ERROR,ERROR,ERROR,N/A,N/A
+293,o1-mini,0,0.1,,"Error code: 400 - {'error': {'message': ""Unsupported value: 'temperature' does not support 0 with this model. Only the default (1) value is supported."", 'type': 'invalid_request_error', 'param': 'temperature', 'code': 'unsupported_value'}}",ERROR,ERROR,ERROR,ERROR,ERROR,N/A,N/A
+1435,o1-mini,0,0.1,,"Error code: 400 - {'error': {'message': ""Unsupported value: 'temperature' does not support 0 with this model. Only the default (1) value is supported."", 'type': 'invalid_request_error', 'param': 'temperature', 'code': 'unsupported_value'}}",ERROR,ERROR,ERROR,ERROR,ERROR,N/A,N/A
+1407,o1-mini,0,0.1,,"Error code: 400 - {'error': {'message': ""Unsupported value: 'temperature' does not support 0 with this model. Only the default (1) value is supported."", 'type': 'invalid_request_error', 'param': 'temperature', 'code': 'unsupported_value'}}",ERROR,ERROR,ERROR,ERROR,ERROR,N/A,N/A
+562,o1-mini,0,0.1,,"Error code: 400 - {'error': {'message': ""Unsupported value: 'temperature' does not support 0 with this model. Only the default (1) value is supported."", 'type': 'invalid_request_error', 'param': 'temperature', 'code': 'unsupported_value'}}",ERROR,ERROR,ERROR,ERROR,ERROR,N/A,N/A
+1570,o1-mini,0,0.1,,"Error code: 400 - {'error': {'message': ""Unsupported value: 'temperature' does not support 0 with this model. Only the default (1) value is supported."", 'type': 'invalid_request_error', 'param': 'temperature', 'code': 'unsupported_value'}}",ERROR,ERROR,ERROR,ERROR,ERROR,N/A,N/A
+762,o1-mini,1,0.95,,"Error code: 400 - {'error': {'message': ""Unsupported parameter: 'top_p' is not supported with this model."", 'type': 'invalid_request_error', 'param': 'top_p', 'code': 'unsupported_parameter'}}",ERROR,ERROR,ERROR,ERROR,ERROR,N/A,N/A
+1015,o1-mini,1,0.95,,"Error code: 400 - {'error': {'message': ""Unsupported parameter: 'top_p' is not supported with this model."", 'type': 'invalid_request_error', 'param': 'top_p', 'code': 'unsupported_parameter'}}",ERROR,ERROR,ERROR,ERROR,ERROR,N/A,N/A
+1754,o1-mini,1,0.95,,"Error code: 400 - {'error': {'message': ""Unsupported parameter: 'top_p' is not supported with this model."", 'type': 'invalid_request_error', 'param': 'top_p', 'code': 'unsupported_parameter'}}",ERROR,ERROR,ERROR,ERROR,ERROR,N/A,N/A
+773,o1-mini,1,0.95,,"Error code: 400 - {'error': {'message': ""Unsupported parameter: 'top_p' is not supported with this model."", 'type': 'invalid_request_error', 'param': 'top_p', 'code': 'unsupported_parameter'}}",ERROR,ERROR,ERROR,ERROR,ERROR,N/A,N/A
+830,o1-mini,1,0.95,,"Error code: 400 - {'error': {'message': ""Unsupported parameter: 'top_p' is not supported with this model."", 'type': 'invalid_request_error', 'param': 'top_p', 'code': 'unsupported_parameter'}}",ERROR,ERROR,ERROR,ERROR,ERROR,N/A,N/A
+1253,o1-mini,1,0.95,,"Error code: 400 - {'error': {'message': ""Unsupported parameter: 'top_p' is not supported with this model."", 'type': 'invalid_request_error', 'param': 'top_p', 'code': 'unsupported_parameter'}}",ERROR,ERROR,ERROR,ERROR,ERROR,N/A,N/A
+1340,o1-mini,1,0.95,,"Error code: 400 - {'error': {'message': ""Unsupported parameter: 'top_p' is not supported with this model."", 'type': 'invalid_request_error', 'param': 'top_p', 'code': 'unsupported_parameter'}}",ERROR,ERROR,ERROR,ERROR,ERROR,N/A,N/A
+283,o1-mini,1,0.95,,"Error code: 400 - {'error': {'message': ""Unsupported parameter: 'top_p' is not supported with this model."", 'type': 'invalid_request_error', 'param': 'top_p', 'code': 'unsupported_parameter'}}",ERROR,ERROR,ERROR,ERROR,ERROR,N/A,N/A
+807,o1-mini,1,0.95,,"Error code: 400 - {'error': {'message': ""Unsupported parameter: 'top_p' is not supported with this model."", 'type': 'invalid_request_error', 'param': 'top_p', 'code': 'unsupported_parameter'}}",ERROR,ERROR,ERROR,ERROR,ERROR,N/A,N/A
+1358,o1-mini,1,0.95,,"Error code: 400 - {'error': {'message': ""Unsupported parameter: 'top_p' is not supported with this model."", 'type': 'invalid_request_error', 'param': 'top_p', 'code': 'unsupported_parameter'}}",ERROR,ERROR,ERROR,ERROR,ERROR,N/A,N/A
+10,o1-mini,1,0.95,,"Error code: 400 - {'error': {'message': ""Unsupported parameter: 'top_p' is not supported with this model."", 'type': 'invalid_request_error', 'param': 'top_p', 'code': 'unsupported_parameter'}}",ERROR,ERROR,ERROR,ERROR,ERROR,N/A,N/A
+846,o1-mini,1,0.95,,"Error code: 400 - {'error': {'message': ""Unsupported parameter: 'top_p' is not supported with this model."", 'type': 'invalid_request_error', 'param': 'top_p', 'code': 'unsupported_parameter'}}",ERROR,ERROR,ERROR,ERROR,ERROR,N/A,N/A
+870,o1-mini,1,0.95,,"Error code: 400 - {'error': {'message': ""Unsupported parameter: 'top_p' is not supported with this model."", 'type': 'invalid_request_error', 'param': 'top_p', 'code': 'unsupported_parameter'}}",ERROR,ERROR,ERROR,ERROR,ERROR,N/A,N/A
+417,o1-mini,1,0.95,,"Error code: 400 - {'error': {'message': ""Unsupported parameter: 'top_p' is not supported with this model."", 'type': 'invalid_request_error', 'param': 'top_p', 'code': 'unsupported_parameter'}}",ERROR,ERROR,ERROR,ERROR,ERROR,N/A,N/A
+403,o1-mini,1,0.95,,"Error code: 400 - {'error': {'message': ""Unsupported parameter: 'top_p' is not supported with this model."", 'type': 'invalid_request_error', 'param': 'top_p', 'code': 'unsupported_parameter'}}",ERROR,ERROR,ERROR,ERROR,ERROR,N/A,N/A
+1386,o1-mini,1,0.95,,"Error code: 400 - {'error': {'message': ""Unsupported parameter: 'top_p' is not supported with this model."", 'type': 'invalid_request_error', 'param': 'top_p', 'code': 'unsupported_parameter'}}",ERROR,ERROR,ERROR,ERROR,ERROR,N/A,N/A
+1646,o1-mini,1,0.95,,"Error code: 400 - {'error': {'message': ""Unsupported parameter: 'top_p' is not supported with this model."", 'type': 'invalid_request_error', 'param': 'top_p', 'code': 'unsupported_parameter'}}",ERROR,ERROR,ERROR,ERROR,ERROR,N/A,N/A
+1574,o1-mini,1,0.95,,"Error code: 400 - {'error': {'message': ""Unsupported parameter: 'top_p' is not supported with this model."", 'type': 'invalid_request_error', 'param': 'top_p', 'code': 'unsupported_parameter'}}",ERROR,ERROR,ERROR,ERROR,ERROR,N/A,N/A
+1750,o1-mini,1,0.95,,"Error code: 400 - {'error': {'message': ""Unsupported parameter: 'top_p' is not supported with this model."", 'type': 'invalid_request_error', 'param': 'top_p', 'code': 'unsupported_parameter'}}",ERROR,ERROR,ERROR,ERROR,ERROR,N/A,N/A
+595,o1-mini,1,0.95,,"Error code: 400 - {'error': {'message': ""Unsupported parameter: 'top_p' is not supported with this model."", 'type': 'invalid_request_error', 'param': 'top_p', 'code': 'unsupported_parameter'}}",ERROR,ERROR,ERROR,ERROR,ERROR,N/A,N/A
+1292,o1-mini,1,0.95,,"Error code: 400 - {'error': {'message': ""Unsupported parameter: 'top_p' is not supported with this model."", 'type': 'invalid_request_error', 'param': 'top_p', 'code': 'unsupported_parameter'}}",ERROR,ERROR,ERROR,ERROR,ERROR,N/A,N/A
+1207,o1-mini,1,0.95,,"Error code: 400 - {'error': {'message': ""Unsupported parameter: 'top_p' is not supported with this model."", 'type': 'invalid_request_error', 'param': 'top_p', 'code': 'unsupported_parameter'}}",ERROR,ERROR,ERROR,ERROR,ERROR,N/A,N/A
+731,o1-mini,1,0.95,,"Error code: 400 - {'error': {'message': ""Unsupported parameter: 'top_p' is not supported with this model."", 'type': 'invalid_request_error', 'param': 'top_p', 'code': 'unsupported_parameter'}}",ERROR,ERROR,ERROR,ERROR,ERROR,N/A,N/A
+803,o1-mini,1,0.95,,"Error code: 400 - {'error': {'message': ""Unsupported parameter: 'top_p' is not supported with this model."", 'type': 'invalid_request_error', 'param': 'top_p', 'code': 'unsupported_parameter'}}",ERROR,ERROR,ERROR,ERROR,ERROR,N/A,N/A
+4,o1-mini,1,0.95,,"Error code: 400 - {'error': {'message': ""Unsupported parameter: 'top_p' is not supported with this model."", 'type': 'invalid_request_error', 'param': 'top_p', 'code': 'unsupported_parameter'}}",ERROR,ERROR,ERROR,ERROR,ERROR,N/A,N/A
+1221,o1-mini,1,0.95,,"Error code: 400 - {'error': {'message': ""Unsupported parameter: 'top_p' is not supported with this model."", 'type': 'invalid_request_error', 'param': 'top_p', 'code': 'unsupported_parameter'}}",ERROR,ERROR,ERROR,ERROR,ERROR,N/A,N/A
+435,o1-mini,1,0.95,,"Error code: 400 - {'error': {'message': ""Unsupported parameter: 'top_p' is not supported with this model."", 'type': 'invalid_request_error', 'param': 'top_p', 'code': 'unsupported_parameter'}}",ERROR,ERROR,ERROR,ERROR,ERROR,N/A,N/A
+819,o1-mini,1,0.95,,"Error code: 400 - {'error': {'message': ""Unsupported parameter: 'top_p' is not supported with this model."", 'type': 'invalid_request_error', 'param': 'top_p', 'code': 'unsupported_parameter'}}",ERROR,ERROR,ERROR,ERROR,ERROR,N/A,N/A
+218,o1-mini,1,0.95,,"Error code: 400 - {'error': {'message': ""Unsupported parameter: 'top_p' is not supported with this model."", 'type': 'invalid_request_error', 'param': 'top_p', 'code': 'unsupported_parameter'}}",ERROR,ERROR,ERROR,ERROR,ERROR,N/A,N/A
+1021,o1-mini,1,0.95,,"Error code: 400 - {'error': {'message': ""Unsupported parameter: 'top_p' is not supported with this model."", 'type': 'invalid_request_error', 'param': 'top_p', 'code': 'unsupported_parameter'}}",ERROR,ERROR,ERROR,ERROR,ERROR,N/A,N/A
+1791,o1-mini,1,0.95,,"Error code: 400 - {'error': {'message': ""Unsupported parameter: 'top_p' is not supported with this model."", 'type': 'invalid_request_error', 'param': 'top_p', 'code': 'unsupported_parameter'}}",ERROR,ERROR,ERROR,ERROR,ERROR,N/A,N/A
+974,o1-mini,1,0.95,,"Error code: 400 - {'error': {'message': ""Unsupported parameter: 'top_p' is not supported with this model."", 'type': 'invalid_request_error', 'param': 'top_p', 'code': 'unsupported_parameter'}}",ERROR,ERROR,ERROR,ERROR,ERROR,N/A,N/A
+810,o1-mini,1,0.95,,"Error code: 400 - {'error': {'message': ""Unsupported parameter: 'top_p' is not supported with this model."", 'type': 'invalid_request_error', 'param': 'top_p', 'code': 'unsupported_parameter'}}",ERROR,ERROR,ERROR,ERROR,ERROR,N/A,N/A
+964,o1-mini,1,0.95,,"Error code: 400 - {'error': {'message': ""Unsupported parameter: 'top_p' is not supported with this model."", 'type': 'invalid_request_error', 'param': 'top_p', 'code': 'unsupported_parameter'}}",ERROR,ERROR,ERROR,ERROR,ERROR,N/A,N/A
+48,o1-mini,1,0.95,,"Error code: 400 - {'error': {'message': ""Unsupported parameter: 'top_p' is not supported with this model."", 'type': 'invalid_request_error', 'param': 'top_p', 'code': 'unsupported_parameter'}}",ERROR,ERROR,ERROR,ERROR,ERROR,N/A,N/A
+1556,o1-mini,1,0.95,,"Error code: 400 - {'error': {'message': ""Unsupported parameter: 'top_p' is not supported with this model."", 'type': 'invalid_request_error', 'param': 'top_p', 'code': 'unsupported_parameter'}}",ERROR,ERROR,ERROR,ERROR,ERROR,N/A,N/A
+1508,o1-mini,1,0.95,,"Error code: 400 - {'error': {'message': ""Unsupported parameter: 'top_p' is not supported with this model."", 'type': 'invalid_request_error', 'param': 'top_p', 'code': 'unsupported_parameter'}}",ERROR,ERROR,ERROR,ERROR,ERROR,N/A,N/A
+814,o1-mini,1,0.95,,"Error code: 400 - {'error': {'message': ""Unsupported parameter: 'top_p' is not supported with this model."", 'type': 'invalid_request_error', 'param': 'top_p', 'code': 'unsupported_parameter'}}",ERROR,ERROR,ERROR,ERROR,ERROR,N/A,N/A
+820,o1-mini,1,0.95,,"Error code: 400 - {'error': {'message': ""Unsupported parameter: 'top_p' is not supported with this model."", 'type': 'invalid_request_error', 'param': 'top_p', 'code': 'unsupported_parameter'}}",ERROR,ERROR,ERROR,ERROR,ERROR,N/A,N/A
+752,o1-mini,1,0.95,,"Error code: 400 - {'error': {'message': ""Unsupported parameter: 'top_p' is not supported with this model."", 'type': 'invalid_request_error', 'param': 'top_p', 'code': 'unsupported_parameter'}}",ERROR,ERROR,ERROR,ERROR,ERROR,N/A,N/A
+857,o1-mini,1,0.95,,"Error code: 400 - {'error': {'message': ""Unsupported parameter: 'top_p' is not supported with this model."", 'type': 'invalid_request_error', 'param': 'top_p', 'code': 'unsupported_parameter'}}",ERROR,ERROR,ERROR,ERROR,ERROR,N/A,N/A
+886,o1-mini,1,0.95,,"Error code: 400 - {'error': {'message': ""Unsupported parameter: 'top_p' is not supported with this model."", 'type': 'invalid_request_error', 'param': 'top_p', 'code': 'unsupported_parameter'}}",ERROR,ERROR,ERROR,ERROR,ERROR,N/A,N/A
+1375,o1-mini,1,0.95,,"Error code: 400 - {'error': {'message': ""Unsupported parameter: 'top_p' is not supported with this model."", 'type': 'invalid_request_error', 'param': 'top_p', 'code': 'unsupported_parameter'}}",ERROR,ERROR,ERROR,ERROR,ERROR,N/A,N/A
+1332,o1-mini,1,0.95,,"Error code: 400 - {'error': {'message': ""Unsupported parameter: 'top_p' is not supported with this model."", 'type': 'invalid_request_error', 'param': 'top_p', 'code': 'unsupported_parameter'}}",ERROR,ERROR,ERROR,ERROR,ERROR,N/A,N/A
+1037,o1-mini,1,0.95,,"Error code: 400 - {'error': {'message': ""Unsupported parameter: 'top_p' is not supported with this model."", 'type': 'invalid_request_error', 'param': 'top_p', 'code': 'unsupported_parameter'}}",ERROR,ERROR,ERROR,ERROR,ERROR,N/A,N/A
+905,o1-mini,1,0.95,,"Error code: 400 - {'error': {'message': ""Unsupported parameter: 'top_p' is not supported with this model."", 'type': 'invalid_request_error', 'param': 'top_p', 'code': 'unsupported_parameter'}}",ERROR,ERROR,ERROR,ERROR,ERROR,N/A,N/A
+1531,o1-mini,1,0.95,,"Error code: 400 - {'error': {'message': ""Unsupported parameter: 'top_p' is not supported with this model."", 'type': 'invalid_request_error', 'param': 'top_p', 'code': 'unsupported_parameter'}}",ERROR,ERROR,ERROR,ERROR,ERROR,N/A,N/A
+481,o1-mini,1,0.95,,"Error code: 400 - {'error': {'message': ""Unsupported parameter: 'top_p' is not supported with this model."", 'type': 'invalid_request_error', 'param': 'top_p', 'code': 'unsupported_parameter'}}",ERROR,ERROR,ERROR,ERROR,ERROR,N/A,N/A
+621,o1-mini,1,0.95,,"Error code: 400 - {'error': {'message': ""Unsupported parameter: 'top_p' is not supported with this model."", 'type': 'invalid_request_error', 'param': 'top_p', 'code': 'unsupported_parameter'}}",ERROR,ERROR,ERROR,ERROR,ERROR,N/A,N/A
+135,o1-mini,1,0.95,,"Error code: 400 - {'error': {'message': ""Unsupported parameter: 'top_p' is not supported with this model."", 'type': 'invalid_request_error', 'param': 'top_p', 'code': 'unsupported_parameter'}}",ERROR,ERROR,ERROR,ERROR,ERROR,N/A,N/A
+793,o1-mini,1,0.95,,"Error code: 400 - {'error': {'message': ""Unsupported parameter: 'top_p' is not supported with this model."", 'type': 'invalid_request_error', 'param': 'top_p', 'code': 'unsupported_parameter'}}",ERROR,ERROR,ERROR,ERROR,ERROR,N/A,N/A
+745,o1-mini,1,0.95,,"Error code: 400 - {'error': {'message': ""Unsupported parameter: 'top_p' is not supported with this model."", 'type': 'invalid_request_error', 'param': 'top_p', 'code': 'unsupported_parameter'}}",ERROR,ERROR,ERROR,ERROR,ERROR,N/A,N/A
+715,o1-mini,1,0.95,,"Error code: 400 - {'error': {'message': ""Unsupported parameter: 'top_p' is not supported with this model."", 'type': 'invalid_request_error', 'param': 'top_p', 'code': 'unsupported_parameter'}}",ERROR,ERROR,ERROR,ERROR,ERROR,N/A,N/A
+1455,o1-mini,1,0.95,,"Error code: 400 - {'error': {'message': ""Unsupported parameter: 'top_p' is not supported with this model."", 'type': 'invalid_request_error', 'param': 'top_p', 'code': 'unsupported_parameter'}}",ERROR,ERROR,ERROR,ERROR,ERROR,N/A,N/A
+150,o1-mini,1,0.95,,"Error code: 400 - {'error': {'message': ""Unsupported parameter: 'top_p' is not supported with this model."", 'type': 'invalid_request_error', 'param': 'top_p', 'code': 'unsupported_parameter'}}",ERROR,ERROR,ERROR,ERROR,ERROR,N/A,N/A
+98,o1-mini,1,0.95,,"Error code: 400 - {'error': {'message': ""Unsupported parameter: 'top_p' is not supported with this model."", 'type': 'invalid_request_error', 'param': 'top_p', 'code': 'unsupported_parameter'}}",ERROR,ERROR,ERROR,ERROR,ERROR,N/A,N/A
+1716,o1-mini,1,0.95,,"Error code: 400 - {'error': {'message': ""Unsupported parameter: 'top_p' is not supported with this model."", 'type': 'invalid_request_error', 'param': 'top_p', 'code': 'unsupported_parameter'}}",ERROR,ERROR,ERROR,ERROR,ERROR,N/A,N/A
+1413,o1-mini,1,0.95,,"Error code: 400 - {'error': {'message': ""Unsupported parameter: 'top_p' is not supported with this model."", 'type': 'invalid_request_error', 'param': 'top_p', 'code': 'unsupported_parameter'}}",ERROR,ERROR,ERROR,ERROR,ERROR,N/A,N/A
+268,o1-mini,1,0.95,,"Error code: 400 - {'error': {'message': ""Unsupported parameter: 'top_p' is not supported with this model."", 'type': 'invalid_request_error', 'param': 'top_p', 'code': 'unsupported_parameter'}}",ERROR,ERROR,ERROR,ERROR,ERROR,N/A,N/A
+1632,o1-mini,1,0.95,,"Error code: 400 - {'error': {'message': ""Unsupported parameter: 'top_p' is not supported with this model."", 'type': 'invalid_request_error', 'param': 'top_p', 'code': 'unsupported_parameter'}}",ERROR,ERROR,ERROR,ERROR,ERROR,N/A,N/A
+452,o1-mini,1,0.95,,"Error code: 400 - {'error': {'message': ""Unsupported parameter: 'top_p' is not supported with this model."", 'type': 'invalid_request_error', 'param': 'top_p', 'code': 'unsupported_parameter'}}",ERROR,ERROR,ERROR,ERROR,ERROR,N/A,N/A
+1004,o1-mini,1,0.95,,"Error code: 400 - {'error': {'message': ""Unsupported parameter: 'top_p' is not supported with this model."", 'type': 'invalid_request_error', 'param': 'top_p', 'code': 'unsupported_parameter'}}",ERROR,ERROR,ERROR,ERROR,ERROR,N/A,N/A
+162,o1-mini,1,0.95,,"Error code: 400 - {'error': {'message': ""Unsupported parameter: 'top_p' is not supported with this model."", 'type': 'invalid_request_error', 'param': 'top_p', 'code': 'unsupported_parameter'}}",ERROR,ERROR,ERROR,ERROR,ERROR,N/A,N/A
+122,o1-mini,1,0.95,,"Error code: 400 - {'error': {'message': ""Unsupported parameter: 'top_p' is not supported with this model."", 'type': 'invalid_request_error', 'param': 'top_p', 'code': 'unsupported_parameter'}}",ERROR,ERROR,ERROR,ERROR,ERROR,N/A,N/A
+930,o1-mini,1,0.95,,"Error code: 400 - {'error': {'message': ""Unsupported parameter: 'top_p' is not supported with this model."", 'type': 'invalid_request_error', 'param': 'top_p', 'code': 'unsupported_parameter'}}",ERROR,ERROR,ERROR,ERROR,ERROR,N/A,N/A
+771,o1-mini,1,0.95,,"Error code: 400 - {'error': {'message': ""Unsupported parameter: 'top_p' is not supported with this model."", 'type': 'invalid_request_error', 'param': 'top_p', 'code': 'unsupported_parameter'}}",ERROR,ERROR,ERROR,ERROR,ERROR,N/A,N/A
+9,o1-mini,1,0.95,,"Error code: 400 - {'error': {'message': ""Unsupported parameter: 'top_p' is not supported with this model."", 'type': 'invalid_request_error', 'param': 'top_p', 'code': 'unsupported_parameter'}}",ERROR,ERROR,ERROR,ERROR,ERROR,N/A,N/A
+840,o1-mini,1,0.95,,"Error code: 400 - {'error': {'message': ""Unsupported parameter: 'top_p' is not supported with this model."", 'type': 'invalid_request_error', 'param': 'top_p', 'code': 'unsupported_parameter'}}",ERROR,ERROR,ERROR,ERROR,ERROR,N/A,N/A
+192,o1-mini,1,0.95,,"Error code: 400 - {'error': {'message': ""Unsupported parameter: 'top_p' is not supported with this model."", 'type': 'invalid_request_error', 'param': 'top_p', 'code': 'unsupported_parameter'}}",ERROR,ERROR,ERROR,ERROR,ERROR,N/A,N/A
+1179,o1-mini,1,0.95,,"Error code: 400 - {'error': {'message': ""Unsupported parameter: 'top_p' is not supported with this model."", 'type': 'invalid_request_error', 'param': 'top_p', 'code': 'unsupported_parameter'}}",ERROR,ERROR,ERROR,ERROR,ERROR,N/A,N/A
+954,o1-mini,1,0.95,,"Error code: 400 - {'error': {'message': ""Unsupported parameter: 'top_p' is not supported with this model."", 'type': 'invalid_request_error', 'param': 'top_p', 'code': 'unsupported_parameter'}}",ERROR,ERROR,ERROR,ERROR,ERROR,N/A,N/A
+1499,o1-mini,1,0.95,,"Error code: 400 - {'error': {'message': ""Unsupported parameter: 'top_p' is not supported with this model."", 'type': 'invalid_request_error', 'param': 'top_p', 'code': 'unsupported_parameter'}}",ERROR,ERROR,ERROR,ERROR,ERROR,N/A,N/A
+937,o1-mini,1,0.95,,"Error code: 400 - {'error': {'message': ""Unsupported parameter: 'top_p' is not supported with this model."", 'type': 'invalid_request_error', 'param': 'top_p', 'code': 'unsupported_parameter'}}",ERROR,ERROR,ERROR,ERROR,ERROR,N/A,N/A
+472,o1-mini,1,0.95,,"Error code: 400 - {'error': {'message': ""Unsupported parameter: 'top_p' is not supported with this model."", 'type': 'invalid_request_error', 'param': 'top_p', 'code': 'unsupported_parameter'}}",ERROR,ERROR,ERROR,ERROR,ERROR,N/A,N/A
+863,o1-mini,1,0.95,,"Error code: 400 - {'error': {'message': ""Unsupported parameter: 'top_p' is not supported with this model."", 'type': 'invalid_request_error', 'param': 'top_p', 'code': 'unsupported_parameter'}}",ERROR,ERROR,ERROR,ERROR,ERROR,N/A,N/A
+530,o1-mini,1,0.95,,"Error code: 400 - {'error': {'message': ""Unsupported parameter: 'top_p' is not supported with this model."", 'type': 'invalid_request_error', 'param': 'top_p', 'code': 'unsupported_parameter'}}",ERROR,ERROR,ERROR,ERROR,ERROR,N/A,N/A
+282,o1-mini,1,0.95,,"Error code: 400 - {'error': {'message': ""Unsupported parameter: 'top_p' is not supported with this model."", 'type': 'invalid_request_error', 'param': 'top_p', 'code': 'unsupported_parameter'}}",ERROR,ERROR,ERROR,ERROR,ERROR,N/A,N/A
+952,o1-mini,1,0.95,,"Error code: 400 - {'error': {'message': ""Unsupported parameter: 'top_p' is not supported with this model."", 'type': 'invalid_request_error', 'param': 'top_p', 'code': 'unsupported_parameter'}}",ERROR,ERROR,ERROR,ERROR,ERROR,N/A,N/A
+1663,o1-mini,1,0.95,,"Error code: 400 - {'error': {'message': ""Unsupported parameter: 'top_p' is not supported with this model."", 'type': 'invalid_request_error', 'param': 'top_p', 'code': 'unsupported_parameter'}}",ERROR,ERROR,ERROR,ERROR,ERROR,N/A,N/A
+115,o1-mini,1,0.95,,"Error code: 400 - {'error': {'message': ""Unsupported parameter: 'top_p' is not supported with this model."", 'type': 'invalid_request_error', 'param': 'top_p', 'code': 'unsupported_parameter'}}",ERROR,ERROR,ERROR,ERROR,ERROR,N/A,N/A
+655,o1-mini,1,0.95,,"Error code: 400 - {'error': {'message': ""Unsupported parameter: 'top_p' is not supported with this model."", 'type': 'invalid_request_error', 'param': 'top_p', 'code': 'unsupported_parameter'}}",ERROR,ERROR,ERROR,ERROR,ERROR,N/A,N/A
+496,o1-mini,1,0.95,,"Error code: 400 - {'error': {'message': ""Unsupported parameter: 'top_p' is not supported with this model."", 'type': 'invalid_request_error', 'param': 'top_p', 'code': 'unsupported_parameter'}}",ERROR,ERROR,ERROR,ERROR,ERROR,N/A,N/A
+1022,o1-mini,1,0.95,,"Error code: 400 - {'error': {'message': ""Unsupported parameter: 'top_p' is not supported with this model."", 'type': 'invalid_request_error', 'param': 'top_p', 'code': 'unsupported_parameter'}}",ERROR,ERROR,ERROR,ERROR,ERROR,N/A,N/A
+547,o1-mini,1,0.95,,"Error code: 400 - {'error': {'message': ""Unsupported parameter: 'top_p' is not supported with this model."", 'type': 'invalid_request_error', 'param': 'top_p', 'code': 'unsupported_parameter'}}",ERROR,ERROR,ERROR,ERROR,ERROR,N/A,N/A
+643,o1-mini,1,0.95,,"Error code: 400 - {'error': {'message': ""Unsupported parameter: 'top_p' is not supported with this model."", 'type': 'invalid_request_error', 'param': 'top_p', 'code': 'unsupported_parameter'}}",ERROR,ERROR,ERROR,ERROR,ERROR,N/A,N/A
+560,o1-mini,1,0.95,,"Error code: 400 - {'error': {'message': ""Unsupported parameter: 'top_p' is not supported with this model."", 'type': 'invalid_request_error', 'param': 'top_p', 'code': 'unsupported_parameter'}}",ERROR,ERROR,ERROR,ERROR,ERROR,N/A,N/A
+940,o1-mini,1,0.95,,"Error code: 400 - {'error': {'message': ""Unsupported parameter: 'top_p' is not supported with this model."", 'type': 'invalid_request_error', 'param': 'top_p', 'code': 'unsupported_parameter'}}",ERROR,ERROR,ERROR,ERROR,ERROR,N/A,N/A
+130,o1-mini,1,0.95,,"Error code: 400 - {'error': {'message': ""Unsupported parameter: 'top_p' is not supported with this model."", 'type': 'invalid_request_error', 'param': 'top_p', 'code': 'unsupported_parameter'}}",ERROR,ERROR,ERROR,ERROR,ERROR,N/A,N/A
+1778,o1-mini,1,0.95,,"Error code: 400 - {'error': {'message': ""Unsupported parameter: 'top_p' is not supported with this model."", 'type': 'invalid_request_error', 'param': 'top_p', 'code': 'unsupported_parameter'}}",ERROR,ERROR,ERROR,ERROR,ERROR,N/A,N/A
+1511,o1-mini,1,0.95,,"Error code: 400 - {'error': {'message': ""Unsupported parameter: 'top_p' is not supported with this model."", 'type': 'invalid_request_error', 'param': 'top_p', 'code': 'unsupported_parameter'}}",ERROR,ERROR,ERROR,ERROR,ERROR,N/A,N/A
+1069,o1-mini,1,0.95,,"Error code: 400 - {'error': {'message': ""Unsupported parameter: 'top_p' is not supported with this model."", 'type': 'invalid_request_error', 'param': 'top_p', 'code': 'unsupported_parameter'}}",ERROR,ERROR,ERROR,ERROR,ERROR,N/A,N/A
+1271,o1-mini,1,0.95,,"Error code: 400 - {'error': {'message': ""Unsupported parameter: 'top_p' is not supported with this model."", 'type': 'invalid_request_error', 'param': 'top_p', 'code': 'unsupported_parameter'}}",ERROR,ERROR,ERROR,ERROR,ERROR,N/A,N/A
+1216,o1-mini,1,0.95,,"Error code: 400 - {'error': {'message': ""Unsupported parameter: 'top_p' is not supported with this model."", 'type': 'invalid_request_error', 'param': 'top_p', 'code': 'unsupported_parameter'}}",ERROR,ERROR,ERROR,ERROR,ERROR,N/A,N/A
+426,o1-mini,1,0.95,,"Error code: 400 - {'error': {'message': ""Unsupported parameter: 'top_p' is not supported with this model."", 'type': 'invalid_request_error', 'param': 'top_p', 'code': 'unsupported_parameter'}}",ERROR,ERROR,ERROR,ERROR,ERROR,N/A,N/A
+1057,o1-mini,1,0.95,,"Error code: 400 - {'error': {'message': ""Unsupported parameter: 'top_p' is not supported with this model."", 'type': 'invalid_request_error', 'param': 'top_p', 'code': 'unsupported_parameter'}}",ERROR,ERROR,ERROR,ERROR,ERROR,N/A,N/A
+277,o1-mini,1,0.95,,"Error code: 400 - {'error': {'message': ""Unsupported parameter: 'top_p' is not supported with this model."", 'type': 'invalid_request_error', 'param': 'top_p', 'code': 'unsupported_parameter'}}",ERROR,ERROR,ERROR,ERROR,ERROR,N/A,N/A
+1119,o1-mini,1,0.95,,"Error code: 400 - {'error': {'message': ""Unsupported parameter: 'top_p' is not supported with this model."", 'type': 'invalid_request_error', 'param': 'top_p', 'code': 'unsupported_parameter'}}",ERROR,ERROR,ERROR,ERROR,ERROR,N/A,N/A
+1064,o1-mini,1,0.95,,"Error code: 400 - {'error': {'message': ""Unsupported parameter: 'top_p' is not supported with this model."", 'type': 'invalid_request_error', 'param': 'top_p', 'code': 'unsupported_parameter'}}",ERROR,ERROR,ERROR,ERROR,ERROR,N/A,N/A
+536,o1-mini,1,0.95,,"Error code: 400 - {'error': {'message': ""Unsupported parameter: 'top_p' is not supported with this model."", 'type': 'invalid_request_error', 'param': 'top_p', 'code': 'unsupported_parameter'}}",ERROR,ERROR,ERROR,ERROR,ERROR,N/A,N/A
+1341,o1-mini,1,0.95,,"Error code: 400 - {'error': {'message': ""Unsupported parameter: 'top_p' is not supported with this model."", 'type': 'invalid_request_error', 'param': 'top_p', 'code': 'unsupported_parameter'}}",ERROR,ERROR,ERROR,ERROR,ERROR,N/A,N/A
+613,o1-mini,1,0.95,,"Error code: 400 - {'error': {'message': ""Unsupported parameter: 'top_p' is not supported with this model."", 'type': 'invalid_request_error', 'param': 'top_p', 'code': 'unsupported_parameter'}}",ERROR,ERROR,ERROR,ERROR,ERROR,N/A,N/A
+651,o1-mini,1,0.95,,"Error code: 400 - {'error': {'message': ""Unsupported parameter: 'top_p' is not supported with this model."", 'type': 'invalid_request_error', 'param': 'top_p', 'code': 'unsupported_parameter'}}",ERROR,ERROR,ERROR,ERROR,ERROR,N/A,N/A
+272,o1-mini,1,0.95,,"Error code: 400 - {'error': {'message': ""Unsupported parameter: 'top_p' is not supported with this model."", 'type': 'invalid_request_error', 'param': 'top_p', 'code': 'unsupported_parameter'}}",ERROR,ERROR,ERROR,ERROR,ERROR,N/A,N/A
+1273,o1-mini,1,0.95,,"Error code: 400 - {'error': {'message': ""Unsupported parameter: 'top_p' is not supported with this model."", 'type': 'invalid_request_error', 'param': 'top_p', 'code': 'unsupported_parameter'}}",ERROR,ERROR,ERROR,ERROR,ERROR,N/A,N/A
+711,o1-mini,1,0.95,,"Error code: 400 - {'error': {'message': ""Unsupported parameter: 'top_p' is not supported with this model."", 'type': 'invalid_request_error', 'param': 'top_p', 'code': 'unsupported_parameter'}}",ERROR,ERROR,ERROR,ERROR,ERROR,N/A,N/A
+358,o1-mini,1,0.95,,"Error code: 400 - {'error': {'message': ""Unsupported parameter: 'top_p' is not supported with this model."", 'type': 'invalid_request_error', 'param': 'top_p', 'code': 'unsupported_parameter'}}",ERROR,ERROR,ERROR,ERROR,ERROR,N/A,N/A
+1264,o1-mini,1,0.95,,"Error code: 400 - {'error': {'message': ""Unsupported parameter: 'top_p' is not supported with this model."", 'type': 'invalid_request_error', 'param': 'top_p', 'code': 'unsupported_parameter'}}",ERROR,ERROR,ERROR,ERROR,ERROR,N/A,N/A
+751,o1-mini,1,0.95,,"Error code: 400 - {'error': {'message': ""Unsupported parameter: 'top_p' is not supported with this model."", 'type': 'invalid_request_error', 'param': 'top_p', 'code': 'unsupported_parameter'}}",ERROR,ERROR,ERROR,ERROR,ERROR,N/A,N/A
+293,o1-mini,1,0.95,,"Error code: 400 - {'error': {'message': ""Unsupported parameter: 'top_p' is not supported with this model."", 'type': 'invalid_request_error', 'param': 'top_p', 'code': 'unsupported_parameter'}}",ERROR,ERROR,ERROR,ERROR,ERROR,N/A,N/A
+1435,o1-mini,1,0.95,,"Error code: 400 - {'error': {'message': ""Unsupported parameter: 'top_p' is not supported with this model."", 'type': 'invalid_request_error', 'param': 'top_p', 'code': 'unsupported_parameter'}}",ERROR,ERROR,ERROR,ERROR,ERROR,N/A,N/A
+1407,o1-mini,1,0.95,,"Error code: 400 - {'error': {'message': ""Unsupported parameter: 'top_p' is not supported with this model."", 'type': 'invalid_request_error', 'param': 'top_p', 'code': 'unsupported_parameter'}}",ERROR,ERROR,ERROR,ERROR,ERROR,N/A,N/A
+562,o1-mini,1,0.95,,"Error code: 400 - {'error': {'message': ""Unsupported parameter: 'top_p' is not supported with this model."", 'type': 'invalid_request_error', 'param': 'top_p', 'code': 'unsupported_parameter'}}",ERROR,ERROR,ERROR,ERROR,ERROR,N/A,N/A
+1570,o1-mini,1,0.95,,"Error code: 400 - {'error': {'message': ""Unsupported parameter: 'top_p' is not supported with this model."", 'type': 'invalid_request_error', 'param': 'top_p', 'code': 'unsupported_parameter'}}",ERROR,ERROR,ERROR,ERROR,ERROR,N/A,N/A
+762,o1-mini,,No response from model,ERROR,ERROR,ERROR,ERROR,ERROR,N/A,N/A,
+762,o1-mini,,'tuple' object has no attribute 'strip',ERROR,ERROR,ERROR,ERROR,ERROR,N/A,N/A,"(None, None, None)"
+762,o1-mini,,'tuple' object has no attribute 'strip',ERROR,ERROR,ERROR,ERROR,ERROR,N/A,N/A,"(None, None, None)"
+762,o1-mini,,'tuple' object has no attribute 'strip',ERROR,ERROR,ERROR,ERROR,ERROR,N/A,N/A,"(None, None, None)"
+1015,o1-mini,,'tuple' object has no attribute 'strip',ERROR,ERROR,ERROR,ERROR,ERROR,N/A,N/A,"(None, None, None)"
+762,o1-mini,,'tuple' object has no attribute 'strip',ERROR,ERROR,ERROR,ERROR,ERROR,N/A,N/A,"(None, None, None)"
+1015,o1-mini,,'tuple' object has no attribute 'strip',ERROR,ERROR,ERROR,ERROR,ERROR,N/A,N/A,"(None, None, None)"
+762,o1-mini,"def count_prime_set_bits(L, R):
+    primes = {2, 3, 5, 7, 11, 13, 17, 19}
+    count = 0
+    for num in range(L, R + 1):
+        set_bits = bin(num).count('1')
+        if set_bits in primes:
+            count += 1
+    return count
+
+def run_tests():
+    test_cases = [
+        {'L': 6, 'R': 10, 'expected': 4},
+        {'L': 10, 'R': 15, 'expected': 5},
+        # You can add more test cases here
+    ]
+    
+    correct = 0
+    total = len(test_cases)
+    
+    for test in test_cases:
+        result = count_prime_set_bits(test['L'], test['R'])
+        if result == test['expected']:
+            print('True')
+            correct += 1
+        else:
+            print('False')
+    
+    print(f""{correct} / {total}"")
+
+run_tests()","True
+True
+2 / 2",2,0,0.31,9.32,"loops: 2, conditionals: 2",447,1196,"```python
+def count_prime_set_bits(L, R):
+    primes = {2, 3, 5, 7, 11, 13, 17, 19}
+    count = 0
+    for num in range(L, R + 1):
+        set_bits = bin(num).count('1')
+        if set_bits in primes:
+            count += 1
+    return count
+
+def run_tests():
+    test_cases = [
+        {'L': 6, 'R': 10, 'expected': 4},
+        {'L': 10, 'R': 15, 'expected': 5},
+        # You can add more test cases here
+    ]
+    
+    correct = 0
+    total = len(test_cases)
+    
+    for test in test_cases:
+        result = count_prime_set_bits(test['L'], test['R'])
+        if result == test['expected']:
+            print('True')
+            correct += 1
+        else:
+            print('False')
+    
+    print(f""{correct} / {total}"")
+
+run_tests()
+```"
+1015,o1-mini,"from collections import deque
+
+def smallest_length(K):
+    if K == 0:
+        return -1
+    visited = set()
+    q = deque()
+    q.append((1 % K, 1))
+    visited.add(1 % K)
+    
+    while q:
+        remainder, length = q.popleft()
+        if remainder == 0:
+            return length
+        next_remainder = (remainder * 10 + 1) % K
+        if next_remainder not in visited:
+            visited.add(next_remainder)
+            q.append((next_remainder, length + 1))
+    return -1
+
+# Test cases: list of tuples (K, expected_output)
+test_cases = [
+    (1, 1),
+    (2, -1),
+    (3, 3),
+    (7, 6),
+    (9, 9),
+    (10, -1),
+    (13, 6),
+    (17, 16),
+    (19, 18),
+    (23, 22),
+    (99991, 99991),  # A large prime
+    (99999, -1),     # Divisible by 3 and 9 but not by 2 or 5
+]
+
+correct = 0
+total = len(test_cases)
+
+for K, expected in test_cases:
+    result = smallest_length(K)
+    is_correct = result == expected
+    print(is_correct)
+    if is_correct:
+        correct += 1
+
+print(f""{correct} / {total}"")","True
+True
+True
+True
+True
+True
+True
+True
+True
+True
+False
+False
+10 / 12",10,2,0.11,1.55,"loops: 2, conditionals: 4",290,974,"```python
+from collections import deque
+
+def smallest_length(K):
+    if K == 0:
+        return -1
+    visited = set()
+    q = deque()
+    q.append((1 % K, 1))
+    visited.add(1 % K)
+    
+    while q:
+        remainder, length = q.popleft()
+        if remainder == 0:
+            return length
+        next_remainder = (remainder * 10 + 1) % K
+        if next_remainder not in visited:
+            visited.add(next_remainder)
+            q.append((next_remainder, length + 1))
+    return -1
+
+# Test cases: list of tuples (K, expected_output)
+test_cases = [
+    (1, 1),
+    (2, -1),
+    (3, 3),
+    (7, 6),
+    (9, 9),
+    (10, -1),
+    (13, 6),
+    (17, 16),
+    (19, 18),
+    (23, 22),
+    (99991, 99991),  # A large prime
+    (99999, -1),     # Divisible by 3 and 9 but not by 2 or 5
+]
+
+correct = 0
+total = len(test_cases)
+
+for K, expected in test_cases:
+    result = smallest_length(K)
+    is_correct = result == expected
+    print(is_correct)
+    if is_correct:
+        correct += 1
+
+print(f""{correct} / {total}"")
+```"
+1754,o1-mini,"def largest_merge(word1, word2):
+    merge = []
+    i, j = 0, 0
+    while i < len(word1) or j < len(word2):
+        if word1[i:] > word2[j:]:
+            merge.append(word1[i])
+            i += 1
+        else:
+            merge.append(word2[j])
+            j += 1
+    return ''.join(merge)
+
+def run_tests():
+    test_cases = [
+        {
+            ""word1"": ""cabaa"",
+            ""word2"": ""bcaaa"",
+            ""expected"": ""cbcabaaaaa""
+        },
+        {
+            ""word1"": ""abcabc"",
+            ""word2"": ""abdcaba"",
+            ""expected"": ""abdcabcabcaba""
+        },
+        {
+            ""word1"": ""abc"",
+            ""word2"": ""abdcaba"",
+            ""expected"": ""abdcababc""
+        },
+        {
+            ""word1"": ""aaa"",
+            ""word2"": ""aaa"",
+            ""expected"": ""aaaaaa""
+        },
+        {
+            ""word1"": ""abcde"",
+            ""word2"": ""fghij"",
+            ""expected"": ""fghijabcde""
+        },
+        {
+            ""word1"": ""zxabc"",
+            ""word2"": ""zxabd"",
+            ""expected"": ""zxzxabdabc""
+        },
+        {
+            ""word1"": ""gattaca"",
+            ""word2"": ""gattaca"",
+            ""expected"": ""gattacagattaca""
+        },
+        {
+            ""word1"": ""abc"",
+            ""word2"": ""xyz"",
+            ""expected"": ""xyzabc""
+        },
+        {
+            ""word1"": ""mnop"",
+            ""word2"": ""mnop"",
+            ""expected"": ""mnopmnop""
+        },
+        {
+            ""word1"": ""kmt"",
+            ""word2"": ""kmtk"",
+            ""expected"": ""kmtkmtk""
+        }
+    ]
+    
+    correct = 0
+    total = len(test_cases)
+    
+    for idx, test in enumerate(test_cases):
+        word1 = test[""word1""]
+        word2 = test[""word2""]
+        expected = test[""expected""]
+        result = largest_merge(word1, word2)
+        if result == expected:
+            print(""True"")
+            correct += 1
+        else:
+            print(""False"")
+    
+    print(f""{correct}/{total}"")
+
+# Run the tests
+run_tests()","True
+True
+False
+True
+True
+False
+False
+True
+True
+True
+7/10",7,3,0.11,1.54,"loops: 2, conditionals: 2",655,1368,"```python
+def largest_merge(word1, word2):
+    merge = []
+    i, j = 0, 0
+    while i < len(word1) or j < len(word2):
+        if word1[i:] > word2[j:]:
+            merge.append(word1[i])
+            i += 1
+        else:
+            merge.append(word2[j])
+            j += 1
+    return ''.join(merge)
+
+def run_tests():
+    test_cases = [
+        {
+            ""word1"": ""cabaa"",
+            ""word2"": ""bcaaa"",
+            ""expected"": ""cbcabaaaaa""
+        },
+        {
+            ""word1"": ""abcabc"",
+            ""word2"": ""abdcaba"",
+            ""expected"": ""abdcabcabcaba""
+        },
+        {
+            ""word1"": ""abc"",
+            ""word2"": ""abdcaba"",
+            ""expected"": ""abdcababc""
+        },
+        {
+            ""word1"": ""aaa"",
+            ""word2"": ""aaa"",
+            ""expected"": ""aaaaaa""
+        },
+        {
+            ""word1"": ""abcde"",
+            ""word2"": ""fghij"",
+            ""expected"": ""fghijabcde""
+        },
+        {
+            ""word1"": ""zxabc"",
+            ""word2"": ""zxabd"",
+            ""expected"": ""zxzxabdabc""
+        },
+        {
+            ""word1"": ""gattaca"",
+            ""word2"": ""gattaca"",
+            ""expected"": ""gattacagattaca""
+        },
+        {
+            ""word1"": ""abc"",
+            ""word2"": ""xyz"",
+            ""expected"": ""xyzabc""
+        },
+        {
+            ""word1"": ""mnop"",
+            ""word2"": ""mnop"",
+            ""expected"": ""mnopmnop""
+        },
+        {
+            ""word1"": ""kmt"",
+            ""word2"": ""kmtk"",
+            ""expected"": ""kmtkmtk""
+        }
+    ]
+    
+    correct = 0
+    total = len(test_cases)
+    
+    for idx, test in enumerate(test_cases):
+        word1 = test[""word1""]
+        word2 = test[""word2""]
+        expected = test[""expected""]
+        result = largest_merge(word1, word2)
+        if result == expected:
+            print(""True"")
+            correct += 1
+        else:
+            print(""False"")
+    
+    print(f""{correct}/{total}"")
+
+# Run the tests
+run_tests()
+```"

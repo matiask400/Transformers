@@ -8,6 +8,9 @@ __pycache__/
 venv/
 env/
 *.env
+*.env.*
+*.env-*
+
 
 # IDE configuration files (e.g., PyCharm, VSCode)
 .idea/

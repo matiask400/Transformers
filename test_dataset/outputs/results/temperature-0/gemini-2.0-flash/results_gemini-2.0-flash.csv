@@ -1,0 +1,368 @@
+ID,code,result,true_count,false_count
+1,"def twoSum(nums, target):
+    """"""
+    Given an array of integers `nums` and an integer `target`, return indices of the two numbers such that they add up to `target`.
+
+    You may assume that each input would have exactly one solution, and you may not use the same element twice.
+
+    You can return the answer in any order.
+    """"""
+    num_map = {}
+    for index, num in enumerate(nums):
+        complement = target - num
+        if complement in num_map:
+            return [num_map[complement], index]
+        num_map[num] = index",SUCCESS,532,0
+2,"class ListNode:
+    def __init__(self, val=0, next=None):
+        self.val = val
+        self.next = next
+
+def addTwoNumbers(l1, l2):
+    carry = 0
+    dummy_head = ListNode(0)
+    current = dummy_head
+
+    while l1 or l2 or carry:
+        val1 = l1.val if l1 else 0
+        val2 = l2.val if l2 else 0
+
+        sum_val = val1 + val2 + carry
+        carry = sum_val // 10
+        digit = sum_val % 10
+
+        current.next = ListNode(digit)
+        current = current.next
+
+        if l1:
+            l1 = l1.next
+        if l2:
+            l2 = l2.next
+
+    return dummy_head.next",SUCCESS,579,0
+3,"def lengthOfLongestSubstring(s):
+    """"""
+    Given a string `s`, find the length of the longest substring without repeating characters.
+    """"""
+    char_index_map = {}
+    start = 0
+    max_length = 0
+
+    for end, char in enumerate(s):
+        if char in char_index_map and char_index_map[char] >= start:
+            start = char_index_map[char] + 1
+        char_index_map[char] = end
+        max_length = max(max_length, end - start + 1)
+
+    return max_length",SUCCESS,462,0
+4,"def findMedianSortedArrays(nums1, nums2):
+    """"""
+    Given two sorted arrays `nums1` and `nums2` of size `m` and `n` respectively, return the median of the two sorted arrays.
+    """"""
+    if len(nums1) > len(nums2):
+        nums1, nums2 = nums2, nums1
+
+    m, n = len(nums1), len(nums2)
+    low, high = 0, m
+
+    while low <= high:
+        partitionX = (low + high) // 2
+        partitionY = (m + n + 1) // 2 - partitionX
+
+        maxLeftX = nums1[partitionX - 1] if partitionX > 0 else float('-inf')
+        minRightX = nums1[partitionX] if partitionX < m else float('inf')
+
+        maxLeftY = nums2[partitionY - 1] if partitionY > 0 else float('-inf')
+        minRightY = nums2[partitionY] if partitionY < n else float('inf')
+
+        if maxLeftX <= minRightY and maxLeftY <= minRightX:
+            if (m + n) % 2 == 0:
+                return (max(maxLeftX, maxLeftY) + min(minRightX, minRightY)) / 2
+            else:
+                return max(maxLeftX, maxLeftY)
+        elif maxLeftX > minRightY:
+            high = partitionX - 1
+        else:
+            low = partitionX + 1",SUCCESS,1083,0
+5,"def longestPalindrome(s):
+    """"""
+    Given a string `s`, return the longest palindromic substring in `s`.
+    """"""
+    if not s:
+        return """"
+
+    n = len(s)
+    longest = """"
+
+    def expand_around_center(left, right):
+        while left >= 0 and right < n and s[left] == s[right]:
+            left -= 1
+            right += 1
+        return s[left + 1:right]
+
+    for i in range(n):
+        # Odd length palindromes
+        palindrome1 = expand_around_center(i, i)
+        if len(palindrome1) > len(longest):
+            longest = palindrome1
+
+        # Even length palindromes
+        palindrome2 = expand_around_center(i, i + 1)
+        if len(palindrome2) > len(longest):
+            longest = palindrome2
+
+    return longest",SUCCESS,734,0
+6,"def convert(s, numRows):
+    """"""
+    The string `""PAYPALISHIRING""` is written in a zigzag pattern on a given number of rows like this: (you may want to display this pattern in a fixed font for better legibility)
+    P   A   H   N
+    A P L S I I G
+    Y   I   R
+    And then read line by line: `""PAHNAPLSIIGYIR""`
+    Write the code that will take a string and make this conversion given a number of rows:
+    string convert(string s, int numRows);
+    """"""
+    if numRows == 1 or numRows >= len(s):
+        return s
+
+    zigzag = [''] * numRows
+    row = 0
+    going_down = True
+
+    for char in s:
+        zigzag[row] += char
+
+        if row == 0:
+            going_down = True
+        elif row == numRows - 1:
+            going_down = False
+
+        if going_down:
+            row += 1
+        else:
+            row -= 1
+
+    return ''.join(zigzag)",SUCCESS,849,0
+7,"def reverse(x):
+    """"""
+    Given a signed 32-bit integer `x`, return `x` with its digits reversed. If reversing `x` causes the value to go outside the signed 32-bit integer range `[-231, 231 - 1]`, then return `0`.
+
+    Assume the environment does not allow you to store 64-bit integers (signed or unsigned).
+    """"""
+    sign = -1 if x < 0 else 1
+    x = abs(x)
+    reversed_x = 0
+
+    while x > 0:
+        digit = x % 10
+        reversed_x = reversed_x * 10 + digit
+        x //= 10
+
+    reversed_x *= sign
+
+    if reversed_x < -2**31 or reversed_x > 2**31 - 1:
+        return 0
+
+    return reversed_x",SUCCESS,603,0
+8,"def myAtoi(s):
+    """"""
+    Implement the `myAtoi(string s)` function, which converts a string to a 32-bit signed integer (similar to C/C++'s `atoi` function).
+    """"""
+    s = s.lstrip()
+    if not s:
+        return 0
+
+    sign = 1
+    index = 0
+
+    if s[0] == '+':
+        index += 1
+    elif s[0] == '-':
+        sign = -1
+        index += 1
+
+    result = 0
+    while index < len(s) and s[index].isdigit():
+        digit = int(s[index])
+        if result > (2**31 - 1) // 10 or (result == (2**31 - 1) // 10 and digit > 7):
+            return 2**31 - 1 if sign == 1 else -2**31
+        result = result * 10 + digit
+        index += 1
+
+    return sign * result",SUCCESS,660,0
+9,"def isPalindrome(x):
+    """"""
+    Given an integer `x`, return `true` if `x` is palindrome integer.
+
+    An integer is a palindrome when it reads the same backward as forward. For example, `121` is palindrome while `123` is not.
+    """"""
+    if x < 0:
+        return False
+
+    original_x = x
+    reversed_x = 0
+
+    while x > 0:
+        digit = x % 10
+        reversed_x = reversed_x * 10 + digit
+        x //= 10
+
+    return original_x == reversed_x",SUCCESS,449,0
+10,"def isMatch(s, p):
+    """"""
+    Given an input string (`s`) and a pattern (`p`), implement regular expression matching with support for `'.'` and `'*'` where:` `
+    `'.'` Matches any single character.​​​​
+    `'*'` Matches zero or more of the preceding element.
+
+    The matching should cover the entire input string (not partial).
+    """"""
+    dp = [[False] * (len(p) + 1) for _ in range(len(s) + 1)]
+    dp[0][0] = True
+
+    for j in range(1, len(p) + 1):
+        if p[j - 1] == '*':
+            dp[0][j] = dp[0][j - 2]
+
+    for i in range(1, len(s) + 1):
+        for j in range(1, len(p) + 1):
+            if p[j - 1] == '.' or p[j - 1] == s[i - 1]:
+                dp[i][j] = dp[i - 1][j - 1]
+            elif p[j - 1] == '*':
+                dp[i][j] = dp[i][j - 2]
+                if p[j - 2] == '.' or p[j - 2] == s[i - 1]:
+                    dp[i][j] = dp[i][j] or dp[i - 1][j]
+            else:
+                dp[i][j] = False
+
+    return dp[len(s)][len(p)]",SUCCESS,967,0
+11,"def maxArea(height):
+    """"""
+    Given `n` non-negative integers `a1, a2, ..., an` , where each represents a point at coordinate `(i, ai)`. `n` vertical lines are drawn such that the two endpoints of the line `i` is at `(i, ai)` and `(i, 0)`. Find two lines, which, together with the x-axis forms a container, such that the container contains the most water.
+
+    Notice that you may not slant the container.
+    """"""
+    max_area = 0
+    left = 0
+    right = len(height) - 1
+
+    while left < right:
+        width = right - left
+        min_height = min(height[left], height[right])
+        area = width * min_height
+        max_area = max(max_area, area)
+
+        if height[left] <= height[right]:
+            left += 1
+        else:
+            right -= 1
+
+    return max_area",SUCCESS,778,0
+12,"def intToRoman(num):
+    """"""
+    Roman numerals are represented by seven different symbols: `I`, `V`, `X`, `L`, `C`, `D` and `M`.
+
+    Symbol       Value
+    I             1
+    V             5
+    X             10
+    L             50
+    C             100
+    D             500
+    M             1000
+    For example, `2` is written as `II` in Roman numeral, just two one's added together. `12` is written as `XII`, which is simply `X + II`. The number `27` is written as `XXVII`, which is `XX + V + II`.
+
+    Roman numerals are usually written largest to smallest from left to right. However, the numeral for four is not `IIII`. Instead, the number four is written as `IV`. Because the one is before the five we subtract it making four. The same principle applies to the number nine, which is written as `IX`. There are six instances where subtraction is used:
+    `I` can be placed before `V` (5) and `X` (10) to make 4 and 9. 
+    `X` can be placed before `L` (50) and `C` (100) to make 40 and 90. 
+    `C` can be placed before `D` (500) and `M` (1000) to make 400 and 900.
+
+    Given an integer, convert it to a roman numeral.
+    """"""
+    roman_map = { 1: 'I', 4: 'IV', 5: 'V', 9: 'IX', 10: 'X', 40: 'XL', 50: 'L', 90: 'XC', 100: 'C', 400: 'CD', 500: 'D', 900: 'CM', 1000: 'M'}
+    integers = list(roman_map.keys())
+    integers.sort(reverse=True)
+    
+    roman_numeral = """"
+    for value in integers:
+        while num >= value:
+            roman_numeral += roman_map[value]
+            num -= value
+    
+    return roman_numeral",SUCCESS,1537,0
+13,"def romanToInt(s):
+    """"""
+    Roman numerals are represented by seven different symbols: `I`, `V`, `X`, `L`, `C`, `D` and `M`.
+
+    Symbol       Value
+    I             1
+    V             5
+    X             10
+    L             50
+    C             100
+    D             500
+    M             1000
+    For example, `2` is written as `II` in Roman numeral, just two one's added together. `12` is written as `XII`, which is simply `X + II`. The number `27` is written as `XXVII`, which is `XX + V + II`.
+
+    Roman numerals are usually written largest to smallest from left to right. However, the numeral for four is not `IIII`. Instead, the number four is written as `IV`. Because the one is before the five we subtract it making four. The same principle applies to the number nine, which is written as `IX`. There are six instances where subtraction is used:
+    `I` can be placed before `V` (5) and `X` (10) to make 4 and 9. 
+    `X` can be placed before `L` (50) and `C` (100) to make 40 and 90. 
+    `C` can be placed before `D` (500) and `M` (1000) to make 400 and 900.
+
+    Given a roman numeral, convert it to an integer.
+    """"""
+    roman_map = {'I': 1, 'V': 5, 'X': 10, 'L': 50, 'C': 100, 'D': 500, 'M': 1000}
+    result = 0
+    i = 0
+    while i < len(s):
+        if i + 1 < len(s) and roman_map[s[i]] < roman_map[s[i+1]]:
+            result += roman_map[s[i+1]] - roman_map[s[i]]
+            i += 2
+        else:
+            result += roman_map[s[i]]
+            i += 1
+    return result",SUCCESS,1500,0
+14,"def longestCommonPrefix(strs):
+    """"""
+    Write a function to find the longest common prefix string amongst an array of strings.
+
+    If there is no common prefix, return an empty string `""""`.
+    """"""
+    if not strs:
+        return """"
+
+    prefix = strs[0]
+    for i in range(1, len(strs)):
+        while strs[i].find(prefix) != 0:
+            prefix = prefix[:-1]
+            if not prefix:
+                return """"
+
+    return prefix",SUCCESS,438,0
+15,"def threeSum(nums):
+    """"""
+    Given an integer array nums, return all the triplets `[nums[i], nums[j], nums[k]]` such that `i != j`, `i != k`, and `j != k`, and `nums[i] + nums[j] + nums[k] == 0`.
+
+    Notice that the solution set must not contain duplicate triplets.
+    """"""
+    nums.sort()
+    result = []
+    for i in range(len(nums) - 2):
+        if i > 0 and nums[i] == nums[i - 1]:
+            continue
+        left = i + 1
+        right = len(nums) - 1
+        while left < right:
+            total = nums[i] + nums[left] + nums[right]
+            if total < 0:
+                left += 1
+            elif total > 0:
+                right -= 1
+            else:
+                result.append([nums[i], nums[left], nums[right]])
+                while left < right and nums[left] == nums[left + 1]:
+                    left += 1
+                while left < right and nums[right] == nums[right - 1]:
+                    right -= 1
+                left += 1
+                right -= 1
+    return result",SUCCESS,1007,0

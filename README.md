@@ -1,62 +1,90 @@
-# Transformers
+## Resolución de algoritmos utilizando IA generativas
 
-## Large Language Model Evaluation
+### Overview
+This repository contains code and data used to develop the research paper "Resolución de algoritmos utilizando IA generativas" The project implements an automated pipeline to evaluate large language models (LLMs) from Google and OpenAI under various temperature configurations. A set of curated problems is processed, Python code solutions are generated via structured prompts, those solutions are executed under controlled conditions, and the outcomes are analyzed.
 
-## Project Description
-This project aims to evaluate the performance of different large language models through a series of standardized tests. Using a Python program executed in IPython, we assess the models' ability to solve problems from "Problem Set 4," experimenting with different temperature settings to observe their impact on the generated results.
+### Project Structure
+```
+project/
+├── data/
+│   ├── raw/                  # Raw problem data
+│   └── processed/            # Preprocessed problem data for evaluation
+├── notebooks/
+│   └── 01_processing.ipynb   # Primary notebook to run the evaluation pipeline
+├── outputs/
+│   ├── outputs/
+│   │   └── py_files_outputs_v2/   # Generated Python code files from LLM responses
+│   └── visualizations/
+│       ├── csv/        # results2; files containing execution and evaluation results
+|       └── excel/      # results; files containing the summary
+├── src/
+│   ├── utils.py
+│   └── process_data.py
+├── .env
+├── requirements.txt
+└── README.md
+```
 
-## Technologies Used
-- **Language**: Python
-- **Environment**: IPython
-- **Libraries**:
-  - `csv`: For handling CSV file operations.
-  - `os`: For interacting with the operating system.
-  - `time`: For time-related operations.
-  - `subprocess`: To run the program under controlled conditions.
-  - `openai`: For integration with OpenAI models.
-  - `pathlib`: For working with file paths.
-  - `langchain_google_genai`: For integration with Google Generative AI models.
-  - `langchain.prompts.ChatPromptTemplate`: For creating prompts for the models.
-  - `langchain.output_parsers`: For parsing model responses.
-  - `langchain.chat_models.ChatOpenAI`: For using OpenAI's chat models.
+### Dependencies and Installation
+The project is implemented in Python and leverages several libraries and APIs. Below are the key dependencies:
 
-## Repository
-The code is available on GitHub [here](https://github.com/matiask400/Transformers). All necessary documentation is included for easy review.
+- **Programming Language:** Python 3.13.0
+- **Core Libraries:** csv, os, time, subprocess, pathlib  
+- **LLM Integration:**  
+  - langchain, langchain-google-genai, langchain-openai, langchain_community  
+  - openai  
+- **Data and Visualization:** pandas, numpy, matplotlib, seaborn
+- **Development Environment:** IPython/Jupyter Notebook  
 
-## Models Used
-- **Models**:
-  - Gemini 1.0 Pro 
+Install the necessary packages using the following commands within a Jupyter Notebook cell:
+```css
+%pip install --upgrade --quiet langchain pandas numpy matplotlib seaborn jupyter
+%pip install --upgrade --quiet langchain-google-genai openai langchain-openai
+%pip install --upgrade --quiet langchain_community
+```
+
+### Environment Configuration
+Create a `.env` file in the root directory with your API keys. For example:
+```ini
+GOOGLE_API_KEY=your_google_api_key_here
+OPENAI_API_KEY=your_openai_api_key_here
+```
+*Note: Ensure that `.env` is added to `.gitignore` to protect sensitive information.*
+
+### Execution Process
+1. **Problem Extraction:**  
+   Problems are read from a preprocessed CSV file located in `data/processed/`.
+
+2. **Prompting the LLMs:**  
+   Structured prompts are constructed to extract a Python solution and test examples from each problem.
+
+3. **Code Generation and Execution:**  
+   The generated Python code is saved to the `outputs/` directory. Each script is executed with a 60-second timeout using a subprocess, and the output is parsed to count test results.
+
+4. **Result Logging:**  
+   Execution details, including counts of "True" and "False" outcomes, are logged in CSV files under `outputs/visualizations/`.
+
+### How to Run
+- **Open the Notebook:**  
+  Navigate to `notebooks/01_processing.ipynb` and open it in Jupyter Notebook.
+  
+- **Set Up Environment Variables:**  
+  Ensure your `.env` file contains the necessary API keys.
+  
+- **Execute the Pipeline:**  
+  Run the notebook cells sequentially to process the problems, generate code via LLMs, execute the code, and log the results.
+
+### Models Evaluated
+- **Google Generative AI Models:**
+  - Gemini 1.0 Pro
   - Gemini 1.5 Pro
   - Gemini 1.5 Flash
-  - GPT 3.5-turbo
-  - GPT 4.0-turbo
-  - GPT-4o 
-  - GPT 4o-mini
 
-## Execution Configuration
-- **Temperatures tested**:
-  - Temperature = 0
-  - Temperature = 1
-- **Additional parameters**:
-  - `top_p = 1`
-- **Prompt**: Solve problems from "Problem Set 4" with the model returning "True" for successful tests and "False" otherwise.
+- **OpenAI Models via LangChain:**
+  - GPT-3.5-turbo
+  - GPT-4o-mini
+  - GPT-4o
+  - GPT-4-turbo
 
-## Execution Process
-1. **Problem Selection**: The first 25 problems from "Problem Set 4".
-2. **Execution**:
-   - The prompt was sent to the models with the indicated configuration.
-   - The model's response was extracted from the resulting JSON and stored in a Python file.
-   - The Python file was executed using `subprocess` with a 60-second time limit.
-3. **Result Analysis**:
-   - Counting "True" and "False" responses.
-   - Results were stored in a CSV file along with the execution code.
-
-## Main Executable Notebook
-The primary notebook responsible for executing the program is located at:
-/Transformers/test_dataset/process_data/Solve_Extract_V2.ipynb
-To run the program, navigate to the directory and execute the notebook.
-
-## Generated Files
-- **Results CSV**: Contains the count of "True" and "False" responses along with execution details.
-- **Python Code**: Contains the code used for the evaluation.
-
+### Paper Reference
+The methods and results documented in this repository underpin the research paper "Resolución de algoritmos utilizando IA generativas" For further details on the methodology and findings, please refer to the publication.
